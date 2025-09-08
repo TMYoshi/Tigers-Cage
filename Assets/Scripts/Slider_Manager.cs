@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Slider_Manager : MonoBehaviour
     private List<Transform> pieces_;
     private int size_;
     private int empty_location_;
+    private bool shuffling_;
 
     #region CreateGamePieces
     // Create the game setup with size_ x size_ pieces
@@ -79,13 +81,62 @@ public class Slider_Manager : MonoBehaviour
     }
     #endregion
 
+    #region CheckCompletion
+    bool CheckCompletion()
+    {
+        for (int tile = 0; tile < pieces_.Count; ++tile)
+        {
+            if (pieces_[tile].name != $"{tile}")
+            {
+                return false;
+            }
+        }
+        Debug.Log("Puzzle completed!");
+        return true;
+    }
+    #endregion
+
+    #region WaitShuffle
+    private IEnumerator WaitShuffle(float wait_time)
+    {
+        yield return new WaitForSeconds(wait_time);
+        Shuffle();
+        shuffling_ = false;
+    }
+    #endregion
+
+    #region Shuffle
+    private void Shuffle()
+    {
+        // Use brute force shuffle because number of elements low + accounts for unsolvable tile sets
+        // If we really wanted to, weyou could work backwards and manually shuffle the tiles here so that each solution is the same, but ehhh
+        int count = 0;
+        int prev = 0;
+        while (count < size_ * size_ * size_ * size_)
+        {
+            // Pick a random location 
+            int random = Random.Range(0, size_ * size_);
+
+            // Prevent swapping the last move
+            if (random == prev) { continue; }
+            prev = empty_location_;
+
+            // Use the same algorithm used to swap as the player would
+            if (SwapIfValid(random, -size_, size_)) { ++count; }
+            else if (SwapIfValid(random, size_, size_)) { ++count; }
+            else if (SwapIfValid(random, -1, 0)) { ++count; }
+            else if (SwapIfValid(random, 1, size_ - 1)) { ++count; }
+        }
+    }
+    #endregion
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pieces_ = new List<Transform>();
         size_ = 3;
         CreateGamePieces(0.01f);
-
+        StartCoroutine(WaitShuffle(0.5f));
     }
 
     #region Update
@@ -109,10 +160,16 @@ public class Slider_Manager : MonoBehaviour
                     {
                         Debug.Log("Hit a tile");
                         if (SwapIfValid(tile, -size_, size_)) { break; }
-                        if (SwapIfValid(tile, size_, size_)) { break; }
-                        if (SwapIfValid(tile, -1, 0)) { break; }
-                        if (SwapIfValid(tile, 1, size_ - 1)) { break; }
+                        else if (SwapIfValid(tile, size_, size_)) { break; }
+                        else if (SwapIfValid(tile, -1, 0)) { break; }
+                        else if (SwapIfValid(tile, 1, size_ - 1)) { break; }
                     }
+                }
+                
+                 // Check for completion, if completed shuffle again
+                if (!shuffling_ && CheckCompletion())
+                {
+                    shuffling_ = true;
                 }
             }
         }
