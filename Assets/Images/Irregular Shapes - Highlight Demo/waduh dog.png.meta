@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 062175078e8e9444e89528bef1a37d48
+guid: e390f7ee6eb68bb49af30e12e0f11b17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1149179304462134857
-    second: adc77577d18d8ae7ad730d493609aa83_0
+      213: 4199592577029987980
+    second: waduh dog_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adc77577d18d8ae7ad730d493609aa83_0
+      name: waduh dog_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 736
-        height: 552
+        y: 43
+        width: 480
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b1dd4ed28b4d00f0800000000000000
-      internalID: -1149179304462134857
+      spriteID: c8e5d3bc233f74a30800000000000000
+      internalID: 4199592577029987980
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adc77577d18d8ae7ad730d493609aa83_0: -1149179304462134857
+      waduh dog_0: 4199592577029987980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
