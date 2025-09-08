@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d09c8db02aa294e9786e8c458557bc90
+guid: d92dcb5b6a1f545e4a5548a5009bd27e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1797837986651104647
-    second: le-whole-rgb-haj-crew-from-my-earlier-blahaj-post-as-v0-5vtjtwhq1s591_0
+      213: 1959048658440658648
+    second: avatar_526a7a28-4755-45f5-8284-2302ededcfaa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: le-whole-rgb-haj-crew-from-my-earlier-blahaj-post-as-v0-5vtjtwhq1s591_0
+      name: avatar_526a7a28-4755-45f5-8284-2302ededcfaa_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 11
-        width: 947
-        height: 1145
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 785ea0e9f1433f810800000000000000
-      internalID: 1797837986651104647
+      spriteID: 8de9f081060ff2b10800000000000000
+      internalID: 1959048658440658648
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      le-whole-rgb-haj-crew-from-my-earlier-blahaj-post-as-v0-5vtjtwhq1s591_0: 1797837986651104647
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
