@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 961157041}
   - component: {fileID: 961157042}
   m_Layer: 0
-  m_Name: waduh dog_0
+  m_Name: hornet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,12 +532,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 4199592577029987980, guid: e390f7ee6eb68bb49af30e12e0f11b17, type: 3}
+  m_Sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.8, y: 3.92}
+  m_Size: {x: 3.59, y: 4.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 0, b: 0.86289215, a: 1}
+  outlineColor: {r: 1, g: 0.10509107, b: 0, a: 1}
   outlineWidth: 0.05
   outlineResolution: 16
 --- !u!61 &961157042
@@ -596,8 +596,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.8, y: 3.92}
-    newSize: {x: 4.8, y: 3.92}
+    oldSize: {x: 3.59, y: 4.18}
+    newSize: {x: 3.59, y: 4.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

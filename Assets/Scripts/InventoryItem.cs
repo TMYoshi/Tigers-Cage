@@ -9,6 +9,11 @@ public class InventoryItem : MonoBehaviour
     private int quantity;
     [SerializeField]
     private Sprite sprite;
+
+    [TextArea]
+    [SerializeField]
+    private string itemDescription;
+
     private InventoryManager inventoryManager;
 
     void Start()
@@ -38,7 +43,7 @@ public class InventoryItem : MonoBehaviour
                     // Your click logic here
                     if (inventoryManager != null)
                     {
-                        inventoryManager.AddItem(itemName, quantity, sprite);
+                        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
                         Debug.Log("Item '" + itemName + "' (" + quantity + ") collected!");
                     }
                     Destroy(gameObject);

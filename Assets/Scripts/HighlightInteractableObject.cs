@@ -106,3 +106,6 @@ public class HighlightInteractableOutline : MonoBehaviour
         }
     }
 }
+
+// highlight on hover, click for dialog
+// only some items should be collectable, not all

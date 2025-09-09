@@ -10,12 +10,21 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public int quantity;
     public Sprite itemSprite;
     public bool isFull;
+    public string itemDescription;
+    public Sprite emptySprite;
 
+    // item slot
     [SerializeField]
     private TMP_Text quantityText;
 
     [SerializeField]
     private Image itemImage;
+
+
+    // item description slot
+    public Image itemDescriptionImage;
+    public TMP_Text ItemDescriptionNameText;
+    public TMP_Text ItemDescriptionText;
 
     public GameObject selectedShader;
     public bool thisItemSelected;
@@ -25,13 +34,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+
+        if (selectedShader != null)
+        {
+            selectedShader.SetActive(false); // ensure selected panel starts as off
+        }
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite)
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
         this.quantity = quantity;
         this.itemSprite = itemSprite;
+        this.itemDescription = itemDescription;
         isFull = true;
 
         quantityText.text = quantity.ToString(); // text component of TMP = int
@@ -54,9 +69,37 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        inventoryManager.DeselectAllSlots();   
-        selectedShader.SetActive(true);
+        if (inventoryManager != null)
+        {
+            inventoryManager.DeselectAllSlots();
+        }
+
+        if (selectedShader != null)
+        {
+            selectedShader.SetActive(true);
+            //Debug.Log($"Activated selectedShader: {selectedShader.name}");
+        }
         thisItemSelected = true;
+
+        ItemDescriptionNameText.text = itemName; // remember .text
+        //Debug.Log("Item Description: '" + itemDescription + "'");
+        //Debug.Log("ItemDescriptionText is null: " + (ItemDescriptionText == null));
+
+        if (ItemDescriptionText != null)
+        {
+            ItemDescriptionText.text = itemDescription;
+            //Debug.Log("Set description text to: '" + ItemDescriptionText.text + "'");
+        }
+        else
+        {
+            Debug.LogError("ItemDescriptionText is not assigned in inspector!");
+        }
+
+        itemDescriptionImage.sprite = itemSprite;
+        if(itemDescriptionImage.sprite == null)
+        {
+            itemDescriptionImage.sprite = emptySprite;
+        }
     }
 
     public void OnRightClick()
