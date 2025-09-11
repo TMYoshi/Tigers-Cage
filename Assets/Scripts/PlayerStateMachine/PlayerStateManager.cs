@@ -6,7 +6,7 @@ public class PlayerStateManager : MonoBehaviour
         PLAYER CONTEXT
     */
     public GameObject _InventoryMenu;
-    public InventoryManager _InventoryManager;
+    public InventoryManager _InventoryManager ;
     public enum State
     {
         Idle,
@@ -20,9 +20,9 @@ public class PlayerStateManager : MonoBehaviour
     {
         _State[State.Moving] = new PlayerMovingState(this);
         _State[State.Inventory] = new PlayerInvState(this);
-        _State[State.Idle] = new PlayerIdleState(this);
+        _State[State.Idle] = new PlayerIdleState(this); 
 
-        UpdateCurrentState(State.Idle);
+        UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
     }
     public void UpdateCurrentState(State state)
     {
@@ -38,3 +38,4 @@ public class PlayerStateManager : MonoBehaviour
         _currentState.UpdateState();
     }
 }
+
