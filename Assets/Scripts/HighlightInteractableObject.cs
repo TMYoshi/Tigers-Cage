@@ -4,7 +4,7 @@
  * when mouse moves away from the item.
  * 
  * Creates an empty GameObject outlineParent to hold all the duplicate sprites (count is based on resolution), 
- * and places these based on 360°/resolution
+ * and places these based on 360ï¿½/resolution
  * 
  * Most of these calculations were created with trigonomety to calculate offsets, whose vector is then 
  * multiplied by outlineWidth to determine how far away from center the duplicate is placed.
@@ -95,6 +95,8 @@ public class HighlightInteractableOutline : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("Clicked on " + gameObject.name);
+        // call InventoryManager.AddItem() here
+        
     }
 
     void OnDestroy()

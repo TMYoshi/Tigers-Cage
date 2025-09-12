@@ -11,7 +11,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         Idle,
         Moving,
-        Inventory
+        Inventory,
     }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
@@ -20,7 +20,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         _State[State.Moving] = new PlayerMovingState(this);
         _State[State.Inventory] = new PlayerInvState(this);
-        _State[State.Idle] = new PlayerIdleState(this); 
+        _State[State.Idle] = new PlayerIdleState(this);
 
         UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
     }

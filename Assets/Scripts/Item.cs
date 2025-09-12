@@ -1,13 +1,15 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Item : MonoBehaviour
 {
-    public string[] lines_;
+    public List<string> lines_;
     public Dialog assoc_dialog_box_;
-    void OnMouseDown()
+
+    public bool WriteLines()
     {
         Debug.Log("Click!");
         assoc_dialog_box_.SetLines(lines_);
-        assoc_dialog_box_.Update();
+        return assoc_dialog_box_.PlayDialog();
     }
 }

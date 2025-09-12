@@ -28,10 +28,11 @@ public class PlayerIdleState : PlayerBaseState
         Debug.Log("Exited idle state.");
     }
 
+
     public void ClickItem()
     {
         if (Input.GetMouseButtonDown(0)) // Left mouse button
-        { 
+        {
             Debug.Log("Mouse clicked somewhere");
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
@@ -39,31 +40,38 @@ public class PlayerIdleState : PlayerBaseState
             if (hit.collider != null)
             {
                 Debug.Log("Hit object: " + hit.collider.gameObject.name);
-                if (hit.collider.gameObject.CompareTag("CollectibleItem"))
+                InventoryItem _inventoryItem = hit.collider.gameObject.GetComponent<InventoryItem>();
+                switch (hit.collider.gameObject.tag)
                 {
-                    InventoryItem inventoryItem = hit.collider.gameObject.GetComponent<InventoryItem>();
-
-                    if (inventoryItem != null)
-                    {
-                        Debug.Log("Hit THIS Object!");
-
-                        _context._InventoryManager.AddItem(
-                            inventoryItem.ItemName,
-                            inventoryItem.Quantity,
-                            inventoryItem.Sprite,
-                            inventoryItem.ItemDescription
-                        );
-
-                        Debug.Log($"Collected: {inventoryItem.ItemName} x{inventoryItem.Quantity}");
-                    }
-                    Object.Destroy(hit.collider.gameObject);
+                    case "Item":
+                        Debug.Log("Hit non-collectible item");
+                        break;
+                    case "CollectibleItem":
+                        if (_inventoryItem.WriteLines())
+                        {
+                            AddItemToInv(_inventoryItem);
+                            Object.Destroy(hit.transform.gameObject);
+                        }
+                        else
+                        {
+                            _inventoryItem.WriteLines();
+                        }
+                        break;
+                    default:
+                        Debug.Log("Hit non-item object: " + hit.collider.gameObject.name);
+                        break;
                 }
             }
-            else
-            {
-                Debug.Log("No hit detected");
-            }
         }
+    }
+    void AddItemToInv(InventoryItem _inventoryItem)
+    {
+        _context._InventoryManager.AddItem(
+            _inventoryItem.ItemName,
+            _inventoryItem.Quantity,
+            _inventoryItem.Sprite,
+            _inventoryItem.ItemDescription
+        );
     }
 }
 
