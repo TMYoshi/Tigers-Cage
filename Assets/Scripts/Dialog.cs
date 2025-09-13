@@ -11,7 +11,6 @@ public class Dialog : MonoBehaviour
     public float text_speed_ = 0.1f;
     public string text_name_ = "Test";
     public Animator dialog_animator_;
-    public bool Finished = false;
     private bool dialog_opener_ = true;
     private int index_ = 0;
 
@@ -26,7 +25,6 @@ public class Dialog : MonoBehaviour
     {
         if (dialog_opener_)
         {
-            dialog_animator_.SetTrigger("Enter");
             dialog_opener_ = false;
             StartDialogue();
             return false;
@@ -50,7 +48,9 @@ public class Dialog : MonoBehaviour
     public void StartDialogue()
     {
         gameObject.SetActive(true);
+        dialog_animator_.SetTrigger("Enter");
         index_ = 0;
+        ResetText();
         StartCoroutine(TypeLine());
     }
 

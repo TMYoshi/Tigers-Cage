@@ -20,6 +20,8 @@ public class InventoryItem : Item
     public int Quantity => quantity;
     public Sprite Sprite => sprite;
     public string ItemDescription => itemDescription;
+    [SerializeField] private bool collectable;
+    public bool Collectable => collectable;
 
     void Start()
     {

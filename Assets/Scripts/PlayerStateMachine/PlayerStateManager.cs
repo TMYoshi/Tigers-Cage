@@ -7,11 +7,14 @@ public class PlayerStateManager : MonoBehaviour
     */
     public GameObject _InventoryMenu;
     public InventoryManager _InventoryManager ;
+    //dunno if I should make proper getters and setters for this but I think it should be fine for now
+    public InventoryItem _CurrentItem;
     public enum State
     {
         Idle,
         Moving,
         Inventory,
+        DialogItem,
     }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
@@ -20,6 +23,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         _State[State.Moving] = new PlayerMovingState(this);
         _State[State.Inventory] = new PlayerInvState(this);
+        _State[State.DialogItem] = new PlayerDialogItemState(this);
         _State[State.Idle] = new PlayerIdleState(this);
 
         UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated

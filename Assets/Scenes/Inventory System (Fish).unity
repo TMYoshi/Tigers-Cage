@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 5880919043794306135, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -403.03998
+      objectReference: {fileID: 0}
     - target: {fileID: 6558702701605746366, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
       propertyPath: m_Camera
       value: 
@@ -388,7 +392,7 @@ GameObject:
   - component: {fileID: 435940882}
   m_Layer: 0
   m_Name: Item
-  m_TagString: CollectibleItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,12 +425,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_: []
+  lines_:
+  - 1
+  - 2
+  - 3
+  - 4
   assoc_dialog_box_: {fileID: 991273365}
   itemName: Hornet
   quantity: 1
   sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
   itemDescription: A bug.
+  collectable: 0
 --- !u!50 &435940883
 Rigidbody2D:
   serializedVersion: 5
@@ -659,7 +668,7 @@ GameObject:
   - component: {fileID: 999445547}
   m_Layer: 0
   m_Name: Item (2)
-  m_TagString: CollectibleItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -682,6 +691,7 @@ MonoBehaviour:
   quantity: 1
   sprite: {fileID: 4495478712733764576, guid: 3e5a92e682f155f44be435ae61e0f686, type: 3}
   itemDescription: Another bug!
+  collectable: 0
 --- !u!50 &999445548
 Rigidbody2D:
   serializedVersion: 5
@@ -785,7 +795,7 @@ GameObject:
   - component: {fileID: 1001873296}
   m_Layer: 0
   m_Name: Item (1)
-  m_TagString: CollectibleItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,6 +821,7 @@ MonoBehaviour:
   quantity: 1
   sprite: {fileID: -4656658513182322354, guid: 45e0818c30ac4b741ad2a2ba537a51b4, type: 3}
   itemDescription: bzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+  collectable: 1
 --- !u!50 &1001873297
 Rigidbody2D:
   serializedVersion: 5

@@ -1,4 +1,5 @@
 using System.Security.Cryptography.X509Certificates;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -44,18 +45,8 @@ public class PlayerIdleState : PlayerBaseState
                 switch (hit.collider.gameObject.tag)
                 {
                     case "Item":
-                        Debug.Log("Hit non-collectible item");
-                        break;
-                    case "CollectibleItem":
-                        if (_inventoryItem.WriteLines())
-                        {
-                            AddItemToInv(_inventoryItem);
-                            Object.Destroy(hit.transform.gameObject);
-                        }
-                        else
-                        {
-                            _inventoryItem.WriteLines();
-                        }
+                        _context._CurrentItem = _inventoryItem;
+                        _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
                         break;
                     default:
                         Debug.Log("Hit non-item object: " + hit.collider.gameObject.name);
@@ -64,15 +55,7 @@ public class PlayerIdleState : PlayerBaseState
             }
         }
     }
-    void AddItemToInv(InventoryItem _inventoryItem)
-    {
-        _context._InventoryManager.AddItem(
-            _inventoryItem.ItemName,
-            _inventoryItem.Quantity,
-            _inventoryItem.Sprite,
-            _inventoryItem.ItemDescription
-        );
-    }
+
 }
 
 

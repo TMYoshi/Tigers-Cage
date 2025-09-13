@@ -951,7 +951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ac06812b319fb4f9b5a20b3209aeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryMenu: {fileID: 964893378104781093}
+  _InventoryMenu: {fileID: 964893378104781093}
+  _InventoryManager: {fileID: 819163271877533854}
 --- !u!1001 &2618441976501031927
 PrefabInstance:
   m_ObjectHideFlags: 0
