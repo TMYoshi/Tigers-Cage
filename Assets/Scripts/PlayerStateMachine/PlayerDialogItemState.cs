@@ -9,7 +9,8 @@ public class PlayerDialogItemState : PlayerBaseState
     }
     public override void EnterState()
     {
-        _context._CurrentItem.WriteLines();
+        if (_context._CurrentItem.lines_.Count <= 0) ExitState();
+        else _context._CurrentItem.WriteLines();
     }
     public override void UpdateState()
     {
