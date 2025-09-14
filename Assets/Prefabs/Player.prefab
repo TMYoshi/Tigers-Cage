@@ -953,6 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _InventoryMenu: {fileID: 964893378104781093}
   _InventoryManager: {fileID: 819163271877533854}
+  _CurrentItem: {fileID: 0}
 --- !u!1001 &2618441976501031927
 PrefabInstance:
   m_ObjectHideFlags: 0

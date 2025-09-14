@@ -14,12 +14,6 @@ public class Dialog : MonoBehaviour
     private bool dialog_opener_ = true;
     private int index_ = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        ResetText();
-    }
-
     // Update is called once per frame
     public bool PlayDialog()
     {
@@ -50,7 +44,6 @@ public class Dialog : MonoBehaviour
         gameObject.SetActive(true);
         dialog_animator_.SetTrigger("Enter");
         index_ = 0;
-        ResetText();
         StartCoroutine(TypeLine());
     }
 
@@ -61,7 +54,6 @@ public class Dialog : MonoBehaviour
         {
             ++index_;
             Debug.Log("Current line: " + index_);
-            ResetText();
             StartCoroutine(TypeLine());
             return false;
         }
@@ -90,14 +82,11 @@ public class Dialog : MonoBehaviour
     // TLDR: IEnumerator ~= foreach object. Has methods: gets current + moves next
     public IEnumerator TypeLine()
     {
+        text_component_.text = text_name_ + '\n';
         foreach (char letter in lines_[index_].ToCharArray())
         {
             text_component_.text += letter;
             yield return new WaitForSeconds(text_speed_); // Returns next element in collection
         }
-    }
-
-    private void ResetText() {
-        text_component_.text = text_name_ + '\n';
     }
 }
