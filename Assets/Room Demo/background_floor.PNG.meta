@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5841c043c5c425e498def43f0c2d2f6b
+guid: 8fb6b846ff0c46d40adc15ba8a89c18d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4772465720370674149
-    second: open_dresser_0
+      213: -7476188313856709572
+    second: IMG_0521_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: open_dresser_0
+      name: IMG_0521_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 3
-        width: 473
-        height: 674
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e93c6d79443b3240800000000000000
-      internalID: 4772465720370674149
+      spriteID: c3ce4aec65e3f3890800000000000000
+      internalID: -7476188313856709572
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      open_dresser_0: 4772465720370674149
+      IMG_0521_0: -7476188313856709572
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
