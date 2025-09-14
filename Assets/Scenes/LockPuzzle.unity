@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 436.8799
       objectReference: {fileID: 0}
+    - target: {fileID: 5237717779032693225, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5880919043794306135, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -403.03998
@@ -429,10 +433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines_:
-  - 1
-  - 2
-  - 3
-  - 4
+  - aeeeeeeeeeeeee
+  - aeeeeeeeeeeeee
   assoc_dialog_box_: {fileID: 991273365}
   itemName: Hornet
   quantity: 1
