@@ -35,8 +35,7 @@ public class Dialog : MonoBehaviour
             StopAllCoroutines();
             text_component_.text = text_name_ + '\n' + lines_[index_];
         }
-
-        return true;
+        return false;
     }
 
     public void StartDialogue()
