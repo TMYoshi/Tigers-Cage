@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lowkey could use a state manager for this, but like it works soooo
 public class Slider_Manager : MonoBehaviour
 {
     [SerializeField] private Transform game_transform_;
@@ -165,8 +166,8 @@ public class Slider_Manager : MonoBehaviour
                         else if (SwapIfValid(tile, 1, size_ - 1)) { break; }
                     }
                 }
-                
-                 // Check for completion, if completed shuffle again
+
+                // Check for completion, if completed shuffle again
                 if (!shuffling_ && CheckCompletion())
                 {
                     shuffling_ = true;

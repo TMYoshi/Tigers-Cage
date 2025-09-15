@@ -30,10 +30,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public bool thisItemSelected;
 
     private InventoryManager inventoryManager;
+    private Equip_Button equipButton;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        equipButton = GameObject.Find("EquipManager").GetComponent<Equip_Button>();
 
         if (selectedShader != null)
         {
@@ -74,11 +76,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             inventoryManager.DeselectAllSlots();
         }
 
-        if (selectedShader != null)
+        if (equipButton != null)
         {
-            selectedShader.SetActive(true);
-            //Debug.Log($"Activated selectedShader: {selectedShader.name}");
+            Debug.Log("Currently selected: " + itemName);
+            equipButton.SetSelected(itemName);
         }
+
+        if (selectedShader != null)
+            {
+                selectedShader.SetActive(true);
+                //Debug.Log($"Activated selectedShader: {selectedShader.name}");
+            }
         thisItemSelected = true;
 
         ItemDescriptionNameText.text = itemName; // remember .text
@@ -102,6 +110,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    // Lowkey thinking of making right click auto equip for quick access - Solivan
     public void OnRightClick()
     {
         Debug.Log("right clicked!");
