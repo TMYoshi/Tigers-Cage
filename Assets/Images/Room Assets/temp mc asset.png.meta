@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9dd25c32e317e4d75ae3978866e6c112
+guid: caea881bd7658d54b9b8f8982baa1792
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4643814673965760421
-    second: bookshelf_closed_0
+      213: -5916340293945595927
+    second: temp mc asset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bookshelf_closed_0
+      name: temp mc asset_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 3
-        width: 473
-        height: 674
+        x: 58
+        y: 0
+        width: 103
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b504683782bdd8fb0800000000000000
-      internalID: -4643814673965760421
+      spriteID: 9e7ea0949dfe4eda0800000000000000
+      internalID: -5916340293945595927
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      bookshelf_closed_0: -4643814673965760421
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
