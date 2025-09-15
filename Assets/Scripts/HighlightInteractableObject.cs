@@ -17,8 +17,8 @@ using UnityEngine;
 public class HighlightInteractableOutline : MonoBehaviour
 {
     [Header("Outline Settings")]
-    public Color outlineColor = Color.yellow; // change later based on sprite
-    public float outlineWidth = 0.05f;
+    public Color outlineColor = Color.black; // change later based on sprite
+    public float outlineWidth = 0.1f;
     [Range(4, 16)]
     /* some sprites play well with this method, some don't; may need to revisit 
     unsure what balance to strike between resolution, outlineThickness for performance
@@ -53,11 +53,15 @@ public class HighlightInteractableOutline : MonoBehaviour
                 0 // no z in 2d :)
             ) * outlineWidth;
 
+            direction = transform.rotation * direction;
+            
             // create outline sprite GameObject
             GameObject outlineSprite = new GameObject($"Outline_{i}");
             outlineSprite.transform.SetParent(outlineParent.transform);
             outlineSprite.transform.localPosition = direction;
             outlineSprite.transform.localScale = Vector3.one;
+
+            outlineSprite.transform.rotation = transform.rotation;
 
             // add and config SpriteRenderer
             SpriteRenderer outlineSR = outlineSprite.AddComponent<SpriteRenderer>();
