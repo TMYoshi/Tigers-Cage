@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 815, y: 103}
-  m_SizeDelta: {x: 1500, y: 300}
+  m_AnchoredPosition: {x: 486.76, y: 62.38}
+  m_SizeDelta: {x: 1301.52, y: 371.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4611695513355067522
 CanvasRenderer:
@@ -406,14 +406,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text_component_: {fileID: 8999008169819580332}
-  lines_:
-  - Hej!
-  - This is the 2nd line of dialog.
-  - Hej da!
-  text_speed_: 0.1
   text_name_: Test
+  sprite_: {fileID: 0}
+  current_dialog_: {fileID: 0}
+  is_dialog_active_: 0
+  dialog_opener_: 1
+  text_speed_: 0.1
   dialog_animator_: {fileID: 8420576868757059824}
-  Finished: 0
 --- !u!95 &8420576868757059824
 Animator:
   serializedVersion: 7

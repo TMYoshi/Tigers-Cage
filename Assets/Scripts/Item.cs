@@ -15,12 +15,10 @@ public class Item : MonoBehaviour
         {
             return false;
         }
-
-        Debug.Log("Click!");
         LastInteractionTime = Time.time;
 
-        assoc_dialog_box_.SetLines(lines_);
-        bool dialog_finished = assoc_dialog_box_.PlayDialog();
+        bool dialog_finished = assoc_dialog_box_.WriteDialog();
+        // bool dialog_finished = assoc_dialog_box_.PlayDialog(dialog_so_);
 
         if (dialog_finished)
         {
