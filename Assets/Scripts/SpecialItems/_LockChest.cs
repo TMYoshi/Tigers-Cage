@@ -4,6 +4,9 @@ using TMPro;
 
 public class _LockedChest : SpecialItems
 {
+    [SerializeField] BoxCollider2D colliderToDestroy;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite openSprite;
     [SerializeField] GameObject CodeLock;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
@@ -45,7 +48,9 @@ public class _LockedChest : SpecialItems
 
     public override void RewardCondition()
     {
-        Debug.Log("Reward!!");
+        spriteRenderer.sprite = openSprite;
+        Destroy(this);
+        Destroy(colliderToDestroy);
     }
 
     public override void CleanUpCondition()
