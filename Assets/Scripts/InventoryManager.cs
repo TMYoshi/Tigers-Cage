@@ -4,6 +4,15 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     public ItemSlot[] itemSlot; 
 
+    private void Start()
+    {
+        // hide inv at game start
+        if (InventoryMenu != null)
+        {
+            InventoryMenu.SetActive(false);
+        }
+    }
+
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++) {

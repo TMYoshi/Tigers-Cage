@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.Events;
 public class InventoryItem : Item
 {
     [SerializeField]
@@ -22,6 +25,9 @@ public class InventoryItem : Item
     public string ItemDescription => itemDescription;
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
+    private SpecialItems SpecialEvents;
+    public SpecialItems GetSpecialEvents() => SpecialEvents;
+    public void AssignSpecialEvents(SpecialItems specialEvent) => SpecialEvents = specialEvent;
 
     void Start()
     {

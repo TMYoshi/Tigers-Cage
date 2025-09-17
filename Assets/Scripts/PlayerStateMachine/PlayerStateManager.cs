@@ -15,6 +15,7 @@ public class PlayerStateManager : MonoBehaviour
         Moving,
         Inventory,
         DialogItem,
+        SpecialItem
     }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
@@ -24,6 +25,7 @@ public class PlayerStateManager : MonoBehaviour
         _State[State.Moving] = new PlayerMovingState(this);
         _State[State.Inventory] = new PlayerInvState(this);
         _State[State.DialogItem] = new PlayerDialogItemState(this);
+        _State[State.SpecialItem] = new PlayerSpecialItemState(this);
         _State[State.Idle] = new PlayerIdleState(this);
 
         UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated

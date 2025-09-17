@@ -42,11 +42,14 @@ public class PlayerIdleState : PlayerBaseState
             {
                 Debug.Log("Hit object: " + hit.collider.gameObject.name);
                 InventoryItem _inventoryItem = hit.collider.gameObject.GetComponent<InventoryItem>();
+                _context._CurrentItem = _inventoryItem;
                 switch (hit.collider.gameObject.tag)
                 {
                     case "Item":
-                        _context._CurrentItem = _inventoryItem;
                         _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+                        break;
+                    case "SpecialItem":
+                        _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
                         break;
                     default:
                         Debug.Log("Hit non-item object: " + hit.collider.gameObject.name);

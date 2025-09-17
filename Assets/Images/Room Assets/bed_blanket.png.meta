@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: bbe054362b381014ea16e0da40721d36
+guid: 4c77ab2818a74f8499c40cd55a3706e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7695509291804975969
-    second: IMG_0524_0
+      213: 2189677436326531327
+    second: bed_blanket_0
+  - first:
+      213: 6480331418710847097
+    second: bed_blanket_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0524_0
+      name: bed_blanket_0
       rect:
         serializedVersion: 2
-        x: 1481
-        y: 249
-        width: 358
-        height: 648
+        x: 366
+        y: 684
+        width: 1799
+        height: 1438
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9c1f38521f043590800000000000000
-      internalID: -7695509291804975969
+      spriteID: ff05ee4e60c436e10800000000000000
+      internalID: 2189677436326531327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bed_blanket_1
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1291
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e201f4713cee950800000000000000
+      internalID: 6480331418710847097
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IMG_0524_0: -7695509291804975969
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
