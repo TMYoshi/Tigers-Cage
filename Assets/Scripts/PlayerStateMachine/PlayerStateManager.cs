@@ -2,13 +2,29 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerStateManager : MonoBehaviour
 {
+    public static PlayerStateManager Instance;
     /*
         PLAYER CONTEXT
     */
     public GameObject _InventoryMenu;
     public InventoryManager _InventoryManager ;
-    //dunno if I should make proper getters and setters for this but I think it should be fine for now
     public InventoryItem _CurrentItem;
+    //dunno if I should make proper getters and setters for this but I think it should be fine for now
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public enum State
     {
         Idle,

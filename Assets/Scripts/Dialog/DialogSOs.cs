@@ -12,13 +12,24 @@ public class DialogSO : ScriptableObject
     // Lowkey this is gonna be really useful for triggering certain scenes as can trigger after certain events or interacting with certain objects!!
     public bool IsConditionMet()
     {
-        if (required_item_ != Equip_Button.Instance.GetEquipped())
+        if (string.IsNullOrEmpty (required_item_))
         {
-            Debug.Log($"Failed Condition; not {required_item_}");
+            return true;
+        }
+
+        if (Equip_Button.Instance == null)
+        {
+            Debug.LogWarning("Equip_Button.Instance is null.");
+            Equip_Button.Instance = FindFirstObjectByType<Equip_Button>();
+        }
+
+        if(Equip_Button.Instance == null)
+        {
+            Debug.LogError("No Equip_Button found.");
             return false;
         }
-        Debug.Log("Passed Condition");
-        return true;
+
+        return required_item_ == Equip_Button.Instance.GetEquipped();
     }
 
     public DialogLine[] GetLines()

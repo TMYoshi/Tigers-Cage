@@ -18,13 +18,17 @@ public class Equip_Button : MonoBehaviour
     // Lowkey prob/should definetly alter this cause like realistically is the equip button always gonna be there lol
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
+        else if (Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
     public void Onclick()
     {
@@ -39,7 +43,7 @@ public class Equip_Button : MonoBehaviour
         {
             // TODO: change text to say "Unequip?" on hover.
             Debug.Log("Unequipping " + selected_item_);
-            equipped_item_ = "";
+            equipped_item_ = "None";
             equip_text_.text = "Equip";
         }
     }
@@ -48,7 +52,7 @@ public class Equip_Button : MonoBehaviour
     {
         Debug.Log(selected_item + " selected");
         selected_item_ = selected_item;
-        if (selected_item_ != "" || selected_item_ != equipped_item_)
+        if (selected_item_ != "" && selected_item_ != equipped_item_)
         {
             equip_text_.text = "Equip";
         }
