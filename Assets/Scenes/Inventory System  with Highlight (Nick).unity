@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 435940882}
   - component: {fileID: 435940885}
   - component: {fileID: 435940886}
+  - component: {fileID: 435940887}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Item
@@ -647,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - A chest where I keep all my toys.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Chest
   quantity: 1
   sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
@@ -771,6 +772,21 @@ MonoBehaviour:
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.15
   outlineResolution: 8
+--- !u!114 &435940887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435940880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: 628a1d938b5d04bf4ba68029cf89a4d7, type: 2}
 --- !u!1 &865846192
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +892,7 @@ MonoBehaviour:
   lines_:
   - My plushie blahaj.
   - I was wondering where I lost it.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Blahaj
   quantity: 2
   sprite: {fileID: 21300000, guid: d09c8db02aa294e9786e8c458557bc90, type: 3}
@@ -945,17 +961,6 @@ MonoBehaviour:
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.2
   outlineResolution: 8
---- !u!114 &991273365 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5357277878547789084, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
-  m_PrefabInstance: {fileID: 203353533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a472f0baa084b15a57395a933fb0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &999445546
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +974,8 @@ GameObject:
   - component: {fileID: 999445547}
   - component: {fileID: 999445551}
   - component: {fileID: 999445552}
+  - component: {fileID: 999445553}
+  - component: {fileID: 999445554}
   m_Layer: 0
   m_Name: Bookshelf
   m_TagString: Item
@@ -991,7 +998,7 @@ MonoBehaviour:
   lines_:
   - A bookshelf.
   - There's still a lot of books I haven't read.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Bookshelf
   quantity: 1
   sprite: {fileID: 4495478712733764576, guid: 3e5a92e682f155f44be435ae61e0f686, type: 3}
@@ -1130,6 +1137,35 @@ MonoBehaviour:
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.1
   outlineResolution: 8
+--- !u!114 &999445553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999445546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: b91aacd8058aa40e49a843b9fc3a916b, type: 2}
+--- !u!114 &999445554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999445546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_convo_: {fileID: 0}
+  convos_: []
 --- !u!1 &1001873295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1179,7 @@ GameObject:
   - component: {fileID: 1001873296}
   - component: {fileID: 1001873300}
   - component: {fileID: 1001873301}
+  - component: {fileID: 1001873302}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Item
@@ -1165,7 +1202,7 @@ MonoBehaviour:
   lines_:
   - I've already slept enough today.
   - I should make my bed before my parents see.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 1001873302}
   itemName: Bed_Messy
   quantity: 1
   sprite: {fileID: -4656658513182322354, guid: 45e0818c30ac4b741ad2a2ba537a51b4, type: 3}
@@ -1304,6 +1341,21 @@ MonoBehaviour:
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.1
   outlineResolution: 8
+--- !u!114 &1001873302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001873295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: 38d457404317944e187ff6541d484aa0, type: 2}
 --- !u!114 &1238875957 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6747945920940678560, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
@@ -1420,7 +1472,7 @@ MonoBehaviour:
   lines_:
   - This is Hornet.
   - She is a bug.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Hornet
   quantity: 1
   sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
@@ -1553,6 +1605,7 @@ GameObject:
   - component: {fileID: 1704212126}
   - component: {fileID: 1704212125}
   - component: {fileID: 1704212128}
+  - component: {fileID: 1704212129}
   m_Layer: 0
   m_Name: DoorExit
   m_TagString: Item
@@ -1645,7 +1698,7 @@ MonoBehaviour:
   lines_:
   - I can't leave my room yet.
   - I still need to clean up my room.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Door
   quantity: 1
   sprite: {fileID: -7695509291804975969, guid: bbe054362b381014ea16e0da40721d36, type: 3}
@@ -1714,6 +1767,21 @@ MonoBehaviour:
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.1
   outlineResolution: 8
+--- !u!114 &1704212129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704212123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: a970a5408209e4e19a280e8fcc410728, type: 2}
 --- !u!224 &1765966242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3543703967262039824, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
