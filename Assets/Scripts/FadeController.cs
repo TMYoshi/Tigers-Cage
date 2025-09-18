@@ -10,12 +10,15 @@ public class FadeController : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private Canvas fadeCanvas;
 
-    // Static flag to track if we should fade in when scene starts
+    // A static flag to track if we should fade in when scene starts
     private static bool shouldFadeInOnLoad = false;
+
+    // Define a delegate and event for when the fade-in is complete
+    public delegate void FadeInCompleteAction();
+    public event FadeInCompleteAction onFadeInComplete;
 
     private void Awake()
     {
-        // Always set this scene's FadeController as the current instance
         Instance = this;
 
         if (fadeCanvas == null)
@@ -86,6 +89,9 @@ public class FadeController : MonoBehaviour
 
         shouldFadeInOnLoad = false;
         Debug.Log("Fade in complete");
+
+        // Notify any listeners that the fade-in is complete
+        onFadeInComplete?.Invoke();
     }
 
     public void FadeAndLoad(string sceneName)

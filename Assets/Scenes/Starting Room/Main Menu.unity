@@ -975,6 +975,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4986444719231885789, guid: fd19e2b7aa0d5c24a8dd65fe50805ce6, type: 3}
+      propertyPath: finalSceneForCutscene
+      value: MC Room - 1 North Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6903217041354304373, guid: fd19e2b7aa0d5c24a8dd65fe50805ce6, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1703,8 +1707,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 863806487}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: FadeAndLoadScene
-        m_Mode: 5
+        m_MethodName: StartCutsceneFromMainButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -4,16 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    // Allows for scene controller to be accessed anywhere as all scene manager objects share this variable
-    // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/static
     public static SceneController scene_controller_instance;
+    public string finalSceneForCutscene;
 
-    // Awake excutes before Start for use in references, inheritted by MonoBehavior
     private void Awake()
     {
         if (scene_controller_instance == null)
         {
-            // Prevents destruction of object upon loading new scene
             scene_controller_instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -23,17 +20,29 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    // Ref: https://www.youtube.com/watch?v=E25JWfeCFPA
     public void Traverse_Scene(string associated_scene)
     {
         SceneManager.LoadSceneAsync(associated_scene);
     }
 
-    // for play button from main menu, or any fade to black
     public void FadeAndLoadScene(string sceneName)
     {
         Debug.Log($"Starting fade transition to {sceneName}");
         StartCoroutine(FadeAndLoadRoutine(sceneName));
+    }
+
+    // New wrapper method with no parameters
+    public void StartCutsceneFromMainButton()
+    {
+        Debug.Log("Button clicked, starting cutscene transition.");
+        // Call the original method with your specified scene names
+        FadeAndLoadSceneWithCutscene("Intro_Cutscene", finalSceneForCutscene);
+    }
+
+    public void FadeAndLoadSceneWithCutscene(string cutsceneSceneName, string finalSceneName)
+    {
+        Debug.Log($"Starting cutscene transition: {cutsceneSceneName} to {finalSceneName}");
+        StartCoroutine(FadeAndLoadCutsceneRoutine(cutsceneSceneName, finalSceneName));
     }
 
     private IEnumerator FadeAndLoadRoutine(string sceneName)
@@ -46,5 +55,18 @@ public class SceneController : MonoBehaviour
         }
 
         FadeController.Instance.FadeAndLoad(sceneName);
+    }
+
+    private IEnumerator FadeAndLoadCutsceneRoutine(string cutsceneSceneName, string finalSceneName)
+    {
+        if (FadeController.Instance == null)
+        {
+            Debug.LogError("FadeController not found. Loading scene without fade.");
+            SceneManager.LoadScene(finalSceneName);
+            yield break;
+        }
+
+        PlayerPrefs.SetString("NextSceneAfterCutscene", finalSceneName);
+        FadeController.Instance.FadeAndLoad(cutsceneSceneName);
     }
 }
