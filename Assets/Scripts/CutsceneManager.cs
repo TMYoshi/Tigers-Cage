@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
-using System.Runtime.CompilerServices;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -11,26 +10,31 @@ public class CutsceneManager : MonoBehaviour
     [Header("Cutscene Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private GameObject skipUI;
-    [SerializeField] private string nextSceneName = "MC Room - 1 North Wall"; // hard coded for now
+    [SerializeField] private string nextSceneName = "GameOver";
 
     [Header("Alternative: Animation Cutscene")]
     [SerializeField] private Animator cutsceneAnimator;
     [SerializeField] private string animationTrigger = "PlayCutscene";
 
     private bool cutsceneFinished = false;
-    private bool useVideo = true; // toggle b/w video and animation
+    private bool useVideo = true;
 
     private void Awake()
     {
         Instance = this;
 
-        // Add a listener to the FadeController's fade-in event
         if (FadeController.Instance != null)
         {
             FadeController.Instance.onFadeInComplete += StartCutscene;
         }
 
         useVideo = _videoPlayer != null && _videoPlayer.clip != null;
+
+        if (useVideo)
+        {
+            // Subscribe to the video finished event
+            _videoPlayer.loopPointReached += OnVideoFinished;
+        }
     }
 
     private void Start()
@@ -45,13 +49,11 @@ public class CutsceneManager : MonoBehaviour
 
     private void StartCutscene()
     {
-        // Unsubscribe from the event once it's triggered
         if (FadeController.Instance != null)
         {
             FadeController.Instance.onFadeInComplete -= StartCutscene;
         }
 
-        // Now we can start the cutscene sequence, knowing the fade-in is complete
         StartCoroutine(PlayCutsceneSequence());
     }
 
@@ -65,7 +67,6 @@ public class CutsceneManager : MonoBehaviour
 
     private IEnumerator PlayCutsceneSequence()
     {
-        // show skip UI
         if (skipUI != null)
         {
             skipUI.SetActive(true);
@@ -73,14 +74,15 @@ public class CutsceneManager : MonoBehaviour
 
         if (useVideo)
         {
-            yield return StartCoroutine(PlayVideoCutscene());
+            _videoPlayer.Play();
+            // The rest of the logic is now handled by the OnVideoFinished event, so we can exit this coroutine for video
+            yield break;
         }
         else
         {
             yield return StartCoroutine(PlayAnimationCutscene());
         }
 
-        // hide skip UI
         if (skipUI != null)
         {
             skipUI.SetActive(false);
@@ -89,6 +91,7 @@ public class CutsceneManager : MonoBehaviour
         ProceedToNextScene();
     }
 
+    // This method is now obsolete for video cutscenes
     private IEnumerator PlayVideoCutscene()
     {
         _videoPlayer.Play();
@@ -105,7 +108,6 @@ public class CutsceneManager : MonoBehaviour
         if (cutsceneAnimator != null)
         {
             cutsceneAnimator.SetTrigger(animationTrigger);
-
             yield return new WaitForSeconds(0.1f);
 
             while (cutsceneAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f && !cutsceneFinished)
@@ -113,6 +115,12 @@ public class CutsceneManager : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        Debug.Log("Video finished playing. Proceeding to next scene.");
+        ProceedToNextScene();
     }
 
     public void SkipCutscene()
@@ -131,6 +139,8 @@ public class CutsceneManager : MonoBehaviour
         {
             cutsceneAnimator.SetTrigger("SkipCutscene");
         }
+
+        ProceedToNextScene();
     }
 
     private void ProceedToNextScene()
@@ -146,8 +156,17 @@ public class CutsceneManager : MonoBehaviour
             SceneManager.LoadScene(nextSceneName);
         }
     }
+
     public void OnSkipButtonPressed()
     {
         SkipCutscene();
+    }
+
+    private void OnDestroy()
+    {
+        if (useVideo && _videoPlayer != null)
+        {
+            _videoPlayer.loopPointReached -= OnVideoFinished;
+        }
     }
 }

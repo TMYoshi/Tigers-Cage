@@ -620,7 +620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.3631592, y: -6.815918}
+  m_AnchoredPosition: {x: 1.38, y: -6.815918}
   m_SizeDelta: {x: 1962.1108, y: 1144.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1061001589
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 1925976093}
   skipUI: {fileID: 102115200}
-  nextSceneName: MC Room - 1 North Wall
+  nextSceneName: GameOver
   cutsceneAnimator: {fileID: 0}
   animationTrigger: PlayCutscene
 --- !u!1 &1925976091
@@ -960,7 +960,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925976091}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 106acf51eb42f654a95397791ee659ce, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 696d4a855fd215f42bc8ec88f9b8349c, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -982,7 +982,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
