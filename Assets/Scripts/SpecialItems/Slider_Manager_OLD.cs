@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Lowkey could use a state manager for this, but like it works soooo
-public class Slider_Manager : SpecialItems
+public class Slider_Manager : MonoBehaviour
 {
     [SerializeField] private Transform game_transform_;
     [SerializeField] private Transform piece_prefab_; // Set it to a small square (100 x 100?)
@@ -13,9 +12,6 @@ public class Slider_Manager : SpecialItems
     private int empty_location_;
     private bool shuffling_;
 
-    [Header("Specialized Items")]
-    bool exit_condition_;
-    
     #region CreateGamePieces
     // Create the game setup with size_ x size_ pieces
     private void CreateGamePieces(float gap_thickness)
@@ -85,32 +81,18 @@ public class Slider_Manager : SpecialItems
     }
     #endregion
 
-    #region CompleteCondition
-    public override bool CompleteCondition()
+    #region CheckCompletion
+    public bool CheckCompletion()
     {
         for (int tile = 0; tile < pieces_.Count; ++tile)
         {
             if (pieces_[tile].name != $"{tile}")
             {
-                exit_condition_ = true;
                 return false;
             }
         }
+        Debug.Log("Puzzle completed!");
         return true;
-    }
-    #endregion
-
-    #region CleanUpCondition
-    public override void CleanUpCondition()
-    {
-        gameObject.SetActive(false);
-    }
-    #endregion
-
-    #region RewardCondition
-    public override void RewardCondition()
-    {
-        return;
     }
     #endregion
 
@@ -127,7 +109,7 @@ public class Slider_Manager : SpecialItems
     private void Shuffle()
     {
         // Use brute force shuffle because number of elements low + accounts for unsolvable tile sets
-        // If we really wanted to, we could work backwards and manually shuffle the tiles here so that each solution is the same, but ehhh
+        // If we really wanted to, weyou could work backwards and manually shuffle the tiles here so that each solution is the same, but ehhh
         int count = 0;
         int prev = 0;
         while (count < size_ * size_ * size_ * size_)
@@ -148,26 +130,15 @@ public class Slider_Manager : SpecialItems
     }
     #endregion
 
-    #region EnterCondition
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void EnterCondition()
+    public void EntryCondition()
     {
         pieces_ = new List<Transform>();
         size_ = 3;
-
-        exit_condition_ = false;
-
         CreateGamePieces(0.01f);
+
         StartCoroutine(WaitShuffle(0.5f));
     }
-    #endregion
-
-    #region ExitCondition
-    public override bool ExitCondition()
-    {
-        return exit_condition_;
-    }
-    #endregion
 
     #region Update
     // Update is called once per frame
@@ -190,14 +161,17 @@ public class Slider_Manager : SpecialItems
                     {
                         Debug.Log("Hit a tile");
                         if (SwapIfValid(tile, -size_, size_)) { break; }
+                        if (SwapIfValid(tile, size_, size_)) { break; }
+                        if (SwapIfValid(tile, -1, 0)) { break; }
+                        if (SwapIfValid(tile, 1, size_ - 1)) { break; }
                         else if (SwapIfValid(tile, size_, size_)) { break; }
                         else if (SwapIfValid(tile, -1, 0)) { break; }
                         else if (SwapIfValid(tile, 1, size_ - 1)) { break; }
                     }
                 }
-
-                // Check for completion, if completed shuffle again
-                if (!shuffling_ && CompleteCondition())
+                
+                 // Check for completion, if completed shuffle again
+                if (!shuffling_ && CheckCompletion())
                 {
                     shuffling_ = true;
                 }
