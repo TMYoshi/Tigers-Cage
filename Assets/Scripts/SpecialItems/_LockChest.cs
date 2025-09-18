@@ -7,10 +7,10 @@ public class _LockedChest : SpecialItems
     [SerializeField] BoxCollider2D colliderToDestroy;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite openSprite;
-    [SerializeField] GameObject CodeLock;
+    [SerializeField] GameObject CodeLock, OpenChest;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
-    uint[] correctCode = { 1, 9, 2, 3 };
+    uint[] correctCode = { 0, 8, 2, 8};
 
     bool _CompleteCondition, _ExitCondition;
     public void IncrementByOne(int _Location)
@@ -48,8 +48,8 @@ public class _LockedChest : SpecialItems
 
     public override void RewardCondition()
     {
-        spriteRenderer.sprite = openSprite;
-        Destroy(this);
+        OpenChest.SetActive(true);
+        gameObject.SetActive(false);
         Destroy(colliderToDestroy);
     }
 
