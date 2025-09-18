@@ -14,9 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: 'It smells.
-
-'
-  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: Best not to look in there.
+    text_: "I\u2019ll fold my clothes later."
   required_item_: 

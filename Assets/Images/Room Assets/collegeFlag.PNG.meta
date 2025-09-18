@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      collegeFlag_0: 6068167174158461119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: Art supplies.
-  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: I don't think I'll find anything useful here.
+    text_: "At least my colored pencils aren\u2019t snapped in half yet."
   required_item_: 

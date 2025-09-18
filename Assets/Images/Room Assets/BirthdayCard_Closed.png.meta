@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BirthdayCard_Closed_0: -6074753653285755102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

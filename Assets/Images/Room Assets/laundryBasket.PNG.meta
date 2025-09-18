@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laundryBasket_0: -2402529629174623810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

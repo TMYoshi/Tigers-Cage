@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      washi_tape_0: -5615715944842404925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

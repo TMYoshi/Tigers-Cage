@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: 'I''m not sleepy anymore.
-
-'
+    text_: "I\u2019m not sleepy anymore."
   required_item_: 

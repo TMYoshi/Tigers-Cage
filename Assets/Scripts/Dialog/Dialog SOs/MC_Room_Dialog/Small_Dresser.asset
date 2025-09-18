@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: My dresser.
+    text_: "The drawers are heavy\u2026 I have to tug with both hands."
   required_item_: 

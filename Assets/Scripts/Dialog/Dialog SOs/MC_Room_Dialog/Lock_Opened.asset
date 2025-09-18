@@ -15,8 +15,4 @@ MonoBehaviour:
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
     text_: I got it!
-  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: 'It was my mom''s birthday after all...
-
-'
   required_item_: 

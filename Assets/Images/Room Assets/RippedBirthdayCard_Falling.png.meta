@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RippedBirthdayCard_Falling_0: -5876572575959176678
+      RippedBirthdayCard_Falling_1: -8568563548600773969
+      RippedBirthdayCard_Falling_2: -8428893998699770845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

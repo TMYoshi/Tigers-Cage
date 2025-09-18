@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: 'I havent''t had the chance to read in a while...
-
-'
+    text_: "Mama thinks I\u2019m too old for bedtime stories, but I don\u2019t think
+      so."
   required_item_: 
