@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 3a158243b2805f34dab7e7ac4e7db01e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7224397252711845340
+    second: sketch_cake_0
+  - first:
+      213: -8334512513158169611
+    second: sketch_cake_1
+  - first:
+      213: 1721471047082698421
+    second: sketch_cake_2
+  - first:
+      213: -7456938544591306474
+    second: sketch_cake_3
+  - first:
+      213: -3295883256563575771
+    second: sketch_cake_4
+  - first:
+      213: -7838244069794359163
+    second: sketch_cake_5
+  - first:
+      213: 4967602202124446063
+    second: sketch_cake_6
+  - first:
+      213: 8677423957786009397
+    second: sketch_cake_7
+  - first:
+      213: 3120244805723530716
+    second: sketch_cake_8
+  - first:
+      213: 2023640139480578815
+    second: sketch_cake_9
+  - first:
+      213: -3898519289882516485
+    second: sketch_cake_10
+  - first:
+      213: -2339076886464028603
+    second: sketch_cake_11
+  - first:
+      213: 8918020149266014532
+    second: sketch_cake_12
+  - first:
+      213: 4550811211455454614
+    second: sketch_cake_13
+  - first:
+      213: -68538046807071848
+    second: sketch_cake_14
+  - first:
+      213: -3597293626733469378
+    second: sketch_cake_15
+  - first:
+      213: -2191840312076269491
+    second: sketch_cake_16
+  - first:
+      213: -6128770563133085321
+    second: sketch_cake_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sketch_cake_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 317
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd823c5607324460800000000000000
+      internalID: 7224397252711845340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 284
+        width: 84
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbb825070dd55c80800000000000000
+      internalID: -8334512513158169611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 225
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6eb7cebc4e3e710800000000000000
+      internalID: 1721471047082698421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 53
+        width: 234
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61187b9f6e1a38890800000000000000
+      internalID: -7456938544591306474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_4
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 164
+        width: 89
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524de57f3aba242d0800000000000000
+      internalID: -3295883256563575771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 177
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588581d1c86f83390800000000000000
+      internalID: -7838244069794359163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 91
+        width: 66
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69631322e770f440800000000000000
+      internalID: 4967602202124446063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 19
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f9c495d176c6870800000000000000
+      internalID: 8677423957786009397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 14
+        width: 53
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5a8697e165d4b20800000000000000
+      internalID: 3120244805723530716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_9
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 5
+        width: 82
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa36f23cf9651c10800000000000000
+      internalID: 2023640139480578815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_10
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 15
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf36b807c5da5e9c0800000000000000
+      internalID: -3898519289882516485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_11
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 12
+        width: 61
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5402cf7f6fde98fd0800000000000000
+      internalID: -2339076886464028603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_12
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 22
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441e6c8731c23cb70800000000000000
+      internalID: 8918020149266014532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_13
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 22
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ddaa28faab72f30800000000000000
+      internalID: 4550811211455454614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_14
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 19
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893277272018c0ff0800000000000000
+      internalID: -68538046807071848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_15
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 31
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3166c97188d31ec0800000000000000
+      internalID: -3597293626733469378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_16
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 38
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48005a59d40591e0800000000000000
+      internalID: -2191840312076269491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sketch_cake_17
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 16
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779e49af4ab32faa0800000000000000
+      internalID: -6128770563133085321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sketch_cake_0: 7224397252711845340
+      sketch_cake_1: -8334512513158169611
+      sketch_cake_10: -3898519289882516485
+      sketch_cake_11: -2339076886464028603
+      sketch_cake_12: 8918020149266014532
+      sketch_cake_13: 4550811211455454614
+      sketch_cake_14: -68538046807071848
+      sketch_cake_15: -3597293626733469378
+      sketch_cake_16: -2191840312076269491
+      sketch_cake_17: -6128770563133085321
+      sketch_cake_2: 1721471047082698421
+      sketch_cake_3: -7456938544591306474
+      sketch_cake_4: -3295883256563575771
+      sketch_cake_5: -7838244069794359163
+      sketch_cake_6: 4967602202124446063
+      sketch_cake_7: 8677423957786009397
+      sketch_cake_8: 3120244805723530716
+      sketch_cake_9: 2023640139480578815
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
