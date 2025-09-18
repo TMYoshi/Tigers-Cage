@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4628d0e09504698a01071ffaa87949, type: 3}
   m_Name: Hornet_Basic
   m_EditorClassIdentifier: 
-  lines_: []
+  lines_:
+  - speaker_: {fileID: 11400000, guid: 4ca381ad242814169b22c433a0c6d2f6, type: 2}
+    text_: Hornet.
+  - speaker_: {fileID: 11400000, guid: 4ca381ad242814169b22c433a0c6d2f6, type: 2}
+    text_: 'Bug.
+
+'
+  required_item_: 

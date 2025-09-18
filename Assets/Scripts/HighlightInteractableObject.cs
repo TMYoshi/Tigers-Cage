@@ -12,6 +12,7 @@
  * Notes: Ensure GameObjects that you intend to interact with are on a layer visible to camera and have a 2D box
  * collider.
  */
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class HighlightInteractableOutline : MonoBehaviour
@@ -54,7 +55,7 @@ public class HighlightInteractableOutline : MonoBehaviour
             ) * outlineWidth;
 
             direction = transform.rotation * direction;
-            
+
             // create outline sprite GameObject
             GameObject outlineSprite = new GameObject($"Outline_{i}");
             outlineSprite.transform.SetParent(outlineParent.transform);
@@ -78,6 +79,8 @@ public class HighlightInteractableOutline : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (!ShouldHighlight()) return;
+
         // show outline
         if (outlineParent != null)
         {
@@ -93,16 +96,7 @@ public class HighlightInteractableOutline : MonoBehaviour
         {
             outlineParent.SetActive(false);
         }
-        Debug.Log("Mouse exited " + gameObject.name);
     }
-
-    void OnMouseDown()
-    {
-        Debug.Log("Clicked on " + gameObject.name);
-        // call InventoryManager.AddItem() here
-        
-    }
-
     void OnDestroy()
     {
         // clean up outlines
@@ -111,7 +105,18 @@ public class HighlightInteractableOutline : MonoBehaviour
             DestroyImmediate(outlineParent);
         }
     }
-}
 
-// highlight on hover, click for dialog
-// only some items should be collectable, not all
+    private bool ShouldHighlight()
+    {
+        InventoryManager inventoryManager = FindFirstObjectByType<InventoryManager>();
+        if(inventoryManager != null && inventoryManager.InventoryMenu != null)
+        {
+            if (inventoryManager.InventoryMenu.activeSelf)
+            {
+                return false; // skip highlighting if inventory is open
+            }
+        }
+
+        return true;
+    }
+}
