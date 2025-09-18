@@ -92,6 +92,7 @@ public class Slider_Manager : MonoBehaviour
             }
         }
         Debug.Log("Puzzle completed!");
+        
         return true;
     }
     #endregion
