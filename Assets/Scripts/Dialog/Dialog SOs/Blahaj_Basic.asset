@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Blahaj_Basic
   m_EditorClassIdentifier: 
   lines_:
-  - speaker_: {fileID: 11400000, guid: b54f27af4457442d1a86ec3a76428468, type: 2}
-    text_: Hej! Hej!
-  - speaker_: {fileID: 11400000, guid: b54f27af4457442d1a86ec3a76428468, type: 2}
-    text_: This is a dialog box
-  - speaker_: {fileID: 11400000, guid: b54f27af4457442d1a86ec3a76428468, type: 2}
-    text_: Hej da!
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: (My favorite plushie!)
+  required_item_: 

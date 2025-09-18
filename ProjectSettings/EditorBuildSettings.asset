@@ -18,16 +18,16 @@ EditorBuildSettings:
     path: Assets/Scenes/old1.unity
     guid: 552a6a694ec43d843938082ba131707b
   - enabled: 1
-    path: Assets/Scenes/MC Room/MC Room - 1 North Wall.unity
+    path: Assets/Scenes/Starting Room/MC Room - 1 North Wall.unity
     guid: e5d7e52078fca944c8f9ea9960f902f5
   - enabled: 1
-    path: Assets/Scenes/MC Room/MC Room - 2 East Wall.unity
+    path: Assets/Scenes/Starting Room/MC Room - 2 East Wall.unity
     guid: a7ed87feae756b14ea24765c390c2466
   - enabled: 1
-    path: Assets/Scenes/MC Room/MC Room - 3 South Wall.unity
+    path: Assets/Scenes/Starting Room/MC Room - 3 South Wall.unity
     guid: 5ffe84c080143254288ff8f9eea94360
   - enabled: 1
-    path: Assets/Scenes/MC Room/MC Room - 4 West Wall.unity
+    path: Assets/Scenes/Starting Room/MC Room - 4 West Wall.unity
     guid: c3cf8fd1efab5ea4eb613ceabe7af7df
   - enabled: 0
     path: Assets/Scenes/Scene Transition/MC Room - 2 East Wall.unity

@@ -23,7 +23,7 @@ public class DialogManager : MonoBehaviour
     public bool dialog_opener_ = true;
 
     [SerializeField]
-    private float text_speed_ = 0.1f;
+    private float text_speed_ = 0.4f;
     public Animator dialog_animator_;
 
     #region Awake

@@ -30,7 +30,7 @@ public class HighlightInteractableOutline : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private GameObject outlineParent;
 
-    void Start()
+    void Start() 
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         CreateOutlineEffect();
