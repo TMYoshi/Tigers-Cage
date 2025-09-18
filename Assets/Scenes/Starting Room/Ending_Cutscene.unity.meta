@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scenes/Starting Room/Ending_Cutscene.unity.meta
 guid: 7667ae74c640c754faa50f6ae1600e80
+========
+guid: 379476636d61c33448a957d471d37ae6
+>>>>>>>> Stashed changes:Assets/Scenes/Starting Room/GameOver.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

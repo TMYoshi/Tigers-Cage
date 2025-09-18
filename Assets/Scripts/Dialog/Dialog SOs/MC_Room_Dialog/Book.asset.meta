@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scripts/Dialog/Dialog SOs/MC_Room_Dialog/Book.asset.meta
 guid: 5103b405c15d4c84781ad788be3300c3
+========
+guid: 828bda7365354654fa65da8ef0146bb4
+>>>>>>>> Stashed changes:Assets/Scripts/Dialog/Dialog SOs/MC_Room_Dialog/Backpack.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

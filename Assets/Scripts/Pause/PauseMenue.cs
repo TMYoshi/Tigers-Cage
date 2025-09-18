@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -51,10 +53,12 @@ public class PauseMenu : MonoBehaviour
         //Todo: call save
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("Gamequit");
-        Application.Quit();
-        Debug.Log("Gamequit part 2");
-    }
+   public void QuitToMainMenu()
+{
+    // Make sure time is running again
+    Time.timeScale = 1f;
+
+    // Load main menu directly
+    SceneManager.LoadScene("Main Menu (Fish)");
+}
 }

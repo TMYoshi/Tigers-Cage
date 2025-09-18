@@ -31,7 +31,7 @@ public class Date : MonoBehaviour
 
     private void UpdateTime()
     {
-        largeText.text = System.DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt");
+        largeText.text = System.DateTime.Now.ToString("2010 dd, yyyy hh:mm tt");
     }
 
 }

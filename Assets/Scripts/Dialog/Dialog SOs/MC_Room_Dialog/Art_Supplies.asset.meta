@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scripts/Dialog/Dialog SOs/MC_Room_Dialog/Art_Supplies.asset.meta
 guid: d580fec5001af6d458cdb181a3d82f38
+========
+guid: 3ce09178a55d71949ad113627c02714f
+>>>>>>>> Stashed changes:Assets/Scripts/Dialog/Actor SOs/Blank Speaker.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

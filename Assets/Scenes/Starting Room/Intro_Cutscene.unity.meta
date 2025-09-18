@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scenes/Starting Room/Intro_Cutscene.unity.meta
 guid: 0418ad353123dda4e8ffbae10058f040
+========
+guid: 7de256ab8360c1541b8b088acb7e7641
+>>>>>>>> Stashed changes:Assets/Scenes/Starting Room/Main Menu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
