@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bed_sideAngle_0: -5893644589550367278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

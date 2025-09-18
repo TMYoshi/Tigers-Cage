@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bed_naked_0: -3045952977342566066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

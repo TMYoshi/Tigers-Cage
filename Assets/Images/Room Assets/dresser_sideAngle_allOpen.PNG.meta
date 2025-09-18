@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dresser_sideAngle_allOpen_0: -5066564080056267151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

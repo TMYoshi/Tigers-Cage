@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nightstand_closed_0: -380008874159079280
+      nightstand_closed_1: -5222541242134160888
+      nightstand_closed_2: 2049044918497196174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
