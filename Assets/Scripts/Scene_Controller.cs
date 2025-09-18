@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,5 +27,24 @@ public class SceneController : MonoBehaviour
     public void Traverse_Scene(string associated_scene)
     {
         SceneManager.LoadSceneAsync(associated_scene);
+    }
+
+    // for play button from main menu, or any fade to black
+    public void FadeAndLoadScene(string sceneName)
+    {
+        Debug.Log($"Starting fade transition to {sceneName}");
+        StartCoroutine(FadeAndLoadRoutine(sceneName));
+    }
+
+    private IEnumerator FadeAndLoadRoutine(string sceneName)
+    {
+        if (FadeController.Instance == null)
+        {
+            Debug.LogError("FadeController not found. Loading scene without fade.");
+            SceneManager.LoadScene(sceneName);
+            yield break;
+        }
+
+        FadeController.Instance.FadeAndLoad(sceneName);
     }
 }

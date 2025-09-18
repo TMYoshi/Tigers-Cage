@@ -121,7 +121,7 @@ public class FadeController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    private IEnumerator FadeToAlpha(float targetAlpha)
+    public IEnumerator FadeToAlpha(float targetAlpha)
     {
         if (fadeImage == null)
         {
