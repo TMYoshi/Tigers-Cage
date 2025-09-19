@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEditor.EditorTools;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class InventoryItem : Item
 {

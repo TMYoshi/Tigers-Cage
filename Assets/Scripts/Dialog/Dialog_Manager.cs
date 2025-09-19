@@ -1,10 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Events;
-using Microsoft.Unity.VisualStudio.Editor;
-
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance;

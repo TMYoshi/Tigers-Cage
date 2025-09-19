@@ -1,7 +1,4 @@
-using System.Security.Cryptography.X509Certificates;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class PlayerIdleState : PlayerBaseState
 {

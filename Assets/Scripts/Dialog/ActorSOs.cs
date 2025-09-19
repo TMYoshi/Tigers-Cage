@@ -1,4 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ActorSO", menuName = "Dialog/Actors")]
