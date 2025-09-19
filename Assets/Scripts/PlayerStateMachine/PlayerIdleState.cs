@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public class PlayerIdleState : PlayerBaseState
 {
@@ -27,8 +29,39 @@ public class PlayerIdleState : PlayerBaseState
     }
 
 
+    HighlightInteractableOutline outlineScript;
     public void ClickItem()
     {
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                // If we're hovering a new object, exit the old one
+                HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
+                if (outlineScript != newOutline)
+                {
+                    if (outlineScript != null)
+                        outlineScript.Exit();
+
+                    outlineScript = newOutline;
+
+                    if (outlineScript != null)
+                        outlineScript.Enter();
+                }
+            }
+            else
+            {
+                // Not hovering anything, exit previous outline
+                if (outlineScript != null)
+                {
+                    outlineScript.Exit();
+                    outlineScript = null;
+                }
+            }
+        }
+
         if (Input.GetMouseButtonDown(0)) // Left mouse button
         {
             Debug.Log("Mouse clicked somewhere");
@@ -47,6 +80,10 @@ public class PlayerIdleState : PlayerBaseState
                         break;
                     case "SpecialItem":
                         _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
+                        break;
+                    case "Transitions":
+                        ArrowController arrowController = hit.collider.gameObject.GetComponent<ArrowController>();
+                        arrowController.OnPressed();
                         break;
                     default:
                         Debug.Log("Hit non-item object: " + hit.collider.gameObject.name);

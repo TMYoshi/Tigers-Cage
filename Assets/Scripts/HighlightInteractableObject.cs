@@ -77,10 +77,8 @@ public class HighlightInteractableOutline : MonoBehaviour
         Debug.Log($"Created outline effect with {outlineResolution} sprites.");
     }
 
-    void OnMouseEnter()
+    public void Enter()
     {
-        if (!ShouldHighlight()) return;
-
         // show outline
         if (outlineParent != null)
         {
@@ -89,7 +87,7 @@ public class HighlightInteractableOutline : MonoBehaviour
         Debug.Log("Mouse entered " + gameObject.name);
     }
 
-    void OnMouseExit()
+    public void Exit()
     {
         // hide outline
         if (outlineParent != null)
@@ -104,19 +102,5 @@ public class HighlightInteractableOutline : MonoBehaviour
         {
             DestroyImmediate(outlineParent);
         }
-    }
-
-    private bool ShouldHighlight()
-    {
-        InventoryManager inventoryManager = FindFirstObjectByType<InventoryManager>();
-        if(inventoryManager != null && inventoryManager.InventoryMenu != null)
-        {
-            if (inventoryManager.InventoryMenu.activeSelf)
-            {
-                return false; // skip highlighting if inventory is open
-            }
-        }
-
-        return true;
     }
 }

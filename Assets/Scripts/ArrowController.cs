@@ -3,8 +3,7 @@ using UnityEngine;
 public class ArrowController : MonoBehaviour
 {
     [SerializeField] private string targetScene; // fallback for inspector
-
-    private void OnMouseDown()
+    public void OnPressed()
     {
         Debug.Log($"Arrow clicked: {gameObject.name}");
         // get scene name from object name
