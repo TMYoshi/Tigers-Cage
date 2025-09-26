@@ -72,7 +72,7 @@ public class PlayerIdleState : PlayerBaseState
             {
                 Debug.Log("Hit object: " + hit.collider.gameObject.name);
                 InventoryItem _inventoryItem = hit.collider.gameObject.GetComponent<InventoryItem>();
-                _context._CurrentItem = _inventoryItem;
+                _context._ItemManager.UpdateSelectedItem(_inventoryItem);
                 switch (hit.collider.gameObject.tag)
                 {
                     case "Item":

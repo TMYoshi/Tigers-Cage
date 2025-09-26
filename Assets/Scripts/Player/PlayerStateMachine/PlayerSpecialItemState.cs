@@ -10,7 +10,7 @@ public class PlayerSpecialItemState : PlayerBaseState
     }
     public override void EnterState()
     {
-        specialItem = _context._CurrentItem.GetSpecialEvents();
+        specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
         Debug.Log("special Item Enter Condition");
         specialItem.EnterCondition();
     }

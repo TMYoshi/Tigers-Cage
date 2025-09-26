@@ -8,7 +8,7 @@ public class PlayerStateManager : MonoBehaviour
     */
     public GameObject _InventoryMenu;
     public InventoryManager _InventoryManager ;
-    public InventoryItem _CurrentItem;
+    public ItemManager _ItemManager;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now
 
     private void Awake()

@@ -10,15 +10,14 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void EnterState()
     {
-        if (_context._CurrentItem.lines_.Count <= 0) ExitState();
-        else _context._CurrentItem.WriteLines();
+        _context._ItemManager._SelectedItem.WriteLines();
     }
 
     public override void UpdateState()
     {
         if (Input.GetMouseButtonDown(0)) // Left mouse button
         {
-            if (_context._CurrentItem.WriteLines())
+            if (_context._ItemManager._SelectedItem.WriteLines())
             {
                 ExitState();
             }
@@ -27,11 +26,11 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void ExitState()
     {
-        if (_context._CurrentItem.Collectable)
+        if (_context._ItemManager._SelectedItem.Collectable)
         {
-            MarkItemAsCollected(_context._CurrentItem);
-            AddItemToInv(_context._CurrentItem);
-            Object.Destroy(_context._CurrentItem.gameObject);
+            MarkItemAsCollected(_context._ItemManager._SelectedItem);
+            AddItemToInv(_context._ItemManager._SelectedItem);
+            _context._ItemManager.DestroySelectedItem();
         }
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }

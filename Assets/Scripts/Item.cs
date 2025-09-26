@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class Item : MonoBehaviour
 {
-    public List<string> lines_;
     public Dialog assoc_dialog_box_;
 
     private float LastInteractionTime = 0f;

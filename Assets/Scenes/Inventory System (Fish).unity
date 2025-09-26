@@ -224,7 +224,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &180781315
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - A chest where I keep all my toys.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Chest
   quantity: 1
   sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
@@ -715,7 +715,7 @@ SpriteRenderer:
   m_Size: {x: 10.84, y: 7.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &865846192
@@ -822,7 +822,7 @@ MonoBehaviour:
   lines_:
   - My plushie blahaj.
   - I was wondering where I lost it.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Blahaj
   quantity: 1
   sprite: {fileID: 21300000, guid: d09c8db02aa294e9786e8c458557bc90, type: 3}
@@ -876,17 +876,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.93, y: 12.27}
   m_EdgeRadius: 0
---- !u!114 &991273365 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5357277878547789084, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
-  m_PrefabInstance: {fileID: 203353533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a472f0baa084b15a57395a933fb0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &999445546
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +910,7 @@ MonoBehaviour:
   lines_:
   - A bookshelf.
   - There's still a lot of books I haven't read.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Bookshelf
   quantity: 1
   sprite: {fileID: 4495478712733764576, guid: 3e5a92e682f155f44be435ae61e0f686, type: 3}
@@ -1079,7 +1068,7 @@ MonoBehaviour:
   lines_:
   - I've already slept enough today.
   - I should make my bed before my parents see.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Bed_Messy
   quantity: 1
   sprite: {fileID: -4656658513182322354, guid: 45e0818c30ac4b741ad2a2ba537a51b4, type: 3}
@@ -1200,7 +1189,7 @@ SpriteRenderer:
   m_Size: {x: 17.990002, y: 14.38}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1276307867
@@ -1307,7 +1296,7 @@ MonoBehaviour:
   lines_:
   - This is Hornet.
   - She is a bug.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Hornet
   quantity: 1
   sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
@@ -1447,7 +1436,7 @@ SpriteRenderer:
   m_Size: {x: 4.57, y: 6.71}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1704212126
@@ -1465,7 +1454,7 @@ MonoBehaviour:
   lines_:
   - I can't leave my room yet.
   - I still need to clean up my room.
-  assoc_dialog_box_: {fileID: 991273365}
+  assoc_dialog_box_: {fileID: 0}
   itemName: Door
   quantity: 1
   sprite: {fileID: -7695509291804975969, guid: bbe054362b381014ea16e0da40721d36, type: 3}
