@@ -7,6 +7,7 @@ TagManager:
   - Item
   - SpecialItem
   - Transitions
+  - InvItem
   layers:
   - Default
   - TransparentFX

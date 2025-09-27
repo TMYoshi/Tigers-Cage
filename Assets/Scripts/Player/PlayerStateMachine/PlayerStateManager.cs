@@ -6,7 +6,6 @@ public class PlayerStateManager : MonoBehaviour
     /*
         PLAYER CONTEXT
     */
-    public GameObject _InventoryMenu;
     public InventoryManager _InventoryManager ;
     public ItemManager _ItemManager;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now

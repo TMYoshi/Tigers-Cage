@@ -2,6 +2,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+ I MOVED MOST OF THIS CODE INTO THE ITEM MANAGER_
+ I'M VERY SORRY SOLIMAN BUT THE NEW CODE'S IN THE ITEMMANAGER NOW
+
+ this is legacy i'll deleted when we've updated all the different scenes
+*/
 public class Equip_Button : MonoBehaviour
 {
     public static Equip_Button Instance;

@@ -8,15 +8,6 @@ public class InventoryManager : MonoBehaviour
 
     public static HashSet<string> collectedItems = new HashSet<string>();
 
-    private void Start()
-    {
-        // hide inv at game start
-        if (InventoryMenu != null)
-        {
-            InventoryMenu.SetActive(false);
-        }
-    }
-
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
@@ -29,7 +20,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-
+/*
     public void DeselectAllSlots()
     {
         Debug.Log("=== DeselectAllSlots called ===");
@@ -51,6 +42,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+*/
     public static void MarkItemAsCollected(string itemId)
     {
         collectedItems.Add(itemId);
