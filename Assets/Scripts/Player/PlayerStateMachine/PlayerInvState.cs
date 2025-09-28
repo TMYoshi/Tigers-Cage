@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerInvState : PlayerBaseState
 {
@@ -12,10 +13,11 @@ public class PlayerInvState : PlayerBaseState
     }
     public override void EnterState()
     {
-
+        InteractedItem = null;
     }
     HighlightInteractableOutline outlineScript;
     RectTransform itemTransform;
+    GameObject InteractedItem;
     public override void UpdateState()
     {
         if (Input.GetMouseButton(0))
@@ -40,6 +42,7 @@ public class PlayerInvState : PlayerBaseState
             {
                 // If we're hovering a new object, exit the old one
                 HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
+                InteractedItem = hit.collider.gameObject;
                 if (outlineScript == newOutline) return;
                 if (outlineScript != null) outlineScript.Exit();
 
@@ -54,11 +57,12 @@ public class PlayerInvState : PlayerBaseState
 
                 outlineScript.Exit();
                 outlineScript = null;
+                InteractedItem = null;
             }
         }
         else
         {
-            DetectWhenExit();
+            DetectWhenExit(InteractedItem);
         }
     }
 
@@ -82,7 +86,7 @@ public class PlayerInvState : PlayerBaseState
                     break;
             }
         }
-        return new ItemSlot();
+        return null;
     }
     public override void ExitState()
     {
@@ -90,8 +94,22 @@ public class PlayerInvState : PlayerBaseState
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
-    public void DetectWhenExit()
+    public void DetectWhenExit(GameObject detectedObject)
     {
-        ExitState();
+        if (outlineScript != null) outlineScript.Exit();
+        InventoryItem detectedInvItem = detectedObject?.GetComponent<InventoryItem>();
+        if (detectedInvItem == null) ExitState();
+        /*  the way interactions work in this game is that it
+            allows items without the special item tag to be
+            special items
+        */
+        ItemInteraction itemInteraction = detectedObject?.GetComponent<ItemInteraction>();
+        if (itemInteraction == null && detectedObject != null)
+        {
+            Debug.Log("test");
+            _context._ItemManager.HideDraggedItem();
+            _context._ItemManager.UpdateSelectedItem(_context._ItemManager._FailedInteraction);
+            _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+        }
     }
 }

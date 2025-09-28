@@ -1527,6 +1527,8 @@ GameObject:
   - component: {fileID: 1169285890}
   - component: {fileID: 1169285889}
   - component: {fileID: 1169285888}
+  - component: {fileID: 1169285892}
+  - component: {fileID: 1169285891}
   - component: {fileID: 1169285887}
   - component: {fileID: 1169285886}
   m_Layer: 0
@@ -1703,6 +1705,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.31, y: 0.42}
   m_EdgeRadius: 0
+--- !u!114 &1169285891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169285884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c98b5a6cb0dfac4cba8ffa2c36d7aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1169285888}
+--- !u!114 &1169285892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169285884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac26899afb0e6d4ea1d0631142abe4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Interactions:
+  - key: Fork
+    effect: {fileID: 1169285891}
 --- !u!1 &1222631256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,6 +3180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectedItem: {fileID: 0}
   _draggedItem: {fileID: 1670687377}
+  _failedInteraction: {fileID: 7923838375203039990}
 --- !u!222 &2346793343941624495
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4621,6 +4652,8 @@ GameObject:
   - component: {fileID: 3680400311940334033}
   - component: {fileID: 511768982631352594}
   - component: {fileID: 2340787537683754454}
+  - component: {fileID: 7923838375203039990}
+  - component: {fileID: 7923838375203039989}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4628,6 +4661,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7923838375203039989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923838375203039988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: 8ab1e34c3c95f884895f8925d2c030fc, type: 2}
+--- !u!114 &7923838375203039990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923838375203039988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assoc_dialog_box_: {fileID: 7923838375203039989}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  itemDescription: This is for static objects, I swear to god if you (the player)
+    somehow get this i'm gonna kill myself.
+  collectable: 0
 --- !u!222 &8024083420818576590
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void EnterState()
     {
-
     }
     public override void UpdateState()
     {
@@ -21,7 +20,6 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void ExitState()
     {
-        Debug.Log("Exited idle state.");
     }
 
 
@@ -65,6 +63,7 @@ public class PlayerIdleState : PlayerBaseState
                 Debug.Log("Hit object: " + hit.collider.gameObject.name);
                 InventoryItem _inventoryItem = hit.collider.gameObject.GetComponent<InventoryItem>();
                 _context._ItemManager.UpdateSelectedItem(_inventoryItem);
+                if (outlineScript != null) outlineScript.Exit();
                 switch (hit.collider.gameObject.tag)
                 {
                     case "Item":
