@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 95894611}
-  fadeDuration: 0.25
+  fadeDuration: 0.05
   fadeCanvas: {fileID: 136026050}
 --- !u!1 &180781313
 GameObject:
