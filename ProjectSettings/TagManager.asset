@@ -48,5 +48,8 @@ TagManager:
   - name: TextLayer
     uniqueID: 2404637225
     locked: 0
+  - name: HoverLayer
+    uniqueID: 2244568317
+    locked: 0
   m_RenderingLayers:
   - Default

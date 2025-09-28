@@ -3,12 +3,13 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     [SerializeField] private InventoryItem _selectedItem;
-    [SerializeField] private InventoryItem _currentlyUsing;
+    [SerializeField] private GameObject _draggedItem;
 
     public InventoryItem _SelectedItem => _selectedItem;
-    public InventoryItem _CurrentlyUsing => _currentlyUsing;
+    public GameObject _DraggedItem => _draggedItem;
 
     public void UpdateSelectedItem(InventoryItem item) => _selectedItem = item;
     public void DestroySelectedItem() => Destroy(_selectedItem.gameObject);
-    public void UpdateCurrentlyUsing(InventoryItem item) => _selectedItem = item;
+    public void HideDraggedItem() => _DraggedItem.SetActive(false);
+    public void ShowDraggedItem() => _DraggedItem.SetActive(true);
 }
