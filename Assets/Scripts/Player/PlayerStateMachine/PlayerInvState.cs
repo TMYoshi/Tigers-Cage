@@ -62,7 +62,7 @@ public class PlayerInvState : PlayerBaseState
         }
         else
         {
-            DetectWhenExit(InteractedItem);
+            DetectWhenExit();
         }
     }
 
@@ -94,22 +94,25 @@ public class PlayerInvState : PlayerBaseState
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
-    public void DetectWhenExit(GameObject detectedObject)
+    public void DetectWhenExit()
     {
         if (outlineScript != null) outlineScript.Exit();
-        InventoryItem detectedInvItem = detectedObject?.GetComponent<InventoryItem>();
+        InventoryItem detectedInvItem = InteractedItem?.GetComponent<InventoryItem>();
         if (detectedInvItem == null) ExitState();
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
             special items
         */
-        ItemInteraction itemInteraction = detectedObject?.GetComponent<ItemInteraction>();
-        if (itemInteraction == null && detectedObject != null)
+        ItemInteraction itemInteraction = InteractedItem?.GetComponent<ItemInteraction>();
+        if (itemInteraction == null && InteractedItem != null)
         {
-            Debug.Log("test");
             _context._ItemManager.HideDraggedItem();
             _context._ItemManager.UpdateSelectedItem(_context._ItemManager._FailedInteraction);
             _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+        }
+        else
+        {
+
         }
     }
 }

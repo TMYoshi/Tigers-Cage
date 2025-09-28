@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.01
+  outlineWidth: 0.005
   outlineResolution: 4
 --- !u!114 &684488660
 MonoBehaviour:
