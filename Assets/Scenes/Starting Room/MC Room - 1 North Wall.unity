@@ -197,8 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 17964204}
   itemName: 
   quantity: 0
@@ -643,8 +641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - I can't leave yet.
   assoc_dialog_box_: {fileID: 136843900}
   itemName: 
   quantity: 0
@@ -1286,8 +1282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - can leave this blank but it MUST have at least an element in lines
   assoc_dialog_box_: {fileID: 542222622}
   itemName: 
   quantity: 0
@@ -1572,7 +1566,7 @@ PrefabInstance:
     - target: {fileID: 1728903238562514009, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 920577717}
+      objectReference: {fileID: 0}
     - target: {fileID: 1728903238562514009, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1982,29 +1976,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3543703967262039824, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 920577716}
+    m_RemovedGameObjects:
+    - {fileID: 7382803648647586434, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
---- !u!224 &577496518 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3543703967262039824, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-  m_PrefabInstance: {fileID: 577496517}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &577496519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6747945920940678560, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-  m_PrefabInstance: {fileID: 577496517}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &662027406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,8 +2059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 662027408}
   itemName: 
   quantity: 0
@@ -2273,8 +2247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 745013899}
   itemName: 
   quantity: 0
@@ -2385,57 +2357,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.38, y: 2.62}
   m_EdgeRadius: 0
---- !u!1 &920577715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 920577716}
-  - component: {fileID: 920577717}
-  m_Layer: 5
-  m_Name: EquipManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &920577716
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920577715}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 577496518}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1675, y: -75}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &920577717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920577715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724ce3e501a7a4c999068f41d4d3e483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equipped_item_: 
-  selected_item_: 
-  equip_text_: {fileID: 577496519}
 --- !u!1 &1150672112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,8 +2435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1150672114}
   itemName: 
   quantity: 0
@@ -2704,8 +2623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1208895591}
   itemName: 
   quantity: 0
@@ -2894,8 +2811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1222172163}
   itemName: 
   quantity: 0
@@ -3084,8 +2999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1376548471}
   itemName: 
   quantity: 0
@@ -3274,8 +3187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1412237033}
   itemName: 
   quantity: 0
@@ -3596,8 +3507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1597276784}
   itemName: 
   quantity: 0
@@ -3953,8 +3862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 1999627247}
   itemName: 
   quantity: 0
@@ -4143,8 +4050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines_:
-  - My chair.
   assoc_dialog_box_: {fileID: 2055991355}
   itemName: 
   quantity: 0

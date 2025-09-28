@@ -32,6 +32,7 @@ public class PlayerDialogItemState : PlayerBaseState
             AddItemToInv(_context._ItemManager._SelectedItem);
             _context._ItemManager.DestroySelectedItem();
         }
+        _context._ItemManager.UpdateSelectedItem(null);
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
