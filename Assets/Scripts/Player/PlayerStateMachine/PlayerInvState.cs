@@ -80,13 +80,7 @@ public class PlayerInvState : PlayerBaseState
 
         foreach (RaycastResult result in results)
         {
-            switch (result.gameObject.tag)
-            {
-                case "InvItem":
-                    return result.gameObject.GetComponent<ItemSlot>();
-                default:
-                    break;
-            }
+            if (result.gameObject.tag == "InvItem") return result.gameObject.GetComponent<ItemSlot>();
         }
         return null;
     }
