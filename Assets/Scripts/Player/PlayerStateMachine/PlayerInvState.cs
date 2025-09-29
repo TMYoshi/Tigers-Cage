@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEditor;
 
 public class PlayerInvState : PlayerBaseState
 {
@@ -99,6 +98,7 @@ public class PlayerInvState : PlayerBaseState
 
     public void DetectWhenExit()
     {
+        bool shouldEnterFail = true;
         if (outlineScript != null) outlineScript.Exit();
         InventoryItem detectedInvItem = InteractedItem?.GetComponent<InventoryItem>();
         if (detectedInvItem == null) ExitState();
@@ -108,27 +108,23 @@ public class PlayerInvState : PlayerBaseState
 
             this is using a dummy item inside of the player state
         */
-        ItemInteraction itemInteraction = InteractedItem?.GetComponent<ItemInteraction>();
+        Interaction[] itemInteraction = InteractedItem?.GetComponents<Interaction>();
         if (itemInteraction != null || InteractedItem == null)
         {
             if (itemInteraction == null) return;
-            for (int I = 0; I < itemInteraction._Interactions.Count; I++)
+            foreach (Interaction interaction in itemInteraction)
             {
-                if (itemInteraction._Interactions[I].key == _context._ItemManager._DraggedItem.name)
+                if (interaction.key == _context._ItemManager._DraggedItem.name)
                 {
                     //switches to special state after interaction
                     _context._ItemManager.HideDraggedItem();
                     _context._ItemManager.UpdateToDummy();
-                    SpecialItems specialToAssign = itemInteraction._Interactions[I].effect;
-                    _context._ItemManager._SelectedItem.AssignSpecialEvents(specialToAssign);
-                    _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
+                    interaction.ExecuteEffect(_context);
+                    shouldEnterFail = false;
                 }
             }
         }
-        else
-        {
-            FailedInteraction();
-        }
+        if (shouldEnterFail) FailedInteraction();
     }
 
     void FailedInteraction()
@@ -136,5 +132,6 @@ public class PlayerInvState : PlayerBaseState
         _context._ItemManager.HideDraggedItem();
         _context._ItemManager.UpdateToDummy();
         _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+        Debug.Log("tripped Failed interaction");
     }
 }
