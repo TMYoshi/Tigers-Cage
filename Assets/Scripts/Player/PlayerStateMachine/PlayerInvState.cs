@@ -27,7 +27,10 @@ public class PlayerInvState : PlayerBaseState
                 _context._ItemManager._DraggedItem.SetActive(true);
                 Image _renderer = _context._ItemManager._DraggedItem.GetComponent<Image>();
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
-                _renderer.sprite = getDraggedObject().itemSprite;
+
+                ItemSlot selectedItemSlot = getDraggedObject();
+                _renderer.sprite = selectedItemSlot.itemSprite;
+                _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
 
                 if (_renderer.sprite == null) ExitState();
             }
@@ -102,17 +105,36 @@ public class PlayerInvState : PlayerBaseState
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
             special items
+
+            this is using a dummy item inside of the player state
         */
         ItemInteraction itemInteraction = InteractedItem?.GetComponent<ItemInteraction>();
-        if (itemInteraction == null && InteractedItem != null)
+        if (itemInteraction != null || InteractedItem == null)
         {
-            _context._ItemManager.HideDraggedItem();
-            _context._ItemManager.UpdateSelectedItem(_context._ItemManager._FailedInteraction);
-            _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+            if (itemInteraction == null) return;
+            for (int I = 0; I < itemInteraction._Interactions.Count; I++)
+            {
+                if (itemInteraction._Interactions[I].key == _context._ItemManager._DraggedItem.name)
+                {
+                    //switches to special state after interaction
+                    _context._ItemManager.HideDraggedItem();
+                    _context._ItemManager.UpdateToDummy();
+                    SpecialItems specialToAssign = itemInteraction._Interactions[I].effect;
+                    _context._ItemManager._SelectedItem.AssignSpecialEvents(specialToAssign);
+                    _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
+                }
+            }
         }
         else
         {
-
+            FailedInteraction();
         }
+    }
+
+    void FailedInteraction()
+    {
+        _context._ItemManager.HideDraggedItem();
+        _context._ItemManager.UpdateToDummy();
+        _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
     }
 }

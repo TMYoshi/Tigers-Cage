@@ -3097,7 +3097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectedItem: {fileID: 0}
   _draggedItem: {fileID: 1670687377}
-  _failedInteraction: {fileID: 7923838375203039990}
+  _dummyItem: {fileID: 7923838375203039990}
 --- !u!222 &2346793343941624495
 CanvasRenderer:
   m_ObjectHideFlags: 0
