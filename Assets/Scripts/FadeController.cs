@@ -2,184 +2,107 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class FadeController : MonoBehaviour
 {
-    public static FadeController Instance;
-    [SerializeField] private Image fadeImage;
-    [SerializeField] private float fadeDuration = 0.5f;
-    [SerializeField] private Canvas fadeCanvas;
+    public static FadeController Instance { get; private set; }
 
-    // A static flag to track if we should fade in when scene starts
-    private static bool shouldFadeInOnLoad = false;
+    [SerializeField] private Animator transitionAnimator;
+    [SerializeField] private CanvasGroup fadeCanvasGroup;
+    [SerializeField] private float sceneLoadDelay = 0.01f;
 
-    // Define a delegate and event for when the fade-in is complete
-    public delegate void FadeInCompleteAction();
-    public event FadeInCompleteAction onFadeInComplete;
+    public event Action onFadeInComplete;
 
     private void Awake()
     {
-        Instance = this;
-
-        if (fadeCanvas == null)
+        if (Instance == null)
         {
-            fadeCanvas = GetComponent<Canvas>();
-            if (fadeCanvas == null)
-            {
-                fadeCanvas = GetComponentInParent<Canvas>();
-            }
-        }
-
-        if (fadeCanvas != null)
-        {
-            fadeCanvas.sortingOrder = 999;
-            fadeCanvas.overrideSorting = true;
-        }
-
-        Debug.Log($"FadeController initialized for scene: {SceneManager.GetActiveScene().name}");
-    }
-
-    private void Start()
-    {
-        if (shouldFadeInOnLoad)
-        {
-            Debug.Log("Scene loaded - starting fade in from black");
-            StartCoroutine(HandleSceneStartFadeIn());
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            // Ensure we start with fade image hidden
-            if (fadeImage != null)
-            {
-                Color color = fadeImage.color;
-                color.a = 0f;
-                fadeImage.color = color;
-                fadeImage.gameObject.SetActive(false);
-            }
-        }
-    }
-
-    private IEnumerator HandleSceneStartFadeIn()
-    {
-        if (fadeImage == null)
-        {
-            Debug.LogError("FadeImage is null!");
-            shouldFadeInOnLoad = false;
-            yield break;
+            Destroy(gameObject);
         }
 
-        // Start with black screen
-        fadeImage.gameObject.SetActive(true);
-        if (fadeCanvas != null)
-        {
-            fadeCanvas.gameObject.SetActive(true);
-        }
-
-        Color color = fadeImage.color;
-        color.a = 1f;
-        fadeImage.color = color;
-
-        // Wait a frame to ensure everything is rendered
-        yield return null;
-        yield return new WaitForSeconds(0.1f);
-
-        // Fade from black to transparent
-        Debug.Log("Fading from black to clear");
-        yield return StartCoroutine(FadeToAlpha(0f));
-
-        shouldFadeInOnLoad = false;
-        Debug.Log("Fade in complete");
-
-        // Notify any listeners that the fade-in is complete
-        onFadeInComplete?.Invoke();
     }
 
     public void FadeAndLoad(string sceneName)
     {
-        Debug.Log($"Starting fade transition to: {sceneName}");
-        StartCoroutine(FadeAndLoadSceneRoutine(sceneName));
+        StartCoroutine(TransitionRoutine(sceneName));
     }
 
-    private IEnumerator FadeAndLoadSceneRoutine(string sceneName)
+    public void FadeAndLoadWithCutscene(string cutsceneScene, string finalScene)
     {
-        // Set flag so the next scene knows to fade in
-        shouldFadeInOnLoad = true;
-
-        if (fadeImage == null)
-        {
-            Debug.LogError("FadeImage is null!");
-            yield break;
-        }
-
-        // Ensure fade elements are active
-        fadeImage.gameObject.SetActive(true);
-        if (fadeCanvas != null)
-        {
-            fadeCanvas.gameObject.SetActive(true);
-        }
-
-        // Fade to black
-        Debug.Log("Fading to black");
-        yield return StartCoroutine(FadeToAlpha(1f));
-
-        // Load the new scene
-        Debug.Log($"Loading scene: {sceneName}");
-        SceneManager.LoadScene(sceneName);
+        PlayerPrefs.SetString("NextSceneAfterCutscene", finalScene);
+        PlayerPrefs.Save();
+        FadeAndLoad(cutsceneScene);
     }
 
-    public IEnumerator FadeToAlpha(float targetAlpha)
+    public IEnumerator FadeToAlpha(float targetAlpha, float duration = 1f)
     {
-        if (fadeImage == null)
+        if (fadeCanvasGroup == null)
         {
-            Debug.LogError("FadeImage is null in FadeToAlpha!");
+            Debug.LogWarning("FadeCanvasGroup not assigned. Cannot fade to alpha.");
             yield break;
         }
 
-        float startAlpha = fadeImage.color.a;
-        Debug.Log($"Fading from {startAlpha} to {targetAlpha}");
+        float startAlpha = fadeCanvasGroup.alpha;
+        float elapsed = 0f;
 
-        if (Mathf.Approximately(startAlpha, targetAlpha))
+        while (elapsed < duration)
         {
-            Debug.Log("Already at target alpha");
-            yield break;
-        }
-
-        fadeImage.gameObject.SetActive(true);
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.unscaledDeltaTime;
-            float t = elapsedTime / fadeDuration;
-
-            Color color = fadeImage.color;
-            color.a = Mathf.Lerp(startAlpha, targetAlpha, t);
-            fadeImage.color = color;
-
+            elapsed += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration); //
             yield return null;
         }
 
-        // Ensure exact final value
-        Color finalColor = fadeImage.color;
-        finalColor.a = targetAlpha;
-        fadeImage.color = finalColor;
-
-        Debug.Log($"Fade complete - final alpha: {finalColor.a}");
-
-        // Hide if fully transparent
-        if (targetAlpha <= 0f)
-        {
-            fadeImage.gameObject.SetActive(false);
-        }
+        fadeCanvasGroup.alpha = targetAlpha;
     }
 
-    // Validation in editor
-    private void OnValidate()
+    private IEnumerator TransitionRoutine(string sceneName)
     {
-        if (fadeImage == null)
+        if (transitionAnimator != null)
         {
-            Debug.LogWarning($"{gameObject.name}: FadeImage not assigned!");
+            transitionAnimator.Play("BlinkingAnimationStart");
+            yield return new WaitForSeconds(GetAnimationLength("BlinkingAnimationStart")); // currently fade to black, actual animation WIP
         }
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(sceneLoadDelay);
+
+        onFadeInComplete?.Invoke();
+
+        if (transitionAnimator != null)
+        {
+            transitionAnimator.Play("BlinkingAnimationEnd"); // currently fade out of black
+            yield return new WaitForSeconds(GetAnimationLength("BlinkingAnimationEnd"));
+        }
+
+    }
+
+    private float GetAnimationLength(string animationName)
+    {
+        if (transitionAnimator == null) return 0f;
+
+        AnimationClip[] clips = transitionAnimator.runtimeAnimatorController.animationClips;
+
+        foreach(AnimationClip clip in clips)
+        {
+            if(clip.name == animationName)
+            {
+                return clip.length;
+            }
+        }
+
+        Debug.LogWarning($"Animation '{animationName}' not found. Using default delay.");
+        return 0.5f;
     }
 }

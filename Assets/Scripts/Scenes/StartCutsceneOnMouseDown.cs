@@ -20,7 +20,7 @@ public class StartCutsceneOnMouseDown : MonoBehaviour
         Debug.Log("Starting cutscene transition.");
         if (SceneController.scene_controller_instance != null)
         {
-            SceneController.scene_controller_instance.FadeAndLoadSceneWithCutscene(cutsceneSceneName, finalSceneName);
+            SceneController.scene_controller_instance.FadeAndLoadSceneWithCutscene(cutsceneSceneName, finalSceneName); // fade to black should persist with menus/cutscene transitions 
         }
         else
         {
