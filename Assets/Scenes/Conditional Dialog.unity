@@ -380,9 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2068ad2b3e5792a4fa7bebcf8c037f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeImage: {fileID: 95894611}
-  fadeDuration: 0.25
-  fadeCanvas: {fileID: 136026050}
+  transitionAnimator: {fileID: 0}
+  fadeCanvasGroup: {fileID: 0}
+  sceneLoadDelay: 0.01
 --- !u!1 &180676408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,7 +2634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1559c3047304132a024ca14b152902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalSceneForCutscene: 
+  cutsceneScene: Intro_Cutscene
+  sceneAfterCutscene: 
 --- !u!4 &2071645456
 Transform:
   m_ObjectHideFlags: 0
@@ -2750,6 +2751,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7116035262970723504, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: CraftingSet.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116035262970723504, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: 'CraftingSet.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 047ffd5fb10d8fe45a0538859b7e65c4, type: 2}
+    - target: {fileID: 7116035262970723504, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: 'CraftingSet.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8423580785056366472, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2827,7 +2840,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7740479880397770966, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}

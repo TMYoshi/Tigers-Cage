@@ -144,7 +144,7 @@ public class Slider_Manager : MonoBehaviour
     #region Update
     // Update is called once per frame
     // Use to actually move the pieces
-    void Update()
+    public void Puzzle()
     {
         // On click, send out a ray that detects if we clicked a piece
         if (Input.GetMouseButtonDown(0))
