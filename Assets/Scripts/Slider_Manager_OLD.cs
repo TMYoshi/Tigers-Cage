@@ -91,6 +91,8 @@ public class Slider_Manager : MonoBehaviour
                 return false;
             }
         }
+
+        pieces_[empty_location_].gameObject.SetActive(true);
         Debug.Log("Puzzle completed!");
         
         return true;
@@ -134,6 +136,8 @@ public class Slider_Manager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void EntryCondition()
     {
+        gameObject.SetActive(true);
+
         pieces_ = new List<Transform>();
         size_ = 3;
         CreateGamePieces(0.01f);
@@ -155,6 +159,7 @@ public class Slider_Manager : MonoBehaviour
                 Debug.Log("Hit Something");
                 // Traverse list to get which tile we clocked
                 // The number of tiles is small so O(n) is neglible lol
+                Debug.Log(pieces_);
                 for (int tile = 0; tile < pieces_.Count; ++tile)
                 {
                     // Check for valid moves in each direction

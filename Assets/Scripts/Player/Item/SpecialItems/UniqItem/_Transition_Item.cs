@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class _Transition_Item : SpecialItems
+{
+    public string transition_to_;
+    public override void EnterCondition()
+    {
+        Debug.Log(transition_to_);
+        if (transition_to_ != "")
+        {
+            Debug.Log("Transitioning to " + transition_to_);
+            FadeController.Instance.FadeAndLoad(transition_to_);
+        }
+    }
+    public override bool CompleteCondition() 
+    {
+        return false;
+    }
+    public override bool ExitCondition()
+    {
+        return false;
+    }
+}

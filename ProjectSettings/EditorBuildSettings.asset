@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Starting Room/MC Room - 4 West Wall.unity
     guid: c3cf8fd1efab5ea4eb613ceabe7af7df
   - enabled: 1
+    path: Assets/Scenes/Starting Room/MC Room - 4 Desk.unity
+    guid: f82799f77914d4f2eb266deee493e022
+  - enabled: 1
     path: Assets/Scenes/Starting Room/Ending_Cutscene.unity
     guid: 7667ae74c640c754faa50f6ae1600e80
   - enabled: 1

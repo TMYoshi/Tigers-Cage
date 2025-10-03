@@ -12,7 +12,6 @@
  * Notes: Ensure GameObjects that you intend to interact with are on a layer visible to camera and have a 2D box
  * collider.
  */
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class HighlightInteractableOutline : MonoBehaviour

@@ -21,7 +21,7 @@ public class InventoryItem : Item
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
 
-    private SpecialItems SpecialEvents;
+    [SerializeField] private SpecialItems SpecialEvents;
     public SpecialItems GetSpecialEvents() => SpecialEvents;
     public void AssignSpecialEvents(SpecialItems specialEvent) => SpecialEvents = specialEvent;
 
