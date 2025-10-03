@@ -59,7 +59,6 @@ public class FadeController : MonoBehaviour
         }
     }
 
-    #region HandleSceneStartFadeIn
     private IEnumerator HandleSceneStartFadeIn()
     {
         if (fadeImage == null)
@@ -94,17 +93,13 @@ public class FadeController : MonoBehaviour
         // Notify any listeners that the fade-in is complete
         onFadeInComplete?.Invoke();
     }
-    #endregion
 
-    #region FadeAndLoad
     public void FadeAndLoad(string sceneName)
     {
         Debug.Log($"Starting fade transition to: {sceneName}");
         StartCoroutine(FadeAndLoadSceneRoutine(sceneName));
     }
-    #endregion
 
-    #region FadeAndLoadSceneRoutine
     private IEnumerator FadeAndLoadSceneRoutine(string sceneName)
     {
         // Set flag so the next scene knows to fade in
@@ -131,9 +126,7 @@ public class FadeController : MonoBehaviour
         Debug.Log($"Loading scene: {sceneName}");
         SceneManager.LoadScene(sceneName);
     }
-    #endregion
 
-    #region FadeToAlpha
     public IEnumerator FadeToAlpha(float targetAlpha)
     {
         if (fadeImage == null)
@@ -180,7 +173,6 @@ public class FadeController : MonoBehaviour
             fadeImage.gameObject.SetActive(false);
         }
     }
-    #endregion
 
     // Validation in editor
     private void OnValidate()

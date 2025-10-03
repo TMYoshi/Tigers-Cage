@@ -8,7 +8,7 @@ public class _Fork_Outlet : SpecialItems
 {
     public override void EnterCondition()
     {
-
+        Debug.Log("this is from FORK OUTLET");
     }
     public override bool CompleteCondition()
     {

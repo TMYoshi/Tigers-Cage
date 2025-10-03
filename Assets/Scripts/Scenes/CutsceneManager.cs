@@ -32,7 +32,6 @@ public class CutsceneManager : MonoBehaviour
 
         if (useVideo)
         {
-            // Subscribe to the video finished event
             _videoPlayer.loopPointReached += OnVideoFinished;
         }
     }
@@ -75,7 +74,6 @@ public class CutsceneManager : MonoBehaviour
         if (useVideo)
         {
             _videoPlayer.Play();
-            // The rest of the logic is now handled by the OnVideoFinished event, so we can exit this coroutine for video
             yield break;
         }
         else
@@ -89,18 +87,6 @@ public class CutsceneManager : MonoBehaviour
         }
 
         ProceedToNextScene();
-    }
-
-    // This method is now obsolete for video cutscenes
-    private IEnumerator PlayVideoCutscene()
-    {
-        _videoPlayer.Play();
-
-        while (_videoPlayer.isPlaying && !cutsceneFinished)
-        {
-            yield return null;
-        }
-        _videoPlayer.Stop();
     }
 
     private IEnumerator PlayAnimationCutscene()

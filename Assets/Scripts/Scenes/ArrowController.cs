@@ -32,14 +32,12 @@ public class ArrowController : MonoBehaviour
 
         if (nextScene != null)
         {
-            // Check if FadeController exists and use it for smooth transitions
             if (FadeController.Instance != null)
             {
                 FadeController.Instance.FadeAndLoad(nextScene);
             }
             else
             {
-                // Fallback to SceneController if FadeController is not available
                 Debug.LogWarning("FadeController.Instance is null - using SceneController fallback");
                 if (SceneController.scene_controller_instance == null)
                 {

@@ -8,7 +8,7 @@ public class QuitButtonController : MonoBehaviour
 {
     public void QuitApplication()
     {
-        StartCoroutine(FadeAndQuit());
+        StartCoroutine(FadeAndQuit()); // fade also stays here for quitout
     }
 
     private IEnumerator FadeAndQuit()

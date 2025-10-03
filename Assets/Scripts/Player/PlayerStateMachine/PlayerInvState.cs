@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEditor;
 
 public class PlayerInvState : PlayerBaseState
 {
@@ -27,7 +26,10 @@ public class PlayerInvState : PlayerBaseState
                 _context._ItemManager._DraggedItem.SetActive(true);
                 Image _renderer = _context._ItemManager._DraggedItem.GetComponent<Image>();
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
-                _renderer.sprite = getDraggedObject().itemSprite;
+
+                ItemSlot selectedItemSlot = getDraggedObject();
+                _renderer.sprite = selectedItemSlot.itemSprite;
+                _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
 
                 if (_renderer.sprite == null) ExitState();
             }
@@ -78,13 +80,7 @@ public class PlayerInvState : PlayerBaseState
 
         foreach (RaycastResult result in results)
         {
-            switch (result.gameObject.tag)
-            {
-                case "InvItem":
-                    return result.gameObject.GetComponent<ItemSlot>();
-                default:
-                    break;
-            }
+            if (result.gameObject.tag == "InvItem") return result.gameObject.GetComponent<ItemSlot>();
         }
         return null;
     }
@@ -96,23 +92,40 @@ public class PlayerInvState : PlayerBaseState
 
     public void DetectWhenExit()
     {
+        bool shouldEnterFail = true;
         if (outlineScript != null) outlineScript.Exit();
         InventoryItem detectedInvItem = InteractedItem?.GetComponent<InventoryItem>();
         if (detectedInvItem == null) ExitState();
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
             special items
-        */
-        ItemInteraction itemInteraction = InteractedItem?.GetComponent<ItemInteraction>();
-        if (itemInteraction == null && InteractedItem != null)
-        {
-            _context._ItemManager.HideDraggedItem();
-            _context._ItemManager.UpdateSelectedItem(_context._ItemManager._FailedInteraction);
-            _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
-        }
-        else
-        {
 
+            this is using a dummy item inside of the player state
+        */
+        Interaction[] itemInteraction = InteractedItem?.GetComponents<Interaction>();
+        if (itemInteraction != null || InteractedItem == null)
+        {
+            if (itemInteraction == null) return;
+            foreach (Interaction interaction in itemInteraction)
+            {
+                if (interaction.key == _context._ItemManager._DraggedItem.name)
+                {
+                    //switches to special state after interaction
+                    _context._ItemManager.HideDraggedItem();
+                    _context._ItemManager.UpdateToDummy();
+                    interaction.ExecuteEffect(_context);
+                    shouldEnterFail = false;
+                }
+            }
         }
+        if (shouldEnterFail) FailedInteraction();
+    }
+
+    void FailedInteraction()
+    {
+        _context._ItemManager.HideDraggedItem();
+        _context._ItemManager.UpdateToDummy();
+        _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+        Debug.Log("tripped Failed interaction");
     }
 }

@@ -18,6 +18,7 @@ public class _Slider_Puzzle : SpecialItems
     }
     public override bool CompleteCondition()
     {
+        slider_Manager.Puzzle();
         if (!AllowForCompletion) return false;
         return slider_Manager.CheckCompletion();
     }

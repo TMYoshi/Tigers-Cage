@@ -1,15 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
-
-public class ItemInteraction : MonoBehaviour
-{
-    public List<Interaction> _Interactions;
-}
-[System.Serializable]
-public class Interaction
+public abstract class Interaction : MonoBehaviour
 {
     //key is the name of the item
+    //Effects has to be defined
     public string key;
-    [SerializeReference]
-    public SpecialItems effect;
+    public abstract void ExecuteEffect(PlayerStateManager _context);
 }
+
