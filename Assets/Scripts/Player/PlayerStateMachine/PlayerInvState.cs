@@ -23,15 +23,16 @@ public class PlayerInvState : PlayerBaseState
         {
             if (!_context._ItemManager._DraggedItem.activeSelf)
             {
-                _context._ItemManager._DraggedItem.SetActive(true);
+                _context._ItemManager.ShowDraggedItem();
                 Image _renderer = _context._ItemManager._DraggedItem.GetComponent<Image>();
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
 
                 ItemSlot selectedItemSlot = getDraggedObject();
+                if (_renderer?.sprite == null) { ExitState(); return;}
+                if (selectedItemSlot?.itemSprite == null) { ExitState(); return;}
+
                 _renderer.sprite = selectedItemSlot.itemSprite;
                 _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
-
-                if (_renderer.sprite == null) ExitState();
             }
 
             Vector2 mousePos = Input.mousePosition;
