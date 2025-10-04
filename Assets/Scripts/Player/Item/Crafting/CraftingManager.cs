@@ -5,11 +5,12 @@ public class CraftingManager : MonoBehaviour
 {
     public ItemCombinations[] StaticItemCombo;
     public static HashSet<ItemCombinations> CraftingSet = new HashSet<ItemCombinations>();
-    public static void CheckIfComboExist(string item1, string item2)
+    public static void CraftIfComboExist(string item1, string item2)
     {
         foreach (ItemCombinations item in CraftingSet)
         {
             item.CraftCombo(item1, item2);
+            Debug.Log(item1 + " " + item2);
         }
     }
 

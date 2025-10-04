@@ -11,7 +11,8 @@ public abstract class ItemCombinations : ScriptableObject
     {
         try
         {
-            if (_item1 == item1 && _item2 == item2) ExecItemCombo();
+            if ((_item1 == item1 && _item2 == item2) ||
+                (_item2 == item1 && _item1 == item2)) ExecItemCombo();
         }
         catch
         {
