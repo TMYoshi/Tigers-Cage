@@ -45,6 +45,7 @@ public class ItemSlot : MonoBehaviour
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
+        itemImage.color = new Color(1, 1, 1, 1);
         this.itemName = itemName;
         this.quantity = quantity;
         this.itemSprite = itemSprite;
@@ -55,6 +56,19 @@ public class ItemSlot : MonoBehaviour
         //quantityText.enabled = true; // applicable for items with quantity: coins etc, i assume most 
         // interactables will be single use however so disabling for time being
         itemImage.sprite = itemSprite;
+    }
+
+    public void RemoveItem()
+    {
+        this.itemName = null;
+        this.quantity = 0;
+        this.itemSprite = null;
+        this.itemDescription = null;
+        isFull = false;
+
+        //sets color to transparent to avoid white null image
+        itemImage.sprite = null;
+        itemImage.color = new Color(1, 1, 1, 0);
     }
 
     /*

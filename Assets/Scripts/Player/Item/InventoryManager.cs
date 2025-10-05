@@ -5,9 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     public ItemSlot[] itemSlot;
-
     public static HashSet<string> collectedItems = new HashSet<string>();
-
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)

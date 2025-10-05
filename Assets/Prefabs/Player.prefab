@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1820ade37c52b0449be854bbda4dde74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inspectorInventory: {fileID: 914735382601121620}
   StaticItemCombo:
   - {fileID: 11400000, guid: 047ffd5fb10d8fe45a0538859b7e65c4, type: 2}
 --- !u!1 &2177789577538051578
