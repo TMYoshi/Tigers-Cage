@@ -2792,16 +2792,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7116035262970723504, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: StaticItemCombo.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7116035262970723504, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: 'StaticItemCombo.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: a2412b5da63adde44856c13b4393ee4f, type: 2}
+      objectReference: {fileID: 11400000, guid: d8c388652c9b41b44b34554e7831a140, type: 2}
     - target: {fileID: 7116035262970723504, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: 'StaticItemCombo.Array.data[1]'
-      value: -2
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d6de3c9cf1a6e44592aa479e1fcc98b, type: 2}
     - target: {fileID: 8423580785056366472, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcce39f66505ebc4590a207a9746f2cb, type: 3}
   m_Name: New Item Com Creation
   m_EditorClassIdentifier: Assembly-CSharp::ItemComCreation
-  _item1: 
-  _item2: 
-  ResultName: 
-  ResultImage: {fileID: 0}
+  _item1: Fork
+  _item2: Fork1
+  ResultName: two forks
+  ResultImage: {fileID: 21300000, guid: 9749ce73f37857244b3fe32132fde9a0, type: 3}
