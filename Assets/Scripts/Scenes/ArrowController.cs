@@ -11,7 +11,6 @@ public class ArrowController : MonoBehaviour
         string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         Debug.Log($"Current scene: {currentScene}");
         string nextScene = null;
-        bool scene_in_scene = false;
 
         // right = 90' clockwise (CW), left = 90' CCW 
         if (gameObject.name.Contains("Right"))
@@ -25,7 +24,6 @@ public class ArrowController : MonoBehaviour
         else
         {
             nextScene = GetNextScene(currentScene);
-            scene_in_scene = true;
         }
 
         Debug.Log($"Next scene calculated: {nextScene}");

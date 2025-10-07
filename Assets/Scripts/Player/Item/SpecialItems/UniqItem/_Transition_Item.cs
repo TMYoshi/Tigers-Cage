@@ -14,10 +14,10 @@ public class _Transition_Item : SpecialItems
     }
     public override bool CompleteCondition() 
     {
-        return false;
+        return true;
     }
     public override bool ExitCondition()
     {
-        return false;
+        return true;
     }
 }
