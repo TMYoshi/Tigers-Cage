@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
 
+//slop code incoming ;-;
 public class PlayerInvState : PlayerBaseState
 {
 
@@ -12,26 +13,30 @@ public class PlayerInvState : PlayerBaseState
     }
     public override void EnterState()
     {
+        AlreadyClicked = false;
         InteractedItem = null;
     }
     HighlightInteractableOutline outlineScript;
     RectTransform itemTransform;
     GameObject InteractedItem;
+    bool AlreadyClicked;
     public override void UpdateState()
     {
         if (Input.GetMouseButton(0))
         {
+            AlreadyClicked = true;
             if (!_context._ItemManager._DraggedItem.activeSelf)
             {
-                _context._ItemManager._DraggedItem.SetActive(true);
+                _context._ItemManager.ShowDraggedItem();
                 Image _renderer = _context._ItemManager._DraggedItem.GetComponent<Image>();
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
 
                 ItemSlot selectedItemSlot = getDraggedObject();
+                if (_renderer?.sprite == null) { ExitState(); return;}
+                if (selectedItemSlot?.itemSprite == null) { ExitState(); return;}
+
                 _renderer.sprite = selectedItemSlot.itemSprite;
                 _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
-
-                if (_renderer.sprite == null) ExitState();
             }
 
             Vector2 mousePos = Input.mousePosition;
@@ -92,10 +97,12 @@ public class PlayerInvState : PlayerBaseState
 
     public void DetectWhenExit()
     {
-        bool shouldEnterFail = true;
         if (outlineScript != null) outlineScript.Exit();
+        //if possibel i wish to move this script to make it so I don't have to call it every frame, 
+        // if possible
         InventoryItem detectedInvItem = InteractedItem?.GetComponent<InventoryItem>();
         if (detectedInvItem == null) ExitState();
+        UIMouseDetection();
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
             special items
@@ -114,12 +121,38 @@ public class PlayerInvState : PlayerBaseState
                     _context._ItemManager.HideDraggedItem();
                     _context._ItemManager.UpdateToDummy();
                     interaction.ExecuteEffect(_context);
-                    shouldEnterFail = false;
                 }
             }
         }
-        if (shouldEnterFail) FailedInteraction();
+
+        FailedInteraction();
     }
+    void UIMouseDetection()
+        {
+            PointerEventData pointerData = new PointerEventData(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointerData, results);
+
+            foreach (RaycastResult result in results)
+            {
+                switch (result.gameObject.tag)
+                {
+                    case "InvItem":
+                        if (!AlreadyClicked) return;
+                        ItemSlot slotInfo = result.gameObject?.GetComponent<ItemSlot>();
+                        if (slotInfo == null) Debug.LogWarning("No itemSlot in inventory");
+                        Debug.Log(slotInfo.itemName + " " + _context._ItemManager._DraggedItem.name);
+                        CraftingManager.CraftIfComboExist(slotInfo.itemName, _context._ItemManager._DraggedItem.name);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
 
     void FailedInteraction()
     {
