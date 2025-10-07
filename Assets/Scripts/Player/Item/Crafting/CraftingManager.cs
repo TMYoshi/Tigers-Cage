@@ -26,7 +26,7 @@ public class CraftingManager : MonoBehaviour
                             _inventory.itemSlot[i].RemoveItem();
                         }
                     }
-                    _inventory.AddItem(creation.ResultName, 1, creation.ResultImage, "");
+                    _inventory.AddItem(creation.ResultName, 1, creation.ResultImage, creation.ResultDescription);
                     break;
                 case ItemComDialog dialog:
                     throw new System.NotImplementedException();
