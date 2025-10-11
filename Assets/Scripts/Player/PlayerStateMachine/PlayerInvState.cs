@@ -121,9 +121,9 @@ public class PlayerInvState : PlayerBaseState
                     _context._ItemManager.HideDraggedItem();
                     _context._ItemManager.UpdateToDummy();
                     interaction.ExecuteEffect(_context);
+                    return;
                 }
             }
-            return;
         }
         FailedInteraction();
     }
