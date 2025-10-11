@@ -15,7 +15,6 @@ public class PlayerSpecialItemState : PlayerBaseState
     }
     public override void UpdateState()
     {
-        Debug.Log(specialItem);
         if (specialItem.CompleteCondition())
         {
             ExitState();

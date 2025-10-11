@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wood-grain-texture-xi_0: 2549358170111707825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -123,8 +123,8 @@ public class PlayerInvState : PlayerBaseState
                     interaction.ExecuteEffect(_context);
                 }
             }
+            return;
         }
-
         FailedInteraction();
     }
     void UIMouseDetection()
