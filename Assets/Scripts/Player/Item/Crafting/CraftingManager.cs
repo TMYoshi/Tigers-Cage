@@ -14,6 +14,11 @@ public class CraftingManager : MonoBehaviour
     {
         foreach (ItemCombinations item in CraftingSet)
         {
+            if(item == null)
+            {
+                Debug.Log("No item combo provided");
+                continue;
+            }
             if(!item.CanCraft(item1, item2)) continue;
             switch (item)
             {

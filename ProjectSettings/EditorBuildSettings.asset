@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Starting Room/MC Room - 4 West Wall.unity
     guid: c3cf8fd1efab5ea4eb613ceabe7af7df
+  - enabled: 1
+    path: Assets/Scenes/Starting Room/MC Room - 4 Closet.unity
+    guid: eca2ac41f17ccf34faebad8987b4a94f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
