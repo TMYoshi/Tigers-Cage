@@ -4571,7 +4571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Transition_Item
   item: {fileID: 1704212126}
-  transition_to_: Closet View (Fish)
+  transition_to_: MC Room - 4 Closet
 --- !u!1 &1769447868
 GameObject:
   m_ObjectHideFlags: 0

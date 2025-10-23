@@ -11,12 +11,16 @@ public class InventoryItem : Item
     [TextArea]
     [SerializeField]
     private string itemDescription;
+
+    [SerializeField]
+    private AudioClip audio_clip_;
     private InventoryManager inventoryManager;
 
     public string ItemName => itemName;
     public int Quantity => quantity;
     public Sprite Sprite => sprite;
     public string ItemDescription => itemDescription;
+    public AudioClip AudioClip => audio_clip_;
 
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
