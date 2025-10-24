@@ -14,6 +14,5 @@ public class ItemSO : ScriptableObject
 
     [Header("Other Components")]
     public DialogSO dialogSO_;
-    public Collider2D collider_;
     public Sprite sprite_;
 }
