@@ -6,24 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu (Fish).unity
-    guid: 3ec916283a62ed3409cd45e18a08929f
-  - enabled: 1
-    path: Assets/Scenes/Dialog Box.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 318862bcd722b432ea25a994111ca37b
-  - enabled: 0
     path: Assets/Scenes/Starting Room/Main Menu.unity
     guid: 7de256ab8360c1541b8b088acb7e7641
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Starting Room/Intro_Cutscene.unity
     guid: 0418ad353123dda4e8ffbae10058f040
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Starting Room/Ending_Cutscene.unity
     guid: 7667ae74c640c754faa50f6ae1600e80
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Starting Room/GameOver.unity
     guid: 379476636d61c33448a957d471d37ae6
   - enabled: 1
@@ -47,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Starting Room/MC Room - 4 Closet.unity
     guid: eca2ac41f17ccf34faebad8987b4a94f
-  - enabled: 1
-    path: Assets/Scenes/Closet View (Fish) 2.unity
-    guid: 5a34e26ebbaffa344b9acf72fdc76b93
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

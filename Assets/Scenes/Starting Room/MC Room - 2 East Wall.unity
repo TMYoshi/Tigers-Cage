@@ -565,6 +565,7 @@ MonoBehaviour:
 
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &254783503
@@ -876,6 +877,7 @@ MonoBehaviour:
 
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &408342666
@@ -1205,104 +1207,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5999175782451099886, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 441573576}
-    - targetCorrespondingSourceObject: {fileID: 7560765475991649908, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 441573575}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
---- !u!1 &441573571 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7560765475991649908, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
-  m_PrefabInstance: {fileID: 441573570}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &441573572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4224395963912067698, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
-  m_PrefabInstance: {fileID: 441573570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441573571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0d8843f6c25d74199a2a7231f26a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &441573573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5999175782451099886, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
-  m_PrefabInstance: {fileID: 441573570}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &441573574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3336580133025540808, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
-  m_PrefabInstance: {fileID: 441573570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441573573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0d8843f6c25d74199a2a7231f26a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &441573575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441573571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 441573572}
-          m_TargetAssemblyTypeName: ArrowController, Assembly-CSharp
-          m_MethodName: OnPressed
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &441573576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441573573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 441573574}
-          m_TargetAssemblyTypeName: ArrowController, Assembly-CSharp
-          m_MethodName: OnPressed
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &575210468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1461,7 @@ MonoBehaviour:
 
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &832778098
@@ -1747,6 +1654,7 @@ MonoBehaviour:
 
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &1063704765
@@ -2856,6 +2764,7 @@ MonoBehaviour:
   itemDescription: 'My favorite plushie.
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 1
   SpecialEvents: {fileID: 0}
 --- !u!212 &1562968582
@@ -3949,6 +3858,7 @@ MonoBehaviour:
   itemDescription: 'chest for 3x3 slider puzzle?
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!114 &1912482831
@@ -4131,6 +4041,7 @@ MonoBehaviour:
 
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &1960106935
@@ -4308,6 +4219,7 @@ MonoBehaviour:
 
 
 '
+  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &2049081938

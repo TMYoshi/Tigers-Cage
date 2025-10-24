@@ -2,25 +2,27 @@ using UnityEngine;
 
 public class InventoryItem : Item
 {
+    // [SerializeField]
+    // private string itemName;
+    // [SerializeField]
+    // private int quantity;
+    // [SerializeField]
+    // private Sprite sprite;
+    // [SerializeField]
+    // private AudioClip audio_clip_;
     [SerializeField]
-    private string itemName;
-    [SerializeField]
-    private int quantity;
-    [SerializeField]
-    private Sprite sprite;
+    private ItemSO item_so_;
+
     [TextArea]
     [SerializeField]
     private string itemDescription;
-
-    [SerializeField]
-    private AudioClip audio_clip_;
     private InventoryManager inventoryManager;
 
-    public string ItemName => itemName;
-    public int Quantity => quantity;
-    public Sprite Sprite => sprite;
+    public string ItemName => item_so_.item_name_;
+    public int Quantity => item_so_.quantity_;
+    public Sprite Sprite => item_so_.sprite_;
     public string ItemDescription => itemDescription;
-    public AudioClip AudioClip => audio_clip_;
+    public AudioClip AudioClip => item_so_.audio_clip_;
 
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
@@ -36,7 +38,7 @@ public class InventoryItem : Item
         string itemId = GenerateItemId();
         if (InventoryManager.IsItemCollected(itemId))
         {
-            Debug.Log($"Item {itemName} (ID: {itemId}) already collected, destroying");
+            Debug.Log($"Item {item_so_.item_name_} (ID: {itemId}) already collected, destroying");
             Destroy(gameObject);
             return;
         }
@@ -50,7 +52,7 @@ public class InventoryItem : Item
     private string GenerateItemId()
     {
         string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        return sceneName + "_" + gameObject.name + "_" + itemName;
+        return sceneName + "_" + gameObject.name + "_" + item_so_.item_name_;
     }
 
     //void Update()
