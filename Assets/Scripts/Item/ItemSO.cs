@@ -9,6 +9,7 @@ public class ItemSO : ScriptableObject
     public int quantity_;
     public AudioClip audio_clip_;
     public string desc_;
+    public Sprite inv_sprite_;
     public SpecialItems special_events_;
     public bool collectable_;
 

@@ -8,6 +8,15 @@ public class Item : MonoBehaviour
     private float LastInteractionTime = 0f;
     private float InteractionCooldown = 0.2f; // .2s
 
+    private void Awake()
+    {
+        if (assoc_dialog_box_ == null)
+        {
+            Debug.Log("meow");
+            assoc_dialog_box_ = GetComponent<Dialog>();
+        }
+    }
+
     public bool WriteLines()
     {
         if (Time.time - LastInteractionTime < InteractionCooldown)
