@@ -17,7 +17,7 @@ public class SFXManager : MonoBehaviour
     public void PlaySFXClip(AudioClip audio_clip, Transform spawn_transform, float volume)
     {
         // Spawn in a game object
-        if (audio_clip == null) return;
+        if (audio_clip == null || spawn_transform == null) return;
         AudioSource audio_source = Instantiate(sfx_obj_, spawn_transform.position, Quaternion.identity);
 
         // Assign audio source
@@ -34,5 +34,6 @@ public class SFXManager : MonoBehaviour
 
         // Destroy once audio finishes
         Destroy(audio_source.gameObject, audio_len);
+        return;
     }
 }
