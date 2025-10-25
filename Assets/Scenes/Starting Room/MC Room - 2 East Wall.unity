@@ -558,14 +558,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 254783505}
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
+  item_so_: {fileID: 0}
   itemDescription: '
 
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &254783503
@@ -870,14 +867,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 408342663}
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
+  item_so_: {fileID: 0}
   itemDescription: '
 
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &408342666
@@ -1454,14 +1448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 832778095}
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
+  item_so_: {fileID: 0}
   itemDescription: '
 
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &832778098
@@ -1647,14 +1638,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1063704767}
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
+  item_so_: {fileID: 0}
   itemDescription: '
 
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &1063704765
@@ -2758,13 +2746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1562968579}
-  itemName: Blahaj
-  quantity: 1
-  sprite: {fileID: 21300000, guid: d09c8db02aa294e9786e8c458557bc90, type: 3}
+  item_so_: {fileID: 0}
   itemDescription: 'My favorite plushie.
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 1
   SpecialEvents: {fileID: 0}
 --- !u!212 &1562968582
@@ -3852,13 +3837,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
-  itemName: Chest
-  quantity: 1
-  sprite: {fileID: -3507984276209942248, guid: cf21ae286d56cb1458341b19a8dd3500, type: 3}
+  item_so_: {fileID: 0}
   itemDescription: 'chest for 3x3 slider puzzle?
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!114 &1912482831
@@ -4034,14 +4016,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1960106932}
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
+  item_so_: {fileID: 0}
   itemDescription: '
 
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &1960106935
@@ -4212,14 +4191,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 2049081940}
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
+  item_so_: {fileID: 0}
   itemDescription: '
 
 
 '
-  audio_clip_: {fileID: 0}
   collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &2049081938

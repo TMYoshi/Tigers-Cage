@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 public class _LockedChest : SpecialItems
 {
     private static HashSet<string> openedChests = new HashSet<string>();
@@ -16,7 +17,7 @@ public class _LockedChest : SpecialItems
     uint[] correctCode = { 0, 8, 2, 8 };
     bool _CompleteCondition, _ExitCondition;
 
-    private void Start()
+    public override void Start()
     {
         base.Start();
 
