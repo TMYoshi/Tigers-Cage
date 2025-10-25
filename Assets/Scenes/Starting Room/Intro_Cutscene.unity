@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'CanvasFade '
       objectReference: {fileID: 0}
+    - target: {fileID: 1683419314622574366, guid: dd4b49b9ffcf644448ad903b0deb3cc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -943,7 +947,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1

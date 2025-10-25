@@ -9,10 +9,12 @@ public class PlayerSpecialItemState : PlayerBaseState
     }
     public override void EnterState()
     {
-        SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
         specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
         Debug.Log("special Item Enter Condition");
         specialItem.EnterCondition();
+
+        if (SFXManager.Instance == null) return;
+        SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
     }
     public override void UpdateState()
     {

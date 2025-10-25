@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,7 +38,7 @@ public class Dialog : MonoBehaviour
         else
         {
             StopAllCoroutines();
-
+            DialogManager.Instance.EndLine();
             // TODO: ok so like the dialog box works again but i had to sacrifice the complete current dialog thing
             // But lowkey I just want a deliverable project so we can fix this later
         }
