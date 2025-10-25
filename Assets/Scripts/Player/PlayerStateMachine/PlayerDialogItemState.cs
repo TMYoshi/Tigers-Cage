@@ -10,7 +10,7 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void EnterState()
     {
-        SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
+        if(SFXManager.Instance == null) SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
         _context._ItemManager._SelectedItem.WriteLines();
     }
 
