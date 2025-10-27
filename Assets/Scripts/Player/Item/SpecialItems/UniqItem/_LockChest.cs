@@ -38,6 +38,7 @@ public class _LockedChest : SpecialItems
     }
     public override bool CompleteCondition()
     {
+        //Add line of code to unlock page for jorurnal
         return _CompleteCondition;
     }
 

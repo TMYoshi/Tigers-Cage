@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1dc5b215322c94c67ad20470ea80a2ec
+guid: 317ac0d31fe696240bb195371a845772
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2549358170111707825
-    second: wood-grain-texture-xi_0
+      213: 2004232101495086770
+    second: journal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wood-grain-texture-xi_0
+      name: journal_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1284
+        x: 73
+        y: 54
+        width: 1784
+        height: 985
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ba8fb6afb3216320800000000000000
-      internalID: 2549358170111707825
+      spriteID: 2be9c093a7670db10800000000000000
+      internalID: 2004232101495086770
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wood-grain-texture-xi_0: 2549358170111707825
+      journal_0: 2004232101495086770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
