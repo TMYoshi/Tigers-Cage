@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Starting Room/MC Room - 2 Chest.unity
     guid: a5a252001ad581f4986c64ec8c96aa5c
   - enabled: 1
+    path: Assets/Scenes/Starting Room/MC Room - 2 Music Box.unity
+    guid: 1a5a44ade410c7b468b641cffe0fd992
+  - enabled: 1
     path: Assets/Scenes/Starting Room/MC Room - 2 East Wall.unity
     guid: a7ed87feae756b14ea24765c390c2466
   - enabled: 1
