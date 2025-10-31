@@ -40,7 +40,7 @@ public class _Slider_Puzzle : SpecialItems
         completed_card.SetActive(true);
         Destroy(_renderer);
         Destroy(_collider);
-        // Add item to inventory
+        // Add line of code to add new page for item documentation
     }
 
     public override void CleanUpCondition()
