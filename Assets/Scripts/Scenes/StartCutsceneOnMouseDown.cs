@@ -15,7 +15,7 @@ public class StartCutsceneOnMouseDown : MonoBehaviour
     private IEnumerator StartCutsceneAfterDelay()
     {
         // wait for dialog to finish
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(1.8f);
 
         Debug.Log("Starting cutscene transition.");
         if (SceneController.scene_controller_instance != null)

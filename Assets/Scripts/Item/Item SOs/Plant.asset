@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1511748806daf4434b0febc175553dc9, type: 3}
+  m_Name: Plant
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  item_name_: Plant
+  quantity_: 0
+  audio_clip_: {fileID: 8300000, guid: f6102fb674f0042c3a6184f4b3258f8e, type: 3}
+  desc_: 
+  inv_sprite_: {fileID: 0}
+  special_events_: {fileID: 0}
+  collectable_: 0
+  dialogSO_: {fileID: 11400000, guid: 9f78934209c1d3844b493f2f4d0457cd, type: 2}
+  sprite_: {fileID: 8591533231565066105, guid: 53b3ad1dc90fb104194b398836c6e8c8, type: 3}

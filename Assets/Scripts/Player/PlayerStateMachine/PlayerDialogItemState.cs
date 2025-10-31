@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,6 +12,9 @@ public class PlayerDialogItemState : PlayerBaseState
     public override void EnterState()
     {
         _context._ItemManager._SelectedItem.WriteLines();
+
+        if (SFXManager.Instance == null) return;
+        SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
     }
 
     public override void UpdateState()

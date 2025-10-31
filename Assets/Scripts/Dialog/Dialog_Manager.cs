@@ -113,6 +113,14 @@ public class DialogManager : MonoBehaviour
     }
     #endregion
 
+    #region EndLine
+    public void EndLine()
+    {
+        StopAllCoroutines();
+        text_component_.text = text_name_ + '\n' + current_dialog_.lines_[index_].text_;
+    }
+    #endregion
+
     #region Setters + Getters
     public int GetIndex()
     {

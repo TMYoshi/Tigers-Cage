@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu (Fish).unity
-    guid: 3ec916283a62ed3409cd45e18a08929f
-  - enabled: 1
-    path: Assets/Scenes/Dialog Box.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 318862bcd722b432ea25a994111ca37b
-  - enabled: 1
     path: Assets/Scenes/Starting Room/Main Menu.unity
     guid: 7de256ab8360c1541b8b088acb7e7641
   - enabled: 1
@@ -27,20 +18,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Starting Room/GameOver.unity
     guid: 379476636d61c33448a957d471d37ae6
   - enabled: 1
-    path: Assets/Scenes/New Scene Transition WIP - Nick/MC Room - 1 North Wall.unity
-    guid: 0779fba786ba3084b8368809f40e66e9
+    path: Assets/Scenes/Starting Room/MC Room - 1 North Wall.unity
+    guid: e5d7e52078fca944c8f9ea9960f902f5
   - enabled: 1
-    path: Assets/Scenes/New Scene Transition WIP - Nick/MC Room - 2 East Wall.unity
-    guid: eeadffa06be5cae4a92a3e1ebbe25b8b
+    path: Assets/Scenes/Starting Room/MC Room - 2 Chest.unity
+    guid: a5a252001ad581f4986c64ec8c96aa5c
   - enabled: 1
-    path: Assets/Scenes/New Scene Transition WIP - Nick/MC Room - 3 South Wall.unity
-    guid: 608e12ec58bb6464c899a21a510da6be
+    path: Assets/Scenes/Starting Room/MC Room - 2 Music Box.unity
+    guid: 1a5a44ade410c7b468b641cffe0fd992
   - enabled: 1
-    path: Assets/Scenes/New Scene Transition WIP - Nick/MC Room - 4 West Wall.unity
-    guid: 8d5b1fa44ebfc5840a4582bd7c0bebe2
+    path: Assets/Scenes/Starting Room/MC Room - 2 East Wall.unity
+    guid: a7ed87feae756b14ea24765c390c2466
+  - enabled: 1
+    path: Assets/Scenes/Starting Room/MC Room - 3 South Wall.unity
+    guid: 5ffe84c080143254288ff8f9eea94360
   - enabled: 1
     path: Assets/Scenes/Starting Room/MC Room - 4 Desk.unity
-    guid: f82799f77914d4f2eb266deee493e022
+    guid: f9442ef2baf6c456498e108ee30f3f6e
+  - enabled: 1
+    path: Assets/Scenes/Starting Room/MC Room - 4 West Wall.unity
+    guid: c3cf8fd1efab5ea4eb613ceabe7af7df
+  - enabled: 1
+    path: Assets/Scenes/Starting Room/MC Room - 4 Closet.unity
+    guid: eca2ac41f17ccf34faebad8987b4a94f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
