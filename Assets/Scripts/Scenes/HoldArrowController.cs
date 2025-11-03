@@ -6,8 +6,8 @@ public class HoldArrowController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     [Header("Cutscene Settings")]
-    public Camera mainCamera;
-    public float scrollspeed = 5f;
+    public Camera mainCamera;// refrence to camera
+    public float scrollspeed = 5f; //how fast the camera moves
     public float leftlimit = -1.0f;
     public float rightlimit = 50f;
 
@@ -30,12 +30,13 @@ public class HoldArrowController : MonoBehaviour
         {
             CamPos.x += scrollspeed * Time.deltaTime;
         }
-
+        //limits the cameras position to stay within defined limits
+        //need to change it later when hallway is created
         CamPos.x = Mathf.Clamp(CamPos.x, leftlimit, rightlimit);
-
+        
         mainCamera.transform.position = CamPos;
 
-        //Mouse intput
+        //Mouse intput detection
         if (Input.GetMouseButtonDown(0))
         {
             CheckArrowHold(true);
@@ -47,6 +48,7 @@ public class HoldArrowController : MonoBehaviour
         }
     }
 
+    //Checks if mouse is clicking on the arrowbutton and updates movement flag to true unitl stop clicking
     void CheckArrowHold(bool holding)
     {
         Vector2 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
