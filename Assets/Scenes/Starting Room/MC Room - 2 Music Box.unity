@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 84171898}
   - component: {fileID: 84171897}
   - component: {fileID: 84171899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cog_small_fixed_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 102762352}
   - component: {fileID: 102762351}
   - component: {fileID: 102762353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cog_small_fixed_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 165740608}
   - component: {fileID: 165740607}
   - component: {fileID: 165740609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cog_large_fixed_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1774,8 +1774,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: -4.464, z: 0}
-  m_LocalScale: {x: 1.15, y: 1.15, z: 2.875}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.15, y: 1.15, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 46569270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5353,7 +5353,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.75, y: -9.8, z: 0}
-  m_LocalScale: {x: 0.32, y: 0.32, z: 0.24869992}
+  m_LocalScale: {x: 0.32, y: 0.32, z: 0.2487}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 292250507}
@@ -5767,7 +5767,7 @@ GameObject:
   - component: {fileID: 665339909}
   - component: {fileID: 665339908}
   - component: {fileID: 665339910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cog_medium_fixed_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10483,7 +10483,7 @@ GameObject:
   - component: {fileID: 1360550661}
   - component: {fileID: 1360550660}
   - component: {fileID: 1360550662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cog_medium_fixed_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15204,7 +15204,7 @@ GameObject:
   - component: {fileID: 2002127835}
   - component: {fileID: 2002127834}
   - component: {fileID: 2002127836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cog_small_fixed_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

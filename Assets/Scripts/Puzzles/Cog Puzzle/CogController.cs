@@ -16,6 +16,8 @@ public class CogController : MonoBehaviour
     private bool isInitialized = false;
 
     private bool canStartDrag = false;
+
+    // initialized via CogInitializer
     public void SetInitialProperties(Vector3 scale, Vector3 position)
     {
         originalScale = scale;
@@ -39,13 +41,14 @@ public class CogController : MonoBehaviour
             Debug.LogWarning($"{gameObject.name} was not explicitly initialized with CogInitializer. Using current transform as fallback.");
         }
     }
-
     private void Update()
     {
+        int draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs"));
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, draggableLayerMask);
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
@@ -122,7 +125,7 @@ public class CogController : MonoBehaviour
 
             if (snapPosition != Vector3.zero)
             {
-                // successful snap; scale maintained
+                // successful snap
                 Vector3 snapWorldPosition = AxleManager.Instance.transform.TransformPoint(snapPosition);
 
                 transform.position = snapWorldPosition;
