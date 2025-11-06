@@ -558,7 +558,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 254783505}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
@@ -867,7 +870,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 408342663}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
@@ -1448,7 +1454,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 832778095}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
@@ -1638,7 +1647,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1063704767}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
@@ -2746,7 +2758,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1562968579}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: 'My favorite plushie.
 
 '
@@ -3688,7 +3703,7 @@ Transform:
   m_GameObject: {fileID: 1912482825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: -1.08, z: -9.884595}
+  m_LocalPosition: {x: 3.6, y: -1.08, z: 0}
   m_LocalScale: {x: 0.22801, y: 0.22801, z: 0.22801}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3708,7 +3723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 1912482830}
-  chestID: MainRoomChest
   colliderToDestroy: {fileID: 1912482829}
   spriteRenderer: {fileID: 1912482828}
   openSprite: {fileID: 21300000, guid: cadcf11eac809ba459e23cc3a85c6fe4, type: 3}
@@ -3837,7 +3851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: 'chest for 3x3 slider puzzle?
 
 '
@@ -4016,7 +4033,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1960106932}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
@@ -4191,7 +4211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 2049081940}
-  item_so_: {fileID: 0}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
@@ -4591,6 +4614,138 @@ PrefabInstance:
     - target: {fileID: 9054729200512070284, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_PreInfinity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[1].time
+      value: 0.34247753
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[2].time
+      value: 0.99853516
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[0].time
+      value: 0.0029335022
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[1].time
+      value: 0.99560404
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[1].value
+      value: 0.47217423
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[2].value
+      value: 0.0050697327
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: ani_curve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[0].value
+      value: 0.32144165
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[1].value
+      value: 0.4642887
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[1].inSlope
+      value: 0.3195861
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[1].inSlope
+      value: -1.9655099
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[1].outSlope
+      value: 0.3195861
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[1].inWeight
+      value: 0.056049973
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: animation_curve.m_Curve.Array.data[1].outSlope
+      value: -1.9655099
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214603050509572179, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: movement_curve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

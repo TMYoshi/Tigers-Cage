@@ -8,6 +8,7 @@ public class PlayerStateManager : MonoBehaviour
     */
     public InventoryManager _InventoryManager ;
     public ItemManager _ItemManager;
+    public PlayerController _MovementController;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now
 
     private void Awake()

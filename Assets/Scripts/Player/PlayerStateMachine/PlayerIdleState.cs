@@ -60,24 +60,35 @@ public class PlayerIdleState : PlayerBaseState
 
             if (hit.collider != null)
             {
-                Debug.Log("Hit object: " + hit.collider.gameObject.name);
-                InventoryItem _inventoryItem = hit.collider.gameObject.GetComponent<InventoryItem>();
+                Collider2D currentCollider = hit.collider;
+
+                Debug.Log("Hit object: " + currentCollider.gameObject.name);
+                InventoryItem _inventoryItem = currentCollider.gameObject.GetComponent<InventoryItem>();
                 _context._ItemManager.UpdateSelectedItem(_inventoryItem);
                 if (outlineScript != null) outlineScript.Exit();
-                switch (hit.collider.gameObject.tag)
+
+                switch (currentCollider.gameObject.tag)
                 {
                     case "Item":
-                        _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
+                        _context._MovementController.MoveTo
+                        (
+                            currentCollider.transform,
+                            () => _context.UpdateCurrentState(PlayerStateManager.State.DialogItem)
+                        );
                         break;
                     case "SpecialItem":
-                        _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
+                        _context._MovementController.MoveTo
+                        (
+                            currentCollider.transform,
+                            () => _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem)
+                        );
                         break;
                     case "Transitions":
-                        ArrowController arrowController = hit.collider.gameObject.GetComponent<ArrowController>();
+                        ArrowController arrowController = currentCollider.gameObject.GetComponent<ArrowController>();
                         arrowController.OnPressed();
                         break;
                     default:
-                        Debug.Log("Hit non-item object: " + hit.collider.gameObject.name);
+                        Debug.Log("Hit non-item object: " + currentCollider.gameObject.name);
                         break;
                 }
             }
