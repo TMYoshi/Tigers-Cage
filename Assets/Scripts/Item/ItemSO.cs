@@ -13,7 +13,6 @@ public class ItemSO : ScriptableObject
     public SpecialItems special_events_;
     public bool collectable_;
 
-    [Header("Other Components")]
+    [Header("World Components")]
     public DialogSO dialogSO_;
-    public Sprite sprite_;
 }
