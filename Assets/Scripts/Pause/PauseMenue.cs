@@ -51,6 +51,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         JournalUI.SetActive(true);// shows pause menue
         PauseBackground.SetActive(true);
+        documentPage.SetActive(false);
 
         Debug.Log("games is paused ");
     }
