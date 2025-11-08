@@ -1,8 +1,12 @@
 using UnityEngine;
+// using Time;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class CogController : MonoBehaviour
 {
+    // each cog has inner and outer collider; if outer collider (teeth) overlap with 
+    // inner collider (inner circumference) 
+    public enum ColliderType { Inner, Outer } 
     public enum CogSize { Small, Medium, Large }
     public CogSize size;
 
@@ -72,6 +76,9 @@ public class CogController : MonoBehaviour
         {
             canStartDrag = false;
         }
+
+        // if: check for connection (invalid if outer overlaps with inner) 
+        // HandleCogRotation();
     }
 
     private void HandleMouseDown()
@@ -146,4 +153,29 @@ public class CogController : MonoBehaviour
             }
         }
     }
+
+    // private void HandleCogRotation(Transform parent)
+    // {
+    //     /*
+    //     small cogs: rotate 60deg/s; 6 teeth
+    //     med: 30/deg/s; 12 teeth
+    //     large: 15/deg/s; 24 teeth
+    //     */
+    //     Transform cogParentTransform = transform;
+
+
+    //     if (child.name.StartsWith("cog_small_fixed_start"))
+    //     {
+
+    //     }
+
+    // }
+
+    // private bool IsValidCog() {
+    //     // if ()
+    //     {
+            
+    //     }
+    
+    // }
 }

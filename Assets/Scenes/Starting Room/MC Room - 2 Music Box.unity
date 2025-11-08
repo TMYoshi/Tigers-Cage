@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 102762351}
   - component: {fileID: 102762353}
   m_Layer: 6
-  m_Name: cog_small_fixed_3
+  m_Name: cog_small_fixed_start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
