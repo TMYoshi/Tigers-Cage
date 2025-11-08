@@ -1,32 +1,51 @@
 using UnityEngine;
-// using Time;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class CogController : MonoBehaviour
 {
     // each cog has inner and outer collider; if outer collider (teeth) overlap with 
     // inner collider (inner circumference) 
-    public enum ColliderType { Inner, Outer } 
     public enum CogSize { Small, Medium, Large }
     public CogSize size;
 
+    public Collider2D innerCollider;
+    public Collider2D outerCollider;
+
+    private List<Collider2D> overlapResults = new List<Collider2D>();
+
+    private Collider2D[] allColliders;
+
     private Vector3 currentAxlePosition = Vector3.zero;
-    private Vector3 originalScale;
-    private Vector3 initialTrayPosition; // to snap back during invalid axle placements
+    private Vector3 trayScale;
+    private Vector3 onBoardScale;
+    private Vector3 initialTrayPosition;
 
     private Rigidbody2D rb;
 
     private bool isDragging = false;
     private bool isInitialized = false;
-
-    private bool canStartDrag = false;
+    //private bool canStartDrag = false;
 
     // initialized via CogInitializer
     public void SetInitialProperties(Vector3 scale, Vector3 position)
     {
-        originalScale = scale;
+        trayScale = scale;
         initialTrayPosition = position;
+
+        float targetOnBoardMagnitude = CogInitializer.CogScales.GetHoverScale(size);
+        onBoardScale = Vector3.one * targetOnBoardMagnitude;
+
         isInitialized = true;
+    }
+
+    private void Awake()
+    {
+        allColliders = GetComponents<Collider2D>();
+        if (allColliders.Length < 2 || innerCollider == null || outerCollider == null)
+        {
+            Debug.LogError($"Cog {gameObject.name} needs 2 Collider2D components: one inner, one outer, and both must be assigned in the Inspector.");
+        }
     }
 
     private void Start()
@@ -42,12 +61,12 @@ public class CogController : MonoBehaviour
         if (!isInitialized)
         {
             SetInitialProperties(transform.localScale, transform.position);
-            Debug.LogWarning($"{gameObject.name} was not explicitly initialized with CogInitializer. Using current transform as fallback.");
         }
     }
+
     private void Update()
     {
-        int draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs"));
+        int draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs")); // ~ to exclude FixedCogs layer from check
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -56,7 +75,7 @@ public class CogController : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                canStartDrag = true;
+                //canStartDrag = true;
                 HandleMouseDown();
             }
         }
@@ -66,19 +85,17 @@ public class CogController : MonoBehaviour
             HandleMouseDrag();
         }
 
-        if (isDragging && Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            HandleMouseUp();
-            canStartDrag = false;
-        }
-
-        if (Input.GetMouseButtonUp(0) && !isDragging)
-        {
-            canStartDrag = false;
+            if (isDragging)
+            {
+                HandleMouseUp();
+            }
+            //canStartDrag = false;
         }
 
         // if: check for connection (invalid if outer overlaps with inner) 
-        // HandleCogRotation();
+        HandleCogRotation();
     }
 
     private void HandleMouseDown()
@@ -95,10 +112,7 @@ public class CogController : MonoBehaviour
         isDragging = true;
 
         // scale up to hover size (sizes found in CogInitializer)
-        float targetHoverScaleMagnitude = CogInitializer.CogScales.GetHoverScale(size);
-        float scaleFactor = targetHoverScaleMagnitude / originalScale.x;
-
-        transform.localScale = originalScale * scaleFactor;
+        transform.localScale = onBoardScale;
     }
 
     private void HandleMouseDrag()
@@ -121,61 +135,109 @@ public class CogController : MonoBehaviour
             if (AxleManager.Instance == null)
             {
                 Debug.LogError("AxleManager is not initialized. Cog cannot snap.");
-                transform.localScale = originalScale;
-                transform.position = initialTrayPosition;
+                SnapBackToTray();
                 return;
             }
 
             Vector3 releaseLocalPosition = AxleManager.Instance.transform.InverseTransformPoint(transform.position);
-
             Vector3 snapPosition = AxleManager.Instance.FindNearestAvailablePosition(releaseLocalPosition);
 
             if (snapPosition != Vector3.zero)
             {
-                // successful snap
                 Vector3 snapWorldPosition = AxleManager.Instance.transform.TransformPoint(snapPosition);
-
                 transform.position = snapWorldPosition;
 
+                // hard fail: cog teeth overlap with the inner radius of another cog
+                if (CheckForInvalidOverlap())
+                {
+                    Debug.Log("Invalid placement; inner circumference overlaps another cog's teeth. Returning to tray.");
+                    SnapBackToTray();
+                    return;
+                }
+
+                // soft fail: cog teeth do not overlap with another cog's teeth (for checking for rotation)
+                if (!CheckForValidMeshing())
+                {
+                    Debug.Log("Cog placed but unmeshed with adjacent cog.");
+                }
+
+                // successful snap
                 currentAxlePosition = snapPosition;
                 AxleManager.Instance.OccupyPosition(currentAxlePosition, this);
-
-                // TODO: check for cog connections 
             }
             else
             {
                 // snap failed
-                Debug.Log("Snap falied; returning cog to tray position.");
-                transform.localScale = originalScale;
-                transform.position = initialTrayPosition;
-
-                currentAxlePosition = Vector3.zero;
+                Debug.Log("Snap failed; returning cog to tray position.");
+                SnapBackToTray();
             }
         }
     }
 
-    // private void HandleCogRotation(Transform parent)
-    // {
-    //     /*
-    //     small cogs: rotate 60deg/s; 6 teeth
-    //     med: 30/deg/s; 12 teeth
-    //     large: 15/deg/s; 24 teeth
-    //     */
-    //     Transform cogParentTransform = transform;
+    private void SnapBackToTray()
+    {
+        transform.localScale = trayScale;
+        transform.position = initialTrayPosition;
+        currentAxlePosition = Vector3.zero;
+    }
 
 
-    //     if (child.name.StartsWith("cog_small_fixed_start"))
-    //     {
+    public bool CheckForInvalidOverlap()
+    {
+        if (innerCollider == null || outerCollider == null) return false;
 
-    //     }
+        ContactFilter2D filter = ContactFilter2D.noFilter;
+        int count = innerCollider.Overlap(filter, overlapResults);
 
-    // }
+        if (count > 0)
+        {
+            foreach (Collider2D otherCollider in overlapResults)
+            {
+                if (otherCollider == innerCollider || otherCollider == outerCollider) continue;
+                CogController otherCog = otherCollider.GetComponent<CogController>();
 
-    // private bool IsValidCog() {
-    //     // if ()
-    //     {
-            
-    //     }
-    
-    // }
+                if (otherCog != null && otherCollider == otherCog.outerCollider)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool CheckForValidMeshing()
+    {
+        if (innerCollider == null || outerCollider == null) return false;
+
+        ContactFilter2D filter = ContactFilter2D.noFilter;
+        int count = outerCollider.Overlap(filter, overlapResults);
+
+        if (count > 0)
+        {
+            foreach (Collider2D otherCollider in overlapResults)
+            {
+                if (otherCollider == innerCollider || otherCollider == outerCollider) continue;
+
+                CogController otherCog = otherCollider.GetComponent<CogController>();
+
+                if (otherCog != null)
+                {
+                    if (otherCollider == otherCog.outerCollider)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private void HandleCogRotation()
+    {
+        if (name.StartsWith("cog_small_fixed_start"))
+        {
+            transform.Rotate(0, 0, -60 * Time.deltaTime);
+        }
+    }
 }
