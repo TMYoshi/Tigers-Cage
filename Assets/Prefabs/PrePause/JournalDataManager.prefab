@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8223690674041654883
+--- !u!1 &7807671518623489572
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 381128008737712236}
-  - component: {fileID: 7442947182510158491}
+  - component: {fileID: 4937582915673205837}
+  - component: {fileID: 7351917450624118498}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: JournalDataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &381128008737712236
+--- !u!4 &4937582915673205837
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8223690674041654883}
+  m_GameObject: {fileID: 7807671518623489572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 229.29997, y: 240.04001, z: 0}
+  m_LocalPosition: {x: 601, y: 124.08002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7442947182510158491
+--- !u!114 &7351917450624118498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8223690674041654883}
+  m_GameObject: {fileID: 7807671518623489572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5117b4cca26936042bb2f7675471a160, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c765c116bb10a34fbe9e2b5cc6a722a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  largeText: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::JournalDataManager
+  allDocuments:
+  - {fileID: 11400000, guid: 40162de4d1be2ec47bdc468c8d767f6c, type: 2}
+  - {fileID: 11400000, guid: 61ed14d3f9473d7429c6f8abbe4092fc, type: 2}

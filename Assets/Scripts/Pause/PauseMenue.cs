@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     public TMP_Text titleText;
     public TMP_Text contentText;
     public Image documentImage;
-
+    
     public GameObject documentPage;
 
     [Header("TOC Buttons")]
@@ -50,8 +50,9 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         JournalUI.SetActive(true);// shows pause menue
-        PauseBackground.SetActive(true);
         documentPage.SetActive(false);
+        tableofContentes.SetActive(false);
+        PauseBackground.SetActive(true);
 
         Debug.Log("games is paused ");
     }
@@ -62,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
         JournalUI.SetActive(false);
+        documentPage.SetActive(false);
     }
 
     public void OpenJournal()
