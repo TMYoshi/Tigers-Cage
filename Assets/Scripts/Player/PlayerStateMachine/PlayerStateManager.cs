@@ -28,7 +28,6 @@ public class PlayerStateManager : MonoBehaviour
     public enum State
     {
         Idle,
-        Moving,
         Inventory,
         DialogItem,
         SpecialItem
@@ -38,7 +37,6 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
-        _State[State.Moving] = new PlayerMovingState(this);
         _State[State.Inventory] = new PlayerInvState(this);
         _State[State.DialogItem] = new PlayerDialogItemState(this);
         _State[State.SpecialItem] = new PlayerSpecialItemState(this);

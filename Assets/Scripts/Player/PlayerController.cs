@@ -41,4 +41,9 @@ public class PlayerController : MonoBehaviour
 
         _onComplete.Invoke();
     }
+
+    public void EnableCharacter(bool enable = true)
+    {
+        gameObject.SetActive(enable);
+    }
 }

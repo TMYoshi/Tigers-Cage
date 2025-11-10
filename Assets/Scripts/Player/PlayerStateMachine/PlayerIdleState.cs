@@ -80,12 +80,18 @@ public class PlayerIdleState : PlayerBaseState
                         _context._MovementController.MoveTo
                         (
                             currentCollider.transform,
-                            () => _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem)
+                            () =>
+                            {
+                                _context.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
+                                _context._MovementController.EnableCharacter(false);
+                            }
                         );
                         break;
                     case "Transitions":
                         ArrowController arrowController = currentCollider.gameObject.GetComponent<ArrowController>();
                         arrowController.OnPressed();
+
+                        _context._MovementController.EnableCharacter();
                         break;
                     default:
                         Debug.Log("Hit non-item object: " + currentCollider.gameObject.name);
