@@ -102,7 +102,6 @@ public class CogController : MonoBehaviour
     {
         if (!isInitialized) return;
 
-        // release current position if any
         if (currentAxlePosition != Vector3.zero && AxleManager.Instance != null)
         {
             AxleManager.Instance.ReleasePosition(currentAxlePosition);
@@ -110,6 +109,7 @@ public class CogController : MonoBehaviour
         }
 
         isDragging = true;
+        SetCollidersEnabled(false);
 
         // scale up to hover size (sizes found in CogInitializer)
         transform.localScale = onBoardScale;
@@ -135,6 +135,7 @@ public class CogController : MonoBehaviour
             if (AxleManager.Instance == null)
             {
                 Debug.LogError("AxleManager is not initialized. Cog cannot snap.");
+                SetCollidersEnabled(true);
                 SnapBackToTray();
                 return;
             }
@@ -147,27 +148,40 @@ public class CogController : MonoBehaviour
                 Vector3 snapWorldPosition = AxleManager.Instance.transform.TransformPoint(snapPosition);
                 transform.position = snapWorldPosition;
 
+                SetCollidersEnabled(true);
+
+                Physics2D.SyncTransforms();
+                bool isValidPlacement = true;
+
                 // hard fail: cog teeth overlap with the inner radius of another cog
                 if (CheckForInvalidOverlap())
                 {
                     Debug.Log("Invalid placement; inner circumference overlaps another cog's teeth. Returning to tray.");
-                    SnapBackToTray();
-                    return;
+                    isValidPlacement = false;
                 }
 
-                // soft fail: cog teeth do not overlap with another cog's teeth (for checking for rotation)
-                if (!CheckForValidMeshing())
+                if (isValidPlacement)
                 {
-                    Debug.Log("Cog placed but unmeshed with adjacent cog.");
-                }
+                    // soft fail: cog teeth do not overlap with another cog's teeth (for checking for rotation)
+                    if (!CheckForValidMeshing())
+                    {
+                        // no rotation
+                        Debug.Log("Cog placed but unmeshed with adjacent cog.");
+                    }
 
-                // successful snap
-                currentAxlePosition = snapPosition;
-                AxleManager.Instance.OccupyPosition(currentAxlePosition, this);
+                    // successful snap
+                    currentAxlePosition = snapPosition;
+                    AxleManager.Instance.OccupyPosition(currentAxlePosition, this);
+                }
+                else
+                {
+                    SnapBackToTray();
+                }
             }
             else
             {
                 // snap failed
+                SetCollidersEnabled(true);
                 Debug.Log("Snap failed; returning cog to tray position.");
                 SnapBackToTray();
             }
@@ -179,8 +193,14 @@ public class CogController : MonoBehaviour
         transform.localScale = trayScale;
         transform.position = initialTrayPosition;
         currentAxlePosition = Vector3.zero;
+        // 0 rotation
     }
 
+    private void SetCollidersEnabled(bool enabled)
+    {
+        if (innerCollider != null) innerCollider.enabled = enabled;
+        if (outerCollider != null) outerCollider.enabled = enabled;
+    }
 
     public bool CheckForInvalidOverlap()
     {
@@ -193,9 +213,11 @@ public class CogController : MonoBehaviour
         {
             foreach (Collider2D otherCollider in overlapResults)
             {
+                // ignore self-collision
                 if (otherCollider == innerCollider || otherCollider == outerCollider) continue;
                 CogController otherCog = otherCollider.GetComponent<CogController>();
 
+                // invalid overlap is inner of this cog touching outer (teeth) of another cog
                 if (otherCog != null && otherCollider == otherCog.outerCollider)
                 {
                     return true;
@@ -216,20 +238,18 @@ public class CogController : MonoBehaviour
         {
             foreach (Collider2D otherCollider in overlapResults)
             {
+                // ignore self-collision
                 if (otherCollider == innerCollider || otherCollider == outerCollider) continue;
 
                 CogController otherCog = otherCollider.GetComponent<CogController>();
 
-                if (otherCog != null)
+                // valid meshing is outer (teeth) of this cog touching outer (teeth) of another cog
+                if (otherCog != null && otherCollider == otherCog.outerCollider)
                 {
-                    if (otherCollider == otherCog.outerCollider)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
-
         return false;
     }
 
@@ -237,7 +257,7 @@ public class CogController : MonoBehaviour
     {
         if (name.StartsWith("cog_small_fixed_start"))
         {
-            transform.Rotate(0, 0, -60 * Time.deltaTime);
+            //transform.Rotate(0, 0, -60 * Time.deltaTime);
         }
     }
 }

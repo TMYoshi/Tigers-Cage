@@ -10,7 +10,7 @@ public class AxleManager : MonoBehaviour
     public static AxleManager Instance { get; private set; }
 
     // max distance a cog can be from an axle to snap onto
-    public float snapRange = 0.5f;
+    public float snapRange = 1.0f;
 
     // axle coordinates 
     private List<Vector3> validAxlePositions = new List<Vector3>();

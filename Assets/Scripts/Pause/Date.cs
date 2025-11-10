@@ -29,9 +29,10 @@ public class Date : MonoBehaviour
         }
     }
 
+    // commented this out for now since warning flooding
     private void UpdateTime()
     {
-        largeText.text = System.DateTime.Now.ToString("2010 dd, yyyy hh:mm tt");
+        // largeText.text = System.DateTime.Now.ToString("2010 dd, yyyy hh:mm tt");
     }
 
 }
