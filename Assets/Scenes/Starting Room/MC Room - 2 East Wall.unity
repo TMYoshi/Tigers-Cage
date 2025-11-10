@@ -928,6 +928,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 486997373}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: documentButtons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[0]'
       value: 
       objectReference: {fileID: 486997368}
