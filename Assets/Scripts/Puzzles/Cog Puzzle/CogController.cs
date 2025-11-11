@@ -149,11 +149,11 @@ public class CogController : MonoBehaviour
                 transform.position = snapWorldPosition;
 
                 SetCollidersEnabled(true);
-
                 Physics2D.SyncTransforms();
+
                 bool isValidPlacement = true;
 
-                // hard fail: cog teeth overlap with the inner radius of another cog
+                // hard fail
                 if (CheckForInvalidOverlap())
                 {
                     Debug.Log("Invalid placement; inner circumference overlaps another cog's teeth. Returning to tray.");
@@ -162,12 +162,17 @@ public class CogController : MonoBehaviour
 
                 if (isValidPlacement)
                 {
-                    // soft fail: cog teeth do not overlap with another cog's teeth (for checking for rotation)
+                    // soft fail
                     if (!CheckForValidMeshing())
                     {
-                        // no rotation
                         Debug.Log("Cog placed but unmeshed with adjacent cog.");
                     }
+
+                    // get the rotation offset for this specific cog size at this axle position
+                    float rotationOffset = AxleManager.Instance.GetAxleRotationOffset(snapPosition, size);
+                    transform.rotation = Quaternion.Euler(0, 0, rotationOffset);
+
+                    Debug.Log($"{gameObject.name} ({size}) placed at axle with {rotationOffset}° rotation offset");
 
                     // successful snap
                     currentAxlePosition = snapPosition;
@@ -194,6 +199,7 @@ public class CogController : MonoBehaviour
         transform.position = initialTrayPosition;
         currentAxlePosition = Vector3.zero;
         // 0 rotation
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void SetCollidersEnabled(bool enabled)
@@ -257,7 +263,7 @@ public class CogController : MonoBehaviour
     {
         if (name.StartsWith("cog_small_fixed_start"))
         {
-            //transform.Rotate(0, 0, -60 * Time.deltaTime);
+            transform.Rotate(0, 0, -60 * Time.deltaTime);
         }
     }
 }

@@ -19,6 +19,17 @@ public class AxleManager : MonoBehaviour
     // position -> CogController occupying it
     private Dictionary<Vector3, CogController> occupiedPositions = new Dictionary<Vector3, CogController>();
 
+    private Dictionary<Vector3, Dictionary<CogController.CogSize, float>> axleRotationOffsets = 
+        new Dictionary<Vector3, Dictionary<CogController.CogSize, float>>();
+
+    private readonly Dictionary<CogController.CogSize, float> sizeRotationOffsets =
+        new Dictionary<CogController.CogSize, float>()
+    {
+            {CogController.CogSize.Small, 30f },
+            {CogController.CogSize.Medium, 15f },
+            {CogController.CogSize.Large, 7.5f }
+    };
+
     private void Awake()
     {
         if (Instance == null)
@@ -35,6 +46,7 @@ public class AxleManager : MonoBehaviour
 
     private void ScanForAxlePositions()
     {
+        axleRotationOffsets.Clear();
         validAxlePositions.Clear();
         recursiveFindAxles(transform);
         Debug.Log($"AxleManager found {validAxlePositions.Count} active, valid snap positions.");
@@ -46,7 +58,10 @@ public class AxleManager : MonoBehaviour
 
         foreach(Transform child in parent)
         {
-            if(child.name.StartsWith("Axle") && child.name != "Axles")
+            bool isAxle = (child.name.StartsWith("Axle") && child.name != "Axles") ||
+                         child.name.StartsWith("fixed_");
+
+            if (isAxle)
             {
                 if (child.gameObject.activeInHierarchy)
                 {
@@ -54,10 +69,32 @@ public class AxleManager : MonoBehaviour
                     Vector3 axleLocalPosition = axlesParentTransform.InverseTransformPoint(worldPosition);
 
                     validAxlePositions.Add(axleLocalPosition);
+                    CalculateRotationOffsetsForAxle(axleLocalPosition);
                 }
             }
 
             recursiveFindAxles(child);
+        }
+    }
+
+    private void CalculateRotationOffsetsForAxle(Vector3 axlePosition)
+    {
+        axleRotationOffsets[axlePosition] = new Dictionary<CogController.CogSize, float>();
+        float verticalSpacing = 1.732f; // sqrt 3 
+        float horizontalSpacing = 2.0f;
+
+        int col = Mathf.RoundToInt(axlePosition.x / horizontalSpacing);
+        int row = Mathf.RoundToInt(axlePosition.y / verticalSpacing);
+        
+        bool shouldOffset = (col + row) % 2 != 0;
+
+        foreach (var sizeOffset in sizeRotationOffsets)
+        {
+            CogController.CogSize cogSize = sizeOffset.Key;
+            float rotationAmount = sizeOffset.Value;
+
+            float finalRotation = shouldOffset ? rotationAmount : 0f;
+            axleRotationOffsets[axlePosition][cogSize] = finalRotation;
         }
     }
 
@@ -91,4 +128,15 @@ public class AxleManager : MonoBehaviour
     {
         occupiedPositions.Remove(position);
     }
+
+    public float GetAxleRotationOffset(Vector3 axlePosition, CogController.CogSize cogSize)
+    {
+        if(axleRotationOffsets.ContainsKey(axlePosition) &&
+            axleRotationOffsets[axlePosition].ContainsKey(cogSize))
+        {
+            return axleRotationOffsets[(axlePosition)][cogSize];
+        }
+        Debug.LogWarning($"No rotation offset for axle at {axlePosition} with size {cogSize}");
+        return 0f;
+    } 
 }

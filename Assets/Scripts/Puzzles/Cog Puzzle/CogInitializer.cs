@@ -64,7 +64,6 @@ public class CogInitializer : MonoBehaviour
 
             cogTransform.localScale = Vector3.one * scale;
 
-            // Get the CogController and tell it its initial scale and position
             CogController cogController = cogTransform.GetComponent<CogController>();
             if (cogController != null)
             {
