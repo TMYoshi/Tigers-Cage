@@ -75,4 +75,6 @@ public class CogInitializer : MonoBehaviour
             Debug.LogError($"Cog not found at path: {path}.");
         }
     }
+
+    
 }

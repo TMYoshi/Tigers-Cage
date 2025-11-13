@@ -49,7 +49,7 @@ public class AxleManager : MonoBehaviour
         axleRotationOffsets.Clear();
         validAxlePositions.Clear();
         recursiveFindAxles(transform);
-        Debug.Log($"AxleManager found {validAxlePositions.Count} active, valid snap positions.");
+        //Debug.Log($"AxleManager found {validAxlePositions.Count} active, valid snap positions.");
     }
 
     private void recursiveFindAxles(Transform parent)

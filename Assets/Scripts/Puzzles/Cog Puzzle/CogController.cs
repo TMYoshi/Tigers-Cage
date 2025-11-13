@@ -25,7 +25,7 @@ public class CogController : MonoBehaviour
 
     private bool isDragging = false;
     private bool isInitialized = false;
-    //private bool canStartDrag = false;
+    // private bool canStartDrag = false;
 
     // initialized via CogInitializer
     public void SetInitialProperties(Vector3 scale, Vector3 position)
@@ -104,6 +104,11 @@ public class CogController : MonoBehaviour
 
         if (currentAxlePosition != Vector3.zero && AxleManager.Instance != null)
         {
+            if (PuzzlePathChecker.Instance != null)
+            {
+                PuzzlePathChecker.Instance.OnCogRemoved(this);
+            }
+
             AxleManager.Instance.ReleasePosition(currentAxlePosition);
             currentAxlePosition = Vector3.zero;
         }
@@ -172,11 +177,16 @@ public class CogController : MonoBehaviour
                     float rotationOffset = AxleManager.Instance.GetAxleRotationOffset(snapPosition, size);
                     transform.rotation = Quaternion.Euler(0, 0, rotationOffset);
 
-                    Debug.Log($"{gameObject.name} ({size}) placed at axle with {rotationOffset}° rotation offset");
+                    //Debug.Log($"{gameObject.name} ({size}) placed at axle with {rotationOffset}° rotation offset");
 
                     // successful snap
                     currentAxlePosition = snapPosition;
                     AxleManager.Instance.OccupyPosition(currentAxlePosition, this);
+
+                    if (PuzzlePathChecker.Instance != null)
+                    {
+                        PuzzlePathChecker.Instance.OnCogPlaced(this);
+                    }
                 }
                 else
                 {
@@ -187,7 +197,7 @@ public class CogController : MonoBehaviour
             {
                 // snap failed
                 SetCollidersEnabled(true);
-                Debug.Log("Snap failed; returning cog to tray position.");
+                //Debug.Log("Snap failed; returning cog to tray position.");
                 SnapBackToTray();
             }
         }
@@ -195,6 +205,11 @@ public class CogController : MonoBehaviour
 
     private void SnapBackToTray()
     {
+        if(PuzzlePathChecker.Instance != null && currentAxlePosition != Vector3.zero)
+        {
+            PuzzlePathChecker.Instance.OnCogRemoved(this);
+        }
+
         transform.localScale = trayScale;
         transform.position = initialTrayPosition;
         currentAxlePosition = Vector3.zero;
@@ -263,7 +278,7 @@ public class CogController : MonoBehaviour
     {
         if (name.StartsWith("cog_small_fixed_start"))
         {
-            transform.Rotate(0, 0, -60 * Time.deltaTime);
+            //transform.Rotate(0, 0, -60 * Time.deltaTime);
         }
     }
 }

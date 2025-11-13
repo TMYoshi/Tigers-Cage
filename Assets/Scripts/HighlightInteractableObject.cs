@@ -73,7 +73,7 @@ public class HighlightInteractableOutline : MonoBehaviour
             outlineSR.sortingOrder = spriteRenderer.sortingOrder - 1;
         }
 
-        Debug.Log($"Created outline effect with {outlineResolution} sprites.");
+        //Debug.Log($"Created outline effect with {outlineResolution} sprites.");
     }
 
     public void Enter()
