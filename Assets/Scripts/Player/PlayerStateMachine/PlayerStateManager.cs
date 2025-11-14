@@ -54,7 +54,15 @@ public class PlayerStateManager : MonoBehaviour
 
     public void UpdatePlayerCharacterReference()
     {
-        _MovementController = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
+        try
+        {
+            if(_MovementController != null) return;
+            _MovementController = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
+        }
+        catch
+        {
+            Debug.Log("<color=green> Clickable Scene Enter (no movement controller)</color>");
+        }
     }
 
     void Update()
