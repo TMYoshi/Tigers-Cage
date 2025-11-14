@@ -72,33 +72,24 @@ public class PlayerIdleState : PlayerBaseState
                 switch (currentCollider.gameObject.tag)
                 {
                     case "Item":
-                    try
-                    {
-                        _context._MovementController.MoveTo
-                        (
-                            currentCollider.transform,
-                            () => _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem)
-                        );
-                    }
-                    catch
-                    {
-                        _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem);
-                    }
-                    
+                        if(_context._MovementController != null)
+                            _context._MovementController.MoveTo
+                            (
+                                currentCollider.transform,
+                                () => _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem)
+                            );
+                        else
+                            _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem);
                         break;
                     case "SpecialItem":
-                    try
-                    {
-                        _context._MovementController.MoveTo
-                        (
-                            currentCollider.transform,
-                            () => _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem)
-                        );
-                    }
-                    catch
-                    {
-                        _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
-                    }
+                        if(_context._MovementController != null)
+                            _context._MovementController.MoveTo
+                            (
+                                currentCollider.transform,
+                                () => _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem)
+                            );
+                        else   
+                            _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
                     
                         break;
                     case "Transitions":
