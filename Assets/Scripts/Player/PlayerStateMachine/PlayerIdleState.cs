@@ -67,6 +67,8 @@ public class PlayerIdleState : PlayerBaseState
                 _context._ItemManager.UpdateSelectedItem(_inventoryItem);
                 if (outlineScript != null) outlineScript.Exit();
 
+                _context.UpdatePlayerCharacterReference();
+
                 switch (currentCollider.gameObject.tag)
                 {
                     case "Item":

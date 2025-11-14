@@ -42,14 +42,19 @@ public class PlayerStateManager : MonoBehaviour
         _State[State.SpecialItem] = new PlayerSpecialItemState(this);
         _State[State.Idle] = new PlayerIdleState(this);
 
-        _MovementController = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
-
+        UpdatePlayerCharacterReference();
+        
         UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
     }
     public void UpdateCurrentState(State state)
     {
         _currentState = _State[state];
         _currentState.EnterState();
+    }
+
+    public void UpdatePlayerCharacterReference()
+    {
+        _MovementController = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
     }
 
     void Update()
