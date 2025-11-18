@@ -92,9 +92,9 @@ public class Slider_Manager : MonoBehaviour
             }
         }
 
-        pieces_[empty_location_].gameObject.SetActive(true);
+        StartCoroutine(WaitToReveal());
         Debug.Log("Puzzle completed!");
-        
+
         return true;
     }
     #endregion
@@ -175,8 +175,8 @@ public class Slider_Manager : MonoBehaviour
                         else if (SwapIfValid(tile, 1, size_ - 1)) { break; }
                     }
                 }
-                
-                 // Check for completion, if completed shuffle again
+
+                // Check for completion, if completed shuffle again
                 if (!shuffling_ && CheckCompletion())
                 {
                     shuffling_ = true;
@@ -184,6 +184,15 @@ public class Slider_Manager : MonoBehaviour
             }
         }
 
+    }
+    #endregion
+
+    #region WaitToReveal
+    private IEnumerator WaitToReveal()
+    {
+        Debug.Log("Show puzzle!");
+        pieces_[empty_location_].gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
     }
     #endregion
 }
