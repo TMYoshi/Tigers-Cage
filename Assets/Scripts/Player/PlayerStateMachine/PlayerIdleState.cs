@@ -94,7 +94,17 @@ public class PlayerIdleState : PlayerBaseState
                         break;
                     case "Transitions":
                         ArrowController arrowController = currentCollider.gameObject.GetComponent<ArrowController>();
-                        arrowController.OnPressed();
+
+                        if(_context._MovementController != null)
+                            _context._MovementController.MoveTo
+                            (
+                                currentCollider.transform,
+                                () => arrowController.OnPressed()
+                            );
+                        else   
+                            arrowController.OnPressed();
+
+                        
                         break;
                     default:
                         Debug.Log("Hit non-item object: " + currentCollider.gameObject.name);
