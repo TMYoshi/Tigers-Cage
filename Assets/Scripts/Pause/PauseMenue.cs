@@ -109,7 +109,7 @@ public class PauseMenu : MonoBehaviour
 
 
     // Load main menu directly
-     SceneManager.LoadScene("Main Menu (Fish)");
+     SceneManager.LoadScene("Main Menu");
 }
 
 
