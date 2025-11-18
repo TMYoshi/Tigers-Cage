@@ -1814,7 +1814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2556816444796563865, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2627926894736515702, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2478,7 +2478,7 @@ GameObject:
   - component: {fileID: 1448908655}
   m_Layer: 0
   m_Name: Card
-  m_TagString: Item
+  m_TagString: SpecialItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
