@@ -11,30 +11,28 @@ public class PlayerMouseUtils : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-        if (!Input.GetMouseButtonDown(0)) // Left mouse button
+        if (Input.GetMouseButtonDown(0)) // Left mouse button
         {
-            if (hit.collider != null)
-            {
-                HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
-                if (outlineScript == newOutline) return null;
-                if (outlineScript != null) outlineScript.Exit();
+            return hit.collider;
+        }
 
-                outlineScript = newOutline;
+        if (hit.collider != null)
+        {
+            HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
+            if (outlineScript == newOutline) return null;
+            if (outlineScript != null) outlineScript.Exit();
 
-                if (outlineScript != null) outlineScript.Enter();
-            }
-            else
-            {
-                // Not hovering anything, exit previous outline
-                if (outlineScript == null) return null;
+            outlineScript = newOutline;
 
-                outlineScript.Exit();
-                outlineScript = null;
-            }
+            if (outlineScript != null) outlineScript.Enter();
         }
         else
         {
-            return hit.collider;
+            // Not hovering anything, exit previous outline
+            if (outlineScript == null) return null;
+
+            outlineScript.Exit();
+            outlineScript = null;
         }
 
         return null;

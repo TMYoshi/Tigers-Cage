@@ -98,7 +98,6 @@ public class PlayerIdleState : PlayerBaseState
             }
         }
     }
-
 }
 
 

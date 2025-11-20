@@ -16,7 +16,6 @@ public class PlayerInvState : PlayerBaseState
         AlreadyClicked = false;
         InteractedItem = null;
     }
-    HighlightInteractableOutline outlineScript;
     RectTransform itemTransform;
     GameObject InteractedItem;
     bool AlreadyClicked;
@@ -32,45 +31,24 @@ public class PlayerInvState : PlayerBaseState
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
 
                 ItemSlot selectedItemSlot = getDraggedObject();
-                if (_renderer?.sprite == null) { ExitState(); return;}
-                if (selectedItemSlot?.itemSprite == null) { ExitState(); return;}
+                if (_renderer?.sprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
+                if (selectedItemSlot?.itemSprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
 
                 _renderer.sprite = selectedItemSlot.itemSprite;
                 _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
             }
-
             Vector2 mousePos = Input.mousePosition;
             itemTransform.position = mousePos;
 
-            //highlight stuff
+            //reminder to self to fix this we have MULTIPLE RAYCAST AAHHAHAHAH
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(mousePos), Vector2.zero);
-
-            if (hit.collider != null)
-            {
-                // If we're hovering a new object, exit the old one
-                HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
-                InteractedItem = hit.collider.gameObject;
-                if (outlineScript == newOutline) return;
-                if (outlineScript != null) outlineScript.Exit();
-
-                outlineScript = newOutline;
-
-                if (outlineScript != null) outlineScript.Enter();
-            }
-            else
-            {
-                // Not hovering anything, exit previous outline
-                if (outlineScript == null) return;
-
-                outlineScript.Exit();
-                outlineScript = null;
-                InteractedItem = null;
-            }
+            InteractedItem = hit.collider?.gameObject;
         }
         else
         {
             DetectWhenExit();
         }
+        _context._MouseUtils.HighlightOnHover();
     }
 
     ItemSlot getDraggedObject()
@@ -97,9 +75,6 @@ public class PlayerInvState : PlayerBaseState
 
     public void DetectWhenExit()
     {
-        if (outlineScript != null) outlineScript.Exit();
-        //if possibel i wish to move this script to make it so I don't have to call it every frame, 
-        // if possible
         InventoryItem detectedInvItem = InteractedItem?.GetComponent<InventoryItem>();
         if (detectedInvItem == null) ExitState();
         UIMouseDetection();
