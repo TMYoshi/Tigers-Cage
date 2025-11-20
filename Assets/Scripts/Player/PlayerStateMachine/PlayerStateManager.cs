@@ -1,13 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent(typeof(ItemManager))]
 public class PlayerStateManager : MonoBehaviour
 {
     public static PlayerStateManager Instance;
     /*
         PLAYER CONTEXT
     */
+    [Header("Should be assigned")]
     public InventoryManager _InventoryManager ;
     public ItemManager _ItemManager;
+    public PlayerMouseUtils _MouseUtils;
+    [Header("null if no movementController")]
     public PlayerController _MovementController;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now
 
