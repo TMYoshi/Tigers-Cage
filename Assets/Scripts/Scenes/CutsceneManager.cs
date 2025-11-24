@@ -53,6 +53,9 @@ public class CutsceneManager : MonoBehaviour
             FadeController.Instance.onFadeInComplete -= StartCutscene;
         }
 
+        if (this == null)
+            return;
+
         StartCoroutine(PlayCutsceneSequence());
     }
 
