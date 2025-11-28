@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6432096949326450438}
   - component: {fileID: 1310034358719874774}
   m_Layer: 0
-  m_Name: PlayerCharacter
+  m_Name: -PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 227207303843707749}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.0304, y: -1.53, z: 0}
+  m_LocalPosition: {x: 11, y: -2, z: 0}
   m_LocalScale: {x: 1.5992, y: 3.7631898, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -116,6 +116,15 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 0.6626051
+      value: 0.44935837
+      inSlope: 0.49927878
+      outSlope: 0.49927878
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.99560404
       value: 0.4642887

@@ -6,6 +6,19 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] AnimationCurve animation_curve;
+    public void GetOffscreenAndGoToMiddle(bool left)
+    {
+        //swaps x position util tool for getting the player offscreen
+        transform.position = new Vector3((left ? -1 : 1) * 11, transform.position.y, transform.position.z);
+
+        //goto middle
+        GameObject _StartmoveObject = GameObject.Find("-MidpointPos");
+
+        if(_StartmoveObject != null)
+            MoveTo(_StartmoveObject.transform);
+        else
+            Debug.LogWarning("No -midposition for start to go towards");
+    }
     public void MoveTo(Transform _moveTo, Action _onComplete = null)
     {
         StopAllCoroutines();
@@ -37,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
 
-        _onComplete.Invoke();
+        if(_onComplete != null)
+            _onComplete.Invoke();
     }
 }

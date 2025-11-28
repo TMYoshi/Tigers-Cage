@@ -443,8 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inspectorInventory: {fileID: 914735382601121620}
-  StaticItemCombo:
-  - {fileID: 0}
+  StaticItemCombo: []
 --- !u!1 &2177789577538051578
 GameObject:
   m_ObjectHideFlags: 0

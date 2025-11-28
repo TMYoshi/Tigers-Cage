@@ -61,7 +61,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         
         if(_MovementController != null) return;
-        GameObject _MovementObject = GameObject.Find("PlayerCharacter");
+        GameObject _MovementObject = GameObject.Find("-PlayerCharacter");
 
         if(_MovementObject == null)
         {
