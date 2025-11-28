@@ -15,10 +15,12 @@ public class ArrowController : MonoBehaviour
         // right = 90' clockwise (CW), left = 90' CCW 
         if (gameObject.name.Contains("Right"))
         {
+            SceneController.scene_controller_instance.SetLastArrow("Right");
             nextScene = GetNextScene(currentScene, "Clockwise");
         }
         else if (gameObject.name.Contains("Left"))
         {
+            SceneController.scene_controller_instance.SetLastArrow("Left");
             nextScene = GetNextScene(currentScene, "Counterclockwise");
         }
         else

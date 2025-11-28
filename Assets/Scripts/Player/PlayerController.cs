@@ -19,6 +19,16 @@ public class PlayerController : MonoBehaviour
         else
             Debug.LogWarning("No -midposition for start to go towards");
     }
+    void Start()
+    {
+        if(SceneController.scene_controller_instance == null)
+        {
+            Debug.LogWarning("No Scene Controller D:");
+            GetOffscreenAndGoToMiddle(false);
+        }
+        else
+            GetOffscreenAndGoToMiddle(SceneController.scene_controller_instance.lastArrowClicked == "Right" ? true : false);
+    }
     public void MoveTo(Transform _moveTo, Action _onComplete = null)
     {
         StopAllCoroutines();

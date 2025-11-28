@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController scene_controller_instance;
-
+    public string lastArrowClicked {get; private set;} = "Right";
     [SerializeField] private string cutsceneScene = "Intro_Cutscene";
     [SerializeField] private string sceneAfterCutscene;
+    //sets the last direction
+    public void SetLastArrow(string arrowName)
+    {
+        lastArrowClicked = arrowName;
+    }
 
     private void Awake()
     {
