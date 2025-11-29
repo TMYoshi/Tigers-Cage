@@ -27,9 +27,9 @@ public class Dialog : MonoBehaviour
         }
 
         // Check if initiated current dialog
-        if (DialogManager.Instance.text_component_.text ==
-            DialogManager.Instance.text_name_ + '\n' +
-            DialogManager.Instance.GetCurrentDialogSO().lines_[DialogManager.Instance.GetIndex()].text_)
+        int totalVisible = DialogManager.Instance.text_component_.textInfo.characterCount;
+
+        if (DialogManager.Instance.text_component_.maxVisibleCharacters >= totalVisible)
         {
             Debug.Log("Advancing");
             return DialogManager.Instance.AdvanceDialog();

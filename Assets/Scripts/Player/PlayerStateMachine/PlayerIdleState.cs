@@ -154,6 +154,9 @@ public class PlayerIdleState : PlayerBaseState
     }
     public void UIMouseDetection()
     {
+        if (EventSystem.current == null)
+            return;
+
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
             position = Input.mousePosition
@@ -164,6 +167,10 @@ public class PlayerIdleState : PlayerBaseState
 
         foreach (RaycastResult result in results)
         {
+            if (result.gameObject == null)
+            {
+                continue;
+            }
             switch (result.gameObject.tag)
             {
                 case "InvItem":

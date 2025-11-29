@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance;
@@ -50,11 +51,18 @@ public class DialogManager : MonoBehaviour
         sprite_ = line.speaker_.sprite_;
         text_name_ = line.speaker_.actor_name_;
 
-        text_component_.text = text_name_ + '\n';
-        foreach (char letter in line.text_.ToCharArray())
+        // Set full text up front
+        string fullText = text_name_ + "\n" + line.text_;
+        text_component_.text = fullText;
+
+        // Start revealing *after* the name + newline
+        text_component_.maxVisibleCharacters = text_name_.Length + 1;
+
+        // Reveal remaining characters
+        for (int i = text_component_.maxVisibleCharacters; i <= fullText.Length; i++)
         {
-            text_component_.text += letter;
-            yield return new WaitForSeconds(text_speed_); // Returns next element in collection
+            text_component_.maxVisibleCharacters = i;
+            yield return new WaitForSeconds(text_speed_);
         }
     }
     #endregion
@@ -117,7 +125,7 @@ public class DialogManager : MonoBehaviour
     public void EndLine()
     {
         StopAllCoroutines();
-        text_component_.text = text_name_ + '\n' + current_dialog_.lines_[index_].text_;
+        text_component_.maxVisibleCharacters = text_component_.textInfo.characterCount;
     }
     #endregion
 
