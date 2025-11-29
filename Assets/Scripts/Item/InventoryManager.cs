@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
             {
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+                //add to save system
                 return;
             }
         }

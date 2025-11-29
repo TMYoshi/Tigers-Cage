@@ -52,6 +52,7 @@ public class _LockedChest : SpecialItems
         OpenChest.SetActive(true);
         gameObject.SetActive(false);
         Destroy(colliderToDestroy);
+        //save system
     }
 
     public override void CleanUpCondition()
