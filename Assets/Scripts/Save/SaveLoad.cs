@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class SaveLoad : MonoBehaviour
@@ -17,6 +19,9 @@ public class SaveLoad : MonoBehaviour
                 d.itemname = slot.itemName;
                 d.quantity = slot.quantity;
                 d.descritption = slot.itemDescription;
+
+                d.spriteName = slot.itemSprite != null ? slot.itemSprite.name : "";
+
                 data.inventorySlots.Add(d);
 
             }
@@ -36,13 +41,24 @@ public class SaveLoad : MonoBehaviour
         //clear all curretn inventory slots before adding them
         foreach (var slot in inventoryManager.itemSlot)
         {
-            //clear evrytinhf
+            //clear evrytinhg
+            slot.RemoveItem();
+
         }
         //load  each saved slot back into the UI
         for (int i = 0; i < data.inventorySlots.Count; i++)
         {
             var s = data.inventorySlots[i];
             //inventoryManager.itemSlot[i].AddItem(d.itemname, s.quantity, d.descritption);
+
+            Sprite loadedSprite = null;
+
+            if (!string.IsNullOrEmpty(s.spriteName))
+            {
+                loadedSprite = Resources.Load<Sprite>(s.spriteName);
+            }
+
+            inventoryManager.itemSlot[i].AddItem(s.itemname, s.quantity,loadedSprite, s.description);
         }
     }
 }
