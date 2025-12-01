@@ -16,4 +16,6 @@ public class Player_Data
     }
     //elemetns of inventory from inventory system.
     public List<Inventorydata> inventorySlots = new List<Inventorydata>();
+
+    public string curretnScene;
 }

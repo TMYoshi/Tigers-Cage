@@ -9,6 +9,7 @@ public class SaveLoad : MonoBehaviour
     public void SaveGame()
     {
         Player_Data data = new Player_Data();
+        data.curretnScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
         foreach (var slot in inventoryManager.itemSlot)
         {
@@ -58,7 +59,12 @@ public class SaveLoad : MonoBehaviour
                 loadedSprite = Resources.Load<Sprite>(s.spriteName);
             }
 
-            inventoryManager.itemSlot[i].AddItem(s.itemname, s.quantity,loadedSprite, s.description);
+            //inventoryManager.itemSlot[i].AddItem(s.itemname, s.quantity,loadedSprite, s.description);
+        }
+
+        if (!string.IsNullOrEmpty(data.curretnScene))
+        {
+            FadeController.Instance.FadeAndLoad(data.curretnScene);
         }
     }
 }
