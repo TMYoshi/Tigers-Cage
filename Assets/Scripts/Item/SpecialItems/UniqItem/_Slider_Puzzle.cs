@@ -38,6 +38,8 @@ public class _Slider_Puzzle : SpecialItems
         Debug.Log("test");
         actual_puzzle.SetActive(false);
         completed_card.SetActive(true);
+        //line of code to set the document page to be turn on
+        JournalDataManager.Instance.UnlockDocument(0); //add by Chris
         Destroy(_renderer);
         Destroy(_collider);
         // Add line of code to add new page for item documentation

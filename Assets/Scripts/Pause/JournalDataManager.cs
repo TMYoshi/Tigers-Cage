@@ -25,7 +25,7 @@ public class JournalDataManager : MonoBehaviour
     void Start()
     {
         LoadProgress();
-        UnlockDocument(0);
+        //UnlockDocument(0); test the jounral documents by uncomment
         
     }
 
