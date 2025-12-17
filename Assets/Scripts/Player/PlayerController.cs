@@ -21,6 +21,12 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        if(SceneController.scene_controller_instance.shouldMoveToMiddle == false)
+        {
+            transform.position = SceneController.scene_controller_instance.teleportPositionForGoingBack;
+            return;
+        }
+
         if(SceneController.scene_controller_instance == null)
         {
             Debug.LogWarning("No Scene Controller D:");

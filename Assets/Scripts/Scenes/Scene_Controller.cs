@@ -7,6 +7,8 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController scene_controller_instance;
     public string lastArrowClicked {get; private set;} = "Right";
+    public bool shouldMoveToMiddle {get; private set;} = true;
+    public Vector3 teleportPositionForGoingBack {get; private set;} = new Vector3(0, 0, 0);
     [SerializeField] private string cutsceneScene = "Intro_Cutscene";
     [SerializeField] private string sceneAfterCutscene;
     //sets the last direction
@@ -32,6 +34,13 @@ public class SceneController : MonoBehaviour
     public void Traverse_Scene(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    //this is for scenes where you go into like a thing that doesn't have a player so it knows where to spawn back
+    public void PlayerShouldReturnTo(Vector3 position)
+    {
+        shouldMoveToMiddle = false;
+        teleportPositionForGoingBack = position;
     }
 
     // call from main menu button, starts game with cutscene
