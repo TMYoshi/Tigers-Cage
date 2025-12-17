@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
         if(SceneController.scene_controller_instance.shouldMoveToMiddle == false)
         {
             transform.position = SceneController.scene_controller_instance.teleportPositionForGoingBack;
+            SceneController.scene_controller_instance.shouldMoveToMiddle = true;
             return;
         }
 

@@ -7,7 +7,7 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController scene_controller_instance;
     public string lastArrowClicked {get; private set;} = "Right";
-    public bool shouldMoveToMiddle {get; private set;} = true;
+    public bool shouldMoveToMiddle {get; set;} = true;
     public Vector3 teleportPositionForGoingBack {get; private set;} = new Vector3(0, 0, 0);
     [SerializeField] private string cutsceneScene = "Intro_Cutscene";
     [SerializeField] private string sceneAfterCutscene;
