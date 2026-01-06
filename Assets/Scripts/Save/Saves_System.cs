@@ -2,14 +2,19 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 
 public static class Saves_System
 {
-    public static void SavePlayer(Player_Data data)
+    public static void SavePlayer()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.Journal";
         FileStream stream = new FileStream(path, FileMode.Create);
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        Player_Data data = new Player_Data(currentSceneIndex);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -20,9 +25,12 @@ public static class Saves_System
     public static Player_Data LoadPlayer()
     {
         string path = Application.persistentDataPath + "/player.Journal";
-        
-        if (File.Exists(path))
+
+        if (!File.Exists(path))
         {
+            Debug.LogError("Save File Not found in" + path);
+            return null;
+        }
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
@@ -32,14 +40,6 @@ public static class Saves_System
             Debug.Log("game Loaded");
             return data;
         }
-        else
-        {
-            Debug.LogError("Save File Not found in" + path);
-            return null;
-        }
         
-    }
-    
-
 
 }

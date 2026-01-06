@@ -1,21 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[SerializeField]
+[System.Serializable]
 public class Player_Data
 //can add puzzle, scene/position.
 {
+    public int sceneIndex;
 
-    [SerializeField]
-    public class Inventorydata
+    public Player_Data(int currentSceneIndex)
     {
-        public string itemname;
-        public int quantity;
-        public string descritption;
-        public string spriteName;
+        sceneIndex = currentSceneIndex;
     }
-    //elemetns of inventory from inventory system.
-    public List<Inventorydata> inventorySlots = new List<Inventorydata>();
 
-    public string curretnScene;
 }
+
+

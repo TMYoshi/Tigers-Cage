@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Save/Load")]
+    public SaveLoad saveLoadManager;
+
     [Header("UI Refrences")]
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
@@ -15,7 +18,7 @@ public class PauseMenu : MonoBehaviour
     public TMP_Text titleText;
     public TMP_Text contentText;
     public Image documentImage;
-    
+
     public GameObject documentPage;
 
     [Header("TOC Buttons")]
@@ -96,21 +99,38 @@ public class PauseMenu : MonoBehaviour
         titleText.text = doc.documentTitle;
         contentText.text = doc.documentText;
         documentImage.sprite = doc.documentImage;
-         tableofContentes.SetActive(false);
-    documentPage.SetActive(true);
+        tableofContentes.SetActive(false);
+        documentPage.SetActive(true);
 
-    Debug.Log($"Opened document: {doc.documentTitle}");
+        Debug.Log($"Opened document: {doc.documentTitle}");
     }
 
-      public void QuitToMainMenu()
-{
-    // Make sure time is running again
-    Time.timeScale = 1f;
+    public void QuitToMainMenu()
+    {
+        // Make sure time is running again
+        Time.timeScale = 1f;
 
 
-    // Load main menu directly
-     SceneManager.LoadScene("Main Menu");
-}
+        // Load main menu directly
+        SceneManager.LoadScene("Main Menu");
+    }
+
+
+    public void SaveGame()
+    {
+        if (saveLoadManager != null)
+        {
+            saveLoadManager.SaveGame();
+            Debug.Log("Game saved via pause menue!");
+        }
+    }
+
+    public void LoadGame()
+    {
+        saveLoadManager.LoadGame();
+        Debug.Log("Game load");
+    }
+
 
 
 
