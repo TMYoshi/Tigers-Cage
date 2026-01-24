@@ -6,12 +6,14 @@ public class SFXManager : MonoBehaviour
     [SerializeField] private AudioSource sfx_obj_;
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
             return;
         }
-        Destroy(this);
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFXClip(AudioClip audio_clip, Transform spawn_transform, float volume)
