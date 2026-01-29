@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class FlashlightPickup : MonoBehaviour
 {
-    private void OnMouseDown()
-    {
-        PickupFlashlight();
-    }
-
-    private void PickupFlashlight()
+    public void PickupFlashlight()
     {
         FlashlightController flashlightController = FindFirstObjectByType<FlashlightController>();
 
