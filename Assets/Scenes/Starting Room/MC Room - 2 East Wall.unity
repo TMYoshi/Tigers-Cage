@@ -3400,8 +3400,8 @@ GameObject:
   - component: {fileID: 1571234729}
   - component: {fileID: 1571234728}
   - component: {fileID: 1571234733}
-  - component: {fileID: 1571234732}
   - component: {fileID: 1571234731}
+  - component: {fileID: 1571234732}
   m_Layer: 0
   m_Name: Flashlight Pickup
   m_TagString: SpecialItem
@@ -3573,7 +3573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Flashlight_Unlock
   item: {fileID: 1571234732}
-  pickupScript: {fileID: 0}
+  pickupScript: {fileID: 1571234731}
 --- !u!1001 &1624406066
 PrefabInstance:
   m_ObjectHideFlags: 0
