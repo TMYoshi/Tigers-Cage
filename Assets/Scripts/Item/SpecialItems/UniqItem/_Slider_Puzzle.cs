@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
+//code feels a little sloppy feel free to fix it up D:
 public class _Slider_Puzzle : SpecialItems
 {
 	public GameObject exitButton;
@@ -37,11 +38,24 @@ public class _Slider_Puzzle : SpecialItems
         StartCoroutine(WaitUntilCheck());
     }
 
+	float currentTime = 0;
+	float lastPuzzlePieceShowSeconds = 3f;
+
     public override bool CompleteCondition()
     {
         slider_Manager.Puzzle();
         if (!AllowForCompletion) return false;
-        return slider_Manager.CheckCompletion();
+        if (!slider_Manager.CheckCompletion()) return false;
+		exitButton.SetActive(false);
+
+		currentTime += Time.deltaTime;
+
+		if(currentTime > lastPuzzlePieceShowSeconds)
+		{
+			return true;
+		}
+
+		return false;
     }
     IEnumerator WaitUntilCheck()
     {

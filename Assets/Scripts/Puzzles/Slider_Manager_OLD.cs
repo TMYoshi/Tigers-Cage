@@ -7,6 +7,8 @@ public class Slider_Manager : MonoBehaviour
     [SerializeField] private Transform game_transform_;
     [SerializeField] private Transform piece_prefab_; // Set it to a small square (100 x 100?)
 
+	public GameObject missingTile;
+
     private List<Transform> pieces_;
     private int size_;
     private int empty_location_;
@@ -37,24 +39,23 @@ public class Slider_Manager : MonoBehaviour
                 if ((row == size_ - 1) && (column == size_ - 1))
                 {
                     empty_location_ = (size_ * size_) - 1;
-                    piece.gameObject.SetActive(false);
+                    missingTile = piece.gameObject;
+					missingTile.SetActive(false);
                 }
-                else
-                {
-                    // Mapping UV coordinates
-                    float gap = gap_thickness / 2;
-                    Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
-                    Vector2[] uv = new Vector2[4];
 
-                    // UV Coordinate order: (0,1), (1,1), (0,0), (1,0)
-                    uv[0] = new Vector2((width * column) + gap, 1 - ((width * (row + 1)) - gap));
-                    uv[1] = new Vector2((width * (column + 1)) - gap, 1 - ((width * (row + 1)) - gap));
-                    uv[2] = new Vector2((width * column) + gap, 1 - ((width * row) - gap));
-                    uv[3] = new Vector2((width * (column + 1)) - gap, 1 - ((width * row) - gap));
+				// Mapping UV coordinates
+				float gap = gap_thickness / 2;
+				Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
+				Vector2[] uv = new Vector2[4];
 
-                    // Assign UV cords to the mesh.
-                    mesh.uv = uv;
-                }
+				// UV Coordinate order: (0,1), (1,1), (0,0), (1,0)
+				uv[0] = new Vector2((width * column) + gap, 1 - ((width * (row + 1)) - gap));
+				uv[1] = new Vector2((width * (column + 1)) - gap, 1 - ((width * (row + 1)) - gap));
+				uv[2] = new Vector2((width * column) + gap, 1 - ((width * row) - gap));
+				uv[3] = new Vector2((width * (column + 1)) - gap, 1 - ((width * row) - gap));
+
+				// Assign UV cords to the mesh.
+				mesh.uv = uv;
             }
         }
     }
