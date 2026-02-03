@@ -6,16 +6,37 @@ using System.Collections;
 
 public class _Slider_Puzzle : SpecialItems
 {
+	public GameObject exitButton;
+	public Button exitButtonComponent;
+
     public Slider_Manager slider_Manager;
     public GameObject completed_card, actual_puzzle;
     public SpriteRenderer _renderer;
     public BoxCollider2D _collider;
-    bool AllowForCompletion = false;
+
+    bool AllowForCompletion;
+	bool ExitPuzzle;
+
+	//if it already spawned the cards, no need to respawn the puzzle's entry conditions
+	bool AlreadyShuffled = false;
+
+	public void QueueToExitPuzzle()
+		=> ExitPuzzle = true;
+
     public override void EnterCondition()
     {
-        slider_Manager.EntryCondition();
+		exitButton.SetActive(true);
+		actual_puzzle.SetActive(true);
+
+		AllowForCompletion = false;
+		ExitPuzzle = false;
+
+        if(!AlreadyShuffled) slider_Manager.EntryCondition();
+		AlreadyShuffled = true;
+
         StartCoroutine(WaitUntilCheck());
     }
+
     public override bool CompleteCondition()
     {
         slider_Manager.Puzzle();
@@ -30,13 +51,11 @@ public class _Slider_Puzzle : SpecialItems
 
     public override bool ExitCondition()
     {
-        return false;
+		return ExitPuzzle;
     }
 
     public override void RewardCondition()
     {
-        Debug.Log("test");
-        actual_puzzle.SetActive(false);
         completed_card.SetActive(true);
         //line of code to set the document page to be turn on
         JournalDataManager.Instance.UnlockDocument(0); //add by Chris
@@ -47,6 +66,7 @@ public class _Slider_Puzzle : SpecialItems
 
     public override void CleanUpCondition()
     {
-        // Delete card
+		actual_puzzle.SetActive(false);
+		exitButton.SetActive(false);
     }
 }
