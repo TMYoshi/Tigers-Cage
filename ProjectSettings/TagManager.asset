@@ -54,5 +54,8 @@ TagManager:
   - name: HoverLayer
     uniqueID: 2244568317
     locked: 0
+  - name: Rim Light
+    uniqueID: 19350193
+    locked: 0
   m_RenderingLayers:
   - Default
