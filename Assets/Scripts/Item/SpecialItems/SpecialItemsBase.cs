@@ -4,6 +4,7 @@ public abstract class SpecialItems : MonoBehaviour
 {
     [Header("Inventory Item (MUST BE ASSIGNED)")]
     public InventoryItem item;
+
     public virtual void Start()
     {
         item.AssignSpecialEvents(this);
