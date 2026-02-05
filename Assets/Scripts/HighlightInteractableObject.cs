@@ -83,7 +83,7 @@ public class HighlightInteractableOutline : MonoBehaviour
         {
             outlineParent.SetActive(true);
         }
-        Debug.Log("Mouse entered " + gameObject.name);
+        //Debug.Log("Mouse entered " + gameObject.name);
     }
 
     public void Exit()

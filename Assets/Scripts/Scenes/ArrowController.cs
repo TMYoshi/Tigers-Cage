@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    [SerializeField] private string targetScene; // fallback for inspector
+    [SerializeField] private string targetScene; // fallback for inspector, will use this for sub scenes 
     #region OnPressed
     public void OnPressed()
     {
@@ -12,25 +12,27 @@ public class ArrowController : MonoBehaviour
         Debug.Log($"Current scene: {currentScene}");
         string nextScene = null;
 
-        // right = 90' clockwise (CW), left = 90' CCW 
-        if (gameObject.name.Contains("Right"))
+        if (!string.IsNullOrEmpty(targetScene))
         {
-            SceneController.scene_controller_instance.SetLastArrow("Right");
-            nextScene = GetNextScene(currentScene, "Clockwise");
-        }
-        else if (gameObject.name.Contains("Left"))
-        {
-            SceneController.scene_controller_instance.SetLastArrow("Left");
-            nextScene = GetNextScene(currentScene, "Counterclockwise");
+            nextScene = targetScene;
         }
         else
         {
-            nextScene = GetNextScene(currentScene);
+            // right = 90' clockwise (CW), left = 90' CCW 
+            if (gameObject.name.Contains("Right"))
+            {
+                SceneController.scene_controller_instance.SetLastArrow("Right");
+                nextScene = GetNextScene(currentScene, "Clockwise");
+            }
+            else if (gameObject.name.Contains("Left"))
+            {
+                SceneController.scene_controller_instance.SetLastArrow("Left");
+                nextScene = GetNextScene(currentScene, "Counterclockwise");
+            }
         }
-
         Debug.Log($"Next scene calculated: {nextScene}");
 
-        if (nextScene != null)
+        if (!string.IsNullOrEmpty(nextScene))
         {
             if (FadeController.Instance != null)
             {
