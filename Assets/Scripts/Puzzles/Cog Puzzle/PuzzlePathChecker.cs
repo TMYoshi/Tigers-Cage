@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PuzzlePathChecker : MonoBehaviour
 {
@@ -54,24 +54,82 @@ public class PuzzlePathChecker : MonoBehaviour
     {
         if (cog == null) return;
 
-        if (!connectionGraph.ContainsKey(cog))
-        {
-            connectionGraph[cog] = new HashSet<CogController>();
-        }
-        List<CogController> neighbors = GetMeshedNeighbors(cog);
+        RebuildConnectionGraph();
 
-        foreach(var neighbor in neighbors)
+        Debug.Log($"Graph updated with: {cog.name}");
+    }
+
+    private int GetToothCount(CogController.CogSize size)
+    {
+        switch (size)
         {
-            connectionGraph[cog].Add(neighbor);
-            if (!connectionGraph.ContainsKey(neighbor))
+            case CogController.CogSize.Small: return 6;
+            case CogController.CogSize.Medium: return 12;
+            case CogController.CogSize.Large: return 24;
+
+            default: return 12;
+        }
+    }
+
+    private float GetHalfPitch(CogController.CogSize size)
+    {
+        // rotate: gap, tooth, gap, etc
+        if (size == CogController.CogSize.Small) return 30f;
+        if (size == CogController.CogSize.Medium) return 15f;
+        if (size == CogController.CogSize.Large) return 7.5f;
+        return 0f;
+    }
+
+    private float CalculateMeshRotation(CogController parent, CogController child)
+    {
+        // angle from parent to child, where cogs touch
+        Vector3 direction = child.transform.position - parent.transform.position;
+        float angleToChild = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // cog ratios based on sizes/teeth
+        float parentTeeth = GetToothCount(parent.size);
+        float childTeeth = GetToothCount(child.size);
+        float ratio = parentTeeth / childTeeth;
+
+   
+        float parentRotationAtContact = Mathf.DeltaAngle(angleToChild, parent.currentRotation);
+        float childRotationAtContact = (parentRotationAtContact * -ratio) + 180f + GetHalfPitch(child.size);
+        return Mathf.Repeat(angleToChild + childRotationAtContact, 360f);
+    }
+
+    private void AlignAllCogs()
+    {
+        if (driverCog == null) return;
+
+        CogController[] allCogs = FindObjectsByType<CogController>(FindObjectsSortMode.None);
+        foreach (var c in allCogs)
+        {
+            c.isAligned = false;
+        }
+
+        Queue<CogController> queue = new Queue<CogController>();
+
+        driverCog.isAligned = true;
+        driverCog.transform.rotation = Quaternion.Euler(0, 0, driverCog.currentRotation);
+        queue.Enqueue(driverCog);
+
+        while (queue.Count > 0)
+        {
+            CogController parent = queue.Dequeue();
+
+            if (!connectionGraph.ContainsKey(parent)) continue;
+
+            foreach (CogController child in connectionGraph[parent])
             {
-                connectionGraph[neighbor] = new HashSet<CogController>();
-            }
-            connectionGraph[neighbor].Add(cog);
-        }
+                if (child.isAligned) continue;
 
-        Debug.Log($"Cog placed: {cog.name} with {neighbors.Count} connections.");
-        CheckPuzzleCompletion();
+                child.currentRotation = CalculateMeshRotation(parent, child);
+                child.transform.rotation = Quaternion.Euler(0, 0, child.currentRotation);
+
+                child.isAligned = true;
+                queue.Enqueue(child);
+            }
+        }
     }
 
     public void OnCogRemoved(CogController cog)
@@ -162,7 +220,8 @@ public class PuzzlePathChecker : MonoBehaviour
 
     private void OnPuzzleSolved()
     {
-        Debug.LogWarning($"\n\nPUZZLE SOLVED\n\n");
+        Debug.LogWarning($"PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED");
+        // fade to black, trigger cutscene
     }
 
     private void RebuildConnectionGraph()
@@ -188,5 +247,8 @@ public class PuzzlePathChecker : MonoBehaviour
             }
         }
         Debug.Log($"Connection graph rebuilt with {connectionGraph.Count} cogs.");
+
+        AlignAllCogs();
+        CheckPuzzleCompletion();
     }
 }

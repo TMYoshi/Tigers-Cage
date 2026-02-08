@@ -819,6 +819,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 0
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 84171897}
   outerCollider: {fileID: 84171899}
 --- !u!1 &92944784
@@ -1216,6 +1218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 0
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 102762351}
   outerCollider: {fileID: 102762353}
 --- !u!1 &143608726
@@ -1514,12 +1518,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: c2d5ed9d18797ef49a0399615866a3ef, type: 3}
+  m_Sprite: {fileID: -8882603033900237567, guid: c2d5ed9d18797ef49a0399615866a3ef, type: 3}
   m_Color: {r: 0.69803923, g: 0.69803923, b: 0.69803923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.81, y: 8.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1574,6 +1578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 2
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 165740607}
   outerCollider: {fileID: 165740609}
 --- !u!1 &180781313
@@ -2098,6 +2104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 0
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 238680199}
   outerCollider: {fileID: 238680201}
 --- !u!1 &264449503
@@ -2808,6 +2816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 1
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 383740624}
   outerCollider: {fileID: 383740623}
 --- !u!1 &388392757
@@ -3346,12 +3356,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: c2d5ed9d18797ef49a0399615866a3ef, type: 3}
+  m_Sprite: {fileID: -8882603033900237567, guid: c2d5ed9d18797ef49a0399615866a3ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.81, y: 8.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3406,6 +3416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 2
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 444379464}
   outerCollider: {fileID: 444379466}
 --- !u!1 &451273125
@@ -3914,7 +3926,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &532566036
@@ -4841,6 +4853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 1
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 601809327}
   outerCollider: {fileID: 601809329}
 --- !u!1 &636696349
@@ -5125,13 +5139,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665339906}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
   m_LocalPosition: {x: -6, y: 5.928, z: 0}
   m_LocalScale: {x: 1.289, y: 1.289, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 292250507}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
 --- !u!58 &665339908
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5275,6 +5289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 1
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 665339908}
   outerCollider: {fileID: 665339910}
 --- !u!1 &670519907
@@ -6272,6 +6288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 0
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 845007311}
   outerCollider: {fileID: 845007313}
 --- !u!1 &846248919
@@ -7712,6 +7730,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 0
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 1179863359}
   outerCollider: {fileID: 1179863361}
 --- !u!1 &1183160708
@@ -8615,6 +8635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 1
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 1360550660}
   outerCollider: {fileID: 1360550662}
 --- !u!1 &1367824434
@@ -9278,7 +9300,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &1449101172
@@ -12659,6 +12681,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CogController
   size: 0
+  currentRotation: 0
+  isAligned: 0
   innerCollider: {fileID: 2002127834}
   outerCollider: {fileID: 2002127836}
 --- !u!1 &2026754146
@@ -13096,7 +13120,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2078136694
