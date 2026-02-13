@@ -222,9 +222,8 @@ public class PuzzlePathChecker : MonoBehaviour
 
     private void OnPuzzleSolved()
     {
-        Debug.LogWarning($"PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED");
-        // fade to black, trigger cutscene
-        
+        Debug.LogWarning($"puzzle solved");
+        SceneController.scene_controller_instance.FadeAndLoadSceneWithCutscene("Music_Box_Cutscene", "MC Room 1 - North Wall");
     }
 
     private void RebuildConnectionGraph()

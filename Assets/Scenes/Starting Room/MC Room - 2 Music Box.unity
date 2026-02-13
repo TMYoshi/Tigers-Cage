@@ -7545,6 +7545,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 985431900979887700, guid: bccc4ee625311f24fa72de363b1ad663, type: 3}
+      propertyPath: cutsceneScene
+      value: cutscene_music_box
+      objectReference: {fileID: 0}
+    - target: {fileID: 985431900979887700, guid: bccc4ee625311f24fa72de363b1ad663, type: 3}
+      propertyPath: sceneAfterCutscene
+      value: MC Room - 1 North Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3960099142121719083, guid: bccc4ee625311f24fa72de363b1ad663, type: 3}
       propertyPath: m_Name
       value: Scene Controller
