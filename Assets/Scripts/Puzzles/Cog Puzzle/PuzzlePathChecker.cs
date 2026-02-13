@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PuzzlePathChecker : MonoBehaviour
 {
+    
+
     public static PuzzlePathChecker Instance { get; private set; }
 
     // must be assigned; can change for future puzzles
@@ -222,6 +224,7 @@ public class PuzzlePathChecker : MonoBehaviour
     {
         Debug.LogWarning($"PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED PUZZLE SOLVED");
         // fade to black, trigger cutscene
+        
     }
 
     private void RebuildConnectionGraph()
