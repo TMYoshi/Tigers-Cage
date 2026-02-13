@@ -8,11 +8,16 @@ public class _LockedChest : SpecialItems
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite openSprite;
     [SerializeField] GameObject CodeLock, OpenChest;
+	[SerializeField] GameObject ExitButtonCanvas;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
     uint[] correctCode = { 0, 8, 2, 8};
 
-    bool _CompleteCondition, _ExitCondition;
+	bool _ExitCondition;
+	public void SetExitCondition(bool _Condition) =>
+		_ExitCondition = _Condition;
+
+    bool _CompleteCondition;
     public void IncrementByOne(int _Location)
     {
         currentCode[_Location]++;
@@ -25,16 +30,13 @@ public class _LockedChest : SpecialItems
         {
             _CompleteCondition = true;
         }
-        else
-        {
-            _ExitCondition = true;
-        }
     }
     public override void EnterCondition()
     {
         CodeLock.SetActive(true);
         _CompleteCondition = false;
         _ExitCondition = false;
+		ExitButtonCanvas.SetActive(true);
     }
     public override bool CompleteCondition()
     {
@@ -58,5 +60,6 @@ public class _LockedChest : SpecialItems
     public override void CleanUpCondition()
     {
         CodeLock.SetActive(false);
+		ExitButtonCanvas.SetActive(false);
     }
 }

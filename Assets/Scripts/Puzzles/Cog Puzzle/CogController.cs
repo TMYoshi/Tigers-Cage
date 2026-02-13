@@ -9,6 +9,9 @@ public class CogController : MonoBehaviour
     public enum CogSize { Small, Medium, Large }
     public CogSize size;
 
+    public float currentRotation;
+    public bool isAligned; // relative to parent, starting from green driver cog
+
     public Collider2D innerCollider;
     public Collider2D outerCollider;
 
@@ -57,6 +60,8 @@ public class CogController : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.gravityScale = 0;
         }
+
+        currentRotation = transform.eulerAngles.z;
 
         if (!isInitialized)
         {
@@ -167,18 +172,6 @@ public class CogController : MonoBehaviour
 
                 if (isValidPlacement)
                 {
-                    // soft fail
-                    if (!CheckForValidMeshing())
-                    {
-                        Debug.Log("Cog placed but unmeshed with adjacent cog.");
-                    }
-
-                    // get the rotation offset for this specific cog size at this axle position
-                    float rotationOffset = AxleManager.Instance.GetAxleRotationOffset(snapPosition, size);
-                    transform.rotation = Quaternion.Euler(0, 0, rotationOffset);
-
-                    //Debug.Log($"{gameObject.name} ({size}) placed at axle with {rotationOffset}° rotation offset");
-
                     // successful snap
                     currentAxlePosition = snapPosition;
                     AxleManager.Instance.OccupyPosition(currentAxlePosition, this);
@@ -197,7 +190,6 @@ public class CogController : MonoBehaviour
             {
                 // snap failed
                 SetCollidersEnabled(true);
-                //Debug.Log("Snap failed; returning cog to tray position.");
                 SnapBackToTray();
             }
         }
