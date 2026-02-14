@@ -28,11 +28,11 @@ public class HeartbeatMinigame : MonoBehaviour
 	[Tooltip("do not set this to anything it's only for viewing purposes")]
 	[SerializeField] float safeZoneVelocity;
 	[SerializeField] float safeZoneAcceleration;
-	[SerializeField, Range(0f, 1f)] float DirectionalChangeProbability;
 
 	[Header("Heart")]
 	[SerializeField] float heartDropRate;
-	[SerializeField] float heartIncrease;
+	[Tooltip("probability of changing direction every second")]
+	[SerializeField, Range(0f, 1f)] float DirectionalChangeProbability;
 
 	[Header("Events")]
 	[SerializeField] UnityEvent LoseEvent;
@@ -61,14 +61,18 @@ public class HeartbeatMinigame : MonoBehaviour
 		this.gameObject.SetActive(false);
 	}
 
+	float AccDirection = 1f;
 	bool _startDanger = false;
 	
 	void Update()
 	{
 		if(!_startDanger) return;
 
-		if (Input.GetKeyDown(KeyCode.F))
-			heartSlider.value -= heartIncrease;
+		if (Input.GetKey(KeyCode.F))
+			AccDirection = -1f;
+		else
+			AccDirection = 1f;
+
 
 		if (AreTouching(safeZoneTransform, heartTransform))
 		{
@@ -118,38 +122,32 @@ public class HeartbeatMinigame : MonoBehaviour
 			_startDanger = true;
 		}
 
-		float direction = 1f;
-		float AccDirection = 1f;
 
 		while (_startDanger)
 		{
-			if (Random.value < DirectionalChangeProbability * durationOffset * 10)
-				AccDirection *= -1f;
-
-			if (safeSlider.value >= 0.99f)
-			{
-				AccDirection = -1f;
-				direction = -1f;
-			}
-			else if (safeSlider.value <= 0.01f)
-			{
-				AccDirection = 1f;
-				direction = 1f;
-			}
-			
 			safeZoneVelocity += safeZoneAcceleration * AccDirection;
-			safeSlider.value += safeZoneVelocity * direction;
-			safeSlider.value = Mathf.Clamp01(safeSlider.value);
+			safeSlider.value += safeZoneVelocity;
 
 			yield return new WaitForSeconds(durationOffset);
 		}
 	}
+	
+	float direction = 1f;
 
 	void FixedUpdate()
 	{
 		if (!_startDanger)
 			return;
-		heartSlider.value += heartDropRate * Time.fixedDeltaTime;
+
+		heartSlider.value += heartDropRate * direction * Time.fixedDeltaTime;
+
+		if (Random.value < DirectionalChangeProbability * Time.fixedDeltaTime)
+			direction *= -1f;
+
+		if (heartSlider.value >= 0.99f)
+			direction = -1f;
+		else if (heartSlider.value <= 0.01f)
+			direction = 1f;
 	}
 
 	public void Win()

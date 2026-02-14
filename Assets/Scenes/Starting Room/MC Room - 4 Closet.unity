@@ -2010,13 +2010,12 @@ MonoBehaviour:
   initSafe: 2
   safeTimerInit: 5
   loseMinigameTimer: 0
-  winMinigameTimer: 8
+  winMinigameTimer: 4
   safeZoneTimerCurrent: 5
   safeZoneVelocity: 0
-  safeZoneAcceleration: 0.03
-  DirectionalChangeProbability: 0.45
+  safeZoneAcceleration: 0.5
   heartDropRate: 0.7
-  heartIncrease: 0.2
+  DirectionalChangeProbability: 0.6
   LoseEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3031,7 +3030,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
