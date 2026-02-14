@@ -12,12 +12,11 @@ public class _LockedChest : SpecialItems
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
     uint[] correctCode = { 0, 8, 2, 8};
+    bool _CompleteCondition, _ExitCondition;
 
-	bool _ExitCondition;
 	public void SetExitCondition(bool _Condition) =>
 		_ExitCondition = _Condition;
 
-    bool _CompleteCondition;
     public void IncrementByOne(int _Location)
     {
         currentCode[_Location]++;
