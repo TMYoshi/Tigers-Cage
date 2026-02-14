@@ -16,6 +16,7 @@ public class SaveLoad : MonoBehaviour
         Player_Data data = Saves_System.LoadPlayer();
         if (data == null) return;
 
+        Saves_System.SetPendingLoad(data);
         SceneManager.LoadScene(data.sceneIndex);
     }
 }
