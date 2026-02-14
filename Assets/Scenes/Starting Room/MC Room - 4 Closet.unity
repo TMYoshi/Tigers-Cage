@@ -2008,10 +2008,10 @@ MonoBehaviour:
   heartTransform: {fileID: 303216853}
   safeZone: {fileID: 1391408706}
   initSafe: 2
-  safeTimerInit: 5
+  safeTimerInit: 1
   loseMinigameTimer: 0
   winMinigameTimer: 4
-  safeZoneTimerCurrent: 5
+  safeZoneTimerCurrent: 1
   safeZoneVelocity: 0
   safeZoneAcceleration: 0.5
   heartDropRate: 0.7
