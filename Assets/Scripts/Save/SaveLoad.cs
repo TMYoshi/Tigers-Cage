@@ -13,10 +13,14 @@ public class SaveLoad : MonoBehaviour
 
     public void LoadGame()
     {
+        //Must always unpuase before chaning scenes
+        Time.timeScale = 1f;
         Player_Data data = Saves_System.LoadPlayer();
         if (data == null) return;
 
         Saves_System.SetPendingLoad(data);
         SceneManager.LoadScene(data.sceneIndex);
+
+       
     }
 }

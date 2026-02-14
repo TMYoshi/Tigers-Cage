@@ -15,6 +15,10 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void UpdateState()
     {
+        if (PauseMenu.isPaused)
+            return;
+        
+        //if Mouse is over any UI, it will not click the world
         MouseDetection();
         UIMouseDetection();
     }
