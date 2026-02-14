@@ -41,8 +41,6 @@ public class HeartbeatMinigame : MonoBehaviour
 	void Start()
 	{
 		safeZoneVelocity = 0;
-		//tad bit dangerous code (startin to reach the int overflow)
-		safeZoneAcceleration *= durationOffset * 0.1f;
 		StartHeartBeatMinigame();
 	}
 
@@ -121,15 +119,6 @@ public class HeartbeatMinigame : MonoBehaviour
 			yield return new WaitForSeconds(safeTimerInit);
 			_startDanger = true;
 		}
-
-
-		while (_startDanger)
-		{
-			safeZoneVelocity += safeZoneAcceleration * AccDirection;
-			safeSlider.value += safeZoneVelocity;
-
-			yield return new WaitForSeconds(durationOffset);
-		}
 	}
 	
 	float direction = 1f;
@@ -148,6 +137,10 @@ public class HeartbeatMinigame : MonoBehaviour
 			direction = -1f;
 		else if (heartSlider.value <= 0.01f)
 			direction = 1f;
+
+		//slider
+		safeZoneVelocity += safeZoneAcceleration * AccDirection * Time.fixedDeltaTime;
+		safeSlider.value += safeZoneVelocity * Time.fixedDeltaTime;
 	}
 
 	public void Win()
