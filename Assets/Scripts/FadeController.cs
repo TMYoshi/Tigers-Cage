@@ -71,6 +71,14 @@ public class FadeController : MonoBehaviour
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
+        if (asyncLoad == null)
+        {
+            Debug.LogError($"Scene '{sceneName}' could not be started.");
+
+            if (transitionAnimator != null) transitionAnimator.Play("BlinkingAnimationEnd");
+            yield break;
+        }
+
         while (!asyncLoad.isDone)
         {
             yield return null;
@@ -82,7 +90,7 @@ public class FadeController : MonoBehaviour
 
         if (transitionAnimator != null)
         {
-            transitionAnimator.Play("BlinkingAnimationEnd"); // currently fade out of black
+            transitionAnimator.Play("BlinkingAnimationEnd");
             yield return new WaitForSeconds(GetAnimationLength("BlinkingAnimationEnd"));
         }
 
