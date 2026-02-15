@@ -4,8 +4,11 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
+
     public ItemSlot[] itemSlot; //UI Slots in the inventory
     public static HashSet<string> collectedItems = new HashSet<string>();
+
+	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
