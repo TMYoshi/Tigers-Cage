@@ -12,12 +12,20 @@ public class _LockedChest : SpecialItems
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
     uint[] correctCode = { 0, 8, 2, 8};
+    bool _CompleteCondition, _ExitCondition;
 
-	bool _ExitCondition;
+	public override void Start()
+	{
+		item.AssignSpecialEvents(this);
+		if(InventoryManager.alreadyInteratedItems.Contains("Chest"))
+		{
+			RewardCondition();
+		}
+	}
+
 	public void SetExitCondition(bool _Condition) =>
 		_ExitCondition = _Condition;
 
-    bool _CompleteCondition;
     public void IncrementByOne(int _Location)
     {
         currentCode[_Location]++;
@@ -33,9 +41,9 @@ public class _LockedChest : SpecialItems
     }
     public override void EnterCondition()
     {
-        CodeLock.SetActive(true);
-        _CompleteCondition = false;
-        _ExitCondition = false;
+		CodeLock.SetActive(true);
+		_CompleteCondition = false;
+		_ExitCondition = false;
 		ExitButtonCanvas.SetActive(true);
     }
     public override bool CompleteCondition()
@@ -51,6 +59,8 @@ public class _LockedChest : SpecialItems
 
     public override void RewardCondition()
     {
+		InventoryManager.alreadyInteratedItems.Add("Chest");
+
         OpenChest.SetActive(true);
         gameObject.SetActive(false);
         Destroy(colliderToDestroy);

@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     [Header("TOC Buttons")]
     public Button[] documentButtons;
 
-    private bool isPaused = false;
+    public static bool isPaused = false;
 
     void Start()
     {
@@ -129,6 +129,18 @@ public class PauseMenu : MonoBehaviour
     {
         saveLoadManager.LoadGame();
         Debug.Log("Game load");
+    }
+
+    void Awake()
+    {
+    
+        Time.timeScale = 1f;
+        isPaused = false;
+        JournalUI.SetActive(false);
+        PauseBackground.SetActive(false);
+        tableofContentes.SetActive(false);
+        documentPage.SetActive(false);
+        Debug.Log("Awake to function to reset Journal has been done");
     }
 
 
