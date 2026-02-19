@@ -5,8 +5,22 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
+    public static Countdown Instance;
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
+    public float GetRemTime() { return remaining_time_; }
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            
+        }
+    }
     
     public void TickDown()
     {
