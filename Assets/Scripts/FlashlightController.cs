@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 public class FlashlightController : MonoBehaviour
 {
     [Header("Flashlight Settings")]
-    [SerializeField] private GameObject flashlightObject;
+    [SerializeField] public GameObject flashlightObject;
     [SerializeField] private Light2D flashlight; // ref to Light2D component
     [SerializeField] private KeyCode toggleKey = KeyCode.F;
 
@@ -13,10 +13,11 @@ public class FlashlightController : MonoBehaviour
 
     // since it doesnt take inventory
     private const string FLASHLIGHT_UNLOCKED_KEY = "FlashlightUnlocked";
-    private bool isFlashlightUnlocked = false;
+    public bool isFlashlightUnlocked = false;
 
     private Camera mainCamera;
-    private bool isFlashlightOn = false;
+    public bool isFlashlightOn { get; private set; } = false;
+
     private Transform playerTransform;
 
     private void Start()
