@@ -220,7 +220,7 @@ public class PuzzlePathChecker : MonoBehaviour
         return neighbors;
     }
 
-    private void OnPuzzleSolved()
+    private void OnPuzzleSolved()// notes for chris puzzle solved
     {
         Debug.LogWarning($"puzzle solved");
         SceneController.scene_controller_instance.FadeAndLoadSceneWithCutscene("Music_Box_Cutscene", "MC Room - 1 North Wall");
