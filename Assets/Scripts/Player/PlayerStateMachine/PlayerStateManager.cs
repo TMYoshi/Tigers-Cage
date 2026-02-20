@@ -35,7 +35,8 @@ public class PlayerStateManager : MonoBehaviour
         Idle,
         Inventory,
         DialogItem,
-        SpecialItem
+        SpecialItem,
+        Hiding
     }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
@@ -46,6 +47,7 @@ public class PlayerStateManager : MonoBehaviour
         _State[State.DialogItem] = new PlayerDialogItemState(this);
         _State[State.SpecialItem] = new PlayerSpecialItemState(this);
         _State[State.Idle] = new PlayerIdleState(this);
+        _State[State.Hiding] = new PlayerHidingState(this);
 
         UpdatePlayerCharacterReference();
         

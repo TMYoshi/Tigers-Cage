@@ -5,24 +5,29 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-    public static Countdown Instance;
+    private static bool is_active_ = false;
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
     public float GetRemTime() { return remaining_time_; }
 
-    public void Awake()
+    private void Awake()
     {
-        if (Instance == null)
+        if (is_active_)
         {
-            Instance = this;
+            remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
+        }
+        else if (PlayerPrefs.GetFloat("countdown_value") <= 0)
+        {
+            PlayerPrefs.DeleteKey("countdown_value");
+            gameObject.SetActive(false);
         }
         else
         {
-            
+            is_active_ = true;
         }
     }
     
-    public void TickDown()
+    private void TickDown()
     {
         if(remaining_time_ > 0)
         {
@@ -30,13 +35,14 @@ public class Countdown : MonoBehaviour
         }
         else if (remaining_time_ < 0)
         {
+            is_active_ = false;
             remaining_time_ = 0;
             timer_text_.color = Color.red;
         }
 
         int minutes      = Mathf.FloorToInt(remaining_time_ / 60);
         int seconds      = Mathf.FloorToInt(remaining_time_ % 60);
-        int centiseconds = Mathf.FloorToInt((remaining_time_ * 100) % 100);
+        int centiseconds = Mathf.FloorToInt(remaining_time_ * 100 % 100);
         timer_text_.text = string.Format("{0:00}:{1:00}.{2:00}", minutes, seconds, centiseconds);
 
     }
@@ -44,5 +50,10 @@ public class Countdown : MonoBehaviour
     private void Update()
     {
         TickDown();
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetFloat("countdown_value", remaining_time_);
     }
 }

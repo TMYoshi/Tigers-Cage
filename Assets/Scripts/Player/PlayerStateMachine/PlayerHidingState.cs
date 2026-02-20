@@ -30,6 +30,7 @@ public class PlayerHidingState : PlayerBaseState
             else
             {
             // Failure cutscene
+                Debug.Log("uh oh");
 
             }
             
