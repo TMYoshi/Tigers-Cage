@@ -30,7 +30,7 @@ public class FlashlightController : MonoBehaviour
         {
             flashlightObject.SetActive(false);
         }
-        DontDestroyOnLoad(flashlightObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
