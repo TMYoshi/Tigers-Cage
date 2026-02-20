@@ -40,6 +40,7 @@ public class PlayerStateManager : MonoBehaviour
     }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
+    public PlayerBaseState GetCurrentState() { return _currentState; }
 
     void Start()
     {

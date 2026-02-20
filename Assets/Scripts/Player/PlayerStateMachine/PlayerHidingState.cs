@@ -31,7 +31,7 @@ public class PlayerHidingState : PlayerBaseState
             {
             // Failure cutscene
                 Debug.Log("uh oh");
-
+                SceneController.scene_controller_instance.FadeAndLoadScene("GameOver");
             }
             
         }
