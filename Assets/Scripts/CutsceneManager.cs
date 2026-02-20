@@ -27,8 +27,16 @@ public class CutsceneManager : MonoBehaviour
         {
             FadeController.Instance.onFadeInComplete += StartCutscene;
         }
+        
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, "intro_cutscene.mp4");
 
-        useVideo = _videoPlayer != null && _videoPlayer.clip != null;
+        if (SceneManager.GetActiveScene().name == "Ending_Cutscene")
+        {
+            videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, "cutscene_music_box.mp4");
+        }
+
+        useVideo = _videoPlayer != null;
+        _videoPlayer.url = videoPath;
 
         if (useVideo)
         {
