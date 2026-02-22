@@ -366,6 +366,7 @@ MonoBehaviour:
   flashlight: {fileID: 161594441}
   toggleKey: 102
   followSpeed: 10
+  isFlashlightUnlocked: 0
 --- !u!1 &161594439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,6 +3524,7 @@ GameObject:
   - component: {fileID: 1562968581}
   - component: {fileID: 1562968580}
   - component: {fileID: 1562968579}
+  - component: {fileID: 1562968584}
   m_Layer: 0
   m_Name: Blahaj
   m_TagString: Item
@@ -3572,7 +3574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.5
   outlineResolution: 8
 --- !u!114 &1562968581
@@ -3587,7 +3589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assoc_dialog_box_: {fileID: 1562968579}
+  assoc_dialog_box_: {fileID: 0}
   itemName: 
   quantity: 0
   sprite: {fileID: 21300000, guid: d34831c80827d4f4bace786d8675c62c, type: 3}
@@ -3595,7 +3597,7 @@ MonoBehaviour:
   itemDescription: 'My favorite plushie.
 
 '
-  collectable: 1
+  collectable: 0
   SpecialEvents: {fileID: 0}
 --- !u!212 &1562968582
 SpriteRenderer:
@@ -3645,7 +3647,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 500
   m_Sprite: {fileID: 21300000, guid: d34831c80827d4f4bace786d8675c62c, type: 3}
-  m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3701,6 +3703,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.93, y: 12.27}
   m_EdgeRadius: 0
+--- !u!114 &1562968584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562968577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cf8d0475b28df449dc38a78aab3dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _flashlight: {fileID: 99206630}
+  revealRadius: 2.5
+  darkColor: {r: 0.11320752, g: 0.11267352, b: 0.11267352, a: 1}
+  brightColor: {r: 1, g: 1, b: 1, a: 1}
+  noFlashlightSO: {fileID: 11400000, guid: 78be11c723bd9384e8426c5339f9a6f1, type: 2}
+  darkFailureSO: {fileID: 11400000, guid: 1fccce3e726bed14c8fe7da3ac123d91, type: 2}
+  lightSuccessSO: {fileID: 11400000, guid: 795ae34ab6dabc445bd858eaec2e418f, type: 2}
 --- !u!1001 &1624406066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4895,7 +4916,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.88, y: 9}
   m_EdgeRadius: 0
---- !u!43 &1967947226
+--- !u!43 &1974502269
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
