@@ -8,10 +8,10 @@ public class PlayerMouseUtils : MonoBehaviour
     //this is for sprites
     public Collider2D HighlightOnHover()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-        if (PlayerInput.Instance.MouseClickInput) // Left mouse button
+        if (Input.GetMouseButtonDown(0)) // Left mouse button
         {
             return hit.collider;
         }

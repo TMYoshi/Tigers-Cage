@@ -48,5 +48,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Starting Room/MC Room - 4 Closet.unity
     guid: eca2ac41f17ccf34faebad8987b4a94f
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: bfb04b84ba42eb24d8565cc4c17ed67a, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

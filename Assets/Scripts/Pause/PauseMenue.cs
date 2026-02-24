@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     //Check if the key 'J" is pressed. it will pause the game
     void Update()
     {
-        if (PlayerInput.Instance.InvInput)
+        if (Input.GetButtonDown("Journal"))
         {
             Debug.Log("J is pressed ");
             if (isPaused)

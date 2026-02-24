@@ -87,7 +87,7 @@ public class PlayerIdleState : PlayerBaseState
 
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
-            position = PlayerInput.Instance.MouseInput
+            position = Input.mousePosition
         };
 
         List<RaycastResult> results = new List<RaycastResult>();
