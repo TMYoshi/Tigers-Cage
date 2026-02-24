@@ -66,7 +66,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	{
 		if(!_startDanger) return;
 
-		if (Input.GetKey(KeyCode.F))
+		if (PlayerInput.Instance.MouseClickInput)
 			AccDirection = -1f;
 		else
 			AccDirection = 1f;
