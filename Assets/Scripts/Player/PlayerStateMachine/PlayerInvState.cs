@@ -106,7 +106,7 @@ public class PlayerInvState : PlayerBaseState
         {
             PointerEventData pointerData = new PointerEventData(EventSystem.current)
             {
-                position = Input.mousePosition
+                position = PlayerInput.Instance.MouseInput
             };
 
             List<RaycastResult> results = new List<RaycastResult>();
