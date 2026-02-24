@@ -21,7 +21,7 @@ public class PlayerInvState : PlayerBaseState
     bool AlreadyClicked;
     public override void UpdateState()
     {
-        if (Input.GetMouseButton(0))
+        if (PlayerInput.Instance.MouseClickInput)
         {
             AlreadyClicked = true;
             if (!_context._ItemManager._DraggedItem.activeSelf)

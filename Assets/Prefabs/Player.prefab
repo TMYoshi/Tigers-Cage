@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 1953037894475601402}
   - component: {fileID: 1024108505556653181}
   - component: {fileID: 5355016504501398550}
+  - component: {fileID: 2883932742938457094}
   - component: {fileID: 7116035262970723504}
   m_Layer: 0
   m_Name: Player
@@ -430,6 +431,19 @@ MonoBehaviour:
   current_convo_: {fileID: 0}
   convos_:
   - {fileID: 11400000, guid: 8ab1e34c3c95f884895f8925d2c030fc, type: 2}
+--- !u!114 &2883932742938457094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494666362022696330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6598c9e627ab045a1b09c8e738009d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  MouseInput: {x: 0, y: 0}
 --- !u!114 &7116035262970723504
 MonoBehaviour:
   m_ObjectHideFlags: 0

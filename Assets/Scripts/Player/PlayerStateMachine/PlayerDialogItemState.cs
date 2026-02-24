@@ -19,7 +19,7 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void UpdateState()
     {
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
+        if (PlayerInput.Instance.MouseClickInput) // Left mouse button
         {
             if (_context._ItemManager._SelectedItem.WriteLines())
             {

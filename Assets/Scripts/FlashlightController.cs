@@ -6,7 +6,6 @@ public class FlashlightController : MonoBehaviour
     [Header("Flashlight Settings")]
     [SerializeField] public GameObject flashlightObject;
     [SerializeField] private Light2D flashlight; // ref to Light2D component
-    [SerializeField] private KeyCode toggleKey = KeyCode.F;
 
     [Header("Follow Settings")]
     [SerializeField] private float followSpeed = 10f;
@@ -45,8 +44,9 @@ public class FlashlightController : MonoBehaviour
             }
         }
 
-        if (isFlashlightUnlocked && Input.GetKeyDown(toggleKey))
+        if (isFlashlightUnlocked && PlayerInput.Instance.FlashInput)
         {
+            PlayerInput.Instance.FlashInput = false;
             ToggleFlashlight();
         }
 
@@ -55,6 +55,7 @@ public class FlashlightController : MonoBehaviour
         }
 
         // DEBUG: R to reset flashlight unlock status
+        /*
         #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -62,6 +63,7 @@ public class FlashlightController : MonoBehaviour
                 Debug.Log("Flashlight unlock reset!");
             }
         #endif
+        */
     }
 
     void ToggleFlashlight()
@@ -82,7 +84,7 @@ public class FlashlightController : MonoBehaviour
         }
 
         // get mouse position in world
-        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
         mousePos.z = 0f;
 
 
