@@ -41,10 +41,9 @@ public class HeartbeatMinigame : MonoBehaviour
 	void Start()
 	{
 		safeZoneVelocity = 0;
-		StartHeartBeatMinigame();
 	}
 
-	void StartHeartBeatMinigame()
+	public void StartHeartBeatMinigame()
 	{
 		for(int I = 0; I < gameObjectsToShow.Count; I++)
 			gameObjectsToShow[I].SetActive(true);
@@ -152,6 +151,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	public void lose()
 	{
 		Debug.Log("<color=red>lose</color>");
+        SceneController.scene_controller_instance.FadeAndLoadScene("GameOver");
 		EndMinigame();
 	}
 }

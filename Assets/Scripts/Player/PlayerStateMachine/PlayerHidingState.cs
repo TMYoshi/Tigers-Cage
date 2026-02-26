@@ -6,6 +6,7 @@ public class PlayerHidingState : PlayerBaseState
     public HidingSpot GetHidingSpot() { return current_spot_; }
     private Countdown countdown_;
     public Countdown GetCountdown() { return countdown_; }
+    private HeartbeatMinigame minigame_;
 
     public PlayerHidingState(PlayerStateManager context) : base(context)
     {
@@ -15,7 +16,6 @@ public class PlayerHidingState : PlayerBaseState
     {
         current_spot_ = (HidingSpot)Object.FindAnyObjectByType(typeof(HidingSpot));
         countdown_ = (Countdown)Object.FindAnyObjectByType(typeof(Countdown));
-
     }
     public override void UpdateState()
     {
@@ -24,7 +24,8 @@ public class PlayerHidingState : PlayerBaseState
             if(GetHidingSpot().IsValidSpot())
             {
                 Debug.Log("Woohoo");
-                _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+                minigame_ = (HeartbeatMinigame)Object.FindAnyObjectByType(typeof(HeartbeatMinigame));
+                minigame_.StartHeartBeatMinigame();
             }
 
             else
@@ -33,7 +34,7 @@ public class PlayerHidingState : PlayerBaseState
                 Debug.Log("uh oh");
                 SceneController.scene_controller_instance.FadeAndLoadScene("GameOver");
             }
-            
+            _context.UpdateCurrentState(PlayerStateManager.State.Idle);   
         }
     }
     public override void ExitState()

@@ -6,14 +6,21 @@ using Unity.VisualScripting;
 
 public class Countdown : MonoBehaviour
 {
+    public Countdown Instance;
     private static bool is_active_ = false;
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
     private PlayerStateManager player_;
     public float GetRemTime() { return remaining_time_; }
 
+    // TODO: Make Singleton
+
     private void Awake()
     {
+        if(Instance != null && Instance != this)
+        {
+            
+        }
         // To activate countdown, affect the player pref?
         if (is_active_)
         {

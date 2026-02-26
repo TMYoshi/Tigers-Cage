@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48232e52a9c1b4c6abd708c22b18a3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HidingSpot
-  is_valid_spot_: 1
+  is_valid_spot_: 0
 --- !u!4 &1129774794
 Transform:
   m_ObjectHideFlags: 0
