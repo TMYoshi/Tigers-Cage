@@ -4,8 +4,6 @@ public class PlayerHidingState : PlayerBaseState
 {
     private HidingSpot current_spot_;
     public HidingSpot GetHidingSpot() { return current_spot_; }
-    private Countdown countdown_;
-    public Countdown GetCountdown() { return countdown_; }
     private HeartbeatMinigame minigame_;
 
     public PlayerHidingState(PlayerStateManager context) : base(context)
@@ -15,11 +13,10 @@ public class PlayerHidingState : PlayerBaseState
     public override void EnterState()
     {
         current_spot_ = (HidingSpot)Object.FindAnyObjectByType(typeof(HidingSpot));
-        countdown_ = (Countdown)Object.FindAnyObjectByType(typeof(Countdown));
     }
     public override void UpdateState()
     {
-        if(GetCountdown().GetRemTime() == 0)
+        if(Countdown.Instance.GetRemTime() == 0)
         {
             if(GetHidingSpot().IsValidSpot())
             {
@@ -39,6 +36,5 @@ public class PlayerHidingState : PlayerBaseState
     }
     public override void ExitState()
     {
-        
     }
 }

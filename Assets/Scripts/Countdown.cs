@@ -6,22 +6,28 @@ using Unity.VisualScripting;
 
 public class Countdown : MonoBehaviour
 {
-    public Countdown Instance;
-    private static bool is_active_ = false;
+    public static Countdown Instance;
+    private static bool is_active_ = false; //Wake up after event via Singleton
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
     private PlayerStateManager player_;
     public float GetRemTime() { return remaining_time_; }
 
-    // TODO: Make Singleton
-
     private void Awake()
     {
         if(Instance != null && Instance != this)
         {
-            
+            Destroy(gameObject);
+            return;
         }
-        // To activate countdown, affect the player pref?
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+         // To activate countdown, affect the player pref?
         if (is_active_)
         {
             remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
@@ -29,10 +35,6 @@ public class Countdown : MonoBehaviour
         else if (PlayerPrefs.GetFloat("countdown_value") <= 0)
         {
             gameObject.SetActive(false);
-        }
-        else
-        {
-            is_active_ = true;
         }
     }
     
