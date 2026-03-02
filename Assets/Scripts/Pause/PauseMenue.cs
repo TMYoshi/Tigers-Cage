@@ -28,6 +28,16 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        PlayerInput.Instance.InvOnClick += () =>
+        {
+            Debug.Log("J is pressed ");
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
+        };
+
+
         PauseBackground.SetActive(false);
         JournalUI.SetActive(false);
 
@@ -35,18 +45,6 @@ public class PauseMenu : MonoBehaviour
 
     }
     //Check if the key 'J" is pressed. it will pause the game
-    void Update()
-    {
-        if (PlayerInput.Instance.InvInput)
-        {
-            Debug.Log("J is pressed ");
-            if (isPaused)
-                ResumeGame();
-            else
-                PauseGame();
-        }
-    }
-
     //Game will freeze and show UI pause menue
     public void PauseGame()
     {

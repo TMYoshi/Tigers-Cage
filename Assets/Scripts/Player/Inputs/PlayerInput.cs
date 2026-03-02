@@ -10,8 +10,6 @@ public class PlayerInput : MonoBehaviour
     public bool MouseClickInput {private set; get;}
     public Action MouseOnClickInput;
     public Action MouseOnUpInput;
-    [field: SerializeField]
-    public bool InvInput {private set; get;}
     public Action InvOnClick;
     public Action FlashInput;
     [field: SerializeField]
@@ -45,10 +43,9 @@ public class PlayerInput : MonoBehaviour
         skipAction = InputSystem.actions.FindAction("Skip");
         hintAction = InputSystem.actions.FindAction("Hint");
 
-        invAction.performed += _ => InvInput = true;
-        invAction.canceled += _ => InvInput = false;
+        invAction.performed += _ => InvOnClick?.Invoke();
 
-        flashAction.performed += _ => FlashInput.Invoke();
+        flashAction.performed += _ => FlashInput?.Invoke();
 
         skipAction.performed += _ => SkipInput = true;
         skipAction.canceled += _ => SkipInput = false;
@@ -56,8 +53,8 @@ public class PlayerInput : MonoBehaviour
         mouseClickAction.performed += _ => MouseClickInput = true;
         mouseClickAction.canceled += _ => MouseClickInput = false;
 
-        mouseClickAction.performed += _ => MouseOnClickInput.Invoke();
-        mouseClickAction.canceled += _ => MouseOnUpInput.Invoke();
+        mouseClickAction.performed += _ => MouseOnClickInput?.Invoke();
+        mouseClickAction.canceled += _ => MouseOnUpInput?.Invoke();
 
         hintAction.performed += _ => HintInput = true;
         hintAction.canceled += _ => HintInput= false;
