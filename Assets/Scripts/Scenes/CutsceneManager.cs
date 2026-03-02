@@ -61,7 +61,7 @@ public class CutsceneManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape) && !cutsceneFinished)
+        if (PlayerInput.Instance.SkipInput && !cutsceneFinished)
         {
             SkipCutscene();
         }
