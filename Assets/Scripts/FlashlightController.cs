@@ -44,10 +44,9 @@ public class FlashlightController : MonoBehaviour
             }
         }
 
-        if (isFlashlightUnlocked && PlayerInput.Instance.FlashInput)
+        if (isFlashlightUnlocked)
         {
-            PlayerInput.Instance.FlashInput = false;
-            ToggleFlashlight();
+            PlayerInput.Instance.FlashInput += ToggleFlashlight;
         }
 
         if(isFlashlightOn && flashlightObject != null){

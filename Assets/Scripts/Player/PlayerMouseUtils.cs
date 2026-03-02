@@ -13,7 +13,6 @@ public class PlayerMouseUtils : MonoBehaviour
 
         if (PlayerInput.Instance.MouseClickInput)
         {
-            PlayerInput.Instance.MouseClickInput = false;
             return hit.collider;
         }
 

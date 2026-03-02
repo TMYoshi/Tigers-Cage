@@ -443,6 +443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6598c9e627ab045a1b09c8e738009d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  MouseClickInput: 0
+  InvInput: 0
+  FlashInput: 0
+  SkipInput: 0
   MouseInput: {x: 0, y: 0}
 --- !u!114 &7116035262970723504
 MonoBehaviour:
