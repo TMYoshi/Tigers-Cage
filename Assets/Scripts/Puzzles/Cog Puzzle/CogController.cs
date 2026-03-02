@@ -55,7 +55,7 @@ public class CogController : MonoBehaviour
 
     private void Start()
     {
-        int draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs")); // ~ to exclude FixedCogs layer from check
+        draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs")); // ~ to exclude FixedCogs layer from check
 
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -102,14 +102,6 @@ public class CogController : MonoBehaviour
         }
         // if: check for connection (invalid if outer overlaps with inner) 
         HandleCogRotation();
-    }
-
-    private void Update()
-    {
-        if (isDragging)
-        {
-            HandleMouseDrag();
-        }
     }
 
     private void HandleMouseDown()
