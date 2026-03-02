@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     public bool InvInput;
     public bool FlashInput;
     public bool SkipInput;
+    public bool HintInput;
     public Vector2 MouseInput;
 
     InputAction mouseClickAction;
@@ -17,6 +18,7 @@ public class PlayerInput : MonoBehaviour
     InputAction invAction;
     InputAction flashAction;
     InputAction skipAction;
+    InputAction hintAction;
 
     void Awake()
     {
@@ -35,6 +37,7 @@ public class PlayerInput : MonoBehaviour
         mouseClickAction = InputSystem.actions.FindAction("Interact");
         flashAction = InputSystem.actions.FindAction("Flashlight");
         skipAction = InputSystem.actions.FindAction("Skip");
+        hintAction = InputSystem.actions.FindAction("Hint");
 
         invAction.performed += _ => InvInput = true;
         invAction.canceled += _ => InvInput = false;
@@ -47,6 +50,9 @@ public class PlayerInput : MonoBehaviour
 
         mouseClickAction.performed += _ => MouseClickInput = true;
         mouseClickAction.canceled += _ => MouseClickInput = false;
+
+        hintAction.performed += _ => HintInput = true;
+        hintAction.canceled += _ => HintInput= false;
     }
 
     void Update()

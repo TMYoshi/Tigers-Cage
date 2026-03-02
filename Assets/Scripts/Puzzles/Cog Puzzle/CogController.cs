@@ -73,9 +73,9 @@ public class CogController : MonoBehaviour
     {
         int draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs")); // ~ to exclude FixedCogs layer from check
 
-        if (Input.GetMouseButtonDown(0))
+        if (PlayerInput.Instance.MouseClickInput) // get mouse down 0
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput); // Input.mousePosition
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, draggableLayerMask);
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
@@ -90,7 +90,7 @@ public class CogController : MonoBehaviour
             HandleMouseDrag();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)) // get mouse button up 0, m1
         {
             if (isDragging)
             {
@@ -129,7 +129,7 @@ public class CogController : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput); // Input.mousePosition
             mouseWorldPosition.z = transform.position.z; // keep z constant in 2D
 
             transform.position = mouseWorldPosition;

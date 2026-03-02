@@ -47,11 +47,6 @@ public class PuzzlePathChecker : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) CheckPuzzleCompletion();
-    }
-
     public void OnCogPlaced(CogController cog)
     {
         if (cog == null) return;
