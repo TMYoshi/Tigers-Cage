@@ -29,6 +29,8 @@ public class CogController : MonoBehaviour
     private bool isDragging = false;
     private bool isInitialized = false;
     // private bool canStartDrag = false;
+    //
+    int draggableLayerMask; // ~ to exclude FixedCogs layer from check
 
     // initialized via CogInitializer
     public void SetInitialProperties(Vector3 scale, Vector3 position)
@@ -90,7 +92,14 @@ public class CogController : MonoBehaviour
             }
             //canStartDrag = false;
         };
+    }
 
+    private void Update()
+    {
+        if (isDragging)
+        {
+            HandleMouseDrag();
+        }
         // if: check for connection (invalid if outer overlaps with inner) 
         HandleCogRotation();
     }
