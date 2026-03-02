@@ -6,24 +6,18 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput Instance;
 
-<<<<<<< Updated upstream
-    public bool MouseClickInput;
-    public bool InvInput;
-    public bool FlashInput;
-    public bool SkipInput;
-    public bool HintInput;
-=======
     [field: SerializeField]
     public bool MouseClickInput {private set; get;}
     public Action MouseOnClickInput;
+    public Action MouseOnUpInput;
     [field: SerializeField]
     public bool InvInput {private set; get;}
     public Action InvOnClick;
     public Action FlashInput;
     [field: SerializeField]
     public bool SkipInput {private set; get;}
->>>>>>> Stashed changes
     public Vector2 MouseInput;
+    public bool HintInput;
 
     InputAction mouseClickAction;
     InputAction mouseAction;
@@ -62,12 +56,11 @@ public class PlayerInput : MonoBehaviour
         mouseClickAction.performed += _ => MouseClickInput = true;
         mouseClickAction.canceled += _ => MouseClickInput = false;
 
-<<<<<<< Updated upstream
+        mouseClickAction.performed += _ => MouseOnClickInput.Invoke();
+        mouseClickAction.canceled += _ => MouseOnUpInput.Invoke();
+
         hintAction.performed += _ => HintInput = true;
         hintAction.canceled += _ => HintInput= false;
-=======
-        mouseClickAction.performed += _ => MouseOnClickInput.Invoke();
->>>>>>> Stashed changes
     }
 
     void Update()

@@ -73,7 +73,7 @@ public class CogController : MonoBehaviour
     {
         int draggableLayerMask = ~(1 << LayerMask.NameToLayer("FixedCogs")); // ~ to exclude FixedCogs layer from check
 
-        if (PlayerInput.Instance.MouseClickInput) // get mouse down 0
+        PlayerInput.Instance.MouseOnClickInput += () => 
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput); // Input.mousePosition
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, draggableLayerMask);
@@ -83,21 +83,21 @@ public class CogController : MonoBehaviour
                 //canStartDrag = true;
                 HandleMouseDown();
             }
-        }
+        };
 
         if (isDragging)
         {
             HandleMouseDrag();
         }
 
-        if (Input.GetMouseButtonUp(0)) // get mouse button up 0, m1
+        PlayerInput.Instance.MouseOnUpInput += () =>
         {
             if (isDragging)
             {
                 HandleMouseUp();
             }
             //canStartDrag = false;
-        }
+        };
 
         // if: check for connection (invalid if outer overlaps with inner) 
         HandleCogRotation();
