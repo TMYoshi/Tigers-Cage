@@ -49,17 +49,6 @@ public class FlashlightController : MonoBehaviour
         if(isFlashlightOn && flashlightObject != null){
             UpdateFlashlightPosition();
         }
-
-        // DEBUG: R to reset flashlight unlock status
-        /*
-        #if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                ResetFlashlightUnlock();
-                Debug.Log("Flashlight unlock reset!");
-            }
-        #endif
-        */
     }
 
     private void OnEnable()
@@ -71,7 +60,7 @@ public class FlashlightController : MonoBehaviour
     }
 
     private void OnDisable()
-    {
+    {   
         if (PlayerInput.Instance != null)
         {
             PlayerInput.Instance.FlashInput -= ToggleFlashlight;
@@ -125,12 +114,5 @@ public class FlashlightController : MonoBehaviour
         PlayerPrefs.SetInt(FLASHLIGHT_UNLOCKED_KEY, 1);
         PlayerPrefs.Save();
         Debug.Log("flashlight unlocked");
-    }
-
-    public void ResetFlashlightUnlock()
-    {
-        isFlashlightUnlocked = false;
-        PlayerPrefs.SetInt(FLASHLIGHT_UNLOCKED_KEY, 0);
-        PlayerPrefs.Save();
     }
 }
