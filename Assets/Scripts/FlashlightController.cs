@@ -44,10 +44,7 @@ public class FlashlightController : MonoBehaviour
             }
         }
 
-        if (isFlashlightUnlocked)
-        {
-            PlayerInput.Instance.FlashInput += ToggleFlashlight;
-        }
+        
 
         if(isFlashlightOn && flashlightObject != null){
             UpdateFlashlightPosition();
@@ -63,6 +60,22 @@ public class FlashlightController : MonoBehaviour
             }
         #endif
         */
+    }
+
+    private void OnEnable()
+    {
+        if (PlayerInput.Instance != null)
+        {
+            PlayerInput.Instance.FlashInput += ToggleFlashlight;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (PlayerInput.Instance != null)
+        {
+            PlayerInput.Instance.FlashInput -= ToggleFlashlight;
+        }
     }
 
     void ToggleFlashlight()
