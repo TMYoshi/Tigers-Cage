@@ -2423,7 +2423,11 @@ MonoBehaviour:
   current_convo_: {fileID: 0}
   convos_:
   - {fileID: 11400000, guid: 79805bdc4a72f194b95e66faa2f139bf, type: 2}
+<<<<<<< Updated upstream
 --- !u!43 &1563193966
+=======
+--- !u!43 &1616572818
+>>>>>>> Stashed changes
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

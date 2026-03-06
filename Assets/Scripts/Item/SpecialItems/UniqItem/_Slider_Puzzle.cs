@@ -72,6 +72,7 @@ public class _Slider_Puzzle : SpecialItems
     {
         completed_card.SetActive(true);
         //line of code to set the document page to be turn on
+        GetComponent<PuzzleSaveState>().Complete();
         JournalDataManager.Instance.UnlockDocument(0); //add by Chris
         Destroy(_renderer);
         Destroy(_collider);
