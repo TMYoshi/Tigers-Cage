@@ -149,12 +149,13 @@ public class Slider_Manager : MonoBehaviour
     #region Update
     // Update is called once per frame
     // Use to actually move the pieces
-    public void Puzzle()
+    public void PuzzleOnClick()
     {
         // On click, send out a ray that detects if we clicked a piece
-        if (Input.GetMouseButtonDown(0))
+        PlayerInput.Instance.MouseOnClickInput += 
+        () => 
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput), Vector2.zero);
             if (hit)
             {
                 Debug.Log("Hit Something");
@@ -183,7 +184,7 @@ public class Slider_Manager : MonoBehaviour
                     shuffling_ = true;
                 }
             }
-        }
+        };
 
     }
     #endregion

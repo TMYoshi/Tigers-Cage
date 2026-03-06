@@ -26,6 +26,7 @@ public class _Slider_Puzzle : SpecialItems
 
     public override void EnterCondition()
     {
+        slider_Manager.PuzzleOnClick();
 		exitButton.SetActive(true);
 		actual_puzzle.SetActive(true);
 
@@ -43,7 +44,6 @@ public class _Slider_Puzzle : SpecialItems
 
     public override bool CompleteCondition()
     {
-        slider_Manager.Puzzle();
         if (!AllowForCompletion) return false;
         if (!slider_Manager.CheckCompletion()) return false;
 		exitButton.SetActive(false);
