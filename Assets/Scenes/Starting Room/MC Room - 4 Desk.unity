@@ -871,6 +871,74 @@ Transform:
   - {fileID: 1063897100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &332492025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.80171
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560413201051230660, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557027288156200346, guid: 48993a38584200c4dabd443c784853be, type: 3}
+      propertyPath: m_Name
+      value: SaveLoadManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48993a38584200c4dabd443c784853be, type: 3}
+--- !u!114 &332492026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3908426647410140419, guid: 48993a38584200c4dabd443c784853be, type: 3}
+  m_PrefabInstance: {fileID: 332492025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248accd18e855a34aab6fa1c17c46fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveLoad
 --- !u!224 &335645731 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8982348953221564752, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
@@ -2509,6 +2577,7 @@ GameObject:
   - component: {fileID: 1448908650}
   - component: {fileID: 1448908649}
   - component: {fileID: 1448908655}
+  - component: {fileID: 1448908656}
   m_Layer: 0
   m_Name: Card
   m_TagString: SpecialItem
@@ -2593,7 +2662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 1448908653}
-  _ExitCondition: 0
   exitButton: {fileID: 926351039}
   exitButtonComponent: {fileID: 718453101}
   slider_Manager: {fileID: 934229231}
@@ -2725,6 +2793,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: Washi Tape
   specialItems: {fileID: 1448908650}
+--- !u!114 &1448908656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448908647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63161a2bbbf7976468bb904d2598690a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleSaveState
+  puzzleId: Slider_puzzle1
+  objectsToDisable: []
 --- !u!1 &1509440143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,6 +3101,22 @@ PrefabInstance:
     - target: {fileID: 2568365670456238734, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 332492026}
+    - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 332492026}
+    - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveGame
       objectReference: {fileID: 0}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
@@ -4171,3 +4269,4 @@ SceneRoots:
   - {fileID: 1576580226}
   - {fileID: 675010968}
   - {fileID: 46036533}
+  - {fileID: 332492025}

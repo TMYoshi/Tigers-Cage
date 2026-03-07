@@ -14,7 +14,7 @@ public class _LockedChest : SpecialItems
     uint[] correctCode = { 0, 8, 2, 8};
     bool _CompleteCondition, _ExitCondition;
 
-	public override void Start()
+	public override void Start()//
 	{
 		item.AssignSpecialEvents(this);
 		if(InventoryManager.alreadyInteratedItems.Contains("Chest"))
@@ -64,7 +64,7 @@ public class _LockedChest : SpecialItems
         OpenChest.SetActive(true);
         gameObject.SetActive(false);
         Destroy(colliderToDestroy);
-        //save system
+        //save system noted for chris 
     }
 
     public override void CleanUpCondition()
