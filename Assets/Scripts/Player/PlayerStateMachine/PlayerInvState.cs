@@ -37,7 +37,7 @@ public class PlayerInvState : PlayerBaseState
                 _renderer.sprite = selectedItemSlot.itemSprite;
                 _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
             }
-            Vector2 mousePos = Input.mousePosition;
+            Vector2 mousePos = PlayerInput.Instance.MouseInput;
             itemTransform.position = mousePos;
 
             //reminder to self to fix this we have MULTIPLE RAYCAST AAHHAHAHAH
@@ -55,7 +55,7 @@ public class PlayerInvState : PlayerBaseState
     {
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
-            position = Input.mousePosition
+            position = PlayerInput.Instance.MouseInput
         };
 
         List<RaycastResult> results = new List<RaycastResult>();
