@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using UnityEngine;
 
-public class NeedsFlashlight : MonoBehaviour
+public class FlashlightReveal : MonoBehaviour
 {
     [Header("References")]
     public FlashlightController _flashlight;
@@ -43,48 +43,5 @@ public class NeedsFlashlight : MonoBehaviour
 
         }
         else { _spriteRenderer.color = darkColor; }
-    }
-
-    private void OnMouseDown()
-    {
-        if (DialogManager.Instance != null && DialogManager.Instance.is_dialog_active_) return;
-
-        if(_flashlight == null || !_flashlight.isFlashlightUnlocked)
-        {
-            if(noFlashlightSO != null) DialogManager.Instance.StartDialog(noFlashlightSO);
-            return;
-        }
-
-        if (!_flashlight.isFlashlightOn)
-        {
-            if (darkFailureSO != null) DialogManager.Instance.StartDialog(darkFailureSO);
-            return;
-        }
-
-        if (lightSuccessSO != null) DialogManager.Instance.StartDialog(lightSuccessSO);
-
-        CollectItem();
-    }
-
-    private void CollectItem()
-    {
-        if(_itemData == null ) return;
-
-        InventoryManager invManager = Object.FindAnyObjectByType<InventoryManager>();
-
-        if (invManager != null)
-        {
-            invManager.AddItem(
-                _itemData.ItemName,
-                _itemData.Quantity,
-                _itemData.Sprite,
-                _itemData.ItemDescription
-            );
-
-            InventoryManager.MarkItemAsCollected(_itemData.ItemName );
-        }
-
-        Destroy(gameObject);
-
     }
 }
