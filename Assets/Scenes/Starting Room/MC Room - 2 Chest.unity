@@ -827,7 +827,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlashlightController
   flashlightObject: {fileID: 364505927}
   flashlight: {fileID: 1785504441}
-  toggleKey: 102
   followSpeed: 10
   isFlashlightUnlocked: 0
 --- !u!1 &364505927

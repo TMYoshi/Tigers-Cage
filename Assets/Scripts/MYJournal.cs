@@ -8,7 +8,7 @@ public class JournalUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Journal"))
+        if(PlayerInput.Instance.JournalInput)
         {
             ToggleJournal();
         }
