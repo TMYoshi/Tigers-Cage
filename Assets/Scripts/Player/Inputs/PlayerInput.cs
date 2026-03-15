@@ -36,6 +36,7 @@ public class PlayerInput : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
         mouseAction = InputSystem.actions.FindAction("MouseLocation");
@@ -53,11 +54,15 @@ public class PlayerInput : MonoBehaviour
         skipAction.performed += _ => SkipInput = true;
         skipAction.canceled += _ => SkipInput = false;
 
-        mouseClickAction.performed += _ => MouseClickInput = true;
-        mouseClickAction.canceled += _ => MouseClickInput = false;
+        mouseClickAction.performed += _ => {
+            MouseClickInput = true;
+            MouseOnClickInput?.Invoke();
+        };
 
-        mouseClickAction.performed += _ => MouseOnClickInput?.Invoke();
-        mouseClickAction.canceled += _ => MouseOnUpInput?.Invoke();
+        mouseClickAction.canceled += _ => {
+            MouseClickInput = false;
+            MouseOnUpInput?.Invoke();
+        };
 
         hintAction.performed += _ => HintInput = true;
         hintAction.canceled += _ => HintInput= false;
@@ -68,6 +73,9 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        MouseInput = mouseAction.ReadValue<Vector2>();
+        if(mouseAction != null)
+        {
+            MouseInput = mouseAction.ReadValue<Vector2>();
+        }
     }
 }
