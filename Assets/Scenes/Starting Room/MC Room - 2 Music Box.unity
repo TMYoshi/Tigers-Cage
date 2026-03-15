@@ -6725,6 +6725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1183160709}
   - component: {fileID: 1183160710}
+  - component: {fileID: 1183160711}
   m_Layer: 0
   m_Name: Music Box Puzzle
   m_TagString: Untagged
@@ -6766,6 +6767,20 @@ MonoBehaviour:
   mediumLockedCog: {fileID: 383740620}
   largeLockedCog: {fileID: 444379462}
   cogParent: {fileID: 143916539}
+--- !u!114 &1183160711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183160708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75db1563a849a504c9b2d1f3021f048f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CogUnlock
+  mediumLockedCog: {fileID: 383740620}
+  largeLockedCog: {fileID: 444379462}
 --- !u!1 &1183754754
 GameObject:
   m_ObjectHideFlags: 0
