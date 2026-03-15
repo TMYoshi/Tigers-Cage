@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CogInitializer : MonoBehaviour
 {
+    [SerializeField] private GameObject mediumLockedCog;
+    [SerializeField] private GameObject largeLockedCog;
+
     // hard coded :^) values for positions and scales of cogs in tray
     private const float TRAY_Y_POSITION = -6f;
 
@@ -29,7 +32,7 @@ public class CogInitializer : MonoBehaviour
 
     public Transform cogParent;
 
-    void Start()
+    private void Awake()
     {
         Transform cogParentTransform = transform.Find("Cogs");
         if(cogParentTransform == null)
@@ -52,6 +55,11 @@ public class CogInitializer : MonoBehaviour
         SetCogProperties("Medium Cogs/cog_medium_2", 1f, MEDIUM_TRAY_SCALE);
 
         SetCogProperties("Large Cogs/cog_large_1", 4f, LARGE_TRAY_SCALE);
+
+        // hide locked cogs
+
+        if (mediumLockedCog != null) mediumLockedCog.SetActive(false);
+        if (largeLockedCog != null) mediumLockedCog.SetActive(false);
     }
 
     private void SetCogProperties(string path, float x_position, float scale)
