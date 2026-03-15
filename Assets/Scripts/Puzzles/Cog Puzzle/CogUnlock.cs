@@ -5,34 +5,60 @@ public class CogUnlock : MonoBehaviour
     [SerializeField] private GameObject mediumLockedCog;
     [SerializeField] private GameObject largeLockedCog;
 
+    private static bool mediumPreviouslyUnlocked = false;
+    private static bool largePreviouslyUnlocked = false;
+
     private void Start()
     {
-        CheckAndUnlock("Medium Cog", mediumLockedCog);
-        CheckAndUnlock("Large Cog", largeLockedCog);
+        if (mediumPreviouslyUnlocked)
+        {
+            mediumLockedCog.SetActive(true);
+        }
+        else if (CheckAndUnlock("Medium Cog"))
+        {
+            mediumLockedCog.SetActive(true);
+            mediumPreviouslyUnlocked = true;
+        }
+
+        if (largePreviouslyUnlocked)
+        {
+            largeLockedCog.SetActive(true);
+        }
+        else if (CheckAndUnlock("Large Cog"))
+        {
+            largeLockedCog.SetActive(true);
+            largePreviouslyUnlocked = true;
+        }
     }
 
-    private void CheckAndUnlock(string itemName, GameObject cogObject)
+    private bool CheckAndUnlock(string itemName)
     {
-        bool hasItem = false;
+        string foundId = "";
 
         foreach (string id in InventoryManager.collectedItems)
         {
             if (id.Contains(itemName))
             {
-                hasItem = true;
+                foundId = id;
                 break;
             }
         }
 
-        if (hasItem)
+        if (string.IsNullOrEmpty(foundId)) return false;
+
+        InventoryManager.collectedItems.Remove(foundId);
+        InventoryManager invManager = Object.FindFirstObjectByType<InventoryManager>();
+        if (invManager != null)
         {
-            cogObject.SetActive(true);
-            Debug.Log($"Success, {itemName} found in inventory.");
+            foreach (ItemSlot slot in invManager.itemSlot)
+            {
+                if (slot.isFull && slot.itemName.Contains(itemName))
+                {
+                    slot.RemoveItem();
+                    break;
+                }
+            }
         }
-        else
-        {
-            cogObject.SetActive(false);
-            Debug.Log($"Fail, {itemName} found in inventory.");
-        }
+        return true;
     }
 }

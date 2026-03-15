@@ -72,26 +72,6 @@ public class CogController : MonoBehaviour
             SetInitialProperties(transform.localScale, transform.position);
         }
 
-        PlayerInput.Instance.MouseOnClickInput += () =>
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput); // Input.mousePosition
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, draggableLayerMask);
-
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
-            {
-                //canStartDrag = true;
-                HandleMouseDown();
-            }
-        };
-
-        PlayerInput.Instance.MouseOnUpInput += () =>
-        {
-            if (isDragging)
-            {
-                HandleMouseUp();
-            }
-            //canStartDrag = false;
-        };
     }
 
     private void Update()
@@ -102,6 +82,31 @@ public class CogController : MonoBehaviour
         }
         // if: check for connection (invalid if outer overlaps with inner) 
         HandleCogRotation();
+    }
+
+    private void HandleInputClick()
+    {
+        if (this == null || !gameObject.activeInHierarchy) return;
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput); // Input.mousePosition
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, draggableLayerMask);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            //canStartDrag = true;
+            HandleMouseDown();
+        }
+    }
+
+    private void HandleInputRelease()
+    {
+        if (this == null) return;
+
+        if (isDragging)
+        {
+            HandleMouseUp();
+        }
+        //canStartDrag = false;
     }
 
     private void HandleMouseDown()
@@ -272,6 +277,24 @@ public class CogController : MonoBehaviour
         if (name.StartsWith("cog_small_fixed_start"))
         {
             //transform.Rotate(0, 0, -60 * Time.deltaTime);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (PlayerInput.Instance != null)
+        {
+            PlayerInput.Instance.MouseOnClickInput += HandleInputClick;
+            PlayerInput.Instance.MouseOnUpInput += HandleInputRelease;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (PlayerInput.Instance != null)
+        {
+            PlayerInput.Instance.MouseOnClickInput -= HandleInputClick;
+            PlayerInput.Instance.MouseOnUpInput -= HandleInputRelease;
         }
     }
 }

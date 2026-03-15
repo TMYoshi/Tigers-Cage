@@ -55,11 +55,6 @@ public class CogInitializer : MonoBehaviour
         SetCogProperties("Medium Cogs/cog_medium_2", 1f, MEDIUM_TRAY_SCALE);
 
         SetCogProperties("Large Cogs/cog_large_1", 4f, LARGE_TRAY_SCALE);
-
-        // hide locked cogs
-
-        if (mediumLockedCog != null) mediumLockedCog.SetActive(false);
-        if (largeLockedCog != null) mediumLockedCog.SetActive(false);
     }
 
     private void SetCogProperties(string path, float x_position, float scale)
