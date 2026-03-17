@@ -23,6 +23,8 @@ public class RestrictScene : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded) return;
+
         if (inventory != null)
             inventory.SetActive(true);
 
