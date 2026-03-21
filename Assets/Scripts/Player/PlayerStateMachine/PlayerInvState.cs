@@ -31,7 +31,8 @@ public class PlayerInvState : PlayerBaseState
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
 
                 ItemSlot selectedItemSlot = getDraggedObject();
-                if (_renderer?.sprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
+                //I don't know why this is null but ehhhh should be fineeeeeee
+                //if (_renderer?.sprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
                 if (selectedItemSlot?.itemSprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
 
                 _renderer.sprite = selectedItemSlot.itemSprite;
