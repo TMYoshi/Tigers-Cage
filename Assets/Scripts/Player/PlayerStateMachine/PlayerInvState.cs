@@ -21,6 +21,7 @@ public class PlayerInvState : PlayerBaseState
     bool AlreadyClicked;
     public override void UpdateState()
     {
+        _context._MouseUtils.HighlightOnHover();
         if (PlayerInput.Instance.MouseClickInput)
         {
             AlreadyClicked = true;
@@ -31,8 +32,6 @@ public class PlayerInvState : PlayerBaseState
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
 
                 ItemSlot selectedItemSlot = getDraggedObject();
-                //I don't know why this is null but ehhhh should be fineeeeeee
-                //if (_renderer?.sprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
                 if (selectedItemSlot?.itemSprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
 
                 _renderer.sprite = selectedItemSlot.itemSprite;
@@ -49,7 +48,6 @@ public class PlayerInvState : PlayerBaseState
         {
             DetectWhenExit();
         }
-        _context._MouseUtils.HighlightOnHover();
     }
 
     ItemSlot getDraggedObject()
