@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CogUnlock : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class CogUnlock : MonoBehaviour
     private static bool mediumPreviouslyUnlocked = false;
     private static bool largePreviouslyUnlocked = false;
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
+        Debug.Log("CogUnlock starting inventory check");
+
+
+
         if (mediumPreviouslyUnlocked)
         {
             mediumLockedCog.SetActive(true);
@@ -33,32 +39,30 @@ public class CogUnlock : MonoBehaviour
 
     private bool CheckAndUnlock(string itemName)
     {
-        string foundId = "";
-
-        foreach (string id in InventoryManager.collectedItems)
-        {
-            if (id.Contains(itemName))
-            {
-                foundId = id;
-                break;
-            }
-        }
-
-        if (string.IsNullOrEmpty(foundId)) return false;
-
-        InventoryManager.collectedItems.Remove(foundId);
         InventoryManager invManager = Object.FindFirstObjectByType<InventoryManager>();
-        if (invManager != null)
+        if (invManager == null) return false;
+
+        bool foundInInventory = false;
+
+        foreach(ItemSlot slot in invManager.itemSlot)
         {
-            foreach (ItemSlot slot in invManager.itemSlot)
+
+            if (slot.isFull)
             {
-                if (slot.isFull && slot.itemName.Contains(itemName))
-                {
-                    slot.RemoveItem();
-                    break;
-                }
+                Debug.Log($"Checking slot: '{slot.itemName}' against target: '{itemName}'");
+            }
+
+            if (slot.isFull && slot.itemName.Replace(" ", "").ToLower().Contains(itemName.Replace(" ", "").ToLower()))
+            {
+                slot.RemoveItem();
+                return true;
             }
         }
-        return true;
+
+        if (foundInInventory)
+        {
+            // can save item data here if you want
+        }
+        return false;
     }
 }

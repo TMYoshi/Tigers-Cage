@@ -1,19 +1,20 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class RestrictScene : MonoBehaviour
 {
-    private GameObject inventory;
+    private Canvas inventoryCanvas;
     private FlashlightController flashlight;
 
     private void Start()
     {
-        inventory = GameObject.Find("InventoryCanvas");
-        if (inventory != null)
-            inventory.SetActive(false);
+        GameObject invObj = GameObject.Find("InventoryCanvas");
+        if (invObj != null)
+        {
+            inventoryCanvas = invObj.GetComponent<Canvas>();
+            if(inventoryCanvas != null ) inventoryCanvas.enabled = false;
+        }
 
-        flashlight = Object.FindFirstObjectByType<FlashlightController>();
+        flashlight = FindFirstObjectByType<FlashlightController>();
         if(flashlight != null)
         {
             flashlight.SetFlashlightState(false);
@@ -21,12 +22,10 @@ public class RestrictScene : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        if (!gameObject.scene.isLoaded) return;
-
-        if (inventory != null)
-            inventory.SetActive(true);
+        if (inventoryCanvas != null)
+            inventoryCanvas.enabled = (true);
 
         if(flashlight != null)
         {

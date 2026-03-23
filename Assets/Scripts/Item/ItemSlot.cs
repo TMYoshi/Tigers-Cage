@@ -69,6 +69,8 @@ public class ItemSlot : MonoBehaviour
         //sets color to transparent to avoid white null image
         itemImage.sprite = null;
         itemImage.color = new Color(1, 1, 1, 0);
+
+        if (quantityText != null) quantityText.text = "";
     }
 
     /*
