@@ -11,11 +11,6 @@ public class PlayerMouseUtils : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-        if (PlayerInput.Instance.MouseClickInput)
-        {
-            return hit.collider;
-        }
-
         if (hit.collider != null)
         {
             HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
@@ -33,6 +28,11 @@ public class PlayerMouseUtils : MonoBehaviour
 
             outlineScript.Exit();
             outlineScript = null;
+        }
+
+        if (PlayerInput.Instance.MouseClickInput)
+        {
+            return hit.collider;
         }
 
         return null;
