@@ -26,9 +26,6 @@ public class PlayerIdleState : PlayerBaseState
     {
     }
 
-
-    HighlightInteractableOutline outlineScript;
-
     public void MouseDetection()
     {
         Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
@@ -38,7 +35,6 @@ public class PlayerIdleState : PlayerBaseState
         Debug.Log("Hit object: " + currentCollider.gameObject.name);
         InventoryItem _inventoryItem = currentCollider.gameObject.GetComponent<InventoryItem>();
         _context._ItemManager.UpdateSelectedItem(_inventoryItem);
-        if (outlineScript != null) outlineScript.Exit();
 
         _context.UpdatePlayerCharacterReference();
 

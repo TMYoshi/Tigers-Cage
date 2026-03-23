@@ -10,9 +10,9 @@ public class FadeController : MonoBehaviour
 
     [SerializeField] private Animator transitionAnimator;
     [SerializeField] private CanvasGroup fadeCanvasGroup;
-    [SerializeField] private float sceneLoadDelay = 0.01f;
 
     public event Action onFadeInComplete;
+    bool alreadyLoading = false;
 
     private void Awake()
     {
@@ -30,6 +30,7 @@ public class FadeController : MonoBehaviour
 
     public void FadeAndLoad(string sceneName)
     {
+        if(alreadyLoading) return;
         StartCoroutine(TransitionRoutine(sceneName));
     }
 
@@ -61,56 +62,21 @@ public class FadeController : MonoBehaviour
         fadeCanvasGroup.alpha = targetAlpha;
     }
 
+    bool finishedBlinkAnimation;
+    public void setFinishedBlinkAnimation() => finishedBlinkAnimation = true;
+
     private IEnumerator TransitionRoutine(string sceneName)
     {
-        if (transitionAnimator != null)
-        {
-            transitionAnimator.Play("BlinkingAnimationStart");
-            yield return new WaitForSeconds(GetAnimationLength("BlinkingAnimationStart")); // currently fade to black, actual animation WIP
-        }
+        alreadyLoading = true;
+        finishedBlinkAnimation = false;
+        transitionAnimator.SetBool("Blink", true);
 
+        yield return new WaitUntil(() => finishedBlinkAnimation);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        yield return new WaitUntil(() => asyncLoad.isDone);
 
-        if (asyncLoad == null)
-        {
-            Debug.LogError($"Scene '{sceneName}' could not be started.");
-
-            if (transitionAnimator != null) transitionAnimator.Play("BlinkingAnimationEnd");
-            yield break;
-        }
-
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(sceneLoadDelay);
-
+        transitionAnimator.SetBool("Blink", false);
+        alreadyLoading = false;
         onFadeInComplete?.Invoke();
-
-        if (transitionAnimator != null)
-        {
-            transitionAnimator.Play("BlinkingAnimationEnd");
-            yield return new WaitForSeconds(GetAnimationLength("BlinkingAnimationEnd"));
-        }
-
-    }
-
-    private float GetAnimationLength(string animationName)
-    {
-        if (transitionAnimator == null) return 0f;
-
-        AnimationClip[] clips = transitionAnimator.runtimeAnimatorController.animationClips;
-
-        foreach(AnimationClip clip in clips)
-        {
-            if(clip.name == animationName)
-            {
-                return clip.length;
-            }
-        }
-
-        Debug.LogWarning($"Animation '{animationName}' not found. Using default delay.");
-        return 0.5f;
     }
 }
