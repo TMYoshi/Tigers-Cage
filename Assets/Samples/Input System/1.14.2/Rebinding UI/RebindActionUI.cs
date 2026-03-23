@@ -15,6 +15,12 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     /// </summary>
     public class RebindActionUI : MonoBehaviour
     {
+        #region Start
+        private void Start()
+        {
+            LoadRebind();
+        }
+        #endregion
         /// <summary>
         /// Reference to the action that is to be rebound.
         /// </summary>
@@ -231,12 +237,15 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             UpdateBindingDisplay();
         }
 
+        #region StartInteractiveRebind
         /// <summary>
         /// Initiate an interactive rebind that lets the player actuate a control to choose a new binding
         /// for the action.
         /// </summary>
         public void StartInteractiveRebind()
         {
+            m_Action.action.Disable();
+
             if (!ResolveActionAndBinding(out var action, out var bindingIndex))
                 return;
 
@@ -252,11 +261,30 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 PerformInteractiveRebind(action, bindingIndex);
             }
         }
+        #endregion
+
+        #region Save/Load Rebind
+        private void SaveRebind()
+        {
+            var current_binding = actionReference.action.actionMap.SaveBindingOverridesAsJson();
+            PlayerPrefs.SetString(m_Action.action.name + bindingId, current_binding);
+        }
+
+        private void LoadRebind()
+        {
+            var saved_binding = PlayerPrefs.GetString(m_Action.action.name + bindingId);
+            if(!string.IsNullOrEmpty(saved_binding))
+            {
+                actionReference.action.actionMap.LoadBindingOverridesFromJson(saved_binding);
+            }
+        }
+        #endregion
 
         private void PerformInteractiveRebind(InputAction action, int bindingIndex, bool allCompositeParts = false)
         {
             m_RebindOperation?.Cancel(); // Will null out m_RebindOperation.
 
+            #region CleanUp
             void CleanUp()
             {
                 m_RebindOperation?.Dispose();
@@ -264,7 +292,11 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
                 action.actionMap.Enable();
                 m_UIInputActionMap?.Enable();
+
+                m_Action.action.Enable();
+                SaveRebind();
             }
+            #endregion
 
             // An "InvalidOperationException: Cannot rebind action x while it is enabled" will
             // be thrown if rebinding is attempted on an action that is enabled.
