@@ -40,7 +40,7 @@ public class PlayerDialogItemState : PlayerBaseState
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
-    void AddItemToInv(InventoryItem _inventoryItem)
+    public static void AddItemToInv(InventoryItem _inventoryItem)
     {
         InventoryManager inventoryManager = GameObject.Find("InventoryCanvas")?.GetComponent<InventoryManager>();
         if (inventoryManager != null)
@@ -58,13 +58,13 @@ public class PlayerDialogItemState : PlayerBaseState
         }
     }
 
-    void MarkItemAsCollected(InventoryItem _inventoryItem)
+    static public void MarkItemAsCollected(InventoryItem _inventoryItem)
     {
         string itemId = GenerateItemId(_inventoryItem);
         InventoryManager.MarkItemAsCollected(itemId);
     }
 
-    string GenerateItemId(InventoryItem _inventoryItem)
+    static public string GenerateItemId(InventoryItem _inventoryItem)
     {
         string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         return sceneName + "_" + _inventoryItem.gameObject.name + "_" + _inventoryItem.ItemName;

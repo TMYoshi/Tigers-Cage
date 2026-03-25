@@ -12,14 +12,22 @@ public class PlayerInventoryHelper : EditorWindow
     private void OnGUI()
     {
         GUILayout.Label("Player Inventory Items", EditorStyles.boldLabel);
-        Texture2D itemImage = null;
-        itemImage = (Texture2D)EditorGUILayout.ObjectField("Item Image", itemImage, typeof(Texture2D), false);
+        Sprite itemImage = null;
+        itemImage = (Sprite)EditorGUILayout.ObjectField("Item Image", itemImage, typeof(Sprite), false);
 
         string itemName = "";
         itemName = EditorGUILayout.TextField("Item Name", itemName);
 
         if (GUILayout.Button("Add Item"))
         {
+            GameObject tempItem = new GameObject("New Inventory Item"); 
+            InventoryItem itemToAdd = tempItem.AddComponent<InventoryItem>();
+            
+            itemToAdd.Init(itemName, itemImage);
+
+            PlayerDialogItemState.MarkItemAsCollected(itemToAdd);
+            PlayerDialogItemState.AddItemToInv(itemToAdd);
+
             Debug.Log("Item was added!");
         }
     }

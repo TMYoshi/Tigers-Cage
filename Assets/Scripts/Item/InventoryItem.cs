@@ -29,6 +29,12 @@ public class InventoryItem : Item
     public SpecialItems GetSpecialEvents() => SpecialEvents;
     public void AssignSpecialEvents(SpecialItems specialEvent) => SpecialEvents = specialEvent;
 
+    public void Init(string _name, Sprite _image)
+    {
+        itemName = _name;
+        sprite = _image;
+    }
+
     
     void Start()
     {
