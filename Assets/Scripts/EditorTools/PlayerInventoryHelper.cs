@@ -3,6 +3,10 @@ using UnityEditor;
 
 public class PlayerInventoryHelper : EditorWindow
 {
+
+    string itemName = "";
+    Texture2D itemImage = null;
+
     [MenuItem("Tiger Tools/Inventory Helper")]
     public static void ShowWindow()
     {
@@ -12,18 +16,14 @@ public class PlayerInventoryHelper : EditorWindow
     private void OnGUI()
     {
         GUILayout.Label("Player Inventory Items", EditorStyles.boldLabel);
-        Sprite itemImage = null;
-        itemImage = (Sprite)EditorGUILayout.ObjectField("Item Image", itemImage, typeof(Sprite), false);
-
-        string itemName = "";
+        itemImage = (Texture2D)EditorGUILayout.ObjectField("Item Image", itemImage, typeof(Texture2D), false);
         itemName = EditorGUILayout.TextField("Item Name", itemName);
 
         if (GUILayout.Button("Add Item"))
         {
             GameObject tempItem = new GameObject("New Inventory Item"); 
             InventoryItem itemToAdd = tempItem.AddComponent<InventoryItem>();
-            
-            itemToAdd.Init(itemName, itemImage);
+            itemToAdd.Init(itemName, Sprite.Create(itemImage, new Rect(0, 0, itemImage.width, itemImage.height), new Vector2(0.5f, 0.5f)));
 
             PlayerDialogItemState.MarkItemAsCollected(itemToAdd);
             PlayerDialogItemState.AddItemToInv(itemToAdd);
