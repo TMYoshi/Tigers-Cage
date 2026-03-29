@@ -21,7 +21,7 @@ public class PlayerInvState : PlayerBaseState
     bool AlreadyClicked;
     public override void UpdateState()
     {
-        _context._MouseUtils.HighlightOnHover();
+        _context._MouseUtils.HighlightOnHoverInv();
         if (PlayerInput.Instance.MouseClickInput)
         {
             AlreadyClicked = true;
