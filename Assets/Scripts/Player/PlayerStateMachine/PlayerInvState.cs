@@ -32,7 +32,6 @@ public class PlayerInvState : PlayerBaseState
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
 
                 ItemSlot selectedItemSlot = getDraggedObject();
-                if (selectedItemSlot?.itemSprite == null) { ExitState(); Debug.Log("<color=red>NO SPRITE IMAGE</color>"); return;}
 
                 _renderer.sprite = selectedItemSlot.itemSprite;
                 _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;
@@ -66,10 +65,15 @@ public class PlayerInvState : PlayerBaseState
         }
         return null;
     }
+
     public override void ExitState()
     {
-        _context._ItemManager.HideDraggedItem();
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+    }
+
+    public override void Cleanup()
+    {
+        _context._ItemManager.HideDraggedItem();
     }
 
     public void DetectWhenExit()

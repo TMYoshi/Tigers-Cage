@@ -30,6 +30,14 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void ExitState()
     {
+            Cleanup();
+            _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+    }
+
+    public override void Cleanup()
+    {
+        if(_context._ItemManager._SelectedItem == null) return;
+
         if (_context._ItemManager._SelectedItem.Collectable)
         {
             MarkItemAsCollected(_context._ItemManager._SelectedItem);
@@ -37,7 +45,6 @@ public class PlayerDialogItemState : PlayerBaseState
             _context._ItemManager.DestroySelectedItem();
         }
         _context._ItemManager.UpdateSelectedItem(null);
-        _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
     public static void AddItemToInv(InventoryItem _inventoryItem)

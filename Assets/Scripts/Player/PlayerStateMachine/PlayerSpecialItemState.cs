@@ -35,4 +35,9 @@ public class PlayerSpecialItemState : PlayerBaseState
         specialItem.RewardCondition();
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
+
+    public override void Cleanup()
+    {
+        specialItem.CleanUpCondition();
+    }
 }

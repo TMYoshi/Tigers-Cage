@@ -56,6 +56,7 @@ public class PlayerStateManager : MonoBehaviour
     }
     public void UpdateCurrentState(State state)
     {
+        if(_currentState != null) _currentState.Cleanup();
         _currentState = _State[state];
         _currentState.EnterState();
     }

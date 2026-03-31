@@ -20,6 +20,14 @@ public class ItemManager : MonoBehaviour
         _dialogItem.assoc_dialog_box_ = dialog;
     }
     public void DestroySelectedItem() => Destroy(_selectedItem.gameObject);
-    public void HideDraggedItem() => _DraggedItem.SetActive(false);
-    public void ShowDraggedItem() => _DraggedItem.SetActive(true);
+    public void HideDraggedItem()
+    {
+        if(_DraggedItem == null) return;
+        _DraggedItem.SetActive(false);
+    }
+    public void ShowDraggedItem()
+    {
+        if(_DraggedItem == null) return;
+        _DraggedItem.SetActive(true);
+    }
 }
