@@ -28,6 +28,7 @@ public class Countdown : MonoBehaviour
     private void Start()
     {
          // To activate countdown, affect the player pref?
+        /*
         if (is_active_)
         {
             remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
@@ -36,10 +37,12 @@ public class Countdown : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        */
     }
     
     private void TickDown()
     {
+        /*
         if(remaining_time_ > 0)
         {
             remaining_time_ -= Time.deltaTime;
@@ -63,7 +66,7 @@ public class Countdown : MonoBehaviour
         int seconds      = Mathf.FloorToInt(remaining_time_ % 60);
         int centiseconds = Mathf.FloorToInt(remaining_time_ * 100 % 100);
         timer_text_.text = string.Format("{0:00}:{1:00}.{2:00}", minutes, seconds, centiseconds);
-
+        */
     }
 
     private void Update()
