@@ -25,19 +25,20 @@ public class PauseMenu : MonoBehaviour
     public Button[] documentButtons;
 
     public static bool isPaused = false;
+    private Action invHandler;
 
     void Start()
     {
-        PlayerInput.Instance.InvOnClick += () =>
+        invHandler = () =>
         {
-            Debug.Log("J is pressed ");
-            if (isPaused)
+            if(!this || JournalUI == null) return;
+
+            if(isPaused)
                 ResumeGame();
             else
                 PauseGame();
         };
-
-
+        PlayerInput.Instance.InvOnClick += invHandler;
         PauseBackground.SetActive(false);
         JournalUI.SetActive(false);
 

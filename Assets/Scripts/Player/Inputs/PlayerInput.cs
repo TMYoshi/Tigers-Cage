@@ -12,11 +12,17 @@ public class PlayerInput : MonoBehaviour
     public Action MouseOnUpInput;
     public Action InvOnClick;
     public Action FlashInput;
+    //public Action MouseMovement;
+    
     [field: SerializeField]
     public bool SkipInput {private set; get;}
     public Vector2 MouseInput {private set; get;}
+   // public Vector2 Mouse {private set; get;}
     public bool HintInput;  
     public bool JournalInput {private set; get;}
+
+
+
 
     InputAction mouseClickAction;
     InputAction mouseAction;
@@ -25,6 +31,8 @@ public class PlayerInput : MonoBehaviour
     InputAction skipAction;
     InputAction hintAction;
     InputAction journalAction;
+
+    //InputAction mouseMoveAction;
 
     void Awake()
     {
@@ -46,6 +54,7 @@ public class PlayerInput : MonoBehaviour
         skipAction = InputSystem.actions.FindAction("Skip");
         hintAction = InputSystem.actions.FindAction("Hint");
         journalAction = InputSystem.actions.FindAction("Journal");
+        //mouseMoveAction = InputSystem.actions.FindAction("MouseMove");
 
         invAction.performed += _ => InvOnClick?.Invoke();
 
@@ -77,5 +86,10 @@ public class PlayerInput : MonoBehaviour
         {
             MouseInput = mouseAction.ReadValue<Vector2>();
         }
+    }
+
+    void Update()
+    {
+        MouseMovement = mouseMoveAction.ReadValue<Vector2>();
     }
 }
