@@ -88,8 +88,9 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    void Update()
+    /*void Update()
     {
         MouseMovement = mouseMoveAction.ReadValue<Vector2>();
     }
+    */
 }
