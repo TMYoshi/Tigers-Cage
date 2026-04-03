@@ -70,7 +70,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseGame",
+                    "name": "MouseMove",
                     "type": "Value",
                     "id": "c60a8cde-1464-4e1f-96c7-05cce6f25a8a",
                     "expectedControlType": "Vector2",
@@ -164,7 +164,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseGame",
+                    "action": "MouseMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
