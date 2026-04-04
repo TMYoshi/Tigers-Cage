@@ -36,7 +36,7 @@ AnimatorController:
   m_Name: MainMenuTraverse
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Transitioning
+  - m_Name: Tiger
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -167,7 +167,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Transitioning
+    m_ConditionEvent: Tiger
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7255331782879037732}
