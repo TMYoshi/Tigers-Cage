@@ -8,6 +8,6 @@ public class Traversal_Button : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("Proceeding to " + proceed_to);
-        SceneController.scene_controller_instance.Traverse_Scene(proceed_to);
+        SceneController.scene_controller_instance.TraverseScene(proceed_to);
     }
 }

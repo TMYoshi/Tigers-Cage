@@ -31,8 +31,20 @@ public class SceneController : MonoBehaviour
     }
 
     // scene load without fade (fallback)
-    public void Traverse_Scene(string sceneName)
+    public void TraverseScene(string sceneName)
     {
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    // scene load without fade (fallback)
+    public void MainMenuTraverse(string sceneName)
+    {
+        StartCoroutine(MainMenuCoroutine(sceneName));
+    }
+
+    IEnumerator MainMenuCoroutine(string sceneName)
+    {
+        yield return new WaitForSeconds(MainMenuTransition.Instance.ChangeSceneWithTigerAnimation());
         SceneManager.LoadSceneAsync(sceneName);
     }
 

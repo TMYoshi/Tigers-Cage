@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 5beac9354bc1aa5498b0320d54200c37
+guid: 8db07a13854772a4da1ac58037d518ca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2071555288105434898
-    second: button_credits_0
+      213: 4238573501208248702
+    second: mainmenu_button_play_v01_0
   - first:
-      213: -1572176813532946480
-    second: button_credits_1
+      213: 5972255995419240973
+    second: mainmenu_button_play_v01_1
   - first:
-      213: 2849415642023490568
-    second: button_credits_2
+      213: 586425012923737799
+    second: mainmenu_button_play_v01_2
   - first:
-      213: -2120226436257377942
-    second: button_credits_3
-  - first:
-      213: 8783115980248869150
-    second: button_credits_4
-  - first:
-      213: -1772769726078963579
-    second: button_credits_5
-  - first:
-      213: 1092494440447757678
-    second: button_credits_6
-  - first:
-      213: -143892801433950972
-    second: button_credits_7
+      213: 2128446458477315131
+    second: mainmenu_button_play_v01_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,17 +105,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_credits_0
+      name: mainmenu_button_play_v01_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 29
-        height: 55
+        x: 62
+        y: 75
+        width: 13
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,42 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee0c4e7e07b5043e0800000000000000
-      internalID: -2071555288105434898
+      spriteID: e71c6e5742072da30800000000000000
+      internalID: 4238573501208248702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button_credits_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 5
-        width: 36
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0df534194818e2ae0800000000000000
-      internalID: -1572176813532946480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_credits_2
+      name: mainmenu_button_play_v01_1
       rect:
         serializedVersion: 2
         x: 71
-        y: 5
-        width: 25
-        height: 53
+        y: 64
+        width: 985
+        height: 253
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8047048fd682b8720800000000000000
-      internalID: 2849415642023490568
+      spriteID: d0a29aa7f27b1e250800000000000000
+      internalID: 5972255995419240973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button_credits_3
+      name: mainmenu_button_play_v01_2
       rect:
         serializedVersion: 2
-        x: 103
-        y: 4
-        width: 29
-        height: 54
+        x: 71
+        y: 50
+        width: 32
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a619c772a417392e0800000000000000
-      internalID: -2120226436257377942
+      spriteID: 7c629b63176632800800000000000000
+      internalID: 586425012923737799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button_credits_4
+      name: mainmenu_button_play_v01_3
       rect:
         serializedVersion: 2
-        x: 136
-        y: 42
-        width: 16
-        height: 14
+        x: 123
+        y: 43
+        width: 837
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,74 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e196ac7f275e3e970800000000000000
-      internalID: 8783115980248869150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_credits_5
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 4
-        width: 14
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5803f70a35bd567e0800000000000000
-      internalID: -1772769726078963579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_credits_6
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 4
-        width: 42
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e6d4af1c7e1592f00800000000000000
-      internalID: 1092494440447757678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button_credits_7
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 2
-        width: 26
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4052bcc624ac00ef0800000000000000
-      internalID: -143892801433950972
+      spriteID: b348af8e6c2c98d10800000000000000
+      internalID: 2128446458477315131
       vertices: []
       indices: 
       edges: []
@@ -310,14 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button_credits_0: -2071555288105434898
-      button_credits_1: -1572176813532946480
-      button_credits_2: 2849415642023490568
-      button_credits_3: -2120226436257377942
-      button_credits_4: 8783115980248869150
-      button_credits_5: -1772769726078963579
-      button_credits_6: 1092494440447757678
-      button_credits_7: -143892801433950972
+      mainmenu_button_play_v01_0: 4238573501208248702
+      mainmenu_button_play_v01_1: 5972255995419240973
+      mainmenu_button_play_v01_2: 586425012923737799
+      mainmenu_button_play_v01_3: 2128446458477315131
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
