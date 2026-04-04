@@ -46,7 +46,7 @@ public class ArrowController : MonoBehaviour
                     Debug.LogError("SceneController.scene_controller_instance is NULL! Make sure SceneController is in the scene.");
                     return;
                 }
-                SceneController.scene_controller_instance.Traverse_Scene(nextScene);
+                SceneController.scene_controller_instance.TraverseScene(nextScene);
             }
         }
         else
