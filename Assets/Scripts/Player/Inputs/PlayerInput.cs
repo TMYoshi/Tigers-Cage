@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
     InputAction flashAction;
     InputAction skipAction;
     InputAction hintAction;
-    InputAction journalAction;
+    //InputAction journalAction;
 
     InputAction mouseMoveAction;
 
@@ -50,7 +50,7 @@ public class PlayerInput : MonoBehaviour
         flashAction = InputSystem.actions.FindAction("Flashlight");
         skipAction = InputSystem.actions.FindAction("Skip");
         hintAction = InputSystem.actions.FindAction("Hint");
-        journalAction = InputSystem.actions.FindAction("Journal");
+        // journalAction = InputSystem.actions.FindAction("Journal");
         mouseMoveAction = InputSystem.actions.FindAction("MouseMove");
 
         invAction.performed += _ => InvOnClick?.Invoke();
@@ -73,8 +73,8 @@ public class PlayerInput : MonoBehaviour
         hintAction.performed += _ => HintInput = true;
         hintAction.canceled += _ => HintInput= false;
 
-        journalAction.performed += _ => JournalInput = true;
-        journalAction.canceled += _ => JournalInput= false;
+        //journalAction.performed += _ => JournalInput = true;
+        //journalAction.canceled += _ => JournalInput= false;
     }
 
     void Update()
