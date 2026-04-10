@@ -104,36 +104,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff431b5c4b55eb4b9d79dd3c34de852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 10
+  speed: 5
   animation_curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0029335022
-      value: 0.32144165
+      time: 0
+      value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.6626051
-      value: 0.44935837
-      inSlope: 0.49927878
-      outSlope: 0.49927878
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.99560404
-      value: 0.4642887
-      inSlope: -1.9655099
-      outSlope: -1.9655099
-      tangentMode: 0
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.056049973
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
