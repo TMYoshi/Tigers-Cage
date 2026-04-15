@@ -19,11 +19,12 @@ public class PlayerController : MonoBehaviour
         else
             Debug.LogWarning("No -midposition for start to go towards");
     }
+
     void Start()
     {
         if(SceneController.scene_controller_instance.shouldMoveToMiddle == false)
         {
-            transform.position = SceneController.scene_controller_instance.teleportPositionForGoingBack;
+            transform.position = new Vector3(SceneController.scene_controller_instance.teleportPositionForGoingBack.x, -2.0f, 0f);
             SceneController.scene_controller_instance.shouldMoveToMiddle = true;
             return;
         }
@@ -36,15 +37,34 @@ public class PlayerController : MonoBehaviour
         else
             GetOffscreenAndGoToMiddle(SceneController.scene_controller_instance.lastArrowClicked == "Right" ? true : false);
     }
+
+    public void WalkToOnClick()
+    {
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
+        targetPos.z = 0f;
+
+        MoveTo
+        (
+            targetPos
+        );
+    }
+
     public void MoveTo(Transform _moveTo, Action _onComplete = null)
+    {
+        StopAllCoroutines();
+        StartCoroutine(MoveToHelper(_moveTo.position, _onComplete));
+    }
+
+    public void MoveTo(Vector3 _moveTo, Action _onComplete = null)
     {
         StopAllCoroutines();
         StartCoroutine(MoveToHelper(_moveTo, _onComplete));
     }
-    public IEnumerator MoveToHelper(Transform _moveTo, Action _onComplete)
+
+    public IEnumerator MoveToHelper(Vector3 _moveTo, Action _onComplete)
     {
         float originalPos = transform.position.x;
-        float targetX = _moveTo.position.x;
+        float targetX = _moveTo.x;
 
         while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
         {
