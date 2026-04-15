@@ -30,7 +30,6 @@ public class PlayerIdleState : PlayerBaseState
     public override void Cleanup()
     {
         PlayerInput.Instance.MouseOnClickInput -= _context._MovementController.WalkToOnClick;
-        Debug.Log("Cleaned Up");
     }
 
     public void MouseDetection()
