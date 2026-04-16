@@ -8,6 +8,8 @@ TagManager:
   - SpecialItem
   - Transitions
   - InvItem
+  - Wall
+  - Fin
   layers:
   - Default
   - TransparentFX

@@ -4,25 +4,40 @@ public class WallHit : MonoBehaviour
 {
     //set up Hit counters
     public int MaxHits = 3;
+    public float HitCoolDown = 0.5f;
+
     private int HitCount = 0;
+    private float LastHitTime = -9999f;
 
-    void OnColisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (!collision.gameObject.CompareTag("Wall"))
         {
-            HitCount++;
+            return;
+        }
+        
+    
+        if(Time.time - LastHitTime < HitCoolDown)
+        {
+            return;//Ignore hits during cooldown
+        }
 
-            Debug.Log("Wall hit: " + HitCount);
+        LastHitTime = Time.time;
+        HitCount++;
 
-            if(HitCount >= MaxHits)
-            {
-                GameOver(); //will have to replace it with a gameover cutscene
-            }
+        Debug.Log("Player hit the wall:" + HitCount + " hits");
+
+        if(HitCount >= MaxHits)
+        {
+            GameOver();
+        }
+
+        void GameOver()
+        {
+            Debug.Log("Game Over! Player hit the max count.");
+            
         }
     }
 
-    void GameOver()
-    {
-        //Game over to put in with game over cut scene
-    }
+
 }
