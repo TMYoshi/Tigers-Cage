@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] AnimationCurve animation_curve;
+
     public void GetOffscreenAndGoToMiddle(bool left)
     {
         //swaps x position util tool for getting the player offscreen
@@ -38,12 +39,12 @@ public class PlayerController : MonoBehaviour
             GetOffscreenAndGoToMiddle(SceneController.scene_controller_instance.lastArrowClicked == "Right" ? true : false);
     }
 
-    public void WalkToOnClick()
+    public static void WalkToOnClick(PlayerController _playerController)
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
         targetPos.z = 0f;
 
-        MoveTo
+        _playerController.MoveTo
         (
             targetPos
         );

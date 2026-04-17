@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
@@ -10,10 +11,23 @@ public class PlayerIdleState : PlayerBaseState
     {
         _context = context;
     }
+
+    Action MoveToWalk;
+    Action LocateMovementController;
+
     public override void EnterState()
     {
-        if(_context._MovementController == null) return;
-        PlayerInput.Instance.MouseOnClickInput += _context._MovementController.WalkToOnClick;
+        MoveToWalk = () => 
+        {
+            if((_context._MovementController) == null)
+            {
+                _context.UpdatePlayerCharacterReference();
+                return;
+            };
+            PlayerController.WalkToOnClick(_context._MovementController);
+        };
+
+        PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
     }
     public override void UpdateState()
     {
@@ -30,8 +44,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void Cleanup()
     {
-        if(_context._MovementController == null) return;
-        PlayerInput.Instance.MouseOnClickInput -= _context._MovementController.WalkToOnClick;
+        PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
     }
 
     private void OnDisable()
