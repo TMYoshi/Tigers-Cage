@@ -7624,7 +7624,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 1417504919}
   fadeCanvasGroup: {fileID: 1417504918}
-  sceneLoadDelay: 0.05
 --- !u!114 &1417504921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9639,7 +9638,7 @@ PrefabInstance:
       objectReference: {fileID: 745277747}
     - target: {fileID: 6873995965935424486, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
+      value: Options
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
