@@ -79,6 +79,7 @@ public class PauseMenu : MonoBehaviour
 
     void UpdateTOCButtons()
     {
+        if(JournalDataManager.Instance == null) return;
         var data = JournalDataManager.Instance.allDocuments;
 
         for (int i = 0; i < documentButtons.Length; i++)

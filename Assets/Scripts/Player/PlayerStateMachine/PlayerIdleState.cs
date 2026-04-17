@@ -12,6 +12,7 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void EnterState()
     {
+        if(_context._MovementController == null) return;
         PlayerInput.Instance.MouseOnClickInput += _context._MovementController.WalkToOnClick;
     }
     public override void UpdateState()
@@ -29,6 +30,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void Cleanup()
     {
+        if(_context._MovementController == null) return;
         PlayerInput.Instance.MouseOnClickInput -= _context._MovementController.WalkToOnClick;
     }
 
