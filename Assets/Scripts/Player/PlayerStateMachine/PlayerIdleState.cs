@@ -34,6 +34,11 @@ public class PlayerIdleState : PlayerBaseState
         PlayerInput.Instance.MouseOnClickInput -= _context._MovementController.WalkToOnClick;
     }
 
+    private void OnDisable()
+    {
+        Cleanup();
+    }
+
     public void MouseDetection()
     {
         Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
