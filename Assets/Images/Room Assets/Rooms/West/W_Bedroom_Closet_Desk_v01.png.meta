@@ -106,12 +106,12 @@ TextureImporter:
       name: W_Bedroom_Closet_Desk_v01_0
       rect:
         serializedVersion: 2
-        x: 306
-        y: 43
-        width: 855
-        height: 2117
+        x: 0
+        y: 0
+        width: 2160
+        height: 2160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -128,12 +128,12 @@ TextureImporter:
       name: W_Bedroom_Closet_Desk_v01_1
       rect:
         serializedVersion: 2
-        x: 2174
-        y: 43
-        width: 1147
-        height: 2117
+        x: 2160
+        y: 0
+        width: 2160
+        height: 2160
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8dec1bd3f3172d147a645e9c8cd2d709
     internalID: 0
     vertices: []
     indices: 
@@ -158,7 +158,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2160.0,"y":2160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       W_Bedroom_Closet_Desk_v01_0: -2451328563708989073
       W_Bedroom_Closet_Desk_v01_1: -4571636407851435304
