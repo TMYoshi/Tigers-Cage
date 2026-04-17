@@ -21,14 +21,15 @@ public class Sound_Mixer_Manager : MonoBehaviour
     public void SetMasterVolume()
     {
         float level = master_slider_.value;
+        audio_mixer_.SetFloat("Master Volume", Mathf.Log10(level) * 20f);
         PlayerPrefs.SetFloat("Master Volume", level);
-        audio_mixer_.SetFloat("MasterVolume", Mathf.Log10(level) * 20f);
+
     }
 
     public void SetSFXVolume()
     {
         float level = sfx_slider_.value;
-        audio_mixer_.SetFloat("SFXVolume", Mathf.Log10(level) * 20f);
+        audio_mixer_.SetFloat("SFX Volume", Mathf.Log10(level) * 20f);
         PlayerPrefs.SetFloat("SFX Volume", level);
 
     }
@@ -36,7 +37,7 @@ public class Sound_Mixer_Manager : MonoBehaviour
     public void SetMusicVolume()
     {
         float level = music_slider_.value;
-        audio_mixer_.SetFloat("MusicVolume", Mathf.Log10(level) * 20f);
+        audio_mixer_.SetFloat("Music Volume", Mathf.Log10(level) * 20f);
         PlayerPrefs.SetFloat("Music Volume", level);
     }
     private void LoadVolume()
