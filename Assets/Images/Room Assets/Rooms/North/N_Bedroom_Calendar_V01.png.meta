@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2f07d738572651345ac11a186c435405
+guid: d1a2d300ab349fd4197e1e23a42adb99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3425157070110748791
-    second: N_Bedroom_Bookshelf_Front_V02_0
-  - first:
-      213: -1762472127777094747
-    second: N_Bedroom_Bookshelf_Front_V02_1
+      213: 2916653580036236797
+    second: N_Bedroom_Calendar_V01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -99,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: N_Bedroom_Bookshelf_Front_V02_0
+      name: N_Bedroom_Calendar_V01_0
       rect:
         serializedVersion: 2
-        x: 107
-        y: 1020
-        width: 206
-        height: 176
+        x: 6
+        y: 8
+        width: 232
+        height: 413
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 98f8120cac56770d0800000000000000
-      internalID: -3425157070110748791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: N_Bedroom_Bookshelf_Front_V02_1
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 90
-        width: 738
-        height: 1690
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a3c15110f07a87e0800000000000000
-      internalID: -1762472127777094747
+      spriteID: df56eea5af80a7820800000000000000
+      internalID: 2916653580036236797
       vertices: []
       indices: 
       edges: []
@@ -173,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      N_Bedroom_Bookshelf_Front_V02_0: -3425157070110748791
-      N_Bedroom_Bookshelf_Front_V02_1: -1762472127777094747
+      N_Bedroom_Calendar_V01_0: 2916653580036236797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
