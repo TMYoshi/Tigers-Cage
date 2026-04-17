@@ -484,17 +484,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 71194145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &246525785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2784819968871204337, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 421782889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &275984701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1002,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 152500034}
     - target: {fileID: 6873995965935424486, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
+      value: Options
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1136,17 +1125,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc4ee625311f24fa72de363b1ad663, type: 3}
---- !u!114 &575721966 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4488519901381587585, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 421782889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &602394171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,17 +1378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248accd18e855a34aab6fa1c17c46fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveLoad
---- !u!114 &1516323054 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1786984527326536157, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 421782889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &1522698481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2719,3 +2686,4 @@ SceneRoots:
   - {fileID: 602394173}
   - {fileID: 1230778503}
   - {fileID: 1988618371}
+  - {fileID: 1522698481}

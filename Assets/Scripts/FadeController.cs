@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -72,8 +71,8 @@ public class FadeController : MonoBehaviour
         transitionAnimator.SetBool("Blink", true);
 
         yield return new WaitUntil(() => finishedBlinkAnimation);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        yield return new WaitUntil(() => asyncLoad.isDone);
+        AsyncOperation scene = SceneController.scene_controller_instance.TraverseScene(sceneName);
+        yield return new WaitUntil(() => scene.isDone);
 
         transitionAnimator.SetBool("Blink", false);
         alreadyLoading = false;

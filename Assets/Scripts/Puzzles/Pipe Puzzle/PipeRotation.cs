@@ -3,9 +3,12 @@ using UnityEngine;
 public class PipeRotation : MonoBehaviour
 {
     private bool isSubscribed = false;
+    private Quaternion targetRotation;
 
     private void Start()
     {
+        targetRotation = transform.rotation;
+
         if(PlayerInput.Instance != null)
         {
             PlayerInput.Instance.MouseOnClickInput += RotatePipe;
@@ -15,6 +18,11 @@ public class PipeRotation : MonoBehaviour
         {
             Debug.LogError("PipeRotation has missing PlayerInput instance.");
         }
+    }
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
     }
 
     private void OnDisable()
@@ -33,7 +41,7 @@ public class PipeRotation : MonoBehaviour
 
         if (hitCollider != null && hitCollider.gameObject == gameObject)
         {
-            gameObject.transform.Rotate(0, 0, -90f);
+            targetRotation *= Quaternion.Euler(0, 0, -90f);
         }
     }
 }

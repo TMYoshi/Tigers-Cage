@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 
 public class PauseMenu : MonoBehaviour
@@ -15,6 +16,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
     public GameObject tableofContentes; //Second UI 
+
+    public GameObject SettingsPanel; // Options menu panel
     public TMP_Text titleText;
     public TMP_Text contentText;
     public Image documentImage;
@@ -71,14 +74,15 @@ public class PauseMenu : MonoBehaviour
     public void OpenJournal()
     {
         PauseBackground.SetActive(false);
+        Debug.Log("Opened table of contetnents");
 
         tableofContentes.SetActive(true);
-        Debug.Log("Opened table of contetnents");
 
     }
 
     void UpdateTOCButtons()
     {
+        if(JournalDataManager.Instance == null) return;
         var data = JournalDataManager.Instance.allDocuments;
 
         for (int i = 0; i < documentButtons.Length; i++)
@@ -112,6 +116,14 @@ public class PauseMenu : MonoBehaviour
 
         // Load main menu directly
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Options()
+    {
+        // Implement options menu logic here
+        Debug.Log("Options menu opened");
+        SettingsPanel.SetActive(true);
+
     }
 
 
