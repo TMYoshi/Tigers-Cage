@@ -878,7 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _videoPlayer: {fileID: 1925976093}
   skipUI: {fileID: 102115200}
-  nextSceneName: MC Room - 1 North Wall
+  nextSceneName: MC Room - 2 East Wall
   cutsceneAnimator: {fileID: 0}
   animationTrigger: PlayCutscene
 --- !u!1 &1925976091

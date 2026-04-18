@@ -3,11 +3,14 @@ using TMPro;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using NUnit.Framework;
 
 public class Countdown : MonoBehaviour
 {
     public static Countdown Instance;
     private static bool is_active_ = false; //Wake up after event via Singleton
+    public void SetActive(bool is_active) { is_active_ = is_active; }
+    public bool IsActive() { return is_active_; }
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
     private PlayerStateManager player_;
@@ -28,21 +31,24 @@ public class Countdown : MonoBehaviour
     private void Start()
     {
          // To activate countdown, affect the player pref?
-        /*
         if (is_active_)
         {
-            remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
+            timer_text_.gameObject.SetActive(true);
+
+            if(PlayerPrefs.HasKey("countdown_value"))
+            {
+                // else, remaining time is just the one that you set
+                remaining_time_ = PlayerPrefs.GetFloat("countdown_value"); 
+            }
         }
         else if (PlayerPrefs.GetFloat("countdown_value") <= 0)
         {
             gameObject.SetActive(false);
         }
-        */
     }
     
     private void TickDown()
     {
-        /*
         if(remaining_time_ > 0)
         {
             remaining_time_ -= Time.deltaTime;
@@ -66,12 +72,11 @@ public class Countdown : MonoBehaviour
         int seconds      = Mathf.FloorToInt(remaining_time_ % 60);
         int centiseconds = Mathf.FloorToInt(remaining_time_ * 100 % 100);
         timer_text_.text = string.Format("{0:00}:{1:00}.{2:00}", minutes, seconds, centiseconds);
-        */
     }
 
     private void Update()
     {
-        TickDown();
+        if(is_active_) { TickDown(); }
     }
 
     private void OnDestroy()

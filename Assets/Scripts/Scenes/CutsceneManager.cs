@@ -18,6 +18,7 @@ public class CutsceneManager : MonoBehaviour
 
     private bool cutsceneFinished = false;
     private bool useVideo = true;
+    private bool countdownAvail = false;
 
     private void Awake()
     {
@@ -48,6 +49,13 @@ public class CutsceneManager : MonoBehaviour
 
     private void StartCutscene()
     {
+        // Countdown Associated Scenes
+        if(Countdown.Instance.IsActive())
+        {
+            Countdown.Instance.gameObject.SetActive(false);
+            countdownAvail = true;
+        }
+
         if (FadeController.Instance != null)
         {
             FadeController.Instance.onFadeInComplete -= StartCutscene;
@@ -134,6 +142,12 @@ public class CutsceneManager : MonoBehaviour
 
     private void ProceedToNextScene()
     {
+        // Countdown Related Logic
+        if(Countdown.Instance.IsActive())
+        {
+            Countdown.Instance.gameObject.SetActive(true);
+        }
+
         cutsceneFinished = true;
 
         if (SceneController.scene_controller_instance != null)
