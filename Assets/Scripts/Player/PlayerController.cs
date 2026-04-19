@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] AnimationCurve animation_curve;
+    //false = left
+    //true = right 
+    public UnityEvent<bool> OnWalk;
+    public UnityEvent OnStop;
 
     public void GetOffscreenAndGoToMiddle(bool left)
     {
@@ -42,7 +47,7 @@ public class PlayerController : MonoBehaviour
     public static void WalkToOnClick(PlayerController _playerController)
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
-        targetPos.z = 0f;
+        targetPos.z = -10;
 
         _playerController.MoveTo
         (
@@ -67,6 +72,8 @@ public class PlayerController : MonoBehaviour
         float originalPos = transform.position.x;
         float targetX = _moveTo.x;
 
+        OnWalk?.Invoke(originalPos - targetX < 0 ? true : false);
+
         while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
         {
             float progress = Mathf.Abs(transform.position.x - originalPos) / Mathf.Abs(originalPos - targetX);
@@ -90,5 +97,7 @@ public class PlayerController : MonoBehaviour
 
         if(_onComplete != null)
             _onComplete.Invoke();
+
+        OnStop?.Invoke();
     }
 }
