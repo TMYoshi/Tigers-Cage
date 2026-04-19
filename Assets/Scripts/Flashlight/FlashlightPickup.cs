@@ -9,6 +9,7 @@ public class FlashlightPickup : MonoBehaviour
         if (flashlightController != null)
         {
             flashlightController.UnlockFlashlight();
+            GetComponent<SpeicalItemID>().Collect();
             Debug.Log("flashlight unlocked");
 
             Destroy(gameObject);
