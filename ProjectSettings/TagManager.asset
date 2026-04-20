@@ -21,7 +21,7 @@ TagManager:
   - 
   - Player
   - 
-  - 
+  - Foreground
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: Rim Light
     uniqueID: 19350193
+    locked: 0
+  - name: Foreground
+    uniqueID: 1377877635
     locked: 0
   m_RenderingLayers:
   - Default

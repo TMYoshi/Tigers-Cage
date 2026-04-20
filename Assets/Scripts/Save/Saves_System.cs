@@ -72,8 +72,9 @@ public static class Saves_System
 
         if(inv != null)
         {
+            inv.ApplyCollectedItemsSaveData(pendingLoadData.collectedItemIds);
             inv.ApplyInventorySaveData(pendingLoadData.inventorySlots);
-            inv.ApplyCollectedItemsSaveData(pendingLoadData.collectedItemIds);//prevent items to duplicate.load once
+            //prevent items to duplicate.load once
 
             Debug.Log("Inventory applied after scene load");
         }

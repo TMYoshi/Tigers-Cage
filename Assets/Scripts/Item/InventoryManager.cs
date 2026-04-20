@@ -59,16 +59,15 @@ public class InventoryManager : MonoBehaviour
             {
                 string itemId = itemSlot[i].itemName;
                 int  qty = itemSlot[i].quantity;
+                string desc = itemSlot[i].itemDescription;
 
                 //save the sprite refrence
                 string spritePath = "";
                 if(itemSlot[i].itemSprite != null)
                 {
-                    spritePath = SPRITE_RESOURCES_FOLDER + itemSlot[i].itemSprite.name;
+                    spritePath = SPRITE_RESOURCES_FOLDER + itemId;
 
                 }
-
-                string desc = itemSlot[i].itemDescription;
 
                 list.Add(new InventorySlotData(itemId,qty,spritePath,desc));
             }
@@ -102,10 +101,13 @@ public class InventoryManager : MonoBehaviour
         for(int i = 0; i < data.Count; i++)
         {
             var d = data[i];
-            Sprite sprite = null;
+
+            Sprite sprite = Resources.Load<Sprite>(SPRITE_RESOURCES_FOLDER + d.itemId);
             //load sprite from resources folder
-            if (!string.IsNullOrEmpty(d.spriteResourcePath))
-                sprite = Resources.Load<Sprite>(d.spriteResourcePath);
+            if (sprite == null)
+            {
+                Debug.LogWarning($"Sprite for itemId '{d.itemId}' not found at path '{SPRITE_RESOURCES_FOLDER + d.itemId}'. Check if the sprite exists and the path is correct.");
+            }
 
             AddItem(d.itemId, d.quantity,sprite, d.itemDescription);
         }
