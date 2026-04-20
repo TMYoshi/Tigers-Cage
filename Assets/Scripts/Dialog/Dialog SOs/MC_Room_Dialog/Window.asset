@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: "The bars are to make sure no one gets in\u2026 Or out."
+    text_: "It\u2019s too high. What if I slip? No, no, that\u2019s a bad idea."
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: I need to think smarter.
   required_item_: 

@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: "I\u2019m stuck in here unless I find a way to distract the tiger."
+    text_: "It won\u2019t open\u2026 Okay, don\u2019t panic. "
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: 'There has to be something in here that can help.
+
+'
   required_item_: 

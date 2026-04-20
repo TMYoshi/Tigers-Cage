@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: "I\u2019m not sleepy anymore."
+    text_: "I can\u2019t sleep right now. My mind keeps going and going."
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: "It\u2019s okay, if I count slowly, maybe I\u2019ll calm down. \n"
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: "One\u2026 Two\u2026\n"
   required_item_: 

@@ -18,8 +18,6 @@ public class CutsceneManager : MonoBehaviour
 
     private bool cutsceneFinished = false;
     private bool useVideo = true;
-    private bool countdownAvail = false;
-
     private void Awake()
     {
         Instance = this;
@@ -54,7 +52,6 @@ public class CutsceneManager : MonoBehaviour
         {
             Debug.Log("Meow" + Countdown.is_active_);
             Countdown.Instance.gameObject.SetActive(false);
-            countdownAvail = true;
         }
 
         if (FadeController.Instance != null)
@@ -148,7 +145,6 @@ public class CutsceneManager : MonoBehaviour
         {
             Countdown.Instance.gameObject.SetActive(true); // Game Object
             Countdown.is_active_ = true;
-            countdownAvail = false;
             Debug.Log("Bark " + Countdown.is_active_);
         }
 

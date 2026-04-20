@@ -91,7 +91,7 @@ public class DialogManager : MonoBehaviour
             return true;
         }
 
-        dialog_animator_.SetTrigger("Bob Sprite");
+        //dialog_animator_.SetTrigger("Bob Sprite");
 
         if (index_ < current_dialog_.lines_.Length - 1)
         {
@@ -103,8 +103,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            EndDialog();
-            gameObject.SetActive(false);
+            StartCoroutine(WaitForDialogAnimation());
 
             return true;
         }
@@ -118,6 +117,34 @@ public class DialogManager : MonoBehaviour
         is_dialog_active_ = false;
 
         dialog_animator_.SetTrigger("Exit"); // TODO: Fix so actually triggers animation lol
+    }
+    #endregion
+
+    #region WaitForDialogAnimation
+    private IEnumerator WaitForDialogAnimation()
+    {
+       EndDialog();
+
+       yield return null;
+
+       AnimatorStateInfo stateInfo = dialog_animator_.GetCurrentAnimatorStateInfo(0);
+       
+       // Keep waiting until the "Exit" animation is actually playing
+        while (!dialog_animator_.GetCurrentAnimatorStateInfo(0).IsName("Dialog Exit"))
+        {
+            Debug.Log("one");
+            yield return null;
+        }   
+
+        // Now wait for the "Exit" animation to complete
+        while (dialog_animator_.GetCurrentAnimatorStateInfo(0).IsName("Exit") &&
+               dialog_animator_.GetCurrentAnimatorStateInfo(0).normalizedTime < 0f)
+        {
+            Debug.Log("two");
+            yield return null;
+        }
+
+        gameObject.SetActive(false);
     }
     #endregion
 

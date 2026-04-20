@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b4628d0e09504698a01071ffaa87949, type: 3}
-  m_Name: Calendar
-  m_EditorClassIdentifier: 
+  m_Name: Bunny
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSO
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: "1986 is supposed to be the year of strength and bravery. I don\u2019t
-      know if I\u2019m brave yet, but I can try.\r\n"
+    text_: "I won Bunbun for getting first place in the spelling bee. \r\n"
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: "Mama said it means I\u2019m improving.\r\n"
   required_item_: 
