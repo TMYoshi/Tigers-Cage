@@ -22,7 +22,6 @@ public class _Turn_Object_On : SpecialItems
     {
         foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
         {
-            Debug.Log(slot.itemName);
             if(slot.itemName == itemToRemove)
             {
                 objectToTurnOn.SetActive(true);
