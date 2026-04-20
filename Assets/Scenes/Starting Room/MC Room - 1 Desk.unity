@@ -2905,6 +2905,10 @@ GameObject:
   - component: {fileID: 8218888756499186071}
   - component: {fileID: 8288123853033184229}
   - component: {fileID: 8288123853033184231}
+  - component: {fileID: 8288123853033184235}
+  - component: {fileID: 8288123853033184234}
+  - component: {fileID: 8288123853033184233}
+  - component: {fileID: 8288123853033184232}
   m_Layer: 0
   m_Name: BrokenCard
   m_TagString: Item
@@ -2941,7 +2945,67 @@ MonoBehaviour:
   item: {fileID: 3560061905963301133}
   objectToTurnOn: {fileID: 2146288726}
   itemToRemove: Ripped Card 1
-  saveKey: Put RippedCard 1
+  saveKey: Put Ripped Card 1
+--- !u!114 &8288123853033184232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288123853033184226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73783a0c1890864e882089bf32331ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Turn_Object_On
+  item: {fileID: 3560061905963301133}
+  objectToTurnOn: {fileID: 930173941}
+  itemToRemove: Ripped Card 3
+  saveKey: Put Ripped Card 3
+--- !u!114 &8288123853033184233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288123853033184226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df3b91bae2e3ea44980f0210050532f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
+  key: Ripped Card 3
+  specialItems: {fileID: 8288123853033184232}
+--- !u!114 &8288123853033184234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288123853033184226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73783a0c1890864e882089bf32331ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Turn_Object_On
+  item: {fileID: 3560061905963301133}
+  objectToTurnOn: {fileID: 342565070}
+  itemToRemove: Ripped Card 2
+  saveKey: Put Ripped Card 2
+--- !u!114 &8288123853033184235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288123853033184226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df3b91bae2e3ea44980f0210050532f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
+  key: Ripped Card 2
+  specialItems: {fileID: 8288123853033184234}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
