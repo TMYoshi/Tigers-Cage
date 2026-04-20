@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] float maxX, minX;
     [SerializeField] float speed;
     [SerializeField] AnimationCurve animation_curve;
     //false = left
@@ -73,6 +74,12 @@ public class PlayerController : MonoBehaviour
         float targetX = _moveTo.x;
 
         OnWalk?.Invoke(originalPos - targetX < 0 ? true : false);
+
+        if(targetX > maxX)
+            targetX = maxX;
+
+        if(targetX < minX)
+            targetX = minX;
 
         while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
         {
