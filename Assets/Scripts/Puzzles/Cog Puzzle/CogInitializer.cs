@@ -6,7 +6,7 @@ public class CogInitializer : MonoBehaviour
     [SerializeField] private GameObject largeLockedCog;
 
     // hard coded :^) values for positions and scales of cogs in tray
-    private const float TRAY_Y_POSITION = -6f;
+    private const float TRAY_X_POSITION = -11.1f;
 
     private const float SMALL_TRAY_SCALE = 0.4f;
     private const float MEDIUM_TRAY_SCALE = 0.32f;
@@ -47,23 +47,23 @@ public class CogInitializer : MonoBehaviour
 
     private void InitializeCogs()
     {
-        SetCogProperties("Small Cogs/cog_small_1", -11f, SMALL_TRAY_SCALE); // -4, -1, 2 are x coords for small cogs in tray
-        SetCogProperties("Small Cogs/cog_small_2", -8f, SMALL_TRAY_SCALE);
-        SetCogProperties("Small Cogs/cog_small_3", -5f, SMALL_TRAY_SCALE);
+        SetCogProperties("Small Cogs/cog_small_1", 7.4f, SMALL_TRAY_SCALE); // -4, -1, 2 are x coords for small cogs in tray
+        SetCogProperties("Small Cogs/cog_small_2", 5.4f, SMALL_TRAY_SCALE);
+        SetCogProperties("Small Cogs/cog_small_3", 3.4f, SMALL_TRAY_SCALE);
 
-        SetCogProperties("Medium Cogs/cog_medium_1", -2f, MEDIUM_TRAY_SCALE); // 5, 8 are x
-        SetCogProperties("Medium Cogs/cog_medium_2", 1f, MEDIUM_TRAY_SCALE);
+        SetCogProperties("Medium Cogs/cog_medium_1", 1.4f, MEDIUM_TRAY_SCALE); // 5, 8 are x
+        SetCogProperties("Medium Cogs/cog_medium_2", -0.6f, MEDIUM_TRAY_SCALE);
 
-        SetCogProperties("Large Cogs/cog_large_1", 4f, LARGE_TRAY_SCALE);
+        SetCogProperties("Large Cogs/cog_large_1", -2.6f, LARGE_TRAY_SCALE);
     }
 
-    private void SetCogProperties(string path, float x_position, float scale)
+    private void SetCogProperties(string path, float y_position, float scale)
     {
         Transform cogTransform = cogParent.Find(path);
 
         if(cogTransform != null)
         {
-            cogTransform.localPosition = new Vector3(x_position, TRAY_Y_POSITION, cogTransform.localPosition.z);
+            cogTransform.localPosition = new Vector3(TRAY_X_POSITION, y_position, cogTransform.localPosition.z);
 
             cogTransform.localScale = Vector3.one * scale;
 
