@@ -46,7 +46,7 @@ public class PlayerDialogItemState : PlayerBaseState
         if (_context._ItemManager._SelectedItem.Collectable)
         {
             MarkItemAsCollected(_context._ItemManager._SelectedItem);
-            AddItemToInv(_context._ItemManager._SelectedItem);
+            if(!_context._ItemManager._SelectedItem.Destroyable) AddItemToInv(_context._ItemManager._SelectedItem);
             _context._ItemManager.DestroySelectedItem();
         }
         _context._ItemManager.UpdateSelectedItem(null);

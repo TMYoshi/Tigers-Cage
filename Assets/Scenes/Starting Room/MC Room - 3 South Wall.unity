@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_convo_: {fileID: 0}
   convos_:
-  - {fileID: 11400000, guid: 9e8435893a22f9940bb6025b9c447a73, type: 2}
+  - {fileID: 11400000, guid: 64df4078ff3fbf14db80dff93279ce46, type: 2}
 --- !u!114 &101833116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
 
 '
   collectable: 1
-  destroyable: 0
+  destroyable: 1
   SpecialEvents: {fileID: 101833119}
 --- !u!212 &101833118
 SpriteRenderer:
