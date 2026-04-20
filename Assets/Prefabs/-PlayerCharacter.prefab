@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff431b5c4b55eb4b9d79dd3c34de852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxX: 5.5
-  minX: -11
+  maxX: 8
+  minX: -8
   speed: 5
   animation_curve:
     serializedVersion: 2
