@@ -16,8 +16,10 @@ public class SFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlaySFXClip(AudioClip audio_clip, Transform spawn_transform, float volume)
+    public void PlaySFXClip(AudioClip audio_clip, Transform spawn_transform = null, float volume = 1)
     {
+        if(spawn_transform == null) spawn_transform = this.transform;
+
         // Spawn in a game object
         if (audio_clip == null || spawn_transform == null) return;
         AudioSource audio_source = Instantiate(sfx_obj_, spawn_transform.position, Quaternion.identity);
@@ -25,8 +27,9 @@ public class SFXManager : MonoBehaviour
         // Assign audio source
         audio_source.clip = audio_clip;
 
-        // Assign volume
-        audio_source.volume = volume;
+        //varying pitch and volume to sound a lil better
+        audio_source.pitch = Random.Range(0.8f, 1.2f);
+        audio_source.volume = volume * Random.Range(0.8f, 1.2f);
 
         // Play sound
         audio_source.Play();

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1310034358719874774}
   - component: {fileID: 2861512473148838420}
   - component: {fileID: 6954879793505645077}
+  - component: {fileID: 4593097698514634001}
   m_Layer: 0
   m_Name: -PlayerCharacter
   m_TagString: Untagged
@@ -150,6 +151,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19e2beb40a63ae4cbb8c39f30228150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+--- !u!114 &4593097698514634001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227207303843707749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b92826d82b3844c907fe378b5c90de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSounds
+  footstepSounds:
+  - {fileID: 8300000, guid: ab7430a7a6e594b43bda4cbc1b0e5711, type: 3}
+  - {fileID: 8300000, guid: 1f0bf1632f90deb4cbc3c968062f1f7f, type: 3}
+  - {fileID: 8300000, guid: 54ec0ee6cdd1c0b47b7f8b1435d12987, type: 3}
 --- !u!1 &7425887975959834089
 GameObject:
   m_ObjectHideFlags: 0
