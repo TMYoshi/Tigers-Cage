@@ -27,11 +27,12 @@ public class PlayerInvState : PlayerBaseState
             AlreadyClicked = true;
             if (!_context._ItemManager._DraggedItem.activeSelf)
             {
+                ItemSlot selectedItemSlot = getDraggedObject();
+                if(selectedItemSlot.itemSprite == null) return;
+
                 _context._ItemManager.ShowDraggedItem();
                 Image _renderer = _context._ItemManager._DraggedItem.GetComponent<Image>();
                 itemTransform = _context._ItemManager._DraggedItem.GetComponent<RectTransform>();
-
-                ItemSlot selectedItemSlot = getDraggedObject();
 
                 _renderer.sprite = selectedItemSlot.itemSprite;
                 _context._ItemManager._DraggedItem.name = selectedItemSlot.itemName;

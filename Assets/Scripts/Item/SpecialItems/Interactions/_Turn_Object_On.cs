@@ -6,20 +6,28 @@ using System.Collections;
 
 public class _Turn_Object_On : SpecialItems
 {
-    [SerializeField] InventoryManager invManager;
     [SerializeField] GameObject objectToTurnOn;
     [SerializeField] string itemToRemove;
+    [SerializeField] string saveKey;
+    void Start()
+    {
+        if(InventoryManager.alreadyInteratedItems.Contains(saveKey))
+            objectToTurnOn.SetActive(true);
+    }
+
     public override void EnterCondition()
     {
     }
     public override bool CompleteCondition()
     {
-        objectToTurnOn.SetActive(true);
-        foreach(ItemSlot slot in invManager.itemSlot)
+        foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
         {
+            Debug.Log(slot.itemName);
             if(slot.itemName == itemToRemove)
             {
+                objectToTurnOn.SetActive(true);
                 slot.RemoveItem();
+                InventoryManager.alreadyInteratedItems.Add(saveKey);
             }
         }
 
