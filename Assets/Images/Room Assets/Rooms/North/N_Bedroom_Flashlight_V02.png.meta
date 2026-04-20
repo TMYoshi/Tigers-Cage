@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e7d3e9b3448e3a9409c8c04370155b89
+guid: ef8c16e273e0a48489cce196e046dd38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2840884516348062941
-    second: E_Bedroom_deco_2_v01_0
-  - first:
-      213: -5297384114045834189
-    second: E_Bedroom_deco_2_v01_1
+      213: 7855226721184212227
+    second: N_Bedroom_Flashlight_V02_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_0
+      name: N_Bedroom_Flashlight_V02_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 398
-        width: 151
-        height: 233
+        x: 81
+        y: 53
+        width: 77
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddc65dc7a69dc6720800000000000000
-      internalID: 2840884516348062941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_1
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 37
-        width: 153
-        height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33c208b0739eb76b0800000000000000
-      internalID: -5297384114045834189
+      spriteID: 305675a851f530d60800000000000000
+      internalID: 7855226721184212227
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      E_Bedroom_deco_2_v01_0: 2840884516348062941
-      E_Bedroom_deco_2_v01_1: -5297384114045834189
+      N_Bedroom_Flashlight_V02_0: 7855226721184212227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

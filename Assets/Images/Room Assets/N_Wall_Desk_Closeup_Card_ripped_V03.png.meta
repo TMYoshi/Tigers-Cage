@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: e7d3e9b3448e3a9409c8c04370155b89
+guid: 22f455f5871a0244d91bfbb04c69318f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2840884516348062941
-    second: E_Bedroom_deco_2_v01_0
+      213: 5405418551023050170
+    second: N_Wall_Desk_Closeup_Card_ripped_V03_0
   - first:
-      213: -5297384114045834189
-    second: E_Bedroom_deco_2_v01_1
+      213: -1912571708030255103
+    second: N_Wall_Desk_Closeup_Card_ripped_V03_1
+  - first:
+      213: 7638622712957130237
+    second: N_Wall_Desk_Closeup_Card_ripped_V03_2
+  - first:
+      213: 8971715129074101298
+    second: N_Wall_Desk_Closeup_Card_ripped_V03_3
+  - first:
+      213: -3778569344082511857
+    second: N_Wall_Desk_Closeup_Card_ripped_V03_4
+  - first:
+      213: 3773723573579329182
+    second: N_Wall_Desk_Closeup_Card_ripped_V03_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,45 +115,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_0
+      name: N_Wall_Desk_Closeup_Card_ripped_V03_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 398
-        width: 151
-        height: 233
+        x: 128
+        y: 945
+        width: 292
+        height: 392
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddc65dc7a69dc6720800000000000000
-      internalID: 2840884516348062941
+      spriteID: abd19047887e30b40800000000000000
+      internalID: 5405418551023050170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_1
+      name: N_Wall_Desk_Closeup_Card_ripped_V03_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 37
-        width: 153
-        height: 229
+        x: 743
+        y: 849
+        width: 446
+        height: 541
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33c208b0739eb76b0800000000000000
-      internalID: -5297384114045834189
+      spriteID: 100056f2a2e2575e0800000000000000
+      internalID: -1912571708030255103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_Closeup_Card_ripped_V03_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 313
+        width: 697
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df55a03e2e6d10a60800000000000000
+      internalID: 7638622712957130237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_Closeup_Card_ripped_V03_5
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 74
+        width: 208
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ea6bb9895fe5430800000000000000
+      internalID: 3773723573579329182
       vertices: []
       indices: 
       edges: []
@@ -150,7 +206,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7783d69ba2f21d84b852c6c8352c0771
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +216,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      E_Bedroom_deco_2_v01_0: 2840884516348062941
-      E_Bedroom_deco_2_v01_1: -5297384114045834189
+      N_Wall_Desk_Closeup_Card_ripped_V03_0: 5405418551023050170
+      N_Wall_Desk_Closeup_Card_ripped_V03_1: -1912571708030255103
+      N_Wall_Desk_Closeup_Card_ripped_V03_2: 7638622712957130237
+      N_Wall_Desk_Closeup_Card_ripped_V03_3: 8971715129074101298
+      N_Wall_Desk_Closeup_Card_ripped_V03_4: -3778569344082511857
+      N_Wall_Desk_Closeup_Card_ripped_V03_5: 3773723573579329182
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

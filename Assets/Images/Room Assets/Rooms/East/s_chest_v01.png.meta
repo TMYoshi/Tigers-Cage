@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e7d3e9b3448e3a9409c8c04370155b89
+guid: 44f3760d636b358478abcc90394fdad6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2840884516348062941
-    second: E_Bedroom_deco_2_v01_0
-  - first:
-      213: -5297384114045834189
-    second: E_Bedroom_deco_2_v01_1
+      213: 3848767492025410580
+    second: s_chest_v01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_0
+      name: s_chest_v01_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 398
-        width: 151
-        height: 233
+        x: 102
+        y: 0
+        width: 3672
+        height: 2160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddc65dc7a69dc6720800000000000000
-      internalID: 2840884516348062941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_1
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 37
-        width: 153
-        height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33c208b0739eb76b0800000000000000
-      internalID: -5297384114045834189
+      spriteID: 414ee3174a1996530800000000000000
+      internalID: 3848767492025410580
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      E_Bedroom_deco_2_v01_0: 2840884516348062941
-      E_Bedroom_deco_2_v01_1: -5297384114045834189
+      s_chest_v01_0: 3848767492025410580
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

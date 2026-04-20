@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ef8c16e273e0a48489cce196e046dd38
+guid: 1e4d2e02eb13bff459cd25f94cb701f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7855226721184212227
-    second: N_Bedroom_Flashlight_V02_0
+      213: 7326108172515051231
+    second: Arrow_Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: N_Bedroom_Flashlight_V02_0
+      name: Arrow_Button_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 53
-        width: 77
-        height: 174
+        x: 45
+        y: 24
+        width: 111
+        height: 268
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 305675a851f530d60800000000000000
-      internalID: 7855226721184212227
+      spriteID: fd688d841909ba560800000000000000
+      internalID: 7326108172515051231
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      N_Bedroom_Flashlight_V02_0: 7855226721184212227
+      Arrow_Button_0: 7326108172515051231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

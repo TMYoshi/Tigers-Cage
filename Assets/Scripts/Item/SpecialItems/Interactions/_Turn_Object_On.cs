@@ -1,14 +1,19 @@
 using UnityEngine;
+using System.Linq;
+using TMPro;
+using UnityEngine.UI;
+using System.Collections;
 
-public class _Ripped_Card : SpecialItems
+public class _Turn_Object_On : SpecialItems
 {
+    [SerializeField] GameObject objectToTurnOn;
     public override void EnterCondition()
     {
-        Debug.Log("this is from FORK OUTLET");
     }
     public override bool CompleteCondition()
     {
-        return false;
+        objectToTurnOn.SetActive(true);
+        return true;
     }
     public override bool ExitCondition()
     {
