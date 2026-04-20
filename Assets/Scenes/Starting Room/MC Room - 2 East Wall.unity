@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9c519d734e7c84298d760289e34573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!43 &363190171
+--- !u!43 &311256160
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1304,14 +1304,14 @@ Mesh:
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
-    indexCount: 36
+    indexCount: 0
     topology: 0
     baseVertex: 0
     firstVertex: 0
-    vertexCount: 20
+    vertexCount: 0
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.62, y: 2.7, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1325,26 +1325,18 @@ Mesh:
     m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 1
-  m_KeepVertices: 0
-  m_KeepIndices: 0
-  m_IndexFormat: 1
-  m_IndexBuffer: 030000000400000005000000050000000000000003000000000000000800000009000000090000000100000000000000010000000c0000000d0000000d0000000200000001000000020000001000000011000000110000000300000002000000030000000600000007000000000000000a0000000b000000010000000e0000000f000000020000001200000013000000
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 
   m_VertexData:
     serializedVersion: 3
-    m_VertexCount: 20
+    m_VertexCount: 0
     m_Channels:
     - stream: 0
       offset: 0
       format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
       dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
     - stream: 0
       offset: 0
       format: 0
@@ -1389,8 +1381,16 @@ Mesh:
       offset: 0
       format: 0
       dimension: 0
-    m_DataSize: 560
-    _typelessdata: 52b81ebfcdcc2cc000000000000080bf0000000052b81ebfcdcc2c4052b81ebfcdcc2c4000000000000080bf0000000052b81e3fcdcc2c4052b81e3fcdcc2c4000000000000080bf0000000052b81e3fcdcc2cc052b81e3fcdcc2cc000000000000080bf0000000052b81ebfcdcc2cc052b81e3fcdcc2cc000000000000000000000000052b81ebfcdcc2cc052b81ebfcdcc2cc000000000000000000000000052b81e3fcdcc2cc052b81e3fcdcc2cc0000000000000803f0000000052b81ebfcdcc2cc052b81e3fcdcc2cc000000000000040400000000052b81ebfcdcc2cc052b81ebfcdcc2cc000000000000000000000000052b81ebfcdcc2c4052b81ebfcdcc2c4000000000000000000000000052b81ebfcdcc2cc052b81ebfcdcc2cc0000000000000803f0000000052b81ebfcdcc2c4052b81ebfcdcc2cc000000000000040400000000052b81ebfcdcc2c4052b81ebfcdcc2c4000000000000000000000000052b81e3fcdcc2c4052b81e3fcdcc2c4000000000000000000000000052b81ebfcdcc2c4052b81ebfcdcc2c40000000000000803f0000000052b81e3fcdcc2c4052b81ebfcdcc2c4000000000000040400000000052b81e3fcdcc2c4052b81e3fcdcc2c4000000000000000000000000052b81e3fcdcc2cc052b81e3fcdcc2cc000000000000000000000000052b81e3fcdcc2c4052b81e3fcdcc2c40000000000000803f0000000052b81e3fcdcc2cc052b81e3fcdcc2c4000000000000040400000000052b81e3fcdcc2cc0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 0
+    _typelessdata: 
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1492,7 +1492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &408342662
 Transform:
   m_ObjectHideFlags: 0

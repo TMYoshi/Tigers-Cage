@@ -101,12 +101,19 @@ public class InventoryManager : MonoBehaviour
         for(int i = 0; i < data.Count; i++)
         {
             var d = data[i];
+            string path = SPRITE_RESOURCES_FOLDER + d.itemId;
+            Debug.Log($"Loading sprite for itemId '{d.itemId}' from path '{path}'");
 
             Sprite sprite = Resources.Load<Sprite>(SPRITE_RESOURCES_FOLDER + d.itemId);
             //load sprite from resources folder
             if (sprite == null)
             {
                 Debug.LogWarning($"Sprite for itemId '{d.itemId}' not found at path '{SPRITE_RESOURCES_FOLDER + d.itemId}'. Check if the sprite exists and the path is correct.");
+            }
+
+            else
+            {
+                Debug.Log($"Successfully loaded sprite for itemId '{d.itemId}' from path '{path}'");
             }
 
             AddItem(d.itemId, d.quantity,sprite, d.itemDescription);
