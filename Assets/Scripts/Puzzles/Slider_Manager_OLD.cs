@@ -77,7 +77,7 @@ public class Slider_Manager : MonoBehaviour
             empty_location_ = tile;
             return true;
         }
-        Debug.Log(tile + " was not swapped");
+        //Debug.Log(tile + " was not swapped");
         return false;
     }
     #endregion

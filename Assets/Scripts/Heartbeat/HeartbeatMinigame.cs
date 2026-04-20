@@ -41,6 +41,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	void Start()
 	{
 		safeZoneVelocity = 0;
+		StartHeartBeatMinigame();
 	}
 
 	public void StartHeartBeatMinigame()
