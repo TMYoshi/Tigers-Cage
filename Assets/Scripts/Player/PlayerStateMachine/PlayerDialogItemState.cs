@@ -11,6 +11,11 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void EnterState()
     {
+        SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+
+        if(specialItem != null)
+            specialItem.EnterCondition();
+
         _context._ItemManager._SelectedItem.WriteLines();
 
         if (SFXManager.Instance == null) return;

@@ -791,6 +791,7 @@ GameObject:
   - component: {fileID: 298236541}
   - component: {fileID: 298236540}
   - component: {fileID: 298236539}
+  - component: {fileID: 298236544}
   m_Layer: 0
   m_Name: RippedCard (2)
   m_TagString: Item
@@ -865,7 +866,7 @@ MonoBehaviour:
 
 '
   collectable: 1
-  SpecialEvents: {fileID: 0}
+  SpecialEvents: {fileID: 298236544}
 --- !u!212 &298236542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -970,6 +971,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1559057, y: 0.72453356}
   m_EdgeRadius: 0
+--- !u!114 &298236544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298236537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2d34f1c8743994299109a12f87522c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_BrokenCardPieces
+  item: {fileID: 298236541}
+  secondDialog:
+  - {fileID: 11400000, guid: 900e8ac748f9dbf4897a91c707d4e464, type: 2}
+  lastDialog:
+  - {fileID: 11400000, guid: 91f90c2e44992164fb2e1f74d34cb4ec, type: 2}
 --- !u!1001 &405899814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1708,6 +1726,184 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38c88ba5abcb6634da46620921495cdd, type: 3}
+--- !u!43 &1016854818
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 12
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 0
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 0
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 0
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 0
+    _typelessdata: 
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+  m_MeshLodInfo:
+    serializedVersion: 2
+    m_LodSelectionCurve:
+      serializedVersion: 1
+      m_LodSlope: 0
+      m_LodBias: 0
+    m_NumLevels: 1
+    m_SubMeshes:
+    - serializedVersion: 2
+      m_Levels:
+      - serializedVersion: 1
+        m_IndexStart: 0
+        m_IndexCount: 0
 --- !u!1 &1043402086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1918,7 @@ GameObject:
   - component: {fileID: 1043402090}
   - component: {fileID: 1043402089}
   - component: {fileID: 1043402088}
+  - component: {fileID: 1043402093}
   m_Layer: 0
   m_Name: RippedCard
   m_TagString: Item
@@ -1758,7 +1955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_convo_: {fileID: 0}
   convos_:
-  - {fileID: 11400000, guid: 900e8ac748f9dbf4897a91c707d4e464, type: 2}
+  - {fileID: 11400000, guid: 56dd0e78f4ec33d49b69bbfb570475ae, type: 2}
 --- !u!114 &1043402089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1796,7 +1993,7 @@ MonoBehaviour:
 
 '
   collectable: 1
-  SpecialEvents: {fileID: 0}
+  SpecialEvents: {fileID: 1043402093}
 --- !u!212 &1043402091
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1901,6 +2098,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1559057, y: 0.72453356}
   m_EdgeRadius: 0
+--- !u!114 &1043402093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043402086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2d34f1c8743994299109a12f87522c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_BrokenCardPieces
+  item: {fileID: 1043402090}
+  secondDialog:
+  - {fileID: 11400000, guid: 900e8ac748f9dbf4897a91c707d4e464, type: 2}
+  lastDialog:
+  - {fileID: 11400000, guid: 91f90c2e44992164fb2e1f74d34cb4ec, type: 2}
 --- !u!1 &1117356553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,184 +2843,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4b49b9ffcf644448ad903b0deb3cc4, type: 3}
---- !u!43 &1410859736
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 12
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 0
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 0
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 0
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 0
-    _typelessdata: 
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
-  m_MeshLodInfo:
-    serializedVersion: 2
-    m_LodSelectionCurve:
-      serializedVersion: 1
-      m_LodSlope: 0
-      m_LodBias: 0
-    m_NumLevels: 1
-    m_SubMeshes:
-    - serializedVersion: 2
-      m_Levels:
-      - serializedVersion: 1
-        m_IndexStart: 0
-        m_IndexCount: 0
 --- !u!1 &1445178420 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1494666362022696330, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
@@ -2932,6 +2968,7 @@ GameObject:
   - component: {fileID: 1475564748}
   - component: {fileID: 1475564747}
   - component: {fileID: 1475564746}
+  - component: {fileID: 1475564751}
   m_Layer: 0
   m_Name: RippedCard (1)
   m_TagString: Item
@@ -3006,7 +3043,7 @@ MonoBehaviour:
 
 '
   collectable: 1
-  SpecialEvents: {fileID: 0}
+  SpecialEvents: {fileID: 1475564751}
 --- !u!212 &1475564749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3111,6 +3148,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1559057, y: 0.72453356}
   m_EdgeRadius: 0
+--- !u!114 &1475564751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2d34f1c8743994299109a12f87522c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_BrokenCardPieces
+  item: {fileID: 1475564748}
+  secondDialog:
+  - {fileID: 11400000, guid: 900e8ac748f9dbf4897a91c707d4e464, type: 2}
+  lastDialog:
+  - {fileID: 11400000, guid: 91f90c2e44992164fb2e1f74d34cb4ec, type: 2}
 --- !u!1001 &1634966170
 PrefabInstance:
   m_ObjectHideFlags: 0
