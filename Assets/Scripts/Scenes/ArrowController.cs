@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
+    [SerializeField] AudioClip OnPressedAudio;
     [SerializeField] private string targetScene; // fallback for inspector, will use this for sub scenes 
     #region OnPressed
     public void OnPressed()
     {
+        SFXManager.Instance.PlaySFXClip(OnPressedAudio);
         Debug.Log($"Arrow clicked: {gameObject.name}");
         // get scene name from object name
         string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;

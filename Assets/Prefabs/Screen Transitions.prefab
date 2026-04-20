@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0d8843f6c25d74199a2a7231f26a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPressedAudio: {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
   targetScene: 
 --- !u!1 &7560765475991649908
 GameObject:
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0d8843f6c25d74199a2a7231f26a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPressedAudio: {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
   targetScene: 
 --- !u!1 &8203171071988731687
 GameObject:
