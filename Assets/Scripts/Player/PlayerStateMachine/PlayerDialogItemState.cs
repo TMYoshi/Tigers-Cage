@@ -35,13 +35,17 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void ExitState()
     {
-            Cleanup();
-            _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+        Cleanup();
+        _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+
     }
 
     public override void Cleanup()
     {
         if(_context._ItemManager._SelectedItem == null) return;
+
+        SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+        if(specialItem != null) specialItem.ExitCondition();
 
         if (_context._ItemManager._SelectedItem.Collectable)
         {

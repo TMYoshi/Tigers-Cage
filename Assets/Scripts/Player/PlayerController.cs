@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public void GetOffscreenAndGoToMiddle(bool left)
     {
         //swaps x position util tool for getting the player offscreen
-        transform.position = new Vector3((left ? -1 : 1) * 11, transform.position.y, transform.position.z);
+        transform.position = new Vector3((left ? -1 : 1) * 8, transform.position.y, transform.position.z);
 
         //goto middle
         GameObject _StartmoveObject = GameObject.Find("-MidpointPos");

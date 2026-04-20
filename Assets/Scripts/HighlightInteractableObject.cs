@@ -32,6 +32,11 @@ public class HighlightInteractableOutline : MonoBehaviour
     void Start() 
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if(spriteRenderer == null)
+        {
+            Debug.Log("No Sprite Renderer");
+            return;
+        }
         CreateOutlineEffect();
     }
 
