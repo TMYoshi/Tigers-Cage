@@ -49,9 +49,10 @@ public class CutsceneManager : MonoBehaviour
 
     private void StartCutscene()
     {
-        // Countdown Associated Scenes
+        // Countdown Associated Scenes - Turn off during cutscene
         if(Countdown.Instance.IsActive())
         {
+            Debug.Log("Meow" + Countdown.is_active_);
             Countdown.Instance.gameObject.SetActive(false);
             countdownAvail = true;
         }
@@ -142,10 +143,13 @@ public class CutsceneManager : MonoBehaviour
 
     private void ProceedToNextScene()
     {
-        // Countdown Related Logic
+        // Countdown Related Logic - Turn back on when done
         if(Countdown.Instance.IsActive())
         {
-            Countdown.Instance.gameObject.SetActive(true);
+            Countdown.Instance.gameObject.SetActive(true); // Game Object
+            Countdown.is_active_ = true;
+            countdownAvail = false;
+            Debug.Log("Bark " + Countdown.is_active_);
         }
 
         cutsceneFinished = true;

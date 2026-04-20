@@ -8,8 +8,7 @@ using NUnit.Framework;
 public class Countdown : MonoBehaviour
 {
     public static Countdown Instance;
-    private static bool is_active_ = false; //Wake up after event via Singleton
-    public void SetActive(bool is_active) { is_active_ = is_active; }
+    public static bool is_active_ = false; //Wake up after event via Singleton
     public bool IsActive() { return is_active_; }
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
@@ -18,23 +17,22 @@ public class Countdown : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(gameObject);
-            return;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            Destroy(gameObject); // prevent duplicates
+        }
     }
 
     private void Start()
-    {
+    {   
          // To activate countdown, affect the player pref?
         if (is_active_)
         {
-            timer_text_.gameObject.SetActive(true);
-
             if(PlayerPrefs.HasKey("countdown_value"))
             {
                 // else, remaining time is just the one that you set
@@ -76,7 +74,15 @@ public class Countdown : MonoBehaviour
 
     private void Update()
     {
-        if(is_active_) { TickDown(); }
+        if(is_active_) { 
+            if(timer_text_.gameObject.activeSelf == false)
+            {
+                timer_text_.gameObject.SetActive(true);
+    
+            }
+
+            TickDown(); 
+        }
     }
 
     private void OnDestroy()
