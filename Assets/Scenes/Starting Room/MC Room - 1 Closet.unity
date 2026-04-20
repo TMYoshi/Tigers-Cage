@@ -2180,12 +2180,12 @@ MonoBehaviour:
   heartTransform: {fileID: 303216853}
   safeZone: {fileID: 1391408706}
   initSafe: 2
-  safeTimerInit: 1
+  safeTimerInit: 2
   loseMinigameTimer: 0
   winMinigameTimer: 4
   safeZoneTimerCurrent: 1
   safeZoneVelocity: 0
-  safeZoneAcceleration: 3
+  safeZoneAcceleration: 4
   heartDropRate: 0.7
   DirectionalChangeProbability: 0.6
   LoseEvent:
