@@ -6,4 +6,9 @@ public class ButtonAudio : MonoBehaviour
     {
         SFXManager.Instance.PlaySFXClip(_clip);
     }
+
+    public void PlaySFXLoop(AudioClip _clip)
+    {
+        SFXManager.Instance.PlaySFXClipLoop(_clip);
+    }
 }

@@ -489,6 +489,7 @@ MonoBehaviour:
   dialog_opener_: 1
   text_speed_: 0.025
   dialog_animator_: {fileID: 8420576868757059824}
+  talking_sounds_: {fileID: 8300000, guid: e7530fe4a81bdee4d93b9af91dcebce6, type: 3}
 --- !u!95 &8420576868757059824
 Animator:
   serializedVersion: 7
