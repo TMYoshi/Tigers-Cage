@@ -4,15 +4,15 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
-public class _Fork_Outlet : SpecialItems
+public class _Turn_Object_On : SpecialItems
 {
+    [SerializeField] GameObject objectToTurnOn;
     public override void EnterCondition()
     {
-        //don't put naything here for interations ;-;
     }
     public override bool CompleteCondition()
     {
-        FadeController.Instance.FadeAndLoad("GameOver");
+        objectToTurnOn.SetActive(true);
         return true;
     }
     public override bool ExitCondition()
