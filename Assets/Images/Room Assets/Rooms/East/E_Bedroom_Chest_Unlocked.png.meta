@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: e7d3e9b3448e3a9409c8c04370155b89
+guid: 01a9d422a6b7ddd4f88beb73829837c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2840884516348062941
-    second: E_Bedroom_deco_2_v01_0
+      213: 4754982732403444841
+    second: E_Bedroom_Chest_733x630_0
   - first:
-      213: -5297384114045834189
-    second: E_Bedroom_deco_2_v01_1
+      213: 8896534199341736645
+    second: E_Bedroom_Chest_733x630_1
+  - first:
+      213: -3351832500138717394
+    second: E_Bedroom_Chest_733x630_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_0
+      name: E_Bedroom_Chest_733x630_0
       rect:
         serializedVersion: 2
         x: 29
-        y: 398
-        width: 151
-        height: 233
+        y: 75
+        width: 671
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddc65dc7a69dc6720800000000000000
-      internalID: 2840884516348062941
+      spriteID: 96c06062a971df140800000000000000
+      internalID: 4754982732403444841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: E_Bedroom_deco_2_v01_1
+      name: E_Bedroom_Chest_733x630_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 37
-        width: 153
-        height: 229
+        x: 762
+        y: 75
+        width: 671
+        height: 513
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +143,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33c208b0739eb76b0800000000000000
-      internalID: -5297384114045834189
+      spriteID: 5c2e0ebe7b6d67b70800000000000000
+      internalID: 8896534199341736645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_Bedroom_Chest_733x630_2
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 13
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f4f929916eb71d0800000000000000
+      internalID: -3351832500138717394
       vertices: []
       indices: 
       edges: []
@@ -160,8 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      E_Bedroom_deco_2_v01_0: 2840884516348062941
-      E_Bedroom_deco_2_v01_1: -5297384114045834189
+      E_Bedroom_Chest_733x630_0: 4754982732403444841
+      E_Bedroom_Chest_733x630_1: 8896534199341736645
+      E_Bedroom_Chest_733x630_2: -3351832500138717394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
