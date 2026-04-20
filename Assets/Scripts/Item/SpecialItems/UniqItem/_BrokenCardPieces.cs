@@ -9,7 +9,7 @@ public class _BrokenCardPieces: SpecialItems
     {
         Dialog currentDialog = GetComponent<Dialog>();
         if(currentDialog == null)
-            Debug.Log("Keep it going and die");
+            Debug.Log("no dialog found in gameobject");
 
         if(!InventoryManager.alreadyInteratedItems.Contains("BrokenCard1"))
             InventoryManager.alreadyInteratedItems.Add("BrokenCard1");
