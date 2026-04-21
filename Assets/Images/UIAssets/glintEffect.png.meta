@@ -103,10 +103,10 @@ TextureImporter:
       name: glintEffect_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 13
-        width: 1136
-        height: 1187
+        x: 21
+        y: 23
+        width: 168
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
