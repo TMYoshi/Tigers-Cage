@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 0.5
+  outlineWidth: 0.15
   outlineResolution: 8
 --- !u!114 &266226320
 MonoBehaviour:
@@ -1656,7 +1656,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -1943,7 +1943,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.75
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3091,8 +3091,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -3210,7 +3210,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 416695840729418996, guid: 803ecae31a30ae94ea99a01b3ffc40de, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -9372,7 +9372,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669454472}
   m_CullTransparentMesh: 1
---- !u!43 &1688191737
+--- !u!43 &1696033283
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
