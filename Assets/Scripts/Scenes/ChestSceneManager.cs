@@ -19,5 +19,15 @@ public class ChestSceneManager : MonoBehaviour
                 if (oldBox != null) oldBox.SetActive(false);
             }
         }
+        if (CutsceneManager.musicBoxCutsceneCompleted)
+        {
+            GameObject room = GameObject.Find("Room Design");
+
+            if (room != null)
+            {
+                Transform finishedBox = room.transform.Find("Music Box Finished");
+                if (finishedBox != null) finishedBox.gameObject.SetActive(false);
+            }
+        }
     }
 }

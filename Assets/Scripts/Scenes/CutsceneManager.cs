@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CutsceneManager : MonoBehaviour
 {
     public static CutsceneManager Instance;
+    public static bool musicBoxCutsceneCompleted = false;
 
     [Header("Cutscene Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
@@ -150,6 +151,7 @@ public class CutsceneManager : MonoBehaviour
                 Countdown.Instance.gameObject.SetActive(true); // Game Object
                 Countdown.is_active_ = true;
                 Debug.Log("Music Box Cutscene finished, countdown: " + Countdown.is_active_);
+                musicBoxCutsceneCompleted = true;
             }
         }
 
