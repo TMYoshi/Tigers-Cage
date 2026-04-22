@@ -219,7 +219,6 @@ public class PuzzlePathChecker : MonoBehaviour
     private void OnPuzzleSolved()// notes for chris puzzle solved
     {
         Debug.LogWarning($"puzzle solved");
-        Countdown.is_active_ = true; // move this later
         musicBoxPuzzleSolved = true;
         SceneController.scene_controller_instance.FadeAndLoadScene("MC Room - 2 Chest");
 
