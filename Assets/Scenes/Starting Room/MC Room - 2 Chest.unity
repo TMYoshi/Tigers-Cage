@@ -155,6 +155,57 @@ Transform:
   - {fileID: 1833522145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &128896262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128896264}
+  - component: {fileID: 128896263}
+  m_Layer: 0
+  m_Name: HidingSpotManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &128896263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128896262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad88b5dfb58d8494b9bc72b17ef58ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HidingSpotManager
+  item_gameobj_list_: {fileID: 0}
+  hiding_spots_:
+  - W_Bedroom_Bed_Side_v01
+  - Dresser
+  interactables_:
+  - W_Bedroom_Bed_Side_v01
+  - Dresser
+--- !u!4 &128896264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128896262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.749, y: -0.28536, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &152500032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1446,6 +1497,10 @@ PrefabInstance:
     - target: {fileID: 1449867874671058063, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.r
       value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224395963912067698, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
+      propertyPath: targetScene
+      value: MC Room - 2 East Wall
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Sprite
@@ -2780,3 +2835,4 @@ SceneRoots:
   - {fileID: 1988618371}
   - {fileID: 1522698481}
   - {fileID: 325574554}
+  - {fileID: 128896264}

@@ -20,7 +20,7 @@ public class Countdown : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -30,23 +30,33 @@ public class Countdown : MonoBehaviour
 
     private void Start()
     {   
-         // To activate countdown, affect the player pref?
         if (is_active_)
         {
             if(PlayerPrefs.HasKey("countdown_value"))
             {
                 // else, remaining time is just the one that you set
-                remaining_time_ = PlayerPrefs.GetFloat("countdown_value"); 
+                remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
             }
-
-            HidingSpotManager.Instance.SwapWithHidingSpot();
         }
         else if (PlayerPrefs.GetFloat("countdown_value") <= 0)
         {
             gameObject.SetActive(false);
         }
     }
-    
+
+    private void OnEnable()
+    {
+        if(is_active_) { 
+            if(timer_text_.gameObject.activeSelf == false)
+            {
+                timer_text_.gameObject.SetActive(true);
+            }
+
+            HidingSpotManager hidingSpotManager = (HidingSpotManager)FindAnyObjectByType(typeof(HidingSpotManager));
+            hidingSpotManager?.SwapWithHidingSpot();
+        }
+    }
+
     private void TickDown()
     {
         if(remaining_time_ > 0)
@@ -80,7 +90,6 @@ public class Countdown : MonoBehaviour
             if(timer_text_.gameObject.activeSelf == false)
             {
                 timer_text_.gameObject.SetActive(true);
-    
             }
 
             TickDown(); 

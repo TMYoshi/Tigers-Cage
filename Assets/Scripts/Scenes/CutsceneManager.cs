@@ -50,7 +50,6 @@ public class CutsceneManager : MonoBehaviour
         // Countdown Associated Scenes - Turn off during cutscene
         if(Countdown.Instance.IsActive())
         {
-            Debug.Log("Meow" + Countdown.is_active_);
             Countdown.Instance.gameObject.SetActive(false);
         }
 
@@ -145,7 +144,6 @@ public class CutsceneManager : MonoBehaviour
         {
             Countdown.Instance.gameObject.SetActive(true); // Game Object
             Countdown.is_active_ = true;
-            Debug.Log("Bark " + Countdown.is_active_);
         }
 
         cutsceneFinished = true;

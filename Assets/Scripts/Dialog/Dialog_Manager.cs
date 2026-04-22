@@ -132,7 +132,6 @@ public class DialogManager : MonoBehaviour
        // Keep waiting until the "Exit" animation is actually playing
         while (!dialog_animator_.GetCurrentAnimatorStateInfo(0).IsName("Dialog Exit"))
         {
-            Debug.Log("one");
             yield return null;
         }   
 
@@ -140,7 +139,6 @@ public class DialogManager : MonoBehaviour
         while (dialog_animator_.GetCurrentAnimatorStateInfo(0).IsName("Exit") &&
                dialog_animator_.GetCurrentAnimatorStateInfo(0).normalizedTime < 0f)
         {
-            Debug.Log("two");
             yield return null;
         }
 

@@ -5,28 +5,37 @@ public class HidingSpotManager : MonoBehaviour
 {
     public static HidingSpotManager Instance;
     [Tooltip("Every hiding spot has a corresponding hiding spot")]
-    [SerializeField] private GameObject item_gameobj_list_;
+    [SerializeField] private GameObject item_gameobj_list_ = null;
     [SerializeField] private List<string> hiding_spots_;
     [SerializeField] private List<string> interactables_;
+    public bool yes;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void Awake()
+    // {
+    //     if (Instance == null)
+    //     {
+    //         Instance = this;
+    //         DontDestroyOnLoad(this);
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     private void Start()
     {
         if(hiding_spots_.Count == 0) { Debug.LogError("Hiding_spots empty!!");}
         if(hiding_spots_.Count != interactables_.Count) { Debug.LogError("Every hiding spot has a corresponding hiding spot"); }
     }
+
+    // public void Update()
+    // {
+    //     if(yes)
+    //     {
+    //         SwapWithHidingSpot();
+    //     }
+    // }
 
     // public void AddHidingSpot(GameObject gameObject)
     // {
@@ -40,6 +49,7 @@ public class HidingSpotManager : MonoBehaviour
     // Hint: Call on countdown
     public void SwapWithHidingSpot()
     {
+        Debug.Log("koko");
         for(int i = 0; i < hiding_spots_.Count; ++i)
         {
             Transform hiding_spot = item_gameobj_list_.transform.Find(hiding_spots_[i] + "_Hidable");
