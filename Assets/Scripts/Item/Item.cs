@@ -27,14 +27,6 @@ public class Item : MonoBehaviour
         bool dialog_finished = assoc_dialog_box_.WriteDialog();
         // bool dialog_finished = assoc_dialog_box_.PlayDialog(dialog_so_);
 
-        if (dialog_finished)
-        {
-            InventoryItem _inventoryItem = this as InventoryItem;
-            if(_inventoryItem != null && _inventoryItem.Collectable)
-            {
-                Destroy(gameObject); // deleting item
-            }
-        }
         return dialog_finished;
     }
 }

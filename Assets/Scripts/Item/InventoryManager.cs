@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
@@ -27,9 +27,11 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 //add to save system
-                return;
+                return true;
             }
         }
+
+        return false;
     }
 /*
     public void DeselectAllSlots()

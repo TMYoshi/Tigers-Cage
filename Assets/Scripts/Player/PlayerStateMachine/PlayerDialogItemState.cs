@@ -11,7 +11,7 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void EnterState()
     {
-        SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+        SpecialItems? specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
 
         if(specialItem != null)
             specialItem.EnterCondition();
@@ -47,20 +47,27 @@ public class PlayerDialogItemState : PlayerBaseState
         SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
         if(specialItem != null) specialItem.ExitCondition();
 
+        bool isFull = false;
         if (_context._ItemManager._SelectedItem.Collectable)
         {
-            MarkItemAsCollected(_context._ItemManager._SelectedItem);
-            if(!_context._ItemManager._SelectedItem.Destroyable) AddItemToInv(_context._ItemManager._SelectedItem);
-            _context._ItemManager.DestroySelectedItem();
+            if(!_context._ItemManager._SelectedItem.Destroyable) 
+                isFull = !AddItemToInv(_context._ItemManager._SelectedItem);
+
+            if(!isFull)
+            {
+                MarkItemAsCollected(_context._ItemManager._SelectedItem);
+                _context._ItemManager.DestroySelectedItem();
+            }
         }
         _context._ItemManager.UpdateSelectedItem(null);
     }
 
-    public static void AddItemToInv(InventoryItem _inventoryItem)
+    public static bool AddItemToInv(InventoryItem _inventoryItem)
     {
         InventoryManager inventoryManager = GameObject.Find("InventoryCanvas")?.GetComponent<InventoryManager>();
         if (inventoryManager != null)
         {
+            return
             inventoryManager.AddItem(
                 _inventoryItem.ItemName,
                 _inventoryItem.Quantity,
@@ -68,10 +75,8 @@ public class PlayerDialogItemState : PlayerBaseState
                 _inventoryItem.ItemDescription
             );
         }
-        else
-        {
-            Debug.LogError("InventoryManager not found!");
-        }
+
+        return false;
     }
 
     static public void MarkItemAsCollected(InventoryItem _inventoryItem)
