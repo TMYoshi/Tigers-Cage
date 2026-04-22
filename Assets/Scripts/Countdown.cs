@@ -38,6 +38,8 @@ public class Countdown : MonoBehaviour
                 // else, remaining time is just the one that you set
                 remaining_time_ = PlayerPrefs.GetFloat("countdown_value"); 
             }
+
+            HidingSpotManager.Instance.SwapWithHidingSpot();
         }
         else if (PlayerPrefs.GetFloat("countdown_value") <= 0)
         {
