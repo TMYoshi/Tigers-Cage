@@ -439,7 +439,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3326513414631346885, guid: e37de25ff650bfb439704513ab9ae751, type: 3}
     - target: {fileID: 2448865613203092284, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448865613203092284, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342395551420262665, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: m_Name
+      value: Card1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342395551420262665, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3560061907717845413, guid: f13cc862f85364c598b58cba4e422754, type: 3}
@@ -950,6 +962,10 @@ PrefabInstance:
       propertyPath: PauseBackground
       value: 
       objectReference: {fileID: 1576580234}
+    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: saveLoadManager
+      value: 
+      objectReference: {fileID: 332492026}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: tableofContentes
       value: 
@@ -1579,6 +1595,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1058596788315249403, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 675010969}
     - target: {fileID: 1289110369496380206, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1663,26 +1683,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 675010969}
-    - target: {fileID: 2568365670456238734, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 332492026}
-    - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGame
-      objectReference: {fileID: 0}
+    - target: {fileID: 3624823537437131987, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 675010969}
     - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 332492026}
-    - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveGame
-      objectReference: {fileID: 0}
+    - target: {fileID: 4395619843194185323, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 675010969}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
       value: JournalUI
@@ -1691,18 +1707,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 675010969}
-    - target: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenJournal
-      objectReference: {fileID: 0}
     - target: {fileID: 6873995965935424486, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 675010969}
-    - target: {fileID: 6873995965935424486, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Options
-      objectReference: {fileID: 0}
+    - target: {fileID: 7768844325614774788, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 675010969}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1946,15 +1958,15 @@ PrefabInstance:
       objectReference: {fileID: 7326108172515051231, guid: 1e4d2e02eb13bff459cd25f94cb701f8, type: 3}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.b
-      value: 0.46226418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.g
-      value: 0.46226418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.r
-      value: 0.46226418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_SortingOrder
@@ -1975,6 +1987,10 @@ PrefabInstance:
     - target: {fileID: 6284393475425276146, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867676357158620361, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
+      propertyPath: outlineColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8203171071988731687, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Name
@@ -2438,6 +2454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
   key: Ripped Card 1
   specialItems: {fileID: 8288123853033184231}
+  interactionAudio: {fileID: 8300000, guid: 271cca466660f2147bde1137f9ae53b9, type: 3}
 --- !u!114 &8288123853033184231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,6 +2501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
   key: Ripped Card 3
   specialItems: {fileID: 8288123853033184232}
+  interactionAudio: {fileID: 8300000, guid: 271cca466660f2147bde1137f9ae53b9, type: 3}
 --- !u!114 &8288123853033184234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,6 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
   key: Ripped Card 2
   specialItems: {fileID: 8288123853033184234}
+  interactionAudio: {fileID: 8300000, guid: 271cca466660f2147bde1137f9ae53b9, type: 3}
 --- !u!212 &8288123853033184236
 SpriteRenderer:
   m_ObjectHideFlags: 0

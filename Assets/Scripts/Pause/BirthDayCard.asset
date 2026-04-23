@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BirthDayCard
   m_EditorClassIdentifier: Assembly-CSharp::DocumentItem
   documentTitle: 
-  documentText: "Taped birthday card.\r\n\r\n[LETTER]\r\n\u201CAugust 28th.\r\nDear
-    Mama, Happy Birthday! I can\u2019t wait to try the cupcakes we baked together!
-    I\u2019m sorry the icing is messy. I hope you still like it!!\u201D\n\n[After
-    reading TAPED BIRTHDAY CARD: DESCRIPTION BOX]\r\n\u201CI wonder why Mama didn\u2019t
-    like my card.\u201D\r\n\r\n\r\n"
+  documentText: "I made this for Mama last year on August 28th, before my math test.
+    I thought she would like the vanilla cake drawing because that\u2019s her favorite
+    flavor. But she tore it up and said I should have spent that time studying instead.
+    Maybe she\u2019ll like it this year. If I do better. If I make it prettier."
   documentImage: {fileID: -1562540554815279977, guid: 078bee59cb02f47dbb3dcf5873d2fa82, type: 3}
+  documentInfoFont: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
   isUnlocked: 1

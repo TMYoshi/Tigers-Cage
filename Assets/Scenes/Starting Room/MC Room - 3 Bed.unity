@@ -160,6 +160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1058596788315249403, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 568327802}
     - target: {fileID: 1289110369496380206, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -248,6 +252,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitToMainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3624823537437131987, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 568327802}
+    - target: {fileID: 4395619843194185323, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 568327802}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
       value: JournalUI
@@ -268,6 +280,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Options
       objectReference: {fileID: 0}
+    - target: {fileID: 7768844325614774788, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 568327802}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -571,6 +587,10 @@ PrefabInstance:
       propertyPath: PauseBackground
       value: 
       objectReference: {fileID: 163587056}
+    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: saveLoadManager
+      value: 
+      objectReference: {fileID: 1820004346}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: tableofContentes
       value: 
@@ -1398,6 +1418,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48993a38584200c4dabd443c784853be, type: 3}
+--- !u!114 &1820004346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3908426647410140419, guid: 48993a38584200c4dabd443c784853be, type: 3}
+  m_PrefabInstance: {fileID: 1820004345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248accd18e855a34aab6fa1c17c46fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveLoad
 --- !u!1001 &1825236669
 PrefabInstance:
   m_ObjectHideFlags: 0
