@@ -19,6 +19,11 @@ public class Brightness_Slider : MonoBehaviour
     {
         volume_profile_ = volume_.profile;
         volume_profile_.TryGet<ColorAdjustments>(out brightness_);
+
+        if(PlayerPrefs.HasKey("Brightness"))
+        {
+            SetBrightness(PlayerPrefs.GetFloat("Brightness"));
+        }
     }
 
     public void SetBrightness(float value)
@@ -35,6 +40,7 @@ public class Brightness_Slider : MonoBehaviour
         if(value >= 0f)
         {
             brightness_.colorFilter.value = gradient.Evaluate(value);
+            PlayerPrefs.SetFloat("Brightness", value);
         }
         else
         {
