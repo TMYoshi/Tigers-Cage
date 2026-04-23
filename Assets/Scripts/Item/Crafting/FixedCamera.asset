@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcce39f66505ebc4590a207a9746f2cb, type: 3}
+  m_Name: FixedCamera
+  m_EditorClassIdentifier: Assembly-CSharp::ItemComCreation
+  _item1: Camera
+  _item2: Batteries
+  ResultName: Working Camera
+  ResultImage: {fileID: 3380806947569627148, guid: 57e516e4eb05b0a4288c0e2343aa8365, type: 3}
+  ResultDescription: My camera's fixed!
