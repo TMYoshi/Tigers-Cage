@@ -25,7 +25,7 @@ public class InventoryItem : Item
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
 
-    [SerializeField] private bool destroyable;
+    [SerializeField] private bool destroyable = false;
     public bool Destroyable => destroyable;
 
     [SerializeField] private SpecialItems SpecialEvents;

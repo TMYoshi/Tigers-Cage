@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class _Bunny_Item : SpecialItems
 {
+    [SerializeField] PlayerAnimator playerAnimator;
     public override void EnterCondition()
     {
-        Debug.Log("This is a bunny");
     }
     public override bool CompleteCondition() 
     {
@@ -12,6 +12,7 @@ public class _Bunny_Item : SpecialItems
     }
     public override bool ExitCondition()
     {
+        playerAnimator.SetBunnyTrue();
         return true;
     }
 }

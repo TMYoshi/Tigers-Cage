@@ -2180,12 +2180,12 @@ MonoBehaviour:
   heartTransform: {fileID: 303216853}
   safeZone: {fileID: 1391408706}
   initSafe: 2
-  safeTimerInit: 1
+  safeTimerInit: 2
   loseMinigameTimer: 0
   winMinigameTimer: 4
   safeZoneTimerCurrent: 1
   safeZoneVelocity: 0
-  safeZoneAcceleration: 3
+  safeZoneAcceleration: 4
   heartDropRate: 0.7
   DirectionalChangeProbability: 0.6
   LoseEvent:
@@ -3095,7 +3095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336580133025540808, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: targetScene
-      value: MC Room - 4 West Wall
+      value: MC Room - 1 North Wall
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Sprite

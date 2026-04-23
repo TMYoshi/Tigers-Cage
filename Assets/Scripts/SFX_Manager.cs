@@ -4,8 +4,11 @@ public class SFXManager : MonoBehaviour
 {
     public static SFXManager Instance;
     [SerializeField] private AudioSource sfx_obj_;
+    private AudioSource loop_sfx_obj_;
     private void Awake()
     {
+        loop_sfx_obj_ = GetComponent<AudioSource>();
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -16,17 +19,33 @@ public class SFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlaySFXClip(AudioClip audio_clip, Transform spawn_transform, float volume)
+    public void PlaySFXClipLoop(AudioClip audio_clip)
     {
+        loop_sfx_obj_.clip = audio_clip;
+        loop_sfx_obj_.Play();
+    }
+
+    public void UnLoopSFXClip()
+    {
+        loop_sfx_obj_.Stop();
+        loop_sfx_obj_.clip = null;
+    }
+
+    public void PlaySFXClip(AudioClip audio_clip, Transform spawn_transform = null, float volume = 1)
+    {
+        if(spawn_transform == null) spawn_transform = this.transform;
+
         // Spawn in a game object
         if (audio_clip == null || spawn_transform == null) return;
         AudioSource audio_source = Instantiate(sfx_obj_, spawn_transform.position, Quaternion.identity);
+        audio_source.loop = false;
 
         // Assign audio source
         audio_source.clip = audio_clip;
 
-        // Assign volume
-        audio_source.volume = volume;
+        //varying pitch and volume to sound a lil better
+        audio_source.pitch = Random.Range(0.8f, 1.2f);
+        audio_source.volume = volume * Random.Range(0.8f, 1.2f);
 
         // Play sound
         audio_source.Play();

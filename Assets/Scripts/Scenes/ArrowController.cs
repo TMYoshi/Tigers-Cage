@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
+    [SerializeField] AudioClip OnPressedAudio;
     [SerializeField] private string targetScene; // fallback for inspector, will use this for sub scenes 
+    bool alreadyPressed = false;
+
     #region OnPressed
     public void OnPressed()
     {
@@ -52,6 +55,12 @@ public class ArrowController : MonoBehaviour
         else
         {
             Debug.LogWarning("Next scene is null - check scene naming convention");
+        }
+        
+        if(!alreadyPressed)
+        {
+            SFXManager.Instance.PlaySFXClip(OnPressedAudio);
+            alreadyPressed = true;
         }
     }
     #endregion

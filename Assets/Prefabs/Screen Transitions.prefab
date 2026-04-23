@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999175782451099886}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -976.41394, y: -545.3872, z: 0}
-  m_LocalScale: {x: 1.1845315, y: 0.5125001, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000043362375}
+  m_LocalPosition: {x: -18.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 515063263319175021}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!212 &5570806497077126001
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: -2050398979
   m_SortingLayer: 3
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 7326108172515051231, guid: 1e4d2e02eb13bff459cd25f94cb701f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,8 +130,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.11, y: 2.68}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -139,9 +139,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: -0.44750062, y: 1.1902505}
+      - {x: -0.44163767, y: -1.2420483}
+      - {x: 0.5097299, y: -0.0065437257}
   m_UseDelaunayMesh: 0
 --- !u!114 &7867676357158620361
 MonoBehaviour:
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0d8843f6c25d74199a2a7231f26a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPressedAudio: {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
   targetScene: 
 --- !u!1 &7560765475991649908
 GameObject:
@@ -199,13 +200,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7560765475991649908}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -958.41394, y: -545.3872, z: 0}
-  m_LocalScale: {x: 1.1845315, y: 0.5125001, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 515063263319175021}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1449867874671058063
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -253,7 +254,7 @@ SpriteRenderer:
   m_SortingLayerID: -2050398979
   m_SortingLayer: 3
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 7326108172515051231, guid: 1e4d2e02eb13bff459cd25f94cb701f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -301,8 +302,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.11, y: 2.68}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -310,9 +311,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: -0.48641583, y: 1.2875261}
+      - {x: -0.48054314, y: -1.3101404}
+      - {x: 0.49027252, y: -0.006545335}
   m_UseDelaunayMesh: 0
 --- !u!114 &2819763211440394108
 MonoBehaviour:
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0d8843f6c25d74199a2a7231f26a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPressedAudio: {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
   targetScene: 
 --- !u!1 &8203171071988731687
 GameObject:
@@ -368,7 +370,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 967.41394, y: 545.3872, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8928907726470448914}

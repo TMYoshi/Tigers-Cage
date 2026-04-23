@@ -12,6 +12,7 @@ public class PuzzlePathChecker : MonoBehaviour
     public CogController driverCog;
     public CogController upperEndCog;
     public CogController lowerEndCog;
+    public static bool musicBoxPuzzleSolved = false;
 
     private Dictionary<CogController, HashSet<CogController>> connectionGraph = 
         new Dictionary<CogController, HashSet<CogController>>();
@@ -218,8 +219,9 @@ public class PuzzlePathChecker : MonoBehaviour
     private void OnPuzzleSolved()// notes for chris puzzle solved
     {
         Debug.LogWarning($"puzzle solved");
-        Countdown.is_active_ = true;
-        SceneController.scene_controller_instance.FadeAndLoadSceneWithCutscene("Music_Box_Cutscene", "MC Room - 1 North Wall");
+        musicBoxPuzzleSolved = true;
+        SceneController.scene_controller_instance.FadeAndLoadScene("MC Room - 2 Chest");
+
     }
 
     private void RebuildConnectionGraph()

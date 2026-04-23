@@ -35,8 +35,10 @@ public class SceneController : MonoBehaviour
     // scene load without fade (fallback) fade also use this
     public AsyncOperation TraverseScene(string sceneName)
     {
+        if(OnSceneChange != null) 
+            OnSceneChange.Invoke();
+
         return SceneManager.LoadSceneAsync(sceneName);
-        OnSceneChange.Invoke();
     }
 
     // scene load without fade (fallback)

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance;
     public GameObject InventoryMenu;
 
     public ItemSlot[] itemSlot; //UI Slots in the inventory
@@ -11,7 +12,13 @@ public class InventoryManager : MonoBehaviour
 	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+
+    void Start()
+    {
+        Instance = this;
+    }
+
+    public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
@@ -20,9 +27,11 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 //add to save system
-                return;
+                return true;
             }
         }
+
+        return false;
     }
 /*
     public void DeselectAllSlots()

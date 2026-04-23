@@ -24,6 +24,9 @@ public class DialogManager : MonoBehaviour
     private float text_speed_ = 0.4f;
     public Animator dialog_animator_;
 
+    [SerializeField]
+    private AudioClip talking_sounds_;
+
     #region Awake
     // Implement Singleton so that SOs can access Dialog
     public void Awake()
@@ -45,6 +48,8 @@ public class DialogManager : MonoBehaviour
     // TLDR: IEnumerator ~= foreach object. Has methods: gets current + moves next
     public IEnumerator TypeLine()
     {
+        SFXManager.Instance.PlaySFXClipLoop(talking_sounds_);
+
         Debug.Log("Current line: " + index_);
         DialogLine line = current_dialog_.lines_[index_];
 
@@ -64,6 +69,8 @@ public class DialogManager : MonoBehaviour
             text_component_.maxVisibleCharacters = i;
             yield return new WaitForSeconds(text_speed_);
         }
+
+        SFXManager.Instance.UnLoopSFXClip();
     }
     #endregion
 
@@ -150,6 +157,7 @@ public class DialogManager : MonoBehaviour
     public void EndLine()
     {
         StopAllCoroutines();
+        SFXManager.Instance.UnLoopSFXClip();
         text_component_.maxVisibleCharacters = text_component_.textInfo.characterCount;
     }
     #endregion
