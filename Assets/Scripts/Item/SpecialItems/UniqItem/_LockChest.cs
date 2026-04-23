@@ -11,7 +11,7 @@ public class _LockedChest : SpecialItems
 	[SerializeField] GameObject ExitButtonCanvas;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
-    uint[] correctCode = { 0, 0,0,0};
+    uint[] correctCode = {0,8,2,8};
     // remind me to change lol-n
     bool _CompleteCondition, _ExitCondition;
 
