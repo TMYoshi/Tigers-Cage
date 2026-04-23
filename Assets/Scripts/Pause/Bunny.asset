@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9580d3026830a40a69473a1c02b551, type: 3}
+  m_Name: Bunny
+  m_EditorClassIdentifier: Assembly-CSharp::DocumentItem
+  documentTitle: Bunny
+  documentText: "I won Bunbun at the spelling bee for getting first place, and Papa
+    was really happy for me. He even tried to fix the dryer so Bunbun could smell
+    like the flowery detergent he picked out. But it didn\u2019t spin right and made
+    a loud noise before stopping. Now she\u2019s not as soft anymore. Mama got upset
+    and said he always makes things worse"
+  documentImage: {fileID: 21300000, guid: 39633717a89f1484fa00844e258cfaaa, type: 3}
+  documentInfoFont: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
+  isUnlocked: 0

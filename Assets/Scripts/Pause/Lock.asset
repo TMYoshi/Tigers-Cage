@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Lock
   m_EditorClassIdentifier: Assembly-CSharp::DocumentItem
   documentTitle: Lock Password
-  documentText: Password is 1991
+  documentText: 'It looks like the code might be 000.I should double-check...
+
+
+    I
+    don''t want to get it wrong.'
   documentImage: {fileID: 0}
+  documentInfoFont: {fileID: 0}
   isUnlocked: 0

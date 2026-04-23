@@ -45,7 +45,7 @@ public class PauseMenu : MonoBehaviour
         PauseBackground.SetActive(false);
         JournalUI.SetActive(false);
 
-        UpdateTOCButtons();
+        RefreshButtons();
 
     }
     //Check if the key 'J" is pressed. it will pause the game
@@ -74,13 +74,14 @@ public class PauseMenu : MonoBehaviour
     public void OpenJournal()
     {
         PauseBackground.SetActive(false);
+        RefreshButtons();
         Debug.Log("Opened table of contetnents");
 
         tableofContentes.SetActive(true);
 
     }
 
-    void UpdateTOCButtons()
+   /* void UpdateTOCButtons()
     {
         if(JournalDataManager.Instance == null) return;
         var data = JournalDataManager.Instance.allDocuments;
@@ -94,6 +95,39 @@ public class PauseMenu : MonoBehaviour
             documentButtons[i].onClick.RemoveAllListeners();
             documentButtons[i].onClick.AddListener(() => OpenDocument(index));
         }
+    }*/
+
+    public void RefreshButtons()
+    {
+        foreach(Button but in documentButtons)
+        {
+            DocumnetButton docBut = but.GetComponent<DocumnetButton>();
+
+            if(docBut != null && docBut.documentItem != null)
+            {
+                but.gameObject.SetActive(docBut.documentItem.isUnlocked);
+            }
+        }
+    }
+
+    public void OpenDocumentByItem(DocumentItem doc)
+    {
+       if(doc == null) return;
+
+        titleText.text = doc.documentTitle;
+        contentText.text = doc.documentText;
+        documentImage.sprite = doc.documentImage;
+
+        if(doc.documentInfoFont != null)
+        {
+            titleText.font = doc.documentInfoFont;
+            contentText.font = doc.documentInfoFont;
+        }
+
+        tableofContentes.SetActive(false);
+        documentPage.SetActive(true);
+
+        Debug.Log($"Opened document: {doc.documentTitle}");
     }
 
     public void OpenDocument(int index)
@@ -102,6 +136,13 @@ public class PauseMenu : MonoBehaviour
         titleText.text = doc.documentTitle;
         contentText.text = doc.documentText;
         documentImage.sprite = doc.documentImage;
+
+        //applying font if set
+        if(doc.documentInfoFont != null)
+        {
+            titleText.font = doc.documentInfoFont;
+            contentText.font = doc.documentInfoFont;
+        }
         tableofContentes.SetActive(false);
         documentPage.SetActive(true);
 

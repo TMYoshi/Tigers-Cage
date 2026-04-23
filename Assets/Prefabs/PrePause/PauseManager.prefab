@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9c519d734e7c84298d760289e34573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveLoadManager: {fileID: 0}
   JournalUI: {fileID: 0}
   PauseBackground: {fileID: 0}
   tableofContentes: {fileID: 0}
+  SettingsPanel: {fileID: 0}
   titleText: {fileID: 0}
   contentText: {fileID: 0}
   documentImage: {fileID: 0}
