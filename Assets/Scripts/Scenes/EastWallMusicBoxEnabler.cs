@@ -18,7 +18,7 @@ public class EastWallMusicBoxEnabler : MonoBehaviour
             if (collectibles != null)
             {
                 Transform batteries = collectibles.transform.Find("Batteries");
-                if (batteries != null) batteries.gameObject.SetActive(true);
+                //if (batteries != null) batteries.gameObject.SetActive(true);
             }
         }
     }
