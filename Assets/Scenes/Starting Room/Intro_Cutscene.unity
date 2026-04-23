@@ -1147,6 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925976092}
   - component: {fileID: 1925976093}
+  - component: {fileID: 1925976094}
   m_Layer: 0
   m_Name: VideoPlayerObject
   m_TagString: Untagged
@@ -1195,8 +1196,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: file://C:/Users/thehu/Downloads/MyGames/4Rum/Tigers-Cage/Assets/Images/Menu
-    Assets/menuAssetOld/intro_cutscene.mp4
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -1206,6 +1206,19 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &1925976094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925976091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb3386dc1d86ba47bf02b7072aa16fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VideoLoader
+  pathDir: intro_cutscene.mp4
 --- !u!1 &2059983744
 GameObject:
   m_ObjectHideFlags: 0
