@@ -1958,15 +1958,15 @@ PrefabInstance:
       objectReference: {fileID: 7326108172515051231, guid: 1e4d2e02eb13bff459cd25f94cb701f8, type: 3}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.b
-      value: 0.46226418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.g
-      value: 0.46226418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Color.r
-      value: 0.46226418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5570806497077126001, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_SortingOrder
@@ -1987,6 +1987,10 @@ PrefabInstance:
     - target: {fileID: 6284393475425276146, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867676357158620361, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
+      propertyPath: outlineColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8203171071988731687, guid: bf83ef4cd6663fd499adf75d8a31569b, type: 3}
       propertyPath: m_Name
@@ -2450,6 +2454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
   key: Ripped Card 1
   specialItems: {fileID: 8288123853033184231}
+  interactionAudio: {fileID: 8300000, guid: 271cca466660f2147bde1137f9ae53b9, type: 3}
 --- !u!114 &8288123853033184231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2496,6 +2501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
   key: Ripped Card 3
   specialItems: {fileID: 8288123853033184232}
+  interactionAudio: {fileID: 8300000, guid: 271cca466660f2147bde1137f9ae53b9, type: 3}
 --- !u!114 &8288123853033184234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2526,6 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpecialItemInteraction
   key: Ripped Card 2
   specialItems: {fileID: 8288123853033184234}
+  interactionAudio: {fileID: 8300000, guid: 271cca466660f2147bde1137f9ae53b9, type: 3}
 --- !u!212 &8288123853033184236
 SpriteRenderer:
   m_ObjectHideFlags: 0
