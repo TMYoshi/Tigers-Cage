@@ -26,9 +26,9 @@ public class Brightness_Slider : MonoBehaviour
         Gradient gradient = new Gradient();
 
         var colors = new GradientColorKey[3];
-        colors[0] = new GradientColorKey(Color.white, 0.0f);
+        colors[0] = new GradientColorKey(Color.white, 1.0f);
         colors[1] = new GradientColorKey(Color.gray4, 0.5f);
-        colors[2] = new GradientColorKey(Color.gray1, 1.0f);
+        colors[2] = new GradientColorKey(Color.gray1, 0.0f);
 
         gradient.SetColorKeys(colors);
 
