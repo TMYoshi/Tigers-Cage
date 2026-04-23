@@ -439,7 +439,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3326513414631346885, guid: e37de25ff650bfb439704513ab9ae751, type: 3}
     - target: {fileID: 2448865613203092284, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448865613203092284, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342395551420262665, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: m_Name
+      value: Card1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342395551420262665, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3560061907717845413, guid: f13cc862f85364c598b58cba4e422754, type: 3}
