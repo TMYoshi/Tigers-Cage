@@ -9,6 +9,8 @@ public class _LockedChest : SpecialItems
     [SerializeField] Sprite openSprite;
     [SerializeField] GameObject CodeLock, OpenChest;
 	[SerializeField] GameObject ExitButtonCanvas;
+    [SerializeField] AudioClip unlock_sound_;
+    [SerializeField] AudioClip padlock_sound_;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
     uint[] correctCode = {0,8,2,8};
@@ -29,6 +31,8 @@ public class _LockedChest : SpecialItems
 
     public void IncrementByOne(int _Location)
     {
+        SFXManager.Instance.PlaySFXClip(padlock_sound_);
+        
         currentCode[_Location]++;
         if (currentCode[_Location] >= 10) currentCode[_Location] = 0;
         DisplayNumbers[_Location].text = currentCode[_Location].ToString();
@@ -63,6 +67,7 @@ public class _LockedChest : SpecialItems
 		InventoryManager.alreadyInteratedItems.Add("Chest");
 
         OpenChest.SetActive(true);
+        SFXManager.Instance.PlaySFXClip(unlock_sound_);
         gameObject.SetActive(false);
         Destroy(colliderToDestroy);
         //save system noted for chris 
