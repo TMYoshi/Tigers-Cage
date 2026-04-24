@@ -520,6 +520,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3560061907717845413, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      propertyPath: destroyable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560061907717845413, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: itemDescription
       value: A card I made for my mom for her birthday. The date on it says "Augest
         28th".
