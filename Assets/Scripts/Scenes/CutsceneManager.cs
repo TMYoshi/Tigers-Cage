@@ -46,6 +46,7 @@ public class CutsceneManager : MonoBehaviour
         }
     }
 
+    bool startedCutscene = false;
     private void StartCutscene()
     {
         // Countdown Associated Scenes - Turn off during cutscene
@@ -57,6 +58,12 @@ public class CutsceneManager : MonoBehaviour
         if (FadeController.Instance != null)
         {
             FadeController.Instance.onFadeInComplete -= StartCutscene;
+        }
+
+        if(!startedCutscene)
+        {
+            startedCutscene = true;
+            return;
         }
 
         if (this == null)

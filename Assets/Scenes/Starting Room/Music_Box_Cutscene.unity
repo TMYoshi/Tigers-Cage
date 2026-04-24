@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlashlightController
   flashlightObject: {fileID: 1456808410}
   flashlight: {fileID: 0}
-  followSpeed: 10
+  followSpeed: 30
   isFlashlightUnlocked: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
