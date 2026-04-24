@@ -14,6 +14,7 @@ public abstract class SpecialItems : MonoBehaviour
     public abstract bool ExitCondition();
     public virtual void RewardCondition()
     {
+        
         Debug.Log("Reward!!");
     }
     public virtual void CleanUpCondition()

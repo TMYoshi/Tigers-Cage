@@ -2252,7 +2252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleSaveState
   puzzleId: Puzzle_box
-  objectsToDisable: []
+  objectsToDisable:
+  - {fileID: 1562968577}
   saveLoadManager: {fileID: 1230778504}
 --- !u!1001 &1624406066
 PrefabInstance:
