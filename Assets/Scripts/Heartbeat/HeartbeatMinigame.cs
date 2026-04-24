@@ -145,7 +145,7 @@ public class HeartbeatMinigame : MonoBehaviour
 
 	public void Win()
 	{
-		Debug.Log("<color=yellow>Win</color>");
+		PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
 		EndMinigame();
 	}
 
