@@ -3910,11 +3910,11 @@ MonoBehaviour:
   innerCollider: {fileID: 601809327}
   outerCollider: {fileID: 601809329}
   pick_up_sounds_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: f2f0b8927033980488e35fec07b43a30, type: 3}
+  - {fileID: 8300000, guid: d35b45f2442830145bc9cfa818530068, type: 3}
   place_sounds_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
+  - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
 --- !u!1 &611362548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6677,7 +6677,7 @@ PrefabInstance:
     - target: {fileID: 6308877122316373437, guid: bc892dc3fd1dc49a5959e8eb55166a85, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 1834384463414150163, guid: 23280ec0ac21147ee81e86baae0b6779, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7509410071097088042, guid: bc892dc3fd1dc49a5959e8eb55166a85, type: 3}
       propertyPath: m_Name
       value: SFXManager

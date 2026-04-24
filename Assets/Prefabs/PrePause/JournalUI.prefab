@@ -745,10 +745,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2654091650914411340}
   m_HandleRect: {fileID: 370436802136730677}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1e-10
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1e-10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3115,7 +3115,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8143782429262519344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3614,10 +3614,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1219588346520480600}
   m_HandleRect: {fileID: 3322271461979124123}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1e-10
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1e-10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5059,10 +5059,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 4621022678770335282}
   m_HandleRect: {fileID: 6858396480065763046}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1e-10
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1e-10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6698,10 +6698,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1777403724323647374}
-        m_TargetAssemblyTypeName: Brightness_Slider, Assembly-CSharp
-        m_MethodName: SetBrightness
-        m_Mode: 0
+      - m_Target: {fileID: 2523997622699560378}
+        m_TargetAssemblyTypeName: BrightnessSlider, Assembly-CSharp
+        m_MethodName: SliderBrightness
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7118,7 +7118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 183660558973443069}
-  - component: {fileID: 1777403724323647374}
+  - component: {fileID: 2523997622699560378}
   m_Layer: 0
   m_Name: Brightness_Slider
   m_TagString: Untagged
@@ -7141,7 +7141,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1289110369496380206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1777403724323647374
+--- !u!114 &2523997622699560378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7150,11 +7150,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8816152375078617973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e502e13962f614047aad105d85498ed8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b34d5cc19008d545bd94187aaaf253e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Brightness_Slider
+  m_EditorClassIdentifier: Assembly-CSharp::BrightnessSlider
   slider_: {fileID: 917947106968731016}
-  volume_: {fileID: 0}
 --- !u!1 &8904398781633930223
 GameObject:
   m_ObjectHideFlags: 0
