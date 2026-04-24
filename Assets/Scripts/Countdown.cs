@@ -63,7 +63,7 @@ public class Countdown : MonoBehaviour
         {
             remaining_time_ -= Time.deltaTime;
         }
-        else if (remaining_time_ < 0)
+        else if (remaining_time_ <= 0)
         {
             is_active_ = false;
             remaining_time_ = 0;

@@ -1269,6 +1269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Countdown
       objectReference: {fileID: 0}
+    - target: {fileID: 4424101150697130693, guid: ea22c3c78eb064a1fb32172f18ce208a, type: 3}
+      propertyPath: remaining_time_
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7665508264445909260, guid: ea22c3c78eb064a1fb32172f18ce208a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
