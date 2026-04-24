@@ -51,7 +51,9 @@ public class SceneController : MonoBehaviour
     {
         yield return new WaitForSeconds(MainMenuTransition.Instance.ChangeSceneWithTigerAnimation());
         SceneManager.LoadSceneAsync(sceneName);
-        OnSceneChange.Invoke();
+
+        if(OnSceneChange != null)
+            OnSceneChange.Invoke();
     }
 
     //this is for scenes where you go into like a thing that doesn't have a player so it knows where to spawn back
