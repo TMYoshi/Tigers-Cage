@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: e1b866dd4f74bcc458ba7c48fe2c34ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3326513414631346885
+    second: N_Wall_Desk_CU_Card_946x995_v02_0
+  - first:
+      213: -5795458446210711403
+    second: N_Wall_Desk_CU_Card_946x995_v02_1
+  - first:
+      213: 3952294899403848565
+    second: N_Wall_Desk_CU_Card_946x995_v02_2
+  - first:
+      213: 7155431942230186374
+    second: N_Wall_Desk_CU_Card_946x995_v02_3
+  - first:
+      213: 3309317495217388268
+    second: N_Wall_Desk_CU_Card_946x995_v02_4
+  - first:
+      213: -4542232530055543788
+    second: N_Wall_Desk_CU_Card_946x995_v02_5
+  - first:
+      213: -8833374436325743358
+    second: N_Wall_Desk_CU_Card_946x995_v02_6
+  - first:
+      213: -1903072266597003128
+    second: N_Wall_Desk_CU_Card_946x995_v02_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_0
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 97
+        width: 696
+        height: 801
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c25ca373562a2e20800000000000000
+      internalID: 3326513414631346885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_1
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 532
+        width: 291
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590c213bf35629fa0800000000000000
+      internalID: -5795458446210711403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_2
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 86
+        width: 696
+        height: 521
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bfd86554f59d630800000000000000
+      internalID: 3952294899403848565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_3
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 403
+        width: 445
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6891d1bb0733d4360800000000000000
+      internalID: 7155431942230186374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 250
+        width: 10
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceafa677abe0ded20800000000000000
+      internalID: 3309317495217388268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_5
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 418
+        width: 44
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414c0d6649fb6f0c0800000000000000
+      internalID: -4542232530055543788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 264
+        width: 8
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205a9ca50cc896580800000000000000
+      internalID: -8833374436325743358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_Wall_Desk_CU_Card_946x995_v02_7
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 256
+        width: 41
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 880969f3bdde695e0800000000000000
+      internalID: -1903072266597003128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      N_Wall_Desk_CU_Card_946x995_v02_0: 3326513414631346885
+      N_Wall_Desk_CU_Card_946x995_v02_1: -5795458446210711403
+      N_Wall_Desk_CU_Card_946x995_v02_2: 3952294899403848565
+      N_Wall_Desk_CU_Card_946x995_v02_3: 7155431942230186374
+      N_Wall_Desk_CU_Card_946x995_v02_4: 3309317495217388268
+      N_Wall_Desk_CU_Card_946x995_v02_5: -4542232530055543788
+      N_Wall_Desk_CU_Card_946x995_v02_6: -8833374436325743358
+      N_Wall_Desk_CU_Card_946x995_v02_7: -1903072266597003128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
