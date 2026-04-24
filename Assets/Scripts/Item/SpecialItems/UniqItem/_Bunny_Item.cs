@@ -9,17 +9,18 @@ public class _Bunny_Item : SpecialItems
     }
     public override bool CompleteCondition() 
     {
+        if(documentToUnlock != null)
+        {
+            documentToUnlock.isUnlocked = true;
+            Debug.Log($"Document '{documentToUnlock.documentTitle}' unlocked!");
+        }
         return true;
     }
     public override bool ExitCondition()
     {
         playerAnimator.SetBunnyTrue();
         
-        if(documentToUnlock != null)
-        {
-            documentToUnlock.isUnlocked = true;
-            JournalDataManager.Instance.SaveProgress();
-        }
+       
         return true;
     }
 }

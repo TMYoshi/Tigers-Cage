@@ -32,6 +32,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+
+        RefreshButtons();
         invHandler = () =>
         {
             if(!this || JournalUI == null) return;
@@ -45,7 +47,6 @@ public class PauseMenu : MonoBehaviour
         PauseBackground.SetActive(false);
         JournalUI.SetActive(false);
 
-        RefreshButtons();
 
     }
     //Check if the key 'J" is pressed. it will pause the game
@@ -76,11 +77,21 @@ public class PauseMenu : MonoBehaviour
         PauseBackground.SetActive(false);
         RefreshButtons();
         Debug.Log("Opened table of contetnents");
-
         tableofContentes.SetActive(true);
 
     }
 
+   public void BackToTable()
+{
+    Debug.Log("BackToTable button clicked");
+
+    if (documentPage == null) Debug.LogError("documentPage is NOT assigned!");
+    if (tableofContentes == null) Debug.LogError("tableofContentes is NOT assigned!");
+
+    documentPage.SetActive(false);
+    tableofContentes.SetActive(true);
+    RefreshButtons();
+}
    /* void UpdateTOCButtons()
     {
         if(JournalDataManager.Instance == null) return;
@@ -148,6 +159,7 @@ public class PauseMenu : MonoBehaviour
 
         Debug.Log($"Opened document: {doc.documentTitle}");
     }
+
 
     public void QuitToMainMenu()
     {

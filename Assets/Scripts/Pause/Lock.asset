@@ -19,5 +19,5 @@ MonoBehaviour:
     I
     don''t want to get it wrong.'
   documentImage: {fileID: 0}
-  documentInfoFont: {fileID: 0}
-  isUnlocked: 0
+  documentInfoFont: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
+  isUnlocked: 1
