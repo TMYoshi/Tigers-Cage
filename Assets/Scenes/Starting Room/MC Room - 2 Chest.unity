@@ -2044,6 +2044,7 @@ GameObject:
   - component: {fileID: 1563247630}
   - component: {fileID: 1563247629}
   - component: {fileID: 1563247628}
+  - component: {fileID: 1563247634}
   m_Layer: 0
   m_Name: Music Box Finished
   m_TagString: SpecialItem
@@ -2238,6 +2239,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1563247634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563247626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63161a2bbbf7976468bb904d2598690a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleSaveState
+  puzzleId: Puzzle_box
+  objectsToDisable: []
+  saveLoadManager: {fileID: 1230778504}
 --- !u!1001 &1624406066
 PrefabInstance:
   m_ObjectHideFlags: 0
