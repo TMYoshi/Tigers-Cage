@@ -42,8 +42,6 @@ public class HeartbeatMinigame : MonoBehaviour
 	{
 		safeZoneVelocity = 0;
 		StartHeartBeatMinigame();
-        countdown.SetActive(false);
-		Countdown.is_active_ = false;
 	}
 
 	public void StartHeartBeatMinigame()
