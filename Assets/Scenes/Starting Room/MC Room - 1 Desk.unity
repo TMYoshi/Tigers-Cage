@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 8218888755821037887, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: 'convos_.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 1b912f6e764890747ba38cf69940d3f8, type: 2}
+      objectReference: {fileID: 11400000, guid: 4b3fd7f083dd745cea96e5b763e1e35c, type: 2}
     - target: {fileID: 8288123851561259850, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: m_Name
       value: Completed Card
