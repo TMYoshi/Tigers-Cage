@@ -9,8 +9,9 @@ public class HeartbeatMinigame : MonoBehaviour
 
 	[Header("Essentials")]
 	[SerializeField] List<GameObject> gameObjectsToShow;
+    [SerializeField] GameObject countdown;
 
-	[SerializeField] Slider safeSlider;
+    [SerializeField] Slider safeSlider;
 	[SerializeField] RectTransform safeZoneTransform;
 	[SerializeField] Slider heartSlider;
 	[SerializeField] RectTransform heartTransform;
@@ -42,7 +43,9 @@ public class HeartbeatMinigame : MonoBehaviour
 	{
 		safeZoneVelocity = 0;
 		StartHeartBeatMinigame();
-	}
+        countdown.SetActive(false);
+        Countdown.is_active_ = false;
+    }
 
 	public void StartHeartBeatMinigame()
 	{
