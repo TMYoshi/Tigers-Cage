@@ -37,6 +37,16 @@ public class _LockedChest : SpecialItems
         if (currentCode[_Location] >= 10) currentCode[_Location] = 0;
         DisplayNumbers[_Location].text = currentCode[_Location].ToString();
     }
+
+    public void DecrementByOne(int _Location)
+    {
+        SFXManager.Instance.PlaySFXClip(padlock_sound_);
+        
+        if (currentCode[_Location] == 0) currentCode[_Location] = 10;
+        currentCode[_Location]--;
+        DisplayNumbers[_Location].text = currentCode[_Location].ToString();
+    }
+
     public void CheckIfCorret()
     {
         if (currentCode.SequenceEqual(correctCode))
