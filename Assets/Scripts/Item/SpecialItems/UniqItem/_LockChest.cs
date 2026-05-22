@@ -11,6 +11,7 @@ public class _LockedChest : SpecialItems
 	[SerializeField] GameObject ExitButtonCanvas;
     [SerializeField] AudioClip unlock_sound_;
     [SerializeField] AudioClip padlock_sound_;
+    [SerializeField] AudioClip failed_sound_;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
     uint[] correctCode = {0,8,2,8};
@@ -52,6 +53,10 @@ public class _LockedChest : SpecialItems
         if (currentCode.SequenceEqual(correctCode))
         {
             _CompleteCondition = true;
+        }
+        else
+        {
+            SFXManager.Instance.PlaySFXClip(failed_sound_);
         }
     }
     public override void EnterCondition()
