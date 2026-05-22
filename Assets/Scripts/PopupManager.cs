@@ -29,9 +29,17 @@ public class PopupManager : MonoBehaviour
         PlayerInput.Instance.InvOnClick += SetpopupOff;
     }
 
+    public void SetpopupOnFlashlight()
+    {
+        text.text = "Press F to use Flashlight";
+        animator.SetBool("Show", true);
+        PlayerInput.Instance.FlashInput += SetpopupOff;
+    }
+
     public void SetpopupOff()
     {
         animator.SetBool("Show", false);
         PlayerInput.Instance.InvOnClick -= SetpopupOff;
+        PlayerInput.Instance.FlashInput -= SetpopupOff;
     }
 }

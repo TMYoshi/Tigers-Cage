@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class _Popup: SpecialItems
 {
+    public UnityEvent OnExitItem;
     public override void EnterCondition()
     {
     }
@@ -14,7 +16,17 @@ public class _Popup: SpecialItems
 
     public override bool ExitCondition()
     {
-        PopupManager.Instance.SetpopupOnJournal();
+        OnExitItem.Invoke();
         return true;
+    }
+
+    public void JournalPopup()
+    {
+        PopupManager.Instance.SetpopupOnJournal();
+    }
+
+    public void FlashlightPopup()
+    {
+        PopupManager.Instance.SetpopupOnFlashlight();
     }
 }
