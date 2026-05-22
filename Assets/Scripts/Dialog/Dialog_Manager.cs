@@ -123,7 +123,7 @@ public class DialogManager : MonoBehaviour
         index_ = 0;
         is_dialog_active_ = false;
 
-        dialog_animator_.SetTrigger("Exit"); // TODO: Fix so actually triggers animation lol
+        dialog_animator_.SetTrigger("Exit");
     }
     #endregion
 
@@ -149,7 +149,7 @@ public class DialogManager : MonoBehaviour
             yield return null;
         }
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     #endregion
 
