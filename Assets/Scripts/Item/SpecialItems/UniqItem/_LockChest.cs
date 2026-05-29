@@ -17,9 +17,11 @@ public class _LockedChest : SpecialItems
     uint[] correctCode = {0,8,2,8};
     // remind me to change lol-n
     bool _CompleteCondition, _ExitCondition;
+    Animator animator;
 
 	public override void Start()//
 	{
+        animator = GetComponent<Animator>();
 		item.AssignSpecialEvents(this);
 		if(InventoryManager.alreadyInteratedItems.Contains("Chest"))
 		{
@@ -32,6 +34,7 @@ public class _LockedChest : SpecialItems
 
     public void IncrementByOne(int _Location)
     {
+        animator.SetTrigger("Jiggles");
         SFXManager.Instance.PlaySFXClip(padlock_sound_);
         
         currentCode[_Location]++;
@@ -41,6 +44,7 @@ public class _LockedChest : SpecialItems
 
     public void DecrementByOne(int _Location)
     {
+        animator.SetTrigger("Jiggles");
         SFXManager.Instance.PlaySFXClip(padlock_sound_);
         
         if (currentCode[_Location] == 0) currentCode[_Location] = 10;
