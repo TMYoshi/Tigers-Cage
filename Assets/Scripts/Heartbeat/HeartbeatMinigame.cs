@@ -21,7 +21,6 @@ public class HeartbeatMinigame : MonoBehaviour
 	const float durationOffset = 0.001f;
 
 	[Header("Settings")]
-	[SerializeField] float initSafe;
 	[SerializeField] float safeTimerInit;
 	[SerializeField] float loseMinigameTimer;
 	[SerializeField] float winMinigameTimer;
@@ -52,6 +51,7 @@ public class HeartbeatMinigame : MonoBehaviour
 
 	public void StartHeartBeatMinigame()
 	{
+        _startDanger = false;
         MinigameActive = true;
         safeSlider.value = 0.5f;
         heartSlider.value = 0.5f;
