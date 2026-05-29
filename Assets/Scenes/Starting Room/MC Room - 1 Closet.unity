@@ -2267,6 +2267,7 @@ MonoBehaviour:
   gameObjectsToShow:
   - {fileID: 1484734392}
   - {fileID: 1564702455}
+  countdown: {fileID: 0}
   safeSlider: {fileID: 1890341604}
   safeZoneTransform: {fileID: 1391408706}
   heartSlider: {fileID: 1982176894}

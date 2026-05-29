@@ -142,7 +142,13 @@ public class HeartbeatMinigame : MonoBehaviour
 			direction = 1f;
 
 		//slider
-		safeZoneVelocity += safeZoneAcceleration * AccDirection * Time.fixedDeltaTime;
+        float addedVelocity = safeZoneAcceleration * AccDirection * Time.fixedDeltaTime;
+        if (safeSlider.value >= 0.99f)
+            safeZoneVelocity = 0;
+        else if (safeSlider.value <= 0.01f)
+            safeZoneVelocity = 0;
+
+        safeZoneVelocity += addedVelocity;
 		safeSlider.value += safeZoneVelocity * Time.fixedDeltaTime;
 	}
 
