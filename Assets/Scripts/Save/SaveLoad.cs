@@ -33,28 +33,52 @@ public class SaveLoad : MonoBehaviour
     }
     public void SaveGame()
     {   //Disable Load Button if no save file exists
+
+        Debug.Log("saving game click");
         string path = Application.persistentDataPath + "/player.Journal";
+
+        Debug.Log("Saving game to: " + path);
 
         if (!File.Exists(path))
         {
+            Debug.Log("save file not exist");
             if(loadButton != null)
             {
+                Debug.Log("Load button found");
                 loadButton.interactable = false;
             }
+            else
+            {
+                Debug.Log("Load button is NULL");
+            }
         }
+
+        Debug.Log("Game saved");
         Saves_System.SavePlayer();
+
+        Debug.Log("Save completed");
     }
 
     public void LoadGame()
     {
+        Debug.Log("Load button click");
         //Must always unpuase before chaning scenes
         Time.timeScale = 1f;
         Player_Data data = Saves_System.LoadPlayer();
-        if (data == null) return;
 
+        Debug.Log("Load called");
+
+        if (data == null)
+        {
+            Debug.LogError("Failed to load game data");
+            return;
+        }
+
+        Debug.Log("Data loaded");
         Saves_System.SetPendingLoad(data);
         SceneManager.LoadScene(data.sceneIndex);
 
+        Debug.LogWarning("Buttons not working, caused from main menue scence");
        
     }
 
@@ -82,3 +106,5 @@ public class SaveLoad : MonoBehaviour
         }
     }
 }
+
+// Debug.LogWarning("Buttons not working, caused from main menue scence");
