@@ -38,13 +38,15 @@ public class HeartbeatMinigame : MonoBehaviour
 	[Header("Events")]
 	[SerializeField] UnityEvent LoseEvent;
 	[SerializeField] UnityEvent SurviveEvent;
+    [SerializeField] UnityEvent OnStart;
 
 	void Start()
 	{
 		safeZoneVelocity = 0;
-		StartHeartBeatMinigame();
-        countdown.SetActive(false);
+        if(countdown != null)
+            countdown.SetActive(false);
         Countdown.is_active_ = false;
+        OnStart.Invoke();
     }
 
 	public void StartHeartBeatMinigame()
@@ -55,7 +57,7 @@ public class HeartbeatMinigame : MonoBehaviour
 		StartCoroutine(StartSafeZoneMoves());
 	}
 
-	void EndMinigame()
+	public void EndMinigame()
 	{
 		for(int I = 0; I < gameObjectsToShow.Count; I++)
 			gameObjectsToShow[I].SetActive(false);
