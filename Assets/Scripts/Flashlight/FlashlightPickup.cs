@@ -1,23 +1,29 @@
 using UnityEngine;
 
-public class FlashlightPickup : MonoBehaviour
+public class FlashlightPickup : SpecialItems
 {
-    public void PickupFlashlight()
-    {
-        FlashlightController flashlightController = FindFirstObjectByType<FlashlightController>();
+    public override void EnterCondition() { }
+    public override bool CompleteCondition() => true;
+    public override bool ExitCondition() => true;
+    public override void RewardCondition() => base.RewardCondition();
 
+    private void OnDestroy()
+    {
+        if (!gameObject.scene.isLoaded) return;
+        UnlockFlashlight();
+    }
+
+    private void UnlockFlashlight()
+    {
+        PlayerPrefs.SetInt("FlashlightUnlocked", 1);
+        PlayerPrefs.Save();
+        Debug.Log("Flashlight perma unlocked");
+
+        FlashlightController flashlightController = FindAnyObjectByType<FlashlightController>();
         if (flashlightController != null)
         {
-            flashlightController.UnlockFlashlight();
-            GetComponent<SpeicalItemID>().Collect();
-            Debug.Log("flashlight unlocked");
-
-            Destroy(gameObject);
-            // add ot journal here
-        }
-
-        else {
-            Debug.LogError("FlashlightController not found!");
+            flashlightController.isFlashlightUnlocked = true;
+            Debug.Log("Flashlight perma unlocked");
         }
     }
 }
