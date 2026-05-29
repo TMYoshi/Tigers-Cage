@@ -121,5 +121,11 @@ public class InventoryItem : Item
     {
         collectable = collectable_;
     }
+
+    public void RemoveItem()
+    {
+        Destroy(gameObject);
+        PlayerDialogItemState.MarkItemAsCollected(this);
+    }
     #endregion
 }

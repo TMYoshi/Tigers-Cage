@@ -37,7 +37,6 @@ public class PlayerDialogItemState : PlayerBaseState
     {
         Cleanup();
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
-
     }
 
     public override void Cleanup()

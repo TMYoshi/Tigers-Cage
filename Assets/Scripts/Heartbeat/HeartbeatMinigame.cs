@@ -16,6 +16,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	[SerializeField] Slider heartSlider;
 	[SerializeField] RectTransform heartTransform;
 	[SerializeField] RectTransform safeZone;
+    public bool MinigameActive;
 
 	const float durationOffset = 0.001f;
 
@@ -38,11 +39,11 @@ public class HeartbeatMinigame : MonoBehaviour
 	[Header("Events")]
 	[SerializeField] UnityEvent LoseEvent;
 	[SerializeField] UnityEvent SurviveEvent;
+    [SerializeField] UnityEvent OnMinigameStart;
     [SerializeField] UnityEvent OnStart;
 
 	void Start()
 	{
-		safeZoneVelocity = 0;
         if(countdown != null)
             countdown.SetActive(false);
         Countdown.is_active_ = false;
@@ -51,6 +52,12 @@ public class HeartbeatMinigame : MonoBehaviour
 
 	public void StartHeartBeatMinigame()
 	{
+        MinigameActive = true;
+        safeSlider.value = 0.5f;
+        heartSlider.value = 0.5f;
+		safeZoneVelocity = 0;
+        safeZoneTimerCurrent = 1;
+        OnMinigameStart.Invoke();
 		for(int I = 0; I < gameObjectsToShow.Count; I++)
 			gameObjectsToShow[I].SetActive(true);
 
@@ -61,7 +68,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	{
 		for(int I = 0; I < gameObjectsToShow.Count; I++)
 			gameObjectsToShow[I].SetActive(false);
-		this.gameObject.SetActive(false);
+        MinigameActive = false;
 	}
 
 	float AccDirection = 1f;
@@ -69,6 +76,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	
 	void Update()
 	{
+        if(!MinigameActive) return;
 		if(!_startDanger) return;
 
 		if (PlayerInput.Instance.MouseClickInput)
@@ -130,6 +138,7 @@ public class HeartbeatMinigame : MonoBehaviour
 
 	void FixedUpdate()
 	{
+        if(!MinigameActive) return;
 		if (!_startDanger)
 			return;
 

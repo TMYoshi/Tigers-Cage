@@ -15,6 +15,7 @@ public class PlayerStateManager : MonoBehaviour
     [Header("null if no movementController")]
     public PlayerController _MovementController;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now
+    //
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class PlayerStateManager : MonoBehaviour
 
     public enum State
     {
+        Null,
         Idle,
         Inventory,
         DialogItem,
@@ -44,6 +46,7 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
+        _State[State.Null] = new PlayerNullState(this);
         _State[State.Inventory] = new PlayerInvState(this);
         _State[State.DialogItem] = new PlayerDialogItemState(this);
         _State[State.SpecialItem] = new PlayerSpecialItemState(this);
