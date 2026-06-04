@@ -13,5 +13,7 @@ public class DocumentItem : ScriptableObject
     public Sprite documentImage;
     public TMP_FontAsset documentInfoFont;
     public bool isUnlocked = false;
+
+    public int pageNumber = -1;
     
 }
