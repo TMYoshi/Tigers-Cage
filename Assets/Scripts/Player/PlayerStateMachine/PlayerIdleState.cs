@@ -12,23 +12,24 @@ public class PlayerIdleState : PlayerBaseState
         _context = context;
     }
 
-    Action MoveToWalk;
     Action LocateMovementController;
+
+    private void MoveToWalk()
+    {
+        if(_context._MovementController == null)
+        {
+            _context.UpdatePlayerCharacterReference();
+            return;
+        }
+
+        PlayerController.WalkToOnClick(_context._MovementController);
+    }
 
     public override void EnterState()
     {
-        MoveToWalk = () => 
-        {
-            if((_context._MovementController) == null)
-            {
-                _context.UpdatePlayerCharacterReference();
-                return;
-            };
-            PlayerController.WalkToOnClick(_context._MovementController);
-        };
-
         PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
     }
+
     public override void UpdateState()
     {
         if (PauseMenu.isPaused)

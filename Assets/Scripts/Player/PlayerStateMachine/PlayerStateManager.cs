@@ -15,7 +15,6 @@ public class PlayerStateManager : MonoBehaviour
     [Header("null if no movementController")]
     public PlayerController _MovementController;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now
-    //
 
     private void Awake()
     {
@@ -57,8 +56,26 @@ public class PlayerStateManager : MonoBehaviour
         
         UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
     }
+
+    //think I programmed the state machine wrong it ends in a feedback loop if I call enterState
+    //so that's why this is here
+    public void UpdateToNullState()
+    {
+        _currentState = _State[State.Idle];
+        _currentState.Cleanup();
+        _currentState = _State[State.Null];
+    }
+
+    //this is only to escape the null state
+    public void UpdateToIdleState()
+    {
+        _currentState = _State[State.Idle];
+        _currentState.EnterState();
+    }
+    
     public void UpdateCurrentState(State state)
     {
+        if(_currentState is PlayerNullState) return;
         if(_currentState != null) _currentState.Cleanup();
         _currentState = _State[state];
         _currentState.EnterState();

@@ -9,7 +9,8 @@ public class _Turn_Object_On : SpecialItems
     [SerializeField] GameObject objectToTurnOn;
     [SerializeField] string itemToRemove;
     [SerializeField] string saveKey;
-    void Start()
+
+    public override void Start()
     {
         if(InventoryManager.alreadyInteratedItems.Contains(saveKey))
             objectToTurnOn.SetActive(true);

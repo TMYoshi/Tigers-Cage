@@ -16,6 +16,7 @@ public class _Bunny_Item : SpecialItems
     public override bool ExitCondition()
     {
         minigame.StartHeartBeatMinigame();
+        PlayerStateManager.Instance.UpdateToNullState();
 
         if(documentToUnlock != null)
         {
@@ -24,4 +25,7 @@ public class _Bunny_Item : SpecialItems
         }
         return true;
     }
+
+    public void UpdatePlayerToIdleState() =>
+        PlayerStateManager.Instance.UpdateToIdleState();
 }
