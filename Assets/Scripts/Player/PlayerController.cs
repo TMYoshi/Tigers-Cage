@@ -56,6 +56,16 @@ public class PlayerController : MonoBehaviour
         );
     }
 
+    public static void StopMoving(PlayerController _playerController)
+    {
+        if(_playerController == null) return;
+        _playerController.StopAllCoroutines();
+        _playerController.MoveTo
+        (
+            _playerController.transform.position
+        );
+    }
+
     public void MoveTo(Transform _moveTo, Action _onComplete = null)
     {
         StopAllCoroutines();
