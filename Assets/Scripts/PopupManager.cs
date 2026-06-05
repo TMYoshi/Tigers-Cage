@@ -7,9 +7,10 @@ public class PopupManager : MonoBehaviour
 {
     public static PopupManager Instance;
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] private GameObject controls_popup_;
-    [SerializeField] private GameObject hb_minigame_popup_;
+    public GameObject controls_popup_;
+    public GameObject hb_minigame_popup_;
     private GameObject curr_popup_;
+    public void SetCurrPopup(GameObject popup) { curr_popup_ = popup; }
     Animator animator;
 
     void Awake()
@@ -58,9 +59,9 @@ public class PopupManager : MonoBehaviour
     public void SetUIPopuopOn()
     {
         // Use cases: Controls, Heartbeat Tutorial
-        Debug.Log("kaboom");
         curr_popup_.gameObject.SetActive(true);
         animator.SetBool("Show UI", true);
+        PlayerStateManager.Instance.UpdateToNullState();
     }
 
     public void SetUIPopupOff()
@@ -88,6 +89,7 @@ public class PopupManager : MonoBehaviour
         }
 
         curr_popup_.gameObject.SetActive(false);
+        PlayerStateManager.Instance.UpdateToIdleState();
     }
     #endregion
 }

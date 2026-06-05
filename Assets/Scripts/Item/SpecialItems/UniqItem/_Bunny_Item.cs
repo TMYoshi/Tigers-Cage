@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class _Bunny_Item : SpecialItems
@@ -15,6 +16,18 @@ public class _Bunny_Item : SpecialItems
 
     public override bool ExitCondition()
     {
+        PopupManager.Instance.SetCurrPopup(PopupManager.Instance.hb_minigame_popup_);
+        PopupManager.Instance.SetUIPopuopOn();
+
+        StartCoroutine(WaitForPopupClosure());
+
+        return true;
+    }
+
+    private IEnumerator WaitForPopupClosure()
+    {
+        yield return new WaitUntil(() => PlayerStateManager.Instance.GetCurrentState() is PlayerIdleState);
+
         minigame.StartHeartBeatMinigame();
         PlayerStateManager.Instance.UpdateToNullState();
 
@@ -23,9 +36,9 @@ public class _Bunny_Item : SpecialItems
             documentToUnlock.isUnlocked = true;
             Debug.Log($"Document '{documentToUnlock.documentTitle}' unlocked!");
         }
-        return true;
     }
 
     public void UpdatePlayerToIdleState() =>
         PlayerStateManager.Instance.UpdateToIdleState();
+
 }
