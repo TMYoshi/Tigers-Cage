@@ -148,8 +148,6 @@ public class DialogManager : MonoBehaviour
         {
             yield return null;
         }
-
-        //gameObject.SetActive(false);
     }
     #endregion
 
