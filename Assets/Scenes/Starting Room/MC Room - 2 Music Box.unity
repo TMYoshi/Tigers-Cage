@@ -703,6 +703,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 0}
   - {fileID: 0}
+  place_fail_sound:
+  - {fileID: 0}
 --- !u!1 &92944784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1110,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 0}
   - {fileID: 0}
+  place_fail_sound:
+  - {fileID: 0}
 --- !u!1 &143608726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1371,8 @@ MonoBehaviour:
   - {fileID: 0}
   place_sounds_:
   - {fileID: 0}
+  - {fileID: 0}
+  place_fail_sound:
   - {fileID: 0}
 --- !u!1 &180781313
 GameObject:
@@ -1646,6 +1652,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
   - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
+  place_fail_sound:
+  - {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
 --- !u!1 &264449503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2382,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
   - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
+  place_fail_sound:
+  - {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
 --- !u!1 &388392757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,6 +2863,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
   - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
+  place_fail_sound:
+  - {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
 --- !u!1 &451273125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,6 +3927,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
   - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
+  place_fail_sound:
+  - {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
 --- !u!1 &611362548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4178,6 +4192,8 @@ MonoBehaviour:
   - {fileID: 0}
   place_sounds_:
   - {fileID: 0}
+  - {fileID: 0}
+  place_fail_sound:
   - {fileID: 0}
 --- !u!1 &670519907
 GameObject:
@@ -5061,6 +5077,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
   - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
+  place_fail_sound:
+  - {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
 --- !u!1 &846716395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,6 +6527,8 @@ MonoBehaviour:
   place_sounds_:
   - {fileID: 8300000, guid: 0814a3937ced59e45aadf2696bf8e64c, type: 3}
   - {fileID: 8300000, guid: 6f6f3401263b3e641ac53b0db2829a9a, type: 3}
+  place_fail_sound:
+  - {fileID: 8300000, guid: 759cfcf9d3fd68e4696e19a5d819dfcc, type: 3}
 --- !u!1 &1183160708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7243,6 +7263,8 @@ MonoBehaviour:
   - {fileID: 0}
   place_sounds_:
   - {fileID: 0}
+  - {fileID: 0}
+  place_fail_sound:
   - {fileID: 0}
 --- !u!1 &1375076339
 GameObject:
@@ -9843,6 +9865,8 @@ MonoBehaviour:
   - {fileID: 0}
   place_sounds_:
   - {fileID: 0}
+  - {fileID: 0}
+  place_fail_sound:
   - {fileID: 0}
 --- !u!1001 &2049843207
 PrefabInstance:
