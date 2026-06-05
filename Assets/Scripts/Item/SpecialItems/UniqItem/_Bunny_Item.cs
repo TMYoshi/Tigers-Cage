@@ -2,13 +2,22 @@ using UnityEngine;
 
 public class _Bunny_Item : SpecialItems
 {
-    [SerializeField] PlayerAnimator playerAnimator;
+    [SerializeField] HeartbeatMinigame minigame;
     public DocumentItem documentToUnlock;
     public override void EnterCondition()
     {
     }
+
     public override bool CompleteCondition() 
     {
+        return true;
+    }
+
+    public override bool ExitCondition()
+    {
+        minigame.StartHeartBeatMinigame();
+        PlayerStateManager.Instance.UpdateToNullState();
+
         if(documentToUnlock != null)
         {
             documentToUnlock.isUnlocked = true;
@@ -16,11 +25,7 @@ public class _Bunny_Item : SpecialItems
         }
         return true;
     }
-    public override bool ExitCondition()
-    {
-        playerAnimator.SetBunnyTrue();
-        
-       
-        return true;
-    }
+
+    public void UpdatePlayerToIdleState() =>
+        PlayerStateManager.Instance.UpdateToIdleState();
 }

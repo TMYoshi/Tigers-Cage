@@ -32,6 +32,7 @@ public class PlayerStateManager : MonoBehaviour
 
     public enum State
     {
+        Null,
         Idle,
         Inventory,
         DialogItem,
@@ -44,6 +45,7 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
+        _State[State.Null] = new PlayerNullState(this);
         _State[State.Inventory] = new PlayerInvState(this);
         _State[State.DialogItem] = new PlayerDialogItemState(this);
         _State[State.SpecialItem] = new PlayerSpecialItemState(this);
@@ -54,8 +56,26 @@ public class PlayerStateManager : MonoBehaviour
         
         UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
     }
+
+    //think I programmed the state machine wrong it ends in a feedback loop if I call enterState
+    //so that's why this is here
+    public void UpdateToNullState()
+    {
+        _currentState = _State[State.Idle];
+        _currentState.Cleanup();
+        _currentState = _State[State.Null];
+    }
+
+    //this is only to escape the null state
+    public void UpdateToIdleState()
+    {
+        _currentState = _State[State.Idle];
+        _currentState.EnterState();
+    }
+    
     public void UpdateCurrentState(State state)
     {
+        if(_currentState is PlayerNullState) return;
         if(_currentState != null) _currentState.Cleanup();
         _currentState = _State[state];
         _currentState.EnterState();

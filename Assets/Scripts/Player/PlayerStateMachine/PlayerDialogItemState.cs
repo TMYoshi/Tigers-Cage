@@ -11,7 +11,7 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void EnterState()
     {
-        SpecialItems? specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+        SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
 
         if(specialItem != null)
             specialItem.EnterCondition();
@@ -37,7 +37,6 @@ public class PlayerDialogItemState : PlayerBaseState
     {
         Cleanup();
         _context.UpdateCurrentState(PlayerStateManager.State.Idle);
-
     }
 
     public override void Cleanup()

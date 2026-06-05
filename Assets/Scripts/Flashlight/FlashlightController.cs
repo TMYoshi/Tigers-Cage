@@ -69,6 +69,14 @@ public class FlashlightController : MonoBehaviour
 
     void ToggleFlashlight()
     {
+        isFlashlightUnlocked = PlayerPrefs.GetInt(FLASHLIGHT_UNLOCKED_KEY, 0) == 1;
+
+        if (!isFlashlightUnlocked)
+        {
+            Debug.Log("Flashlight locked, cannot toggle.");
+            return;
+        }
+
         Debug.Log("flashlight toggled");
         isFlashlightOn = !isFlashlightOn;
         if (flashlightObject != null)

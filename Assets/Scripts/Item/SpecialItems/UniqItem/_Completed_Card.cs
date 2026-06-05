@@ -6,7 +6,7 @@ public class _Completed_Card : SpecialItems
     [SerializeField] GameObject brokenCard;
     [SerializeField] GameObject finishedCard;
     [SerializeField] List<DialogSO> puttingCardTogetherDialog;
-    void Start()
+    public override void Start()
     {
         if(InventoryManager.alreadyInteratedItems.Contains("Completed Card"))
             RewardCondition();
