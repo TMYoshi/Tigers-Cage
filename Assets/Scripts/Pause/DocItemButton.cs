@@ -23,7 +23,7 @@ public class DocItemButton : MonoBehaviour
     {
         if (documentItem.isUnlocked)
         {
-          // pauseMenu.OpenDocument(documentItem);
+          pauseMenu.OpenDocumentByItem(documentItem);
         }
     }
 }
