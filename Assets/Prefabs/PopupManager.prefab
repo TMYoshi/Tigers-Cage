@@ -2541,6 +2541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
   text: {fileID: 5379950388958748315}
+  controls_popup_: {fileID: 7202420798431094526}
+  hb_minigame_popup_: {fileID: 3057475479126735126}
 --- !u!1 &7754729110884897265
 GameObject:
   m_ObjectHideFlags: 0

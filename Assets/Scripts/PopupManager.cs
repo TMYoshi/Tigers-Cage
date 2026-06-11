@@ -37,6 +37,7 @@ public class PopupManager : MonoBehaviour
     public void SetpopupOnJournal()
     {
         // Can we make this one function maybe 🥺🥺 (DRY)
+        // maybe :3 (WET)
         text.text = "Press E to use Journal";
         animator.SetBool("Show", true);
         PlayerInput.Instance.InvOnClick += SetpopupOff;
