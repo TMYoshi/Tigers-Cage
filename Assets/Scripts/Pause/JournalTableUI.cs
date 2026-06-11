@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class JournalTableUI : MonoBehaviour
 {
+    [Header("Testing")]
+    public DocumentItem[] testDocuments; // For testing purposes, assign in inspector
     public static JournalTableUI Instance;
     
     public Transform contentParent;
@@ -19,7 +21,7 @@ public class JournalTableUI : MonoBehaviour
 
     public void CollectDocument(DocumentItem item)
     {
-        if (item.isUnlocked)
+        if (item.isUnlocked || item.forceUnlock)
         {
             return; // Already collected
         }
@@ -33,5 +35,14 @@ public class JournalTableUI : MonoBehaviour
         DocItemButton newButton = Instantiate(tocButtonPrefab, contentParent);
 
         newButton.Setup(item, pauseMenu);
+    }
+
+    private void Start()
+    {
+        // For testing, add all test documents to the journal at start
+        foreach (DocumentItem doc in testDocuments)
+        {
+            CollectDocument(doc);
+        }
     }
 }
