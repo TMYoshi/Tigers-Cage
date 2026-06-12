@@ -13,15 +13,28 @@ public class JournalTableUI : MonoBehaviour
 
     private List<DocumentItem> documentItems = new List<DocumentItem>();
 
-
-    private void Awake()
+     private void Awake()
     {
         Instance = this;
     }
+    private void Start()
+    {
+        // For testing, add all test documents to the journal at start
+        Debug.Log("JournalTableUI Start: Adding test documents to journal");
+        foreach (DocumentItem doc in testDocuments)
+        {
+            if (doc != null && doc.forceUnlock)
+            {
+                Debug.Log("Force unlocking document: " + doc.documentTitle);
+                CollectDocument(doc);
+            }
+        }
+    }
+
 
     public void CollectDocument(DocumentItem item)
     {
-        if (item.isUnlocked || item.forceUnlock)
+        if (documentItems.Contains(item))
         {
             return; // Already collected
         }
@@ -37,12 +50,4 @@ public class JournalTableUI : MonoBehaviour
         newButton.Setup(item, pauseMenu);
     }
 
-    private void Start()
-    {
-        // For testing, add all test documents to the journal at start
-        foreach (DocumentItem doc in testDocuments)
-        {
-            CollectDocument(doc);
-        }
-    }
 }

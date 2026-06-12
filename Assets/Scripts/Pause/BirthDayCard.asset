@@ -20,3 +20,5 @@ MonoBehaviour:
   documentImage: {fileID: -6074753653285755102, guid: b3e5235d81f56c64097bdab45cdb97c8, type: 3}
   documentInfoFont: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
   isUnlocked: 1
+  forceUnlock: 1
+  pageNumber: -1
