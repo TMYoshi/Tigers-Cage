@@ -13,10 +13,19 @@ public class InventoryManager : MonoBehaviour
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
 
-    void Start()
+    private void Awake()
     {
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
+
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
