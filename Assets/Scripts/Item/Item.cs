@@ -11,7 +11,6 @@ public class Item : MonoBehaviour
     {
         if (assoc_dialog_box_ == null)
         {
-            Debug.Log("meow");
             assoc_dialog_box_ = GetComponent<Dialog>();
         }
     }
