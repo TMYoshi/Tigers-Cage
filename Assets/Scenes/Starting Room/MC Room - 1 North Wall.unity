@@ -2188,7 +2188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &715326550
 Transform:
   m_ObjectHideFlags: 0
@@ -2754,28 +2754,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
---- !u!114 &884080818 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1040461868777033303, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 884080817}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &884080819 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6219706197872680002, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 884080817}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &884080820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6775606433605595368, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
@@ -3041,7 +3019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1109231621
 Transform:
   m_ObjectHideFlags: 0
@@ -3102,7 +3080,7 @@ MonoBehaviour:
   assoc_dialog_box_: {fileID: 1109231622}
   itemName: Batteries
   quantity: 1
-  sprite: {fileID: 21300000, guid: 18f1f0f84ec913f429dad30e21203fce, type: 3}
+  sprite: {fileID: 21300000, guid: 488be46472d25d9458225d23c2c47d32, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: 'test
 
@@ -3158,15 +3136,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 18f1f0f84ec913f429dad30e21203fce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 488be46472d25d9458225d23c2c47d32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.58, y: 6.48}
+  m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1109231626
@@ -3208,7 +3186,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 20, y: 20}
-    newSize: {x: 3.58, y: 6.48}
+    newSize: {x: 20, y: 20}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3406,7 +3384,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2.7002962, y: -0.16988993}
+  m_Offset: {x: 2.7002962, y: -0.69032574}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 5.1299996, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3416,7 +3394,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8779283, y: 14.977925}
+  m_Size: {x: 1.8779283, y: 13.937054}
   m_EdgeRadius: 0
 --- !u!61 &1252917124
 BoxCollider2D:
@@ -3452,7 +3430,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -8.418523, y: 4.089947}
+  m_Offset: {x: -8.418523, y: 3.3613377}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 5.1299996, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3462,7 +3440,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.022955, y: 7.156071}
+  m_Size: {x: 2.022955, y: 5.6988516}
   m_EdgeRadius: 0
 --- !u!114 &1252917125
 MonoBehaviour:
@@ -5110,7 +5088,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.422183, y: 14.977925}
   m_EdgeRadius: 0
---- !u!43 &1685753009
+--- !u!43 &1681981817
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6287,11 +6265,11 @@ PrefabInstance:
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[0]'
       value: 
-      objectReference: {fileID: 884080819}
+      objectReference: {fileID: 0}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 884080818}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
