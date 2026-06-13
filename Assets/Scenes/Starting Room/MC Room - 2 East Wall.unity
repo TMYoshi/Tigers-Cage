@@ -159,79 +159,7 @@ Transform:
   - {fileID: 1833522145}
   m_Father: {fileID: 71194145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &49111217 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3908426647410140419, guid: 48993a38584200c4dabd443c784853be, type: 3}
-  m_PrefabInstance: {fileID: 4377649094990256480}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248accd18e855a34aab6fa1c17c46fda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SaveLoad
---- !u!1 &71194144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 71194145}
-  m_Layer: 0
-  m_Name: Room Design
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &71194145
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71194144}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1718742118}
-  - {fileID: 180781315}
-  - {fileID: 1306219097}
-  - {fileID: 36770955}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &99206621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1494666362022696330, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-  m_PrefabInstance: {fileID: 8011519921836958163}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &99206629 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3522435851530888255, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-  m_PrefabInstance: {fileID: 8011519921836958163}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &99206630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99206621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ed2e62b4f9721429609d1bb7e4ce51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlashlightController
-  flashlightObject: {fileID: 2008924198}
-  flashlight: {fileID: 161594441}
-  followSpeed: 10
-  isFlashlightUnlocked: 0
---- !u!43 &102267842
+--- !u!43 &47606533
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,6 +337,78 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &49111217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3908426647410140419, guid: 48993a38584200c4dabd443c784853be, type: 3}
+  m_PrefabInstance: {fileID: 4377649094990256480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248accd18e855a34aab6fa1c17c46fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveLoad
+--- !u!1 &71194144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71194145}
+  m_Layer: 0
+  m_Name: Room Design
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71194145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71194144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1718742118}
+  - {fileID: 180781315}
+  - {fileID: 1306219097}
+  - {fileID: 36770955}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &99206621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1494666362022696330, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+  m_PrefabInstance: {fileID: 8011519921836958163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &99206629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3522435851530888255, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+  m_PrefabInstance: {fileID: 8011519921836958163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &99206630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99206621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ed2e62b4f9721429609d1bb7e4ce51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashlightController
+  flashlightObject: {fileID: 2008924198}
+  flashlight: {fileID: 161594441}
+  followSpeed: 10
+  isFlashlightUnlocked: 0
 --- !u!1 &124914591
 GameObject:
   m_ObjectHideFlags: 0
@@ -11407,7 +11407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1615408245
 Transform:
   m_ObjectHideFlags: 0
