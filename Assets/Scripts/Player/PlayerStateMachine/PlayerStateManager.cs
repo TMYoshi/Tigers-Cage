@@ -28,6 +28,13 @@ public class PlayerStateManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _State[State.Null] = new PlayerNullState(this);
+        _State[State.Inventory] = new PlayerInvState(this);
+        _State[State.DialogItem] = new PlayerDialogItemState(this);
+        _State[State.SpecialItem] = new PlayerSpecialItemState(this);
+        _State[State.Idle] = new PlayerIdleState(this);
+        _State[State.Hiding] = new PlayerHidingState(this);
     }
 
     public enum State
@@ -45,12 +52,7 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
-        _State[State.Null] = new PlayerNullState(this);
-        _State[State.Inventory] = new PlayerInvState(this);
-        _State[State.DialogItem] = new PlayerDialogItemState(this);
-        _State[State.SpecialItem] = new PlayerSpecialItemState(this);
-        _State[State.Idle] = new PlayerIdleState(this);
-        _State[State.Hiding] = new PlayerHidingState(this);
+
 
         UpdatePlayerCharacterReference();
         

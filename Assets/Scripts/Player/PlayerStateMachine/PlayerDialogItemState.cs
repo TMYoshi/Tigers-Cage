@@ -54,6 +54,11 @@ public class PlayerDialogItemState : PlayerBaseState
 
             if(!isFull)
             {
+                JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
+
+                if(journalItem != null)
+                    journalItem.AddtoJournal();
+
                 MarkItemAsCollected(_context._ItemManager._SelectedItem);
                 _context._ItemManager.DestroySelectedItem();
             }
