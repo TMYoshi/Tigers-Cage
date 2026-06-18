@@ -30,6 +30,7 @@ public class PlayerInvState : PlayerBaseState
             if (!_context._ItemManager._DraggedItem.activeSelf)
             {
                 ItemSlot selectedItemSlot = getDraggedObject();
+                if(selectedItemSlot == null) return;
                 if(selectedItemSlot.itemSprite == null) return;
 
                 _context._ItemManager.ShowDraggedItem();
@@ -141,8 +142,16 @@ public class PlayerInvState : PlayerBaseState
     {
         if (!AlreadyClicked) return;
         ItemSlot slotInfo = InteractedItem?.GetComponent<ItemSlot>();
-        if (slotInfo == null) Debug.LogWarning("No itemSlot in inventory");
-        Debug.Log(slotInfo.itemName + " " + _context._ItemManager._DraggedItem.name);
+        if (slotInfo == null)
+        {
+            Debug.LogWarning("No itemSlot in inventory");
+            return;
+        }
+        if (_context._ItemManager._DraggedItem == null)
+        {
+            Debug.LogWarning("No _DraggedItem current exist");
+            return;
+        }
         CraftingManager.CraftIfComboExist(slotInfo.itemName, _context._ItemManager._DraggedItem.name);
     }
 

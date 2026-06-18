@@ -125,7 +125,6 @@ public class PlayerIdleState : PlayerBaseState
             switch (result.gameObject.tag)
             {
                 case "InvItem":
-                    Debug.Log("I'm gonna krill myself");
                     _context.UpdateCurrentState(PlayerStateManager.State.Inventory);
                     break;
                 default:
