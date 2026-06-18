@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 public class DocItemButton : MonoBehaviour
 {
-    public TMP_Text pageNumberText;
+    public TMP_Text PageNumberText;
     public TMP_Text documentTitleText;
     public Button button;
 
@@ -14,7 +14,8 @@ public class DocItemButton : MonoBehaviour
     {
         documentItem = item;
         pauseMenu = menu;
-        pageNumberText.text = $"page {item.pageNumber}";
+
+        PageNumberText.text = $"page {item.pageNumber}...............";
         documentTitleText.text = item.documentTitle;
 
         button.onClick.RemoveAllListeners();
