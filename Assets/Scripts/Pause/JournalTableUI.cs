@@ -16,6 +16,7 @@ public class JournalTableUI : MonoBehaviour
      private void Awake()
     {
         Instance = this;
+        Debug.Log("JournalTableUI Instance set");
     }
    /* private void Start()
     {

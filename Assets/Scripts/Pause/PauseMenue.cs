@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
     public GameObject tableofContentes; //Second UI 
+    public GameObject PreFabTableOfContents; // Third UI
 
     public GameObject SettingsPanel; // Options menu panel
     public TMP_Text titleText;

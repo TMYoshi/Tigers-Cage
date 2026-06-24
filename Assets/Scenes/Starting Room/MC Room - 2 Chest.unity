@@ -1097,10 +1097,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1058596788315249403, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 152500034}
     - target: {fileID: 1289110369496380206, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1185,59 +1181,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 152500034}
-    - target: {fileID: 2568365670456238734, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1230778504}
-    - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 3624823537437131987, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 152500034}
     - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1230778504}
-    - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 4395619843194185323, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 152500034}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
       value: JournalUI
       objectReference: {fileID: 0}
-    - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 152500034}
-    - target: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenJournal
-      objectReference: {fileID: 0}
     - target: {fileID: 6873995965935424486, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 152500034}
-    - target: {fileID: 6873995965935424486, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Options
-      objectReference: {fileID: 0}
-    - target: {fileID: 7768844325614774788, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+    - target: {fileID: 8883242742626292067, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 152500034}
@@ -1862,6 +1826,7 @@ GameObject:
   - component: {fileID: 1562968579}
   - component: {fileID: 1562968586}
   - component: {fileID: 1562968587}
+  - component: {fileID: 1562968588}
   m_Layer: 0
   m_Name: Music Box
   m_TagString: SpecialItem
@@ -2056,6 +2021,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.99, y: 6.3}
   m_EdgeRadius: 0
+--- !u!114 &1562968588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562968577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12452667ef41a5541a032fde147276ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JournalCollectable
+  documentItem: {fileID: 11400000, guid: 9774425ffaf0358468aaac902d95a492, type: 2}
 --- !u!1 &1563247626
 GameObject:
   m_ObjectHideFlags: 0

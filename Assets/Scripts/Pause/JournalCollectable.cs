@@ -21,6 +21,12 @@ public class JournalCollectable : MonoBehaviour
             Debug.LogWarning("DocumentItem is not assigned for " + gameObject.name);
             return;
         }
+
+        if(JournalTableUI.Instance == null)
+        {
+            Debug.LogWarning("JournalTableUI instance is not found. Make sure it is present in the scene.");
+            return;
+        }
         
         Debug.Log("Adding document to journal: " + documentItem.documentTitle);
         JournalTableUI.Instance.CollectDocument(documentItem);
