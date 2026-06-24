@@ -688,7 +688,7 @@ MonoBehaviour:
 
     Solivan Hiep
 
-    Alexis Valenzuela
+    Alexis Loi
 
 
     <b>Writer:</b>
@@ -718,8 +718,8 @@ MonoBehaviour:
     Christopher
     Rodriguez Martinez'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
-  m_sharedMaterial: {fileID: 1152759562551367745, guid: e361601876104404b815372cf5c4de7e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
