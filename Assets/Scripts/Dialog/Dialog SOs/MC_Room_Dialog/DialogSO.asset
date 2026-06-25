@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4628d0e09504698a01071ffaa87949, type: 3}
   m_Name: DialogSO
   m_EditorClassIdentifier: Assembly-CSharp::DialogSO
-  lines_: []
+  lines_:
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: I think the tiger heard me! I need to find a place to hide NOW.
   required_item_: 
