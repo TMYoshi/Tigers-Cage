@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4510974858196415401}
   - component: {fileID: 6075644342992764066}
+  - component: {fileID: 5054144373773206409}
   m_Layer: 0
   m_Name: PauseManager
   m_TagString: Untagged
@@ -48,11 +49,26 @@ MonoBehaviour:
   JournalUI: {fileID: 0}
   PauseBackground: {fileID: 0}
   tableofContentes: {fileID: 0}
+  PreFabTableOfContents: {fileID: 0}
   SettingsPanel: {fileID: 0}
   titleText: {fileID: 0}
   contentText: {fileID: 0}
   documentImage: {fileID: 0}
   documentPage: {fileID: 0}
-  documentButtons:
-  - {fileID: 0}
-  - {fileID: 0}
+  documentButtons: []
+--- !u!114 &5054144373773206409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942334328809161159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ff086c82d388b49ba816323bdff0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
+  testDocuments: []
+  contentParent: {fileID: 0}
+  tocButtonPrefab: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
+  pauseMenu: {fileID: 6075644342992764066}

@@ -16,8 +16,9 @@ public class JournalTableUI : MonoBehaviour
      private void Awake()
     {
         Instance = this;
+        Debug.Log("JournalTableUI Instance set");
     }
-    private void Start()
+   /* private void Start()
     {
         // For testing, add all test documents to the journal at start
         Debug.Log("JournalTableUI Start: Adding test documents to journal");
@@ -29,22 +30,25 @@ public class JournalTableUI : MonoBehaviour
                 CollectDocument(doc);
             }
         }
-    }
+    }*/
 
 
     public void CollectDocument(DocumentItem item)
     {
+        Debug.Log("CollectDocument called for: " + item.documentTitle);
+
         if (documentItems.Contains(item))
         {
             return; // Already collected
         }
 
-        item.isUnlocked = true;
+        //item.isUnlocked = true;
 
         item.pageNumber = documentItems.Count + 1; //assigns page number
 
         documentItems.Add(item);
 
+        Debug.Log("Creating button for document: " + item.documentTitle);
         DocItemButton newButton = Instantiate(tocButtonPrefab, contentParent);
 
         newButton.Setup(item, pauseMenu);

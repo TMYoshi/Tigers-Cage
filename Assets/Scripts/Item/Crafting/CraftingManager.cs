@@ -4,14 +4,17 @@ using NUnit.Framework;
 
 public class CraftingManager : MonoBehaviour
 {
-    public static InventoryManager _inventory;
-    [SerializeField] private InventoryManager _inspectorInventory;
-
-    [SerializeReference]
-    public ItemCombinations[] StaticItemCombo;
+    public static InventoryManager _inventory => InventoryManager.Instance;
+    [SerializeReference] public ItemCombinations[] StaticItemCombo;
     public static HashSet<ItemCombinations> CraftingSet = new HashSet<ItemCombinations>();
+
     public static void CraftIfComboExist(string item1, string item2)
     {
+        if (_inventory == null || _inventory.itemSlot == null)
+        {
+            Debug.LogWarning("CraftingManager has broken inventory or item slots.");
+        }
+
         foreach (ItemCombinations item in CraftingSet)
         {
             if(item == null)
@@ -53,6 +56,5 @@ public class CraftingManager : MonoBehaviour
         {
             AddToHash(item);
         }
-        _inventory = _inspectorInventory;
     }
 }

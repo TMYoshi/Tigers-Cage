@@ -6,19 +6,21 @@ using UnityEngine;
 //slop code incoming ;-;
 public class PlayerInvState : PlayerBaseState
 {
+    RectTransform itemTransform;
+    GameObject InteractedItem;
+    bool AlreadyClicked;
 
     public PlayerInvState(PlayerStateManager context) : base(context)
     {
         _context = context;
     }
+
     public override void EnterState()
     {
         AlreadyClicked = false;
         InteractedItem = null;
     }
-    RectTransform itemTransform;
-    GameObject InteractedItem;
-    bool AlreadyClicked;
+
     public override void UpdateState()
     {
         _context._MouseUtils.HighlightOnHoverInv();
@@ -28,6 +30,7 @@ public class PlayerInvState : PlayerBaseState
             if (!_context._ItemManager._DraggedItem.activeSelf)
             {
                 ItemSlot selectedItemSlot = getDraggedObject();
+                if(selectedItemSlot == null) return;
                 if(selectedItemSlot.itemSprite == null) return;
 
                 _context._ItemManager.ShowDraggedItem();
@@ -39,10 +42,6 @@ public class PlayerInvState : PlayerBaseState
             }
             Vector2 mousePos = PlayerInput.Instance.MouseInput;
             itemTransform.position = mousePos;
-
-            //reminder to self to fix this we have MULTIPLE RAYCAST AAHHAHAHAH
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(mousePos), Vector2.zero);
-            InteractedItem = hit.collider?.gameObject;
         }
         else
         {
@@ -62,7 +61,14 @@ public class PlayerInvState : PlayerBaseState
 
         foreach (RaycastResult result in results)
         {
-            if (result.gameObject.tag == "InvItem") return result.gameObject.GetComponent<ItemSlot>();
+            if (result.gameObject.tag == "InvItem")
+            {
+                ItemSlot draggedItemSlot = result.gameObject.GetComponent<ItemSlot>();
+                if(draggedItemSlot.itemName != "")
+                    InteractedItem = result.gameObject;
+
+                return draggedItemSlot;
+            }
         }
         return null;
     }
@@ -79,19 +85,47 @@ public class PlayerInvState : PlayerBaseState
 
     public void DetectWhenExit()
     {
-        InventoryItem detectedInvItem = InteractedItem?.GetComponent<InventoryItem>();
-        if (detectedInvItem == null) ExitState();
-        UIMouseDetection();
+        bool shouldReturn = false;
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = PlayerInput.Instance.MouseInput
+        };
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+        Interaction[] itemInteraction = new Interaction[0];
+
+        foreach (RaycastResult result in results)
+        {
+            if (result.gameObject == null)
+            {
+                continue;
+            }
+
+            if(result.gameObject.GetComponents<Interaction>() != null)
+                itemInteraction = result.gameObject.GetComponents<Interaction>();
+
+            switch (result.gameObject.tag)
+            {
+                case "InvItem":
+                    shouldReturn = true;
+                    return;
+                default:
+                    break;
+            }
+        }
+
+        if(!shouldReturn) ExitState();
+
+        UIMouseDetectionReleased();
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
             special items
 
             this is using a dummy item inside of the player state
         */
-        Interaction[] itemInteraction = InteractedItem?.GetComponents<Interaction>();
         if (itemInteraction != null || InteractedItem == null)
         {
-            if (itemInteraction == null) return;
             foreach (Interaction interaction in itemInteraction)
             {
                 if (interaction.key == _context._ItemManager._DraggedItem.name)
@@ -104,34 +138,27 @@ public class PlayerInvState : PlayerBaseState
                 }
             }
         }
-        FailedInteraction();
+
+        if(InteractedItem != null)
+            FailedInteraction();
     }
-    void UIMouseDetection()
+
+    void UIMouseDetectionReleased()
+    {
+        if (!AlreadyClicked) return;
+        ItemSlot slotInfo = InteractedItem?.GetComponent<ItemSlot>();
+        if (slotInfo == null)
         {
-            PointerEventData pointerData = new PointerEventData(EventSystem.current)
-            {
-                position = PlayerInput.Instance.MouseInput
-            };
-
-            List<RaycastResult> results = new List<RaycastResult>();
-            EventSystem.current.RaycastAll(pointerData, results);
-
-            foreach (RaycastResult result in results)
-            {
-                switch (result.gameObject.tag)
-                {
-                    case "InvItem":
-                        if (!AlreadyClicked) return;
-                        ItemSlot slotInfo = result.gameObject?.GetComponent<ItemSlot>();
-                        if (slotInfo == null) Debug.LogWarning("No itemSlot in inventory");
-                        Debug.Log(slotInfo.itemName + " " + _context._ItemManager._DraggedItem.name);
-                        CraftingManager.CraftIfComboExist(slotInfo.itemName, _context._ItemManager._DraggedItem.name);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            Debug.LogWarning("No itemSlot in inventory");
+            return;
         }
+        if (_context._ItemManager._DraggedItem == null)
+        {
+            Debug.LogWarning("No _DraggedItem current exist");
+            return;
+        }
+        CraftingManager.CraftIfComboExist(slotInfo.itemName, _context._ItemManager._DraggedItem.name);
+    }
 
     void FailedInteraction()
     {

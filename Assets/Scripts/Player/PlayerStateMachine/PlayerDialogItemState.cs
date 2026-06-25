@@ -1,5 +1,4 @@
-using NUnit.Framework.Internal;
-using UnityEditor;
+
 using UnityEngine;
 
 public class PlayerDialogItemState : PlayerBaseState
@@ -46,6 +45,18 @@ public class PlayerDialogItemState : PlayerBaseState
         SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
         if(specialItem != null) specialItem.ExitCondition();
 
+        JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
+
+        
+        if(journalItem != null){
+            Debug.Log("JournalCollectable found, adding to journal.");
+            journalItem.AddtoJournal();
+        }
+        else
+        {
+            Debug.Log("No JournalCollectable found, item will not be added to journal.");
+        }
+
         bool isFull = false;
         if (_context._ItemManager._SelectedItem.Collectable)
         {
@@ -54,11 +65,6 @@ public class PlayerDialogItemState : PlayerBaseState
 
             if(!isFull)
             {
-                JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
-
-                if(journalItem != null)
-                    journalItem.AddtoJournal();
-
                 MarkItemAsCollected(_context._ItemManager._SelectedItem);
                 _context._ItemManager.DestroySelectedItem();
             }

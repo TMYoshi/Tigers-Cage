@@ -45,6 +45,12 @@ public class ItemSlot : MonoBehaviour
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
+        if (this == null || itemImage == null || quantityText == null)
+        {
+            Debug.LogWarning($"ItemSlot on {gameObject.name} is missing UI references or has been destroyed.");
+            return;
+        }
+
         itemImage.color = new Color(1, 1, 1, 1);
         this.itemName = itemName;
         this.quantity = quantity;
