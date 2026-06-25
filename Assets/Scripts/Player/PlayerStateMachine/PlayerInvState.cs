@@ -93,6 +93,7 @@ public class PlayerInvState : PlayerBaseState
 
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
+        Interaction[] itemInteraction = new Interaction[0];
 
         foreach (RaycastResult result in results)
         {
@@ -100,6 +101,10 @@ public class PlayerInvState : PlayerBaseState
             {
                 continue;
             }
+
+            if(result.gameObject.GetComponents<Interaction>() != null)
+                itemInteraction = result.gameObject.GetComponents<Interaction>();
+
             switch (result.gameObject.tag)
             {
                 case "InvItem":
@@ -119,10 +124,8 @@ public class PlayerInvState : PlayerBaseState
 
             this is using a dummy item inside of the player state
         */
-        Interaction[] itemInteraction = InteractedItem?.GetComponents<Interaction>();
         if (itemInteraction != null || InteractedItem == null)
         {
-            if (itemInteraction == null) return;
             foreach (Interaction interaction in itemInteraction)
             {
                 if (interaction.key == _context._ItemManager._DraggedItem.name)
@@ -135,7 +138,9 @@ public class PlayerInvState : PlayerBaseState
                 }
             }
         }
-        FailedInteraction();
+
+        if(InteractedItem != null)
+            FailedInteraction();
     }
 
     void UIMouseDetectionReleased()
