@@ -158,6 +158,9 @@ public class CutsceneManager : MonoBehaviour
                 Countdown.is_active_ = true;
                 Debug.Log("Music Box Cutscene finished, countdown: " + Countdown.is_active_);
                 musicBoxCutsceneCompleted = true;
+
+                IndiscriminateDialog.Instance.gameObject.SetActive(true);
+                IndiscriminateDialog.is_active_ = true;
             }
         }
 

@@ -3,8 +3,10 @@ using UnityEngine;
 public class IndiscriminateDialog : MonoBehaviour
 {
     public static IndiscriminateDialog Instance;
-    public Dialog assoc_dialog_box_;
+    public DialogManager assoc_dialog_box_;
     [SerializeField] private DialogSO dialog_;
+    public static bool is_active_ = false;
+    private bool start_dialog_ = true;
 
     private void Awake()
     {
@@ -16,36 +18,29 @@ public class IndiscriminateDialog : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return;
         }
-    }
-
-    private void Start()
-    {
-        if (assoc_dialog_box_ == null)
-        {
-            assoc_dialog_box_ = FindAnyObjectByType<Dialog>();
-        }
-
-        DialogManager.Instance.StartDialog(dialog_);
     }
 
     private void Update()
-    {
-        if (PlayerInput.Instance.MouseClickInput) // Left mouse button
+    {   
+        if(is_active_)
         {
-            bool dialog_finished = assoc_dialog_box_.WriteDialog();
-
-            if(dialog_finished)
+            if (assoc_dialog_box_ == null && start_dialog_ == true)
             {
-                Decomission();
+                assoc_dialog_box_ = GetComponent<DialogManager>();
+                DialogManager.Instance.StartDialog(dialog_);
+                start_dialog_ = false;
+                return;
+            }
+
+            if (PlayerInput.Instance.MouseClickInput) // Left mouse button
+            {
+                if(!DialogManager.Instance.AdvanceDialog())
+                {
+                    is_active_ = false;
+                    return;
+                }
             }
         }
-    }
-
-    private void Decomission()
-    {
-        Instance = null;
-        Destroy(gameObject);
     }
 }

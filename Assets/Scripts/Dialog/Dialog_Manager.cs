@@ -17,7 +17,7 @@ public class DialogManager : MonoBehaviour
     private DialogSO current_dialog_;
     private int index_ = 0;
     public bool is_dialog_active_; // Used for opener animation
-    public bool is_dialog_ending_; // Used for checking if dialog still available
+    //public bool is_dialog_ending_; // Used for checking if dialog still available
     public bool dialog_opener_ = true;
 
     [SerializeField]
@@ -93,10 +93,10 @@ public class DialogManager : MonoBehaviour
     #region AdvanceDialog
     public bool AdvanceDialog()
     {
-        if (is_dialog_ending_)
-        {
-            return true;
-        }
+        // if (is_dialog_ending_)
+        // {
+        //     return true;
+        // }
 
         //dialog_animator_.SetTrigger("Bob Sprite");
 
@@ -128,7 +128,7 @@ public class DialogManager : MonoBehaviour
     #endregion
 
     #region WaitForDialogAnimation
-    private IEnumerator WaitForDialogAnimation()
+    public IEnumerator WaitForDialogAnimation()
     {
        EndDialog();
 
