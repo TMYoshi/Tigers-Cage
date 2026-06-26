@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HoldArrowController : MonoBehaviour
 {
@@ -37,11 +38,11 @@ public class HoldArrowController : MonoBehaviour
         mainCamera.transform.position = CamPos;
 
         //Mouse intput detection
-        if (Input.GetMouseButtonDown(0))
+        if (PlayerInput.Instance.MouseClickInput)
         {
             CheckArrowHold(true);
         }
-        else if (Input.GetMouseButtonUp(0))
+        else
         {
             moveLeft = false;
             moveRight = false;
@@ -51,13 +52,11 @@ public class HoldArrowController : MonoBehaviour
     //Checks if mouse is clicking on the arrowbutton and updates movement flag to true unitl stop clicking
     void CheckArrowHold(bool holding)
     {
-        Vector2 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousepos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);
 
         if (hit.collider != null) {
-
-
             if (hit.collider.name == "LeftArrow")
             {
                 moveLeft = holding;
