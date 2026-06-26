@@ -85,7 +85,7 @@ public class PlayerInvState : PlayerBaseState
 
     public void DetectWhenExit()
     {
-        bool shouldReturn = false;
+        bool shouldReturn = true;
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
             position = PlayerInput.Instance.MouseInput
@@ -108,16 +108,17 @@ public class PlayerInvState : PlayerBaseState
             switch (result.gameObject.tag)
             {
                 case "InvItem":
-                    shouldReturn = true;
+                    ItemSlot slotInfo = result.gameObject?.GetComponent<ItemSlot>();
+                    shouldReturn = false;
+                    UIMouseDetectionReleased(slotInfo);
                     return;
                 default:
                     break;
             }
         }
 
-        if(!shouldReturn) ExitState();
+        if(shouldReturn) ExitState();
 
-        UIMouseDetectionReleased();
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
             special items
@@ -143,11 +144,10 @@ public class PlayerInvState : PlayerBaseState
             FailedInteraction();
     }
 
-    void UIMouseDetectionReleased()
+    void UIMouseDetectionReleased(ItemSlot _slotInfo)
     {
         if (!AlreadyClicked) return;
-        ItemSlot slotInfo = InteractedItem?.GetComponent<ItemSlot>();
-        if (slotInfo == null)
+        if (_slotInfo == null)
         {
             Debug.LogWarning("No itemSlot in inventory");
             return;
@@ -157,7 +157,8 @@ public class PlayerInvState : PlayerBaseState
             Debug.LogWarning("No _DraggedItem current exist");
             return;
         }
-        CraftingManager.CraftIfComboExist(slotInfo.itemName, _context._ItemManager._DraggedItem.name);
+        CraftingManager.TryCraftIfComboExist(_slotInfo.itemName, _context._ItemManager._DraggedItem.name);
+        ExitState();
     }
 
     void FailedInteraction()
