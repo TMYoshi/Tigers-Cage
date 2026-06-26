@@ -595,7 +595,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8288123851561259850, guid: f13cc862f85364c598b58cba4e422754, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110014064}
   m_SourcePrefab: {fileID: 100100000, guid: f13cc862f85364c598b58cba4e422754, type: 3}
 --- !u!1 &314075665
 GameObject:
@@ -1034,11 +1037,11 @@ PrefabInstance:
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[0]'
       value: 
-      objectReference: {fileID: 1576580228}
+      objectReference: {fileID: 0}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1576580227}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1873,6 +1876,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: JournalUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 675010969}
+    - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseUI
+      objectReference: {fileID: 0}
     - target: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1890,28 +1901,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
---- !u!114 &1576580227 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1040461868777033303, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 1576580226}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &1576580228 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6219706197872680002, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 1576580226}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1576580229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6775606433605595368, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
@@ -2375,6 +2364,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8288123851561259850, guid: f13cc862f85364c598b58cba4e422754, type: 3}
   m_PrefabInstance: {fileID: 279140243}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2110014064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110014063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12452667ef41a5541a032fde147276ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JournalCollectable
+  documentItem: {fileID: 11400000, guid: 40162de4d1be2ec47bdc468c8d767f6c, type: 2}
 --- !u!1 &2146288726
 GameObject:
   m_ObjectHideFlags: 0

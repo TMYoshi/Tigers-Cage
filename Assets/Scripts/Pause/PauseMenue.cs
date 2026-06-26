@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
     public GameObject tableofContentes; //Second UI 
-    public GameObject PreFabTableOfContents; // Third UI
+    //public GameObject PreFabTableOfContents; // Third UI
 
     public GameObject SettingsPanel; // Options menu panel
     public TMP_Text titleText;
@@ -59,6 +59,7 @@ public class PauseMenu : MonoBehaviour
         JournalUI.SetActive(true);// shows pause menue
         documentPage.SetActive(false);
         tableofContentes.SetActive(false);
+        SettingsPanel.SetActive(false);
         PauseBackground.SetActive(true);
 
         Debug.Log("games is paused ");
@@ -83,16 +84,23 @@ public class PauseMenu : MonoBehaviour
     }
 
    public void BackToTable()
-{
-    Debug.Log("BackToTable button clicked");
+    {
+        Debug.Log("BackToTable button clicked");
 
-    if (documentPage == null) Debug.LogError("documentPage is NOT assigned!");
-    if (tableofContentes == null) Debug.LogError("tableofContentes is NOT assigned!");
+       documentPage.SetActive(false);
 
-    documentPage.SetActive(false);
-    tableofContentes.SetActive(true);
-    RefreshButtons();
-}
+        tableofContentes.SetActive(true);
+        RefreshButtons();
+    }
+
+    public void  PauseUI()
+    {
+        Debug.Log("BackToPauseMenu button clicked");
+        tableofContentes.SetActive(false);
+        SettingsPanel.SetActive(false);
+        PauseBackground.SetActive(true);
+    }
+
    /* void UpdateTOCButtons()
     {
         if(JournalDataManager.Instance == null) return;
@@ -198,13 +206,20 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("PauseMeneu on: " + gameObject.name + " is awake");
+        
+        if(PauseBackground == null) Debug.LogError("PauseBackground is NOT assigned!");
     
         Time.timeScale = 1f;
         isPaused = false;
+
+        
         JournalUI.SetActive(false);
         PauseBackground.SetActive(false);
         tableofContentes.SetActive(false);
         documentPage.SetActive(false);
+        SettingsPanel.SetActive(false);
+        
         Debug.Log("Awake to function to reset Journal has been done");
     }
 

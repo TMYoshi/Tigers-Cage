@@ -1100,11 +1100,11 @@ PrefabInstance:
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[0]'
       value: 
-      objectReference: {fileID: 1653529981}
+      objectReference: {fileID: 0}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: 'documentButtons.Array.data[1]'
       value: 
-      objectReference: {fileID: 1653529980}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2117,6 +2117,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986314283}
+    - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseUI
+      objectReference: {fileID: 0}
     - target: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2134,28 +2142,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
---- !u!114 &1653529980 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1040461868777033303, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 1653529979}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &1653529981 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6219706197872680002, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 1653529979}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1653529982 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
