@@ -4406,6 +4406,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 646348665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &742705736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2764121329423726400, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 1930101458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &743095938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,6 +4496,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5054144373773206409, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: contentParent
+      value: 
+      objectReference: {fileID: 1930101460}
     - target: {fileID: 5942334328809161159, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_Name
       value: PauseManager
@@ -4511,6 +4520,10 @@ PrefabInstance:
       propertyPath: documentPage
       value: 
       objectReference: {fileID: 1930101461}
+    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: SettingsPanel
+      value: 
+      objectReference: {fileID: 742705736}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: documentImage
       value: 
@@ -9622,6 +9635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1930101460 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 884541571988603890, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 1930101458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1930101461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6775606433605595368, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
