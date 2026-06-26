@@ -9,6 +9,7 @@ public class PopupManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     public GameObject controls_popup_;
     public GameObject hb_minigame_popup_;
+    public GameObject door_exit_popup_;
     private GameObject curr_popup_;
     public void SetCurrPopup(GameObject popup) { curr_popup_ = popup; }
     Animator animator;
@@ -59,7 +60,7 @@ public class PopupManager : MonoBehaviour
 
     public void SetUIPopuopOn()
     {
-        // Use cases: Controls, Heartbeat Tutorial
+        // Use cases: Controls, Heartbeat Tutorial, Door Exit
         curr_popup_.gameObject.SetActive(true);
         animator.SetBool("Show UI", true);
         PlayerStateManager.Instance.UpdateToNullState();
