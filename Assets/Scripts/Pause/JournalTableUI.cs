@@ -39,19 +39,41 @@ public class JournalTableUI : MonoBehaviour
 
         if (documentItems.Contains(item))
         {
+            Debug.Log("Document already collected: " + item.documentTitle);
             return; // Already collected
         }
 
-        //item.isUnlocked = true;
+        item.isUnlocked = true;
 
         item.pageNumber = documentItems.Count + 1; //assigns page number
 
         documentItems.Add(item);
 
         Debug.Log("Creating button for document: " + item.documentTitle);
+        
         DocItemButton newButton = Instantiate(tocButtonPrefab, contentParent);
 
         newButton.Setup(item, pauseMenu);
+    }
+
+    public void RefreshTable()
+    {
+        Debug.Log("Refreshing Journal Table UI");
+        foreach (Transform child in contentParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        documentItems.Clear();
+
+        foreach (DocumentItem doc in JournalDataManager.Instance.allDocuments)
+        {
+           if(doc != null && doc.isUnlocked){
+            
+                CollectDocument(doc);
+
+           }
+        }
     }
 
 }

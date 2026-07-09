@@ -79,6 +79,7 @@ public class PauseMenu : MonoBehaviour
         PauseBackground.SetActive(false);
         RefreshButtons();
         Debug.Log("Opened table of contetnents");
+        JournalTableUI.Instance.RefreshTable();
         tableofContentes.SetActive(true);
 
     }

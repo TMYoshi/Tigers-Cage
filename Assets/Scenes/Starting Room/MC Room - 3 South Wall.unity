@@ -1368,7 +1368,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 71194145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &192730899
+--- !u!43 &228306180
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3988,7 +3988,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 243150085}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5555,17 +5555,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc4ee625311f24fa72de363b1ad663, type: 3}
---- !u!114 &1490824216 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 985431900979887700, guid: bccc4ee625311f24fa72de363b1ad663, type: 3}
-  m_PrefabInstance: {fileID: 1490824215}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1559c3047304132a024ca14b152902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1544320199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6172,12 +6161,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7351917450624118498, guid: bbd03bb2507f5f44e828b2acf483c4ce, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7351917450624118498, guid: bbd03bb2507f5f44e828b2acf483c4ce, type: 3}
       propertyPath: allDocuments.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7351917450624118498, guid: bbd03bb2507f5f44e828b2acf483c4ce, type: 3}
+      propertyPath: 'allDocuments.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 40162de4d1be2ec47bdc468c8d767f6c, type: 2}
+    - target: {fileID: 7351917450624118498, guid: bbd03bb2507f5f44e828b2acf483c4ce, type: 3}
+      propertyPath: 'allDocuments.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 34de6fa30b0f6084c994d34ead90bab6, type: 2}
+    - target: {fileID: 7351917450624118498, guid: bbd03bb2507f5f44e828b2acf483c4ce, type: 3}
+      propertyPath: 'allDocuments.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9774425ffaf0358468aaac902d95a492, type: 2}
     - target: {fileID: 7807671518623489572, guid: bbd03bb2507f5f44e828b2acf483c4ce, type: 3}
       propertyPath: m_Name
       value: JournalDataManager
@@ -6274,7 +6275,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2145890233}
-  - {fileID: 182169570}
   m_Father: {fileID: 71194145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1842146288
@@ -6371,7 +6371,6 @@ RectTransform:
   - {fileID: 580061160}
   - {fileID: 1366197890}
   - {fileID: 1062952202}
-  - {fileID: 243150085}
   - {fileID: 1455801772}
   m_Father: {fileID: 1258734263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7518,3 +7517,4 @@ SceneRoots:
   - {fileID: 1490175239}
   - {fileID: 8675057431898335069}
   - {fileID: 1258734261}
+  - {fileID: 1152690271}
