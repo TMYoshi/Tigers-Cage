@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b4628d0e09504698a01071ffaa87949, type: 3}
-  m_Name: Door
+  m_Name: DoorNeedsCamera
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: "I\u2019m stuck in here unless I find a way to distract the tiger.\n"
+    text_: 'The door''s open! But I need a way to distract the tiger...
+
+'
   required_item_: 
