@@ -8,6 +8,9 @@ public class JournalDataManager : MonoBehaviour
     [Header("All Document Data (ScriptableObjects)")]
     public DocumentItem[] allDocuments;
 
+    
+
+
     void Awake()
     {
         //allows one manager exists between scenes
@@ -24,7 +27,7 @@ public class JournalDataManager : MonoBehaviour
 
     void Start()
     {
-        LoadProgress();
+        //LoadProgress();
         //UnlockDocument(0); test the jounral documents by uncomment
         
     }
@@ -37,8 +40,15 @@ public class JournalDataManager : MonoBehaviour
             return;
         }
         //Mark the doucments as unlock
-        allDocuments[index].isUnlocked = true;
+        DocumentItem doc = allDocuments[index];
+
+        doc.isUnlocked = true;
         SaveProgress();
+
+        if(JournalTableUI.Instance != null)
+        {
+            JournalTableUI.Instance.CollectDocument(doc);
+        }
     }
 
     public void SaveProgress()

@@ -6,9 +6,9 @@ public class CraftingManager : MonoBehaviour
 {
     public static InventoryManager _inventory => InventoryManager.Instance;
     [SerializeReference] public ItemCombinations[] StaticItemCombo;
-    public static HashSet<ItemCombinations> CraftingSet = new HashSet<ItemCombinations>();
+    public static List<ItemCombinations> CraftingSet = new List<ItemCombinations>();
 
-    public static void CraftIfComboExist(string item1, string item2)
+    public static bool TryCraftIfComboExist(string item1, string item2)
     {
         if (_inventory == null || _inventory.itemSlot == null)
         {
@@ -35,7 +35,7 @@ public class CraftingManager : MonoBehaviour
                         }
                     }
                     _inventory.AddItem(creation.ResultName, 1, creation.ResultImage, creation.ResultDescription);
-                    break;
+                    return true;
                 case ItemComDialog dialog:
                     throw new System.NotImplementedException();
                 default:
@@ -43,9 +43,11 @@ public class CraftingManager : MonoBehaviour
                     break;
             }
         }
+
+        return false;
     }
 
-    public void AddToHash(ItemCombinations item)
+    public void AddToItemCombo(ItemCombinations item)
     {
         CraftingSet.Add(item);
     }
@@ -54,7 +56,7 @@ public class CraftingManager : MonoBehaviour
     {
         foreach (ItemCombinations item in StaticItemCombo)
         {
-            AddToHash(item);
+            AddToItemCombo(item);
         }
     }
 }

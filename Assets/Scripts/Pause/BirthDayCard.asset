@@ -19,6 +19,6 @@ MonoBehaviour:
     Maybe she\u2019ll like it this year. If I do better. If I make it prettier."
   documentImage: {fileID: -6074753653285755102, guid: b3e5235d81f56c64097bdab45cdb97c8, type: 3}
   documentInfoFont: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
-  isUnlocked: 1
-  forceUnlock: 1
-  pageNumber: -1
+  isUnlocked: 0
+  forceUnlock: 0
+  pageNumber: 1

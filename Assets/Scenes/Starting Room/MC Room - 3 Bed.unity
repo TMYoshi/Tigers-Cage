@@ -316,6 +316,14 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568327802}
+    - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseUI
+      objectReference: {fileID: 0}
     - target: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -349,6 +357,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+--- !u!224 &163587049 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 884541571988603890, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 163587048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &163587050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2764121329423726400, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 163587048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163587051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6775606433605595368, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
@@ -686,6 +704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5054144373773206409, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: contentParent
+      value: 
+      objectReference: {fileID: 163587049}
     - target: {fileID: 5942334328809161159, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_Name
       value: PauseManager
@@ -706,6 +728,10 @@ PrefabInstance:
       propertyPath: documentPage
       value: 
       objectReference: {fileID: 163587051}
+    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: SettingsPanel
+      value: 
+      objectReference: {fileID: 163587050}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: documentImage
       value: 
