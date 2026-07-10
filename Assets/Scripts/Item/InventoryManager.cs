@@ -156,8 +156,22 @@ public class InventoryManager : MonoBehaviour
         Debug.Log($"Marked {itemId} as collected. Total collected: {collectedItems.Count}");
     }
 
-    public static bool IsItemCollected(string itemId)
+    public static bool IsItemCollected(string partialId)
     {
-        return collectedItems.Contains(itemId);
+        foreach (string collectedId in collectedItems)
+        {
+            if (collectedId.Contains(partialId)) return true;
+        }
+        return false;
+    }
+
+    public static void DebugPrintAllCollectedItems()
+    {
+        Debug.Log("collected items:");
+        foreach (string item in collectedItems)
+        {
+            Debug.Log("Collected Item ID: " + item);
+        }
+        Debug.Log("end of collected items");
     }
 }
