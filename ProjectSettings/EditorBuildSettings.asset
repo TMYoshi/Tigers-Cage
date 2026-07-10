@@ -59,6 +59,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bathroom/Bathroom - 1 North Wall.unity
     guid: e4e85660e30abd245a74722f3e1f8fe1
+  - enabled: 1
+    path: Assets/Scenes/Bathroom/Bathroom - 2 East Wall.unity
+    guid: 122f417f4d4ed654ea288a2844799645
+  - enabled: 1
+    path: Assets/Scenes/Bathroom/Bathroom - 3 South Wall.unity
+    guid: 24c1a8113da24a24ca10e471cbe8030c
+  - enabled: 1
+    path: Assets/Scenes/Bathroom/Bathroom - 4 West Wall.unity
+    guid: 244d4ea896051e149a7885027413f4bd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: bfb04b84ba42eb24d8565cc4c17ed67a, type: 3}
   m_UseUCBPForAssetBundles: 0
