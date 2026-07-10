@@ -1105,14 +1105,6 @@ PrefabInstance:
       propertyPath: tableofContentes
       value: 
       objectReference: {fileID: 1653529988}
-    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
-      propertyPath: 'documentButtons.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
-      propertyPath: 'documentButtons.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2129,7 +2121,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1653529981 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 884541571988603890, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1472779238766449294, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 1653529979}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1653529982 stripped

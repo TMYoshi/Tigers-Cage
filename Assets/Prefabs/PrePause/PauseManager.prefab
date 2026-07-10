@@ -49,7 +49,6 @@ MonoBehaviour:
   JournalUI: {fileID: 0}
   PauseBackground: {fileID: 0}
   tableofContentes: {fileID: 0}
-  PreFabTableOfContents: {fileID: 0}
   SettingsPanel: {fileID: 0}
   titleText: {fileID: 0}
   contentText: {fileID: 0}
