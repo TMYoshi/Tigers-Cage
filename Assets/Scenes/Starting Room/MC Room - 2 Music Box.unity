@@ -4499,7 +4499,7 @@ PrefabInstance:
     - target: {fileID: 5054144373773206409, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: contentParent
       value: 
-      objectReference: {fileID: 1930101460}
+      objectReference: {fileID: 1930101459}
     - target: {fileID: 5942334328809161159, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_Name
       value: PauseManager
@@ -4540,14 +4540,6 @@ PrefabInstance:
       propertyPath: tableofContentes
       value: 
       objectReference: {fileID: 1930101465}
-    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
-      propertyPath: 'documentButtons.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
-      propertyPath: 'documentButtons.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1930101459}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9628,20 +9620,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
---- !u!114 &1930101459 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6655029358594663409, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 1930101458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &1930101460 stripped
+--- !u!224 &1930101459 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 884541571988603890, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1472779238766449294, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 1930101458}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1930101461 stripped
