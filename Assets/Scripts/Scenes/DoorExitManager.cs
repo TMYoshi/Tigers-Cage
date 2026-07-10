@@ -4,7 +4,7 @@ public class DoorExitManager : MonoBehaviour
 {
     void Start()
     {
-        if (CutsceneManager.musicBoxCutsceneCompleted)
+        if (HeartbeatMinigame.hasWon)
         {
             GameObject items = GameObject.Find("Items");
 

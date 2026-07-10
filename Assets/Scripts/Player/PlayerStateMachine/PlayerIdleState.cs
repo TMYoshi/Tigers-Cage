@@ -59,7 +59,7 @@ public class PlayerIdleState : PlayerBaseState
 
         if(currentCollider == null) return;
 
-        Debug.Log("Hit object: " + currentCollider.gameObject.name);
+        //Debug.Log("Hit object: " + currentCollider.gameObject.name);
         InventoryItem _inventoryItem = currentCollider.gameObject.GetComponent<InventoryItem>();
         _context._ItemManager.UpdateSelectedItem(_inventoryItem);
 
