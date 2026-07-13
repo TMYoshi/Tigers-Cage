@@ -41,4 +41,6 @@ public class _Bunny_Item : SpecialItems
     public void UpdatePlayerToIdleState() =>
         PlayerStateManager.Instance.UpdateToIdleState();
 
+    public void PlaySelectedDialog(InventoryItem _InventoryItem) =>
+        PlayerStateManager.Instance.UpdateToDialogAndSpeak(_InventoryItem);
 }

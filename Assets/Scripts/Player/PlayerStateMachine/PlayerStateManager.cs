@@ -44,7 +44,7 @@ public class PlayerStateManager : MonoBehaviour
         Inventory,
         DialogItem,
         SpecialItem,
-        Hiding
+        Hiding,
     }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
@@ -52,11 +52,10 @@ public class PlayerStateManager : MonoBehaviour
 
     void Start()
     {
-
-
         UpdatePlayerCharacterReference();
-        
-        UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
+
+        UpdateCurrentState(State.Idle);
+        // immediately start as idle when first instantiated
     }
 
     //think I programmed the state machine wrong it ends in a feedback loop if I call enterState
@@ -72,6 +71,14 @@ public class PlayerStateManager : MonoBehaviour
     public void UpdateToIdleState()
     {
         _currentState = _State[State.Idle];
+        _currentState.EnterState();
+    }
+
+    //play dialog
+    public void UpdateToDialogAndSpeak(InventoryItem _selectedItem)
+    {
+        _ItemManager.UpdateSelectedItem(_selectedItem);
+        _currentState = _State[State.DialogItem];
         _currentState.EnterState();
     }
     

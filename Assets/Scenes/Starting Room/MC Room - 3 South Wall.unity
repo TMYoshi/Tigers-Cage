@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
   m_PrefabInstance: {fileID: 1490175239}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1377191026}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efe00ef6f4d9914dacd73fe6082fded, type: 3}
@@ -2240,6 +2240,184 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4b49b9ffcf644448ad903b0deb3cc4, type: 3}
+--- !u!43 &659647599
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 12
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 0
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 0
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 0
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 0
+    _typelessdata: 
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+  m_MeshLodInfo:
+    serializedVersion: 2
+    m_LodSelectionCurve:
+      serializedVersion: 1
+      m_LodSlope: 0
+      m_LodBias: 0
+    m_NumLevels: 1
+    m_SubMeshes:
+    - serializedVersion: 2
+      m_Levels:
+      - serializedVersion: 1
+        m_IndexStart: 0
+        m_IndexCount: 0
 --- !u!1 &737183459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,6 +4619,47 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b97e7e6de36a384f9ccc3190fa04dfc, type: 3}
+--- !u!1 &1377191026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1864423936384747913, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+  m_PrefabInstance: {fileID: 1490175239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1377191028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377191026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialog
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: 8e86a314313cde24a9a32bf40493fd65, type: 2}
+--- !u!114 &1377191029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377191026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
+  assoc_dialog_box_: {fileID: 1377191028}
+  itemName: 
+  quantity: 0
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
+  itemDescription: 
+  collectable: 0
+  destroyable: 0
+  SpecialEvents: {fileID: 0}
 --- !u!114 &1415336373 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4488519901381587585, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
@@ -4474,184 +4693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
---- !u!43 &1441859196
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 12
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 0
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 0
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 0
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 0
-    _typelessdata: 
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
-  m_MeshLodInfo:
-    serializedVersion: 2
-    m_LodSelectionCurve:
-      serializedVersion: 1
-      m_LodSlope: 0
-      m_LodBias: 0
-    m_NumLevels: 1
-    m_SubMeshes:
-    - serializedVersion: 2
-      m_Levels:
-      - serializedVersion: 1
-        m_IndexStart: 0
-        m_IndexCount: 0
 --- !u!1 &1448314292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,7 +5009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5019,6 +5060,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartHeartBeatMinigame
       objectReference: {fileID: 0}
@@ -5045,11 +5090,15 @@ PrefabInstance:
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 101833119}
+      objectReference: {fileID: 8675057431898335070}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 8675057431898335070}
+      objectReference: {fileID: 101833119}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 101833119}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: LoseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndMinigame
@@ -5079,6 +5128,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetBunnyTrue
       objectReference: {fileID: 0}
@@ -5092,11 +5145,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: UpdatePlayerToIdleState
+      value: TurnStressDown
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: TurnStressDown
+      value: UpdatePlayerToIdleState
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: PlaySelectedDialog
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -5124,12 +5181,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: _Bunny_Item, Assembly-CSharp
+      value: HeartbeatBackground, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: HeartbeatBackground, Assembly-CSharp
+      value: _Bunny_Item, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: _Bunny_Item, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1377191029}
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
@@ -5161,6 +5234,10 @@ PrefabInstance:
     - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370374985461758057, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      propertyPath: SurviveEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: InventoryItem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2465768073205133692, guid: 535efe0abda58be42b3531561df1c737, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5269,7 +5346,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1864423936384747913, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1377191029}
+    - targetCorrespondingSourceObject: {fileID: 1864423936384747913, guid: 535efe0abda58be42b3531561df1c737, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1377191028}
   m_SourcePrefab: {fileID: 100100000, guid: 535efe0abda58be42b3531561df1c737, type: 3}
 --- !u!1001 &1490824215
 PrefabInstance:
