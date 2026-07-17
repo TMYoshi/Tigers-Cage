@@ -82,16 +82,17 @@ public class SceneController : MonoBehaviour
 
     public void FadeAndLoadScene(string sceneName)
     {
-        if (FadeController.Instance != null)
-        {
+        //if (FadeController.Instance != null)
+        //{
+        Debug.Log("attempting scene fade and load");
             FadeController.Instance.FadeAndLoad(sceneName);
-        }
-        else
-        {
-            Debug.LogWarning("FadeController not found, loading directly instead.");
-            SceneManager.LoadScene(sceneName);
-            OnSceneChange.Invoke();
-        }
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("FadeController not found, loading directly instead.");
+        //    SceneManager.LoadScene(sceneName);
+        //    OnSceneChange.Invoke();
+        //}
     }
 
     public void FadeAndLoadSceneWithCutscene(string cutsceneSceneName, string finalSceneName)
