@@ -14,6 +14,10 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerMouseUtils _MouseUtils;
     [Header("null if no movementController")]
     public PlayerController _MovementController;
+    //should be hooked up to the save imo but we'll just leave it for now :3
+    internal bool PlayerPickupItems = false;
+    public void SetPlayerPickupItemsTrue() =>
+        PlayerPickupItems = true;
     //dunno if I should make proper getters and setters for this but I think it should be fine for now
 
     private void Awake()

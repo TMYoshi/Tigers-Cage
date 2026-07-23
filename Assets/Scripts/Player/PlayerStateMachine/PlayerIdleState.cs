@@ -68,6 +68,9 @@ public class PlayerIdleState : PlayerBaseState
         switch (currentCollider.gameObject.tag)
         {
             case "Item":
+                //ughhh a bit hard coded but all it is it's only letting bunny interact
+                //so you can't pickup anything while in nervious state.
+                if(!_context.PlayerPickupItems && currentCollider.gameObject.name != "Rabbit") return;
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
@@ -78,6 +81,7 @@ public class PlayerIdleState : PlayerBaseState
                     _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem);
                 break;
             case "SpecialItem":
+                if(!_context.PlayerPickupItems) return;
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (

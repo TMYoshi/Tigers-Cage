@@ -38,9 +38,14 @@ public class _Bunny_Item : SpecialItems
         }
     }
 
-    public void UpdatePlayerToIdleState() =>
+    public void UpdatePlayerToIdleState()
+    {
         PlayerStateManager.Instance.UpdateToIdleState();
+    }
 
-    public void PlaySelectedDialog(InventoryItem _InventoryItem) =>
+    public void PlaySelectedDialogAndSetPickupTrue(InventoryItem _InventoryItem)
+    {
+        PlayerStateManager.Instance.SetPlayerPickupItemsTrue();
         PlayerStateManager.Instance.UpdateToDialogAndSpeak(_InventoryItem);
+    }
 }
