@@ -4019,7 +4019,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!43 &1527680787
+--- !u!43 &1518964290
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6550,8 +6550,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6233522511494507174, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
       propertyPath: m_Color.a
-      value: 0.02745098
+      value: 0.6509804
       objectReference: {fileID: 0}
+    - target: {fileID: 6233522511494507174, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: e01e1ea71fb5713489c92acf3c5a5735, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
