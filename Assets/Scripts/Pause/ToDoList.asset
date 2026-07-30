@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb9580d3026830a40a69473a1c02b551, type: 3}
-  m_Name: Lock
+  m_Name: ToDoList
   m_EditorClassIdentifier: Assembly-CSharp::DocumentItem
-  documentTitle: Lock Password
-  documentText: 'It looks like the code might be 000.I should double-check...
-
-
-    I
-    don''t want to get it wrong.'
-  documentImage: {fileID: -5726946644100466083, guid: 8cfd77917dd1e494cb7ec3996c1cebc6, type: 3}
-  documentInfoFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  documentTitle: ' To Do List'
+  documentText: 
+  documentImage: {fileID: 0}
+  documentInfoFont: {fileID: 0}
   isUnlocked: 0
   forceUnlock: 0
-  pageNumber: 2
+  pageNumber: -1
