@@ -4,6 +4,8 @@ public class ArrowController : MonoBehaviour
 {
     [SerializeField] AudioClip OnPressedAudio;
     [SerializeField] private string targetScene; // fallback for inspector, will use this for sub scenes 
+    [Header("Save System")]
+    //[SerializeField] private SaveLoad saveLoadManager; // reference to the SaveLoad script
     bool alreadyPressed = false;
 
     #region OnPressed
@@ -26,14 +28,18 @@ public class ArrowController : MonoBehaviour
             {
                 SceneController.scene_controller_instance.SetLastArrow("Right");
                 nextScene = GetNextScene(currentScene, "Clockwise");
+                //saveLoadManager.SaveGame();
+                
             }
             else if (gameObject.name.Contains("Left"))
             {
                 SceneController.scene_controller_instance.SetLastArrow("Left");
                 nextScene = GetNextScene(currentScene, "Counterclockwise");
+                //saveLoadManager.SaveGame();
             }
         }
         Debug.Log($"Next scene calculated: {nextScene}");
+        
 
         if (!string.IsNullOrEmpty(nextScene))
         {
