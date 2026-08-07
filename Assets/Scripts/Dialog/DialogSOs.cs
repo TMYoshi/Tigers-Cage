@@ -41,5 +41,4 @@ public class DialogSO : ScriptableObject
 public class DialogLine
 {
     [TextArea(3,5)] public string text_;
-
 }
