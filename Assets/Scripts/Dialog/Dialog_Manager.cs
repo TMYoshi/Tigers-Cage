@@ -53,9 +53,6 @@ public class DialogManager : MonoBehaviour
         Debug.Log("Current line: " + index_);
         DialogLine line = current_dialog_.lines_[index_];
 
-        sprite_ = line.speaker_.sprite_;
-        text_name_ = line.speaker_.actor_name_;
-
         // Set full text up front
         string fullText = text_name_ + "\n" + line.text_;
         text_component_.text = fullText;

@@ -40,7 +40,6 @@ public class DialogSO : ScriptableObject
 [System.Serializable]
 public class DialogLine
 {
-    public ActorSO speaker_;
     [TextArea(3,5)] public string text_;
 
 }
