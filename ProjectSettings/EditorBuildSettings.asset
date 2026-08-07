@@ -47,9 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Starting Room/MC Room - 1 Closet.unity
     guid: eca2ac41f17ccf34faebad8987b4a94f
-  - enabled: 0
-    path: Assets/Scenes/Starting Room/Credits old.unity
-    guid: fd0ecd43998ba5a499b6aa300e34dd30
   - enabled: 1
     path: Assets/Scenes/Starting Room/Credits.unity
     guid: 2a90aa070dae8eb4696a1d369b1260d0
@@ -57,11 +54,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Hallway/Hallway.unity
     guid: 4928f870de252477db84dbe771676961
   - enabled: 1
+    path: Assets/Scenes/Hallway/Hallway Clock.unity
+    guid: 603e0abde24987245aef2014f70bc4d7
+  - enabled: 1
     path: Assets/Scenes/Bathroom/Bathroom - 1 North Wall.unity
     guid: e4e85660e30abd245a74722f3e1f8fe1
   - enabled: 1
     path: Assets/Scenes/Bathroom/Bathroom - 2 East Wall.unity
-    guid: 122f417f4d4ed654ea288a2844799645
+    guid: f623206ccd413e140916924c4097861f
   - enabled: 1
     path: Assets/Scenes/Bathroom/Bathroom - 3 South Wall.unity
     guid: 24c1a8113da24a24ca10e471cbe8030c
