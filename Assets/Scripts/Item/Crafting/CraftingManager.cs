@@ -35,6 +35,9 @@ public class CraftingManager : MonoBehaviour
                         }
                     }
                     _inventory.AddItem(creation.ResultName, 1, creation.ResultImage, creation.ResultDescription);
+                    InventoryManager.MarkItemAsCollected(creation.ResultName);
+
+                    Debug.Log($"Crafted {creation.ResultName}.");
                     return true;
                 case ItemComDialog dialog:
                     throw new System.NotImplementedException();

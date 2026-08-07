@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float maxX, minX;
+    [Tooltip("the player won't move if the click is within this min ")]
+    [SerializeField] float minXMove;
     [SerializeField] float speed;
-    [SerializeField] AnimationCurve animation_curve;
     //false = left
     //true = right 
     public UnityEvent<bool> OnWalk;
@@ -83,6 +84,13 @@ public class PlayerController : MonoBehaviour
         float originalPos = transform.position.x;
         float targetX = _moveTo.x;
 
+        if(minXMove > Mathf.Abs(originalPos - targetX))
+        {
+            _onComplete?.Invoke();
+            OnStop?.Invoke();
+            yield break;
+        }
+
         OnWalk?.Invoke(originalPos - targetX < 0 ? true : false);
 
         if(targetX > maxX)
@@ -98,7 +106,7 @@ public class PlayerController : MonoBehaviour
             float newX = Mathf.MoveTowards(
                 transform.position.x,
                 targetX,
-                Mathf.Clamp(animation_curve.Evaluate(progress), 0.01f, 1f) * speed * Time.deltaTime
+                speed * Time.deltaTime
             );
 
             transform.position = new Vector3(
@@ -112,9 +120,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
 
-        if(_onComplete != null)
-            _onComplete.Invoke();
-
+        _onComplete?.Invoke();
         OnStop?.Invoke();
     }
 }

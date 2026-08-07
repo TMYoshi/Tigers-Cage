@@ -6,6 +6,8 @@ public class _Completed_Card : SpecialItems
     [SerializeField] GameObject brokenCard;
     [SerializeField] GameObject finishedCard;
     [SerializeField] List<DialogSO> puttingCardTogetherDialog;
+    //[Header("Save System")]
+   // [SerializeField] private SaveLoad saveLoadManager;
     public override void Start()
     {
         if(InventoryManager.alreadyInteratedItems.Contains("Completed Card"))
@@ -25,6 +27,8 @@ public class _Completed_Card : SpecialItems
         currentDialog.convos_ = puttingCardTogetherDialog;
 
         InventoryManager.alreadyInteratedItems.Add("Completed Card");
+        //saveLoadManager.SaveGame();
+        Debug.Log("Completed Card added to alreadyInteratedItems and saved");
 
         RewardCondition();
     }
@@ -44,3 +48,6 @@ public class _Completed_Card : SpecialItems
         return true;
     }
 }
+
+
+

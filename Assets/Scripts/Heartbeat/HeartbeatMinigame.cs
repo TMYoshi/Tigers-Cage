@@ -41,6 +41,8 @@ public class HeartbeatMinigame : MonoBehaviour
     [SerializeField] UnityEvent OnMinigameStart;
     [SerializeField] UnityEvent OnStart;
 
+	public static bool hasWon = false;
+
 	void Start()
 	{
         if(countdown != null)
@@ -165,6 +167,7 @@ public class HeartbeatMinigame : MonoBehaviour
 
 	public void Win()
 	{
+		hasWon = true;
 		PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
 		EndMinigame();
 	}

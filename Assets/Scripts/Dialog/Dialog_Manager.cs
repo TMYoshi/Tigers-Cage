@@ -9,7 +9,6 @@ public class DialogManager : MonoBehaviour
 
     [Header("UI References")]
     public TextMeshProUGUI text_component_;
-    public string text_name_ = "Test"; // TODO: Later make this its own component in the prefab
     //public List<string> lines_;
     public Image sprite_;
 
@@ -53,15 +52,12 @@ public class DialogManager : MonoBehaviour
         Debug.Log("Current line: " + index_);
         DialogLine line = current_dialog_.lines_[index_];
 
-        sprite_ = line.speaker_.sprite_;
-        text_name_ = line.speaker_.actor_name_;
-
         // Set full text up front
-        string fullText = text_name_ + "\n" + line.text_;
+        string fullText = line.text_;
         text_component_.text = fullText;
 
         // Start revealing *after* the name + newline
-        text_component_.maxVisibleCharacters = text_name_.Length + 1;
+        text_component_.maxVisibleCharacters = 1;
 
         // Reveal remaining characters
         for (int i = text_component_.maxVisibleCharacters; i <= fullText.Length; i++)
@@ -176,7 +172,6 @@ public class DialogManager : MonoBehaviour
     [Header("UI References")]
     public TextMeshProUGUI text_component_;
     public List<string> lines_;
-    public string text_name_ = "Test";
     public Animator dialog_animator_;
     public Sprite sprite_;
 

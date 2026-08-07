@@ -21,4 +21,4 @@ MonoBehaviour:
   documentInfoFont: {fileID: 11400000, guid: e361601876104404b815372cf5c4de7e, type: 2}
   isUnlocked: 0
   forceUnlock: 0
-  pageNumber: 1
+  pageNumber: -1

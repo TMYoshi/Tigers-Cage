@@ -20,6 +20,12 @@ public class PipeRotation : MonoBehaviour
         }
     }
 
+    public void SetRotation(float zAngle)
+    {
+        targetRotation = Quaternion.Euler(0, 0, zAngle);
+        transform.rotation = targetRotation;
+    }
+
     private void Update()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
@@ -36,7 +42,6 @@ public class PipeRotation : MonoBehaviour
     void RotatePipe()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
-        
         Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
 
         if (hitCollider != null && hitCollider.gameObject == gameObject)

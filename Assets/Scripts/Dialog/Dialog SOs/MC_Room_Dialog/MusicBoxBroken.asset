@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: That definitely made a ruckus, I need to find a place to hide quick!
+    text_: It's broken... I'll miss hearing this song.
   required_item_: 
