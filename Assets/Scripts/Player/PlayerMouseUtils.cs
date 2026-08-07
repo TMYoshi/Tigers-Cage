@@ -6,7 +6,7 @@ public class PlayerMouseUtils : MonoBehaviour
 {
     HighlightInteractableOutline outlineScript;
     //this is for sprites
-    public Collider2D HighlightOnHover()
+    public Collider2D HighlightOnHover(bool _pickupBunny = false)
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
@@ -24,7 +24,7 @@ public class PlayerMouseUtils : MonoBehaviour
 
             outlineScript = newOutline;
 
-            if (outlineScript != null) outlineScript.Enter();
+            if (outlineScript != null) outlineScript.Enter(_pickupBunny);
         }
         else
         {

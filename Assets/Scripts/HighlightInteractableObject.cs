@@ -17,6 +17,7 @@ using UnityEngine;
 public class HighlightInteractableOutline : MonoBehaviour
 {
     [Header("Outline Settings")]
+    public bool HideIfHaventPickBunny = false;
     public Color outlineColor = Color.black; // change later based on sprite
     public float outlineWidth = 0.1f;
     [Range(4, 16)]
@@ -81,8 +82,9 @@ public class HighlightInteractableOutline : MonoBehaviour
         //Debug.Log($"Created outline effect with {outlineResolution} sprites.");
     }
 
-    public void Enter()
+    public void Enter(bool _pickBunny = false)
     {
+        if(!HideIfHaventPickBunny && !_pickBunny) return;
         // show outline
         if (outlineParent != null)
         {

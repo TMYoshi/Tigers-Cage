@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideIfHaventPickBunny: 1
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.05
   outlineResolution: 8
@@ -327,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideIfHaventPickBunny: 1
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.05
   outlineResolution: 8

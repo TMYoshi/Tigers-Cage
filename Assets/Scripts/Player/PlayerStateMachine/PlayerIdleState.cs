@@ -55,7 +55,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public void MouseDetection()
     {
-        Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
+        Collider2D currentCollider = _context._MouseUtils.HighlightOnHover(_context.PlayerPickupItems);
 
         if(currentCollider == null) return;
 
