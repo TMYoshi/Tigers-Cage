@@ -2956,7 +2956,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
 --- !u!224 &884080818 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1472779238766449294, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 884541571988603890, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 884080817}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &884080820 stripped
@@ -5557,6 +5557,22 @@ PrefabInstance:
     - target: {fileID: 6211530763520305541, guid: 55680c3e826d5814b97a558204783479, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532383432357208793, guid: 55680c3e826d5814b97a558204783479, type: 3}
+      propertyPath: intervals_.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532383432357208793, guid: 55680c3e826d5814b97a558204783479, type: 3}
+      propertyPath: 'intervals_.Array.data[0]'
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532383432357208793, guid: 55680c3e826d5814b97a558204783479, type: 3}
+      propertyPath: 'intervals_.Array.data[1]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532383432357208793, guid: 55680c3e826d5814b97a558204783479, type: 3}
+      propertyPath: 'intervals_.Array.data[2]'
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6980013831477287160, guid: 55680c3e826d5814b97a558204783479, type: 3}
       propertyPath: m_Name
