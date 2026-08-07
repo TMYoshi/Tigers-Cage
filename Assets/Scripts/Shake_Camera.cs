@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 
@@ -6,18 +7,12 @@ public class ShakeCamera : MonoBehaviour
 {
     public float duration_;
     public AnimationCurve curve_;
-    private bool do_once_ = true;
+    // private bool do_once_ = true;
+    public List<float> intervals_ = new List<float>();
 
-    private void Update()
-    {
-        if(do_once_)
-        { 
-            StartCoroutine(WaitForShake());
-            do_once_ = false;
-        }
-    }
+    
 
-    private IEnumerator WaitForShake()
+    public IEnumerator WaitForShake()
     {
         Vector3 original_pos = transform.position;
         float current_time_ = 0;

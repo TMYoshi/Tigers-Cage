@@ -1,9 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.UI;
-using Unity.VisualScripting;
-using NUnit.Framework;
+using System.Linq;
 
 public class Countdown : MonoBehaviour
 {
@@ -12,7 +9,9 @@ public class Countdown : MonoBehaviour
     public bool IsActive() { return is_active_; }
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
+    [SerializeField] private float[] time_interval_;
     private PlayerStateManager player_;
+    private ShakeCamera shake_camera_;
     public float GetRemTime() { return remaining_time_; }
 
     private void Awake()
@@ -54,6 +53,14 @@ public class Countdown : MonoBehaviour
 
             HidingSpotManager hidingSpotManager = (HidingSpotManager)FindAnyObjectByType(typeof(HidingSpotManager));
             hidingSpotManager?.SwapWithHidingSpot();
+
+            shake_camera_ = (ShakeCamera)FindAnyObjectByType(typeof(ShakeCamera));
+            
+            // On scene traversal, remove higher time intervals to avoid repeats (I lowk feel like this is not at all optimal, but the interval sizes are small anyways so it should be fineeeee right?)
+            foreach(var time in shake_camera_.intervals_)
+            {
+                if(time > remaining_time_) { shake_camera_.intervals_.Remove(time); }
+            }
         }
     }
 
@@ -75,6 +82,15 @@ public class Countdown : MonoBehaviour
             if(player_.GetCurrentState() is not PlayerHidingState)
             {
                 SceneController.scene_controller_instance.FadeAndLoadScene("GameOver");
+            }
+        }
+
+        if(shake_camera_ != null)
+        {            
+            if(remaining_time_ < shake_camera_.intervals_.Max())
+            {
+                StartCoroutine(shake_camera_.WaitForShake());
+                shake_camera_.intervals_.Remove(shake_camera_.intervals_.Max());
             }
         }
 
