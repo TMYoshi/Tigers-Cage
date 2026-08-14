@@ -5,14 +5,12 @@ using UnityEngine.Rendering;
 public class _Camera_Door: SpecialItems
 {
     [SerializeField] private string requiredItemKey = "WorkingCamera";
-    [SerializeField] private DialogSO doorDialog;
-
     public override void EnterCondition()
     {
         Debug.Log("exit called");
-        if (doorDialog != null)
+        if (item != null)
         {
-            DialogManager.Instance.StartDialog(doorDialog);
+            item.WriteLines();
         }
     }
 
