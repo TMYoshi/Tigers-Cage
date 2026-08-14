@@ -27,6 +27,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
+        PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
     }
 
@@ -39,6 +40,7 @@ public class PlayerIdleState : PlayerBaseState
         MouseDetection();
         UIMouseDetection();
     }
+
     public override void ExitState()
     {
     }
