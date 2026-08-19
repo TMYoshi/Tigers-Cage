@@ -1368,8 +1368,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press ESC to skip
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
-  m_sharedMaterial: {fileID: -2629195299392661221, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1860,7 +1860,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1

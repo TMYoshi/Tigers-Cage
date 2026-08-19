@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Starting Room/Intro_Cutscene.unity
     guid: 0418ad353123dda4e8ffbae10058f040
   - enabled: 1
-    path: Assets/Scenes/Starting Room/Music_Box_Cutscene.unity
+    path: Assets/Scenes/Starting Room/Cutscene_Music_Box.unity
     guid: 2d084ac0d3f33374c8716c5e71ac1ef0
   - enabled: 1
     path: Assets/Scenes/Starting Room/Ending_Cutscene.unity

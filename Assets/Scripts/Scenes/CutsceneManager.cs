@@ -22,21 +22,9 @@ public class CutsceneManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        if (FadeController.Instance != null)
-        {
-            FadeController.Instance.onFadeInComplete += StartCutscene;
-        }
-
-        useVideo = _videoPlayer != null && _videoPlayer.clip != null;
-
-        if (useVideo)
-        {
-            _videoPlayer.loopPointReached += OnVideoFinished;
-        }
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         string storedNextScene = PlayerPrefs.GetString("NextSceneAfterCutscene", "");
         if (!string.IsNullOrEmpty(storedNextScene))
@@ -44,13 +32,18 @@ public class CutsceneManager : MonoBehaviour
             nextSceneName = storedNextScene;
             PlayerPrefs.DeleteKey("NextSceneAfterCutscene");
         }
+
+        yield return null;
+
+        StartCutscene();
     }
 
     bool startedCutscene = false;
     private void StartCutscene()
     {
-        // Countdown Associated Scenes - Turn off during cutscene
-        if(Countdown.Instance.IsActive())
+        Debug.Log("StartCutscene Called!");
+
+        if (Countdown.Instance != null && Countdown.Instance.IsActive())
         {
             Countdown.Instance.gameObject.SetActive(false);
         }
@@ -58,12 +51,6 @@ public class CutsceneManager : MonoBehaviour
         if (FadeController.Instance != null)
         {
             FadeController.Instance.onFadeInComplete -= StartCutscene;
-        }
-
-        if(!startedCutscene)
-        {
-            startedCutscene = true;
-            return;
         }
 
         if (this == null)
@@ -87,19 +74,19 @@ public class CutsceneManager : MonoBehaviour
             skipUI.SetActive(true);
         }
 
+        useVideo = _videoPlayer != null && (_videoPlayer.clip != null || !string.IsNullOrEmpty(_videoPlayer.url));
+
         if (useVideo)
         {
+            _videoPlayer.loopPointReached -= OnVideoFinished;
+            _videoPlayer.loopPointReached += OnVideoFinished;
+
             _videoPlayer.Play();
             yield break;
         }
         else
         {
             yield return StartCoroutine(PlayAnimationCutscene());
-        }
-
-        if (skipUI != null)
-        {
-            skipUI.SetActive(false);
         }
 
         ProceedToNextScene();
@@ -122,6 +109,12 @@ public class CutsceneManager : MonoBehaviour
     private void OnVideoFinished(VideoPlayer vp)
     {
         Debug.Log("Video finished playing. Proceeding to next scene.");
+
+        if (skipUI != null)
+        {
+            skipUI.SetActive(false);
+        }
+
         ProceedToNextScene();
     }
 
@@ -130,7 +123,6 @@ public class CutsceneManager : MonoBehaviour
         if (cutsceneFinished) return;
 
         Debug.Log("Cutscene skipped.");
-        cutsceneFinished = true;
 
         if (useVideo && _videoPlayer.isPlaying)
         {
@@ -147,14 +139,22 @@ public class CutsceneManager : MonoBehaviour
 
     private void ProceedToNextScene()
     {
+        if (cutsceneFinished) return;
+        cutsceneFinished = true;
+
+        if (skipUI != null)
+        {
+            skipUI.SetActive(false);
+        }
+
         string currentScene = SceneManager.GetActiveScene().name;
 
         // Countdown Related Logic - Turn back on when done
-        if(currentScene == "Music_Box_Cutscene")
+        if (currentScene == "Music_Box_Cutscene")
         {
             if (Countdown.Instance != null)
             {
-                Countdown.Instance.gameObject.SetActive(true); // Game Object
+                Countdown.Instance.gameObject.SetActive(true);
                 Countdown.is_active_ = true;
                 Debug.Log("Music Box Cutscene finished, countdown: " + Countdown.is_active_);
                 musicBoxCutsceneCompleted = true;
@@ -163,8 +163,6 @@ public class CutsceneManager : MonoBehaviour
                 IndiscriminateDialog.is_active_ = true;
             }
         }
-
-        cutsceneFinished = true;
 
         if (SceneController.scene_controller_instance != null)
         {
@@ -183,6 +181,11 @@ public class CutsceneManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (FadeController.Instance != null)
+        {
+            FadeController.Instance.onFadeInComplete -= StartCutscene;
+        }
+
         if (useVideo && _videoPlayer != null)
         {
             _videoPlayer.loopPointReached -= OnVideoFinished;
