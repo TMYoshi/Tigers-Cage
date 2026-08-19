@@ -4336,6 +4336,10 @@ PrefabInstance:
       propertyPath: cameraNameToRemove
       value: WorkingCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 3057475479126735126, guid: 31586e453dc8412469b90a9a4b85ca7a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3603374783049707050, guid: 31586e453dc8412469b90a9a4b85ca7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1048.4149
@@ -4374,6 +4378,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3603374783049707050, guid: 31586e453dc8412469b90a9a4b85ca7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202420798431094526, guid: 31586e453dc8412469b90a9a4b85ca7a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7641829478695218716, guid: 31586e453dc8412469b90a9a4b85ca7a, type: 3}
@@ -6579,9 +6587,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 942004349516543752, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2921302799798819951, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
       propertyPath: m_Name
       value: HeartbeatCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407971123746381450, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407971123746381450, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407971123746381450, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 5237293392679571344, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
       propertyPath: m_Pivot.x
@@ -6662,6 +6686,10 @@ PrefabInstance:
     - target: {fileID: 5237293392679571344, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233522511494507174, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_Color.a
+      value: 0.11764706
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
