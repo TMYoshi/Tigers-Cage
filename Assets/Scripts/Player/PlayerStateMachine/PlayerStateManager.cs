@@ -38,6 +38,7 @@ public class PlayerStateManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
         _State[State.Null] = new PlayerNullState(this);

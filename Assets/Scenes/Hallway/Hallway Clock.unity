@@ -549,6 +549,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26090209}
     m_Modifications:
+    - target: {fileID: 2054985587644740350, guid: 85048af76758348e693bf5b9fadd97cb, type: 3}
+      propertyPath: convos_.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054985587644740350, guid: 85048af76758348e693bf5b9fadd97cb, type: 3}
+      propertyPath: 'convos_.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: eca63bce7a892454d8e2c50e0b94d61f, type: 2}
     - target: {fileID: 3216113696258555141, guid: 85048af76758348e693bf5b9fadd97cb, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3247,6 +3255,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26090209}
     m_Modifications:
+    - target: {fileID: 2054985587644740350, guid: 85048af76758348e693bf5b9fadd97cb, type: 3}
+      propertyPath: convos_.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054985587644740350, guid: 85048af76758348e693bf5b9fadd97cb, type: 3}
+      propertyPath: 'convos_.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a82771227bee254468cf41378025fcc5, type: 2}
     - target: {fileID: 3216113696258555141, guid: 85048af76758348e693bf5b9fadd97cb, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
