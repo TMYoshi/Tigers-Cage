@@ -38,7 +38,7 @@ public class CutsceneManager : MonoBehaviour
         StartCutscene();
     }
 
-    bool startedCutscene = false;
+    //bool startedCutscene = false;
     private void StartCutscene()
     {
         Debug.Log("StartCutscene Called!");
