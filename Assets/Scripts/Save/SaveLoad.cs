@@ -24,37 +24,25 @@ public class SaveLoad : MonoBehaviour
             return;
         }
 
-        string path = Application.persistentDataPath + "/Player.Journal";
+        UpdateLoadButtonState();
+
+    }
+
+    private void UpdateLoadButtonState(){
 
         if(loadButton != null)
         {
-            loadButton.interactable = File.Exists(path);
+            loadButton.interactable = Saves_System.SaveFileExists();
         }
     }
     public void SaveGame()
     {   //Disable Load Button if no save file exists
 
-        Debug.Log("saving game click");
-        string path = Application.persistentDataPath + "/player.Journal";
-
-        Debug.Log("Saving game to: " + path);
-
-        if (!File.Exists(path))
-        {
-            Debug.Log("save file not exist");
-            if(loadButton != null)
-            {
-                Debug.Log("Load button found");
-                loadButton.interactable = false;
-            }
-            else
-            {
-                Debug.Log("Load button is NULL");
-            }
-        }
-
+        Debug.Log("Saving game click");
         Debug.Log("Game saved");
         Saves_System.SavePlayer();
+
+        UpdateLoadButtonState();
 
         Debug.Log("Save completed");
     }
@@ -65,8 +53,6 @@ public class SaveLoad : MonoBehaviour
         //Must always unpuase before chaning scenes
         Time.timeScale = 1f;
         Player_Data data = Saves_System.LoadPlayer();
-
-        Debug.Log("Load called");
 
         if (data == null)
         {

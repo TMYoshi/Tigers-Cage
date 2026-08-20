@@ -20,6 +20,8 @@ public class Player_Data
         this.inventorySlots = inventorySlots;
         this.collectedItemIds = collectedItemIds;
         // bug inventorySlots = inventorySlots;
+        //unlock items = unlockItems;
+        //keybinds
 
     }
 
