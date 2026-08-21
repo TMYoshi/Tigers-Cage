@@ -1950,6 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideIfHaventPickBunny: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.2
   outlineResolution: 8
@@ -2205,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Transition_Item
   item: {fileID: 1563247632}
-  transition_to_: Music_Box_Cutscene
+  transition_to_: Cutscene_Music_Box
   audio_clip_: {fileID: 0}
 --- !u!114 &1563247630
 MonoBehaviour:
@@ -2234,6 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HideIfHaventPickBunny: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.2
   outlineResolution: 8

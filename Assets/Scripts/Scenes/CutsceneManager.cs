@@ -150,7 +150,7 @@ public class CutsceneManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
 
         // Countdown Related Logic - Turn back on when done
-        if (currentScene == "Music_Box_Cutscene")
+        if (currentScene == "Cutscene_Music_Box")
         {
             if (Countdown.Instance != null)
             {
