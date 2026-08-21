@@ -36,11 +36,14 @@ public static class Saves_System
         var inventorySlots = (inv != null) ? inv.BuildInventorySaveData() : null;
         var collectedIds = (inv != null) ? inv.BuildCollectedItemsSaveData() : null;
 
+        var journalPages = (JournalDataManager.Instance != null) ? JournalDataManager.Instance.BuildJournalPageSaveData() : null;
+
         //Create Save file object
         Player_Data data = new Player_Data(
             currentSceneIndex, 
             inventorySlots, 
-            collectedIds);
+            collectedIds,
+            journalPages);
 
        string json = JsonUtility.ToJson(data, true);
 
