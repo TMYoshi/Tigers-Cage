@@ -31,8 +31,8 @@ public class PopupManager : MonoBehaviour
     // Prompt when first entering game
     void Start()
     {
-        curr_popup_ = controls_popup_;
-        SetUIPopuopOn();
+        //curr_popup_ = controls_popup_;
+        //SetUIPopuopOn();
     }
 
     public void SetpopupOnJournal()
@@ -61,9 +61,11 @@ public class PopupManager : MonoBehaviour
     public void SetUIPopuopOn()
     {
         // Use cases: Controls, Heartbeat Tutorial, Door Exit
+        /*
         curr_popup_.gameObject.SetActive(true);
         animator.SetBool("Show UI", true);
         PlayerStateManager.Instance.UpdateToNullState();
+        */
     }
 
     public void SetUIPopupOff()
