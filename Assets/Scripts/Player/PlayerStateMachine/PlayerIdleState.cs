@@ -41,10 +41,6 @@ public class PlayerIdleState : PlayerBaseState
         UIMouseDetection();
     }
 
-    public override void ExitState()
-    {
-    }
-
     public override void Cleanup()
     {
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;

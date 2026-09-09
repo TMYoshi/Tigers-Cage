@@ -27,15 +27,9 @@ public class PlayerDialogItemState : PlayerBaseState
         {
             if (_context._ItemManager._SelectedItem.WriteLines())
             {
-                ExitState();
+                _context.UpdateCurrentState(PlayerStateManager.State.Idle);
             }
         }
-    }
-
-    public override void ExitState()
-    {
-        Cleanup();
-        _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
     public override void Cleanup()

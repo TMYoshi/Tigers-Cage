@@ -20,7 +20,9 @@ public class PlayerSpecialItemState : PlayerBaseState
     {
         if (specialItem.CompleteCondition())
         {
-            ExitState();
+            specialItem.CleanUpCondition();
+            specialItem.RewardCondition();
+            _context.UpdateCurrentState(PlayerStateManager.State.Idle);
         }
 
         if (specialItem.ExitCondition())
@@ -28,12 +30,6 @@ public class PlayerSpecialItemState : PlayerBaseState
             specialItem.CleanUpCondition();
             _context.UpdateCurrentState(PlayerStateManager.State.Idle);
         }
-    }
-    public override void ExitState()
-    {
-        specialItem.CleanUpCondition();
-        specialItem.RewardCondition();
-        _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
     public override void Cleanup()

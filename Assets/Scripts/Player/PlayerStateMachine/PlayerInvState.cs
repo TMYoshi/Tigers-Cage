@@ -73,11 +73,6 @@ public class PlayerInvState : PlayerBaseState
         return null;
     }
 
-    public override void ExitState()
-    {
-        _context.UpdateCurrentState(PlayerStateManager.State.Idle);
-    }
-
     public override void Cleanup()
     {
         _context._ItemManager.HideDraggedItem();
@@ -117,7 +112,7 @@ public class PlayerInvState : PlayerBaseState
             }
         }
 
-        if(shouldReturn) ExitState();
+        if(shouldReturn) _context.UpdateCurrentState(PlayerStateManager.State.Idle);
 
         /*  the way interactions work in this game is that it
             allows items without the special item tag to be
@@ -158,7 +153,7 @@ public class PlayerInvState : PlayerBaseState
             return;
         }
         CraftingManager.TryCraftIfComboExist(_slotInfo.itemName, _context._ItemManager._DraggedItem.name);
-        ExitState();
+        _context.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
     void FailedInteraction()
