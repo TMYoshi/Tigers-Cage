@@ -14,18 +14,18 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerMouseUtils _MouseUtils;
     [Header("null if no movementController")]
     public PlayerController _MovementController;
-    //should be hooked up to the save imo but we'll just leave it for now :3
 
-    [SerializeField] private bool playerPickupItems = false;
-    public bool PlayerPickupItems
+    public enum State
     {
-        get => playerPickupItems;
-        set => playerPickupItems = value;
+        Null,
+        Idle,
+        Inventory,
+        DialogItem,
+        SpecialItem,
+        Hiding,
+        Nervous,
     }
 
-    public void SetPlayerPickupItemsTrue() =>
-        PlayerPickupItems = true;
-    //dunno if I should make proper getters and setters for this but I think it should be fine for now
 
     private void Awake()
     {
@@ -47,17 +47,9 @@ public class PlayerStateManager : MonoBehaviour
         _State[State.SpecialItem] = new PlayerSpecialItemState(this);
         _State[State.Idle] = new PlayerIdleState(this);
         _State[State.Hiding] = new PlayerHidingState(this);
+        _State[State.Nervous] = new PlayerNervousState(this);
     }
 
-    public enum State
-    {
-        Null,
-        Idle,
-        Inventory,
-        DialogItem,
-        SpecialItem,
-        Hiding,
-    }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
     public PlayerBaseState GetCurrentState() { return _currentState; }

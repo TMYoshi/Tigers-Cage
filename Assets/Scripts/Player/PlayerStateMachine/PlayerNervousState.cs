@@ -3,9 +3,10 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class PlayerIdleState : PlayerBaseState
+
+public class PlayerNervousState : PlayerBaseState
 {
-    public PlayerIdleState(PlayerStateManager context) : base(context)
+    public PlayerNervousState(PlayerStateManager context) : base(context)
     {
         _context = context;
     }
@@ -34,9 +35,7 @@ public class PlayerIdleState : PlayerBaseState
         if (PauseMenu.isPaused)
             return;
         
-        //if Mouse is over any UI, it will not click the world
         MouseDetection();
-        UIMouseDetection();
     }
 
     public override void Cleanup()
@@ -55,7 +54,6 @@ public class PlayerIdleState : PlayerBaseState
 
         if(currentCollider == null) return;
 
-        //Debug.Log("Hit object: " + currentCollider.gameObject.name);
         InventoryItem _inventoryItem = currentCollider.gameObject.GetComponent<InventoryItem>();
         _context._ItemManager.UpdateSelectedItem(_inventoryItem);
 
@@ -64,6 +62,7 @@ public class PlayerIdleState : PlayerBaseState
         switch (currentCollider.gameObject.tag)
         {
             case "Item":
+                if(currentCollider.gameObject.name != "Rabbit") return;
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
@@ -72,16 +71,6 @@ public class PlayerIdleState : PlayerBaseState
                     );
                 else
                     _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem);
-                break;
-            case "SpecialItem":
-                if(_context._MovementController != null)
-                    _context._MovementController.MoveTo
-                    (
-                        currentCollider.transform,
-                        () => _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem)
-                    );
-                else   
-                    _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem);
                 break;
             case "Transitions":
                 ArrowController arrowController = currentCollider.gameObject.GetComponent<ArrowController>();
@@ -97,35 +86,6 @@ public class PlayerIdleState : PlayerBaseState
             default:
                 Debug.Log("Hit non-item object: " + currentCollider.gameObject.name);
                 break;
-        }
-    }
-    public void UIMouseDetection()
-    {
-        if (EventSystem.current == null)
-            return;
-
-        PointerEventData pointerData = new PointerEventData(EventSystem.current)
-        {
-            position = PlayerInput.Instance.MouseInput
-        };
-
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointerData, results);
-
-        foreach (RaycastResult result in results)
-        {
-            if (result.gameObject == null)
-            {
-                continue;
-            }
-            switch (result.gameObject.tag)
-            {
-                case "InvItem":
-                    _context.UpdateCurrentState(PlayerStateManager.State.Inventory);
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }

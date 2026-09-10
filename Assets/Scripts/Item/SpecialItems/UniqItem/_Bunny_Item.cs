@@ -45,7 +45,6 @@ public class _Bunny_Item : SpecialItems
 
     public void PlaySelectedDialogAndSetPickupTrue(InventoryItem _InventoryItem)
     {
-        PlayerStateManager.Instance.SetPlayerPickupItemsTrue();
         PlayerStateManager.Instance.UpdateToDialogAndSpeak(_InventoryItem);
     }
 }

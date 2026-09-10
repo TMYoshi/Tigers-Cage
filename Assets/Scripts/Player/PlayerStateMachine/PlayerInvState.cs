@@ -23,7 +23,7 @@ public class PlayerInvState : PlayerBaseState
 
     public override void UpdateState()
     {
-        _context._MouseUtils.HighlightOnHoverInv(_context.PlayerPickupItems);
+        _context._MouseUtils.HighlightOnHoverInv();
         if (PlayerInput.Instance.MouseClickInput)
         {
             AlreadyClicked = true;
