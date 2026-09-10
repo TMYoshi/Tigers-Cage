@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3407971123746381450
 RectTransform:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 5237293392679571344}
   - component: {fileID: 7149368526162214758}
   - component: {fileID: 1587504142775663044}
-  - component: {fileID: 231147357996586691}
+  - component: {fileID: 2115231321456973940}
   m_Layer: 5
   m_Name: HeartbeatCanvas
   m_TagString: Untagged
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &231147357996586691
+--- !u!114 &2115231321456973940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

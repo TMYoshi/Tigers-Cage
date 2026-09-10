@@ -4,25 +4,33 @@ using UnityEngine.Events;
 public class HeartbeatBackground : MonoBehaviour
 {
     public static bool Stressed {get; private set;} = true;
+    public static HeartbeatBackground Instance;
     public UnityEvent OnStressed;
     public UnityEvent OnStressedDown;
     [SerializeField] GameObject heartbeatBackground;
 
-    public void TurnStressDown()
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    public static void TurnStressDown()
     {
         Stressed = false;
-        heartbeatBackground.SetActive(false);
-        OnStressedDown.Invoke();
+        Instance.heartbeatBackground.SetActive(false);
+        Instance.OnStressedDown.Invoke();
+    }
+    
+    public static void TurnStressUp()
+    {
+        Stressed = true;
+        Instance.heartbeatBackground.SetActive(true);
+        Instance.OnStressed.Invoke();
     }
 
     void Start()
     {
-        if(!Stressed) 
-            heartbeatBackground.SetActive(false);
-        else
-        {
-            heartbeatBackground.SetActive(true);
-            OnStressed.Invoke();
-        }
+        if(Stressed) TurnStressUp();
+        if(!Stressed) TurnStressDown();
     }
 }

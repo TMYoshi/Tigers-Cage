@@ -14,6 +14,9 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerMouseUtils _MouseUtils;
     [Header("null if no movementController")]
     public PlayerController _MovementController;
+    [Header("Debug")]
+    [SerializeField]
+    bool debugLogs;
 
     public enum State
     {
@@ -58,12 +61,10 @@ public class PlayerStateManager : MonoBehaviour
     {
         UpdatePlayerCharacterReference();
 
-        UpdateCurrentState(State.Idle);
-        // immediately start as idle when first instantiated
+        // immediately start as nervous when first instantiated
+        UpdateCurrentState(State.Nervous);
     }
 
-    //think I programmed the state machine wrong it ends in a feedback loop if I call enterState
-    //so that's why this is here
     public void UpdateToNullState()
     {
         _currentState = _State[State.Idle];
@@ -71,10 +72,15 @@ public class PlayerStateManager : MonoBehaviour
         _currentState = _State[State.Null];
     }
 
-    //this is only to escape the null state
     public void UpdateToIdleState()
     {
         _currentState = _State[State.Idle];
+        _currentState.EnterState();
+    }
+
+    public void UpdateToNervousState()
+    {
+        _currentState = _State[State.Nervous];
         _currentState.EnterState();
     }
 
@@ -96,13 +102,12 @@ public class PlayerStateManager : MonoBehaviour
 
     public void UpdatePlayerCharacterReference()
     {
-        
         if(_MovementController != null) return;
         GameObject _MovementObject = GameObject.Find("-PlayerCharacter");
 
         if(_MovementObject == null)
         {
-            Debug.Log("<color=green> Clickable Scene Enter (no movement controller)</color>");
+            if(debugLogs) Debug.Log("<color=green> Clickable Scene Enter (no movement controller)</color>");
             return;
         }
 
@@ -110,7 +115,7 @@ public class PlayerStateManager : MonoBehaviour
 
         if(_MovementController == null)
         {
-            Debug.LogWarning("No player controller in movement controller!!!");
+            if(debugLogs) Debug.LogWarning("No player controller in movement controller!!!");
             return;
         }
     }

@@ -26,6 +26,8 @@ public class PlayerNervousState : PlayerBaseState
 
     public override void EnterState()
     {
+        HeartbeatBackground.TurnStressUp();
+
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
     }
@@ -40,6 +42,8 @@ public class PlayerNervousState : PlayerBaseState
 
     public override void Cleanup()
     {
+        HeartbeatBackground.TurnStressDown();
+
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
     }
 
@@ -50,7 +54,7 @@ public class PlayerNervousState : PlayerBaseState
 
     public void MouseDetection()
     {
-        Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
+        Collider2D currentCollider = _context._MouseUtils.JustReturnColliders();
 
         if(currentCollider == null) return;
 

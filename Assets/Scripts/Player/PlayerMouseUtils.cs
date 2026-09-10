@@ -6,6 +6,33 @@ public class PlayerMouseUtils : MonoBehaviour
 {
     HighlightInteractableOutline outlineScript;
     //this is for sprites
+
+    public Collider2D JustReturnColliders()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        if (PlayerInput.Instance.MouseClickInput)
+        {
+            return hit.collider;
+        }
+
+        if (hit.collider != null)
+        {
+            HighlightInteractableOutline newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
+            if (outlineScript == newOutline) return null;
+        }
+        else
+        {
+            if (outlineScript == null) return null;
+
+            outlineScript.Exit();
+            outlineScript = null;
+        }
+
+        return null;
+    }
+
     public Collider2D HighlightOnHover()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);

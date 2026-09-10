@@ -43,6 +43,11 @@ public class _Bunny_Item : SpecialItems
         PlayerStateManager.Instance.UpdateToIdleState();
     }
 
+    public void UpdatePlayerToNervousState()
+    {
+        PlayerStateManager.Instance.UpdateToNervousState();
+    }
+
     public void PlaySelectedDialogAndSetPickupTrue(InventoryItem _InventoryItem)
     {
         PlayerStateManager.Instance.UpdateToDialogAndSpeak(_InventoryItem);
