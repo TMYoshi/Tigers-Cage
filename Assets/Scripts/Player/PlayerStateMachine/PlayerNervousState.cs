@@ -54,7 +54,7 @@ public class PlayerNervousState : PlayerBaseState
 
     public void MouseDetection()
     {
-        Collider2D currentCollider = _context._MouseUtils.JustReturnColliders();
+        Collider2D currentCollider = _context._MouseUtils.HighlightOnSpecificTag("Transitions");
 
         if(currentCollider == null) return;
 
