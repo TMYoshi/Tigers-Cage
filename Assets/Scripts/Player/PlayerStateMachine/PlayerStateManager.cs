@@ -74,12 +74,14 @@ public class PlayerStateManager : MonoBehaviour
 
     public void UpdateToIdleState()
     {
+        _currentState.Cleanup();
         _currentState = _State[State.Idle];
         _currentState.EnterState();
     }
 
     public void UpdateToNervousState()
     {
+        _currentState.Cleanup();
         _currentState = _State[State.Nervous];
         _currentState.EnterState();
     }
