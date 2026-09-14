@@ -52,9 +52,17 @@ public class PlayerNervousState : PlayerBaseState
         Cleanup();
     }
 
+    bool CheckTransitionAndRabbit(RaycastHit2D _hit)
+    {
+        if(_hit.collider.gameObject.tag == "Transitions" || _hit.collider.gameObject.name == "Rabbit")
+            return true;
+        else
+            return false;
+    }
+
     public void MouseDetection()
     {
-        Collider2D currentCollider = _context._MouseUtils.HighlightOnSpecificTag("Transitions");
+        Collider2D currentCollider = _context._MouseUtils.HighlightOnCondition(CheckTransitionAndRabbit);
 
         if(currentCollider == null) return;
 

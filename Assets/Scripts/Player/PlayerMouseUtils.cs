@@ -33,7 +33,7 @@ public class PlayerMouseUtils : MonoBehaviour
         return null;
     }
 
-    public Collider2D HighlightOnSpecificTag(string _highlightName)
+    public Collider2D HighlightOnCondition(Func<RaycastHit2D, bool> _condition)
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
@@ -46,7 +46,7 @@ public class PlayerMouseUtils : MonoBehaviour
         if (hit.collider != null)
         {
             HighlightInteractableOutline newOutline = null;
-            if(hit.collider.CompareTag(_highlightName))
+            if(_condition(hit))
                 newOutline = hit.collider.gameObject.GetComponent<HighlightInteractableOutline>();
             if (outlineScript == newOutline) return null;
             if (outlineScript != null) outlineScript.Exit();
