@@ -93,7 +93,7 @@ public class PopupManager : MonoBehaviour
         }
 
         curr_popup_.gameObject.SetActive(false);
-        PlayerStateManager.Instance.UpdateToIdleState();
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
     #endregion
 }

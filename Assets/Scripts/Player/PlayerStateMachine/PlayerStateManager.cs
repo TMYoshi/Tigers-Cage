@@ -65,27 +65,6 @@ public class PlayerStateManager : MonoBehaviour
         UpdateCurrentState(State.Nervous);
     }
 
-    public void UpdateToNullState()
-    {
-        _currentState = _State[State.Idle];
-        _currentState.Cleanup();
-        _currentState = _State[State.Null];
-    }
-
-    public void UpdateToIdleState()
-    {
-        _currentState.Cleanup();
-        _currentState = _State[State.Idle];
-        _currentState.EnterState();
-    }
-
-    public void UpdateToNervousState()
-    {
-        _currentState.Cleanup();
-        _currentState = _State[State.Nervous];
-        _currentState.EnterState();
-    }
-
     //play dialog
     public void UpdateToDialogAndSpeak(InventoryItem _selectedItem)
     {
@@ -96,7 +75,6 @@ public class PlayerStateManager : MonoBehaviour
     
     public void UpdateCurrentState(State state)
     {
-        if(_currentState is PlayerNullState) return;
         if(_currentState != null) _currentState.Cleanup();
         _currentState = _State[state];
         _currentState.EnterState();

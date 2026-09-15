@@ -16,7 +16,7 @@ public class PlayerStateHelper : EditorWindow
         idleConstant = GUILayout.Toggle(idleConstant, "IDLE");
         if (idleConstant)
         {
-            PlayerStateManager.Instance.UpdateToIdleState();
+            PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
         }
     }
 }

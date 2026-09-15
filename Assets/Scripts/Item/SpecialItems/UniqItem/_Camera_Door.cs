@@ -41,6 +41,6 @@ public class _Camera_Door: SpecialItems
     }
 
     public void UpdatePlayerToIdleState() =>
-        PlayerStateManager.Instance.UpdateToIdleState();
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
 
 }

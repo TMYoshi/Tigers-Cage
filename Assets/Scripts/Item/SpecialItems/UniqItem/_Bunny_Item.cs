@@ -29,7 +29,7 @@ public class _Bunny_Item : SpecialItems
         yield return new WaitUntil(() => PlayerStateManager.Instance.GetCurrentState() is PlayerIdleState);
 
         minigame.StartHeartBeatMinigame();
-        PlayerStateManager.Instance.UpdateToNullState();
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Null);
 
         if(documentToUnlock != null)
         {
@@ -40,12 +40,12 @@ public class _Bunny_Item : SpecialItems
 
     public void UpdatePlayerToIdleState()
     {
-        PlayerStateManager.Instance.UpdateToIdleState();
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
     }
 
     public void UpdatePlayerToNervousState()
     {
-        PlayerStateManager.Instance.UpdateToNervousState();
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Nervous);
     }
 
     public void PlaySelectedDialogAndSetPickupTrue(InventoryItem _InventoryItem)
