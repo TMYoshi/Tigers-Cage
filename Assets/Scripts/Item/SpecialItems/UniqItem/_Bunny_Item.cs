@@ -16,26 +16,18 @@ public class _Bunny_Item : SpecialItems
 
     public override bool ExitCondition()
     {
-        PopupManager.Instance.SetCurrPopup(PopupManager.Instance.hb_minigame_popup_);
-        PopupManager.Instance.SetUIPopuopOn();
-
-        StartCoroutine(WaitForPopupClosure());
-
         return true;
     }
 
-    private IEnumerator WaitForPopupClosure()
+    public override PlayerStateManager.State DialogExitCondition()
     {
-        yield return new WaitUntil(() => PlayerStateManager.Instance.GetCurrentState() is PlayerIdleState);
-
         minigame.StartHeartBeatMinigame();
-        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Null);
-
         if(documentToUnlock != null)
         {
             documentToUnlock.isUnlocked = true;
             Debug.Log($"Document '{documentToUnlock.documentTitle}' unlocked!");
-        }
+        }       
+        return PlayerStateManager.State.Null;
     }
 
     public void UpdatePlayerToIdleState()

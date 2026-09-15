@@ -13,7 +13,7 @@ public class PlayerDialogItemState : PlayerBaseState
         SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
 
         if(specialItem != null)
-            specialItem.EnterCondition();
+            specialItem.DialogEnterCondition();
 
         _context._ItemManager._SelectedItem.WriteLines();
 
@@ -27,18 +27,21 @@ public class PlayerDialogItemState : PlayerBaseState
         {
             if (_context._ItemManager._SelectedItem.WriteLines())
             {
-                _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+                if(_context._ItemManager._SelectedItem == null) return;
+
+                PlayerStateManager.State nextState = PlayerStateManager.State.Idle;
+
+                SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+                if(specialItem != null)
+                    nextState = specialItem.DialogExitCondition();
+
+                _context.UpdateCurrentState(nextState);
             }
         }
     }
 
     public override void Cleanup()
     {
-        if(_context._ItemManager._SelectedItem == null) return;
-
-        SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
-        if(specialItem != null) specialItem.ExitCondition();
-
         JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
 
         

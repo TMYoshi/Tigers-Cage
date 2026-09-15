@@ -16,6 +16,11 @@ public class _Completed_Card : SpecialItems
 
     public override void EnterCondition()
     {
+
+    }
+
+    public override void DialogEnterCondition()
+    {
         if(!InventoryManager.alreadyInteratedItems.Contains("Put Ripped Card 1")) return;
         if(!InventoryManager.alreadyInteratedItems.Contains("Put Ripped Card 2")) return;
         if(!InventoryManager.alreadyInteratedItems.Contains("Put Ripped Card 3")) return;

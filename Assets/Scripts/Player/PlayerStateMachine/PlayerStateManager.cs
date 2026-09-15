@@ -9,7 +9,7 @@ public class PlayerStateManager : MonoBehaviour
         PLAYER CONTEXT
     */
     [Header("Should be assigned")]
-    public InventoryManager _InventoryManager ;
+    public InventoryManager _InventoryManager;
     public ItemManager _ItemManager;
     public PlayerMouseUtils _MouseUtils;
     [Header("null if no movementController")]
@@ -72,11 +72,17 @@ public class PlayerStateManager : MonoBehaviour
         _currentState = _State[State.DialogItem];
         _currentState.EnterState();
     }
+
+    public void UpdateCurrentStateSkipCleanup(State _state)
+    {
+        _currentState = _State[_state];
+        _currentState.EnterState();
+    }
     
-    public void UpdateCurrentState(State state)
+    public void UpdateCurrentState(State _state)
     {
         if(_currentState != null) _currentState.Cleanup();
-        _currentState = _State[state];
+        _currentState = _State[_state];
         _currentState.EnterState();
     }
 
