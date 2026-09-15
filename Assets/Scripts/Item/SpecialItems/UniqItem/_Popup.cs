@@ -16,17 +16,24 @@ public class _Popup: SpecialItems
 
     public override bool ExitCondition()
     {
-        OnExitItem.Invoke();
         return true;
+    }
+
+    public override PlayerStateManager.State DialogExitCondition()
+    {
+        OnExitItem.Invoke();
+        return PlayerStateManager.State.Idle;
     }
 
     public void JournalPopup()
     {
-        PopupManager.Instance.SetpopupOnJournal();
+        PopupManager.Instance.SetPopupOnMessage
+            ("Press E to use Journal", ref PlayerInput.Instance.InvOnClick);
     }
 
     public void FlashlightPopup()
     {
-        PopupManager.Instance.SetpopupOnFlashlight();
+        PopupManager.Instance.SetPopupOnMessage
+            ("Press F to use Flashlight", ref PlayerInput.Instance.FlashInput);
     }
 }

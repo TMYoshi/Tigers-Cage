@@ -7,6 +7,10 @@ public class _BrokenCardPieces: SpecialItems
     [SerializeField] List<DialogSO> lastDialog;
     public override void EnterCondition()
     {
+    }
+
+    public override void DialogEnterCondition()
+    {
         Dialog currentDialog = GetComponent<Dialog>();
         if(currentDialog == null)
             Debug.Log("no dialog found in gameobject");
@@ -26,6 +30,7 @@ public class _BrokenCardPieces: SpecialItems
             InventoryManager.alreadyInteratedItems.Add("BrokenCard3");
         }
     }
+
     public override bool CompleteCondition() 
     {
         return false;

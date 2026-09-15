@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using TMPro;
 using System.Collections;
 
@@ -35,20 +36,12 @@ public class PopupManager : MonoBehaviour
         //SetUIPopuopOn();
     }
 
-    public void SetpopupOnJournal()
+    public void SetPopupOnMessage(string _message, ref Action _inputAction)
     {
-        // Can we make this one function maybe 🥺🥺 (DRY)
-        // maybe :3 (WET)
-        text.text = "Press E to use Journal";
+        text.text = _message;
         animator.SetBool("Show", true);
-        PlayerInput.Instance.InvOnClick += SetpopupOff;
-    }
-
-    public void SetpopupOnFlashlight()
-    {
-        text.text = "Press F to use Flashlight";
-        animator.SetBool("Show", true);
-        PlayerInput.Instance.FlashInput += SetpopupOff;
+        _inputAction -= SetpopupOff;
+        _inputAction += SetpopupOff;
     }
 
     public void SetpopupOff()

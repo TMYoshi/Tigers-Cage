@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Card Piece 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogSO
   lines_:
-  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: This goes with the other ones.
+  - text_: This goes with the other one.
   required_item_: 
