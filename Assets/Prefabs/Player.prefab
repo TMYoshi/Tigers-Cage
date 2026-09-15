@@ -302,7 +302,6 @@ GameObject:
   - component: {fileID: 5355016504501398550}
   - component: {fileID: 2883932742938457094}
   - component: {fileID: 7116035262970723504}
-  - component: {fileID: 5083822971837469059}
   - component: {fileID: 4130158236776889299}
   m_Layer: 8
   m_Name: Player
@@ -467,22 +466,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StaticItemCombo:
   - {fileID: 11400000, guid: a20e707db1bf821479646376e7052142, type: 2}
---- !u!114 &5083822971837469059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494666362022696330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ed2e62b4f9721429609d1bb7e4ce51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlashlightController
-  flashlightObject: {fileID: 4909485112188573296}
-  flashlight: {fileID: 0}
-  followSpeed: 10
-  isFlashlightUnlocked: 0
 --- !u!114 &4130158236776889299
 MonoBehaviour:
   m_ObjectHideFlags: 0
