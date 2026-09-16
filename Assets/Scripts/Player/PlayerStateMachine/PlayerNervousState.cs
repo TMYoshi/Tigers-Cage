@@ -15,11 +15,10 @@ public class PlayerNervousState : PlayerBaseState
 
     private void MoveToWalk()
     {
+        _context.UpdatePlayerCharacterReference();
+
         if(_context._MovementController == null)
-        {
-            _context.UpdatePlayerCharacterReference();
             return;
-        }
 
         PlayerController.WalkToOnClick(_context._MovementController);
     }
