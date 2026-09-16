@@ -34,6 +34,7 @@ public class PopupManager : MonoBehaviour
     {
         //curr_popup_ = controls_popup_;
         //SetUIPopuopOn();
+        animator.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 
     public void SetPopupOnMessage(string _message, ref Action _inputAction)

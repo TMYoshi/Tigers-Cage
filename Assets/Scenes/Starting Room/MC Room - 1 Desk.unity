@@ -1522,6 +1522,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4130158236776889299, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130158236776889299, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: flashlightObject
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4747354499834959356, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2534,7 +2542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideIfHaventPickBunny: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.1
   outlineResolution: 4
