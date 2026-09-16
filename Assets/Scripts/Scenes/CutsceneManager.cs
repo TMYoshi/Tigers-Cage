@@ -2,11 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class CutsceneManager : MonoBehaviour
 {
     public static CutsceneManager Instance;
-    public static bool musicBoxCutsceneCompleted = false;
 
     [Header("Cutscene Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
@@ -16,6 +16,9 @@ public class CutsceneManager : MonoBehaviour
     [Header("Alternative: Animation Cutscene")]
     [SerializeField] private Animator cutsceneAnimator;
     [SerializeField] private string animationTrigger = "PlayCutscene";
+    
+    [Header("Events")]
+    public UnityEvent OnCutsceneComplete;
 
     private bool cutsceneFinished = false;
     private bool useVideo = true;
@@ -149,20 +152,7 @@ public class CutsceneManager : MonoBehaviour
 
         string currentScene = SceneManager.GetActiveScene().name;
 
-        // Countdown Related Logic - Turn back on when done
-        if (currentScene == "Cutscene_Music_Box")
-        {
-            if (Countdown.Instance != null)
-            {
-                Countdown.Instance.gameObject.SetActive(true);
-                Countdown.is_active_ = true;
-                Debug.Log("Music Box Cutscene finished, countdown: " + Countdown.is_active_);
-                musicBoxCutsceneCompleted = true;
-
-                IndiscriminateDialog.Instance.gameObject.SetActive(true);
-                IndiscriminateDialog.is_active_ = true;
-            }
-        }
+        OnCutsceneComplete?.Invoke();
 
         if (SceneController.scene_controller_instance != null)
         {
