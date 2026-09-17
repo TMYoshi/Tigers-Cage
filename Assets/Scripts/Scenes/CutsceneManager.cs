@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class CutsceneManager : MonoBehaviour
 {
+    public static bool musicBoxCutsceneCompleted;
     public static CutsceneManager Instance;
 
     [Header("Cutscene Settings")]
