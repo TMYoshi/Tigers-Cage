@@ -221,7 +221,7 @@ public class PuzzlePathChecker : MonoBehaviour
         Debug.LogWarning($"puzzle solved");
         musicBoxPuzzleSolved = true;
         //autosave
-        SaveLoad.Instance.SaveGame();
+        SaveData.Instance.SavePlayer();
         SceneController.scene_controller_instance.FadeAndLoadScene("MC Room - 2 Chest");
 
     }

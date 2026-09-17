@@ -8,8 +8,8 @@ public class PuzzleSaveState : MonoBehaviour
     [Header ("Optional: objects to disable when completed")]
    [SerializeField] private GameObject[] objectsToDisable;
 
-    [Header("Save system")]
-    [SerializeField] private SaveLoad saveLoadManager;
+    //[Header("Save system")]
+    //[SerializeField] private SaveLoad saveLoadManager;
 
    private void Start()
     {
@@ -17,11 +17,12 @@ public class PuzzleSaveState : MonoBehaviour
         //check if the puzzle id inside the collectedItems
         if (InventoryManager.IsItemCollected(puzzleId))
         {
-            ApplyCompleteState();
+            //ApplyCompleteState();
         }
     }
 
     //function is called when the puzzle is solved
+    /*
     public void Complete()
     {
         if(InventoryManager.IsItemCollected(puzzleId))
@@ -56,4 +57,5 @@ public class PuzzleSaveState : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    */
 }

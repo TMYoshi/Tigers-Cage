@@ -1,0 +1,35 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+public class SaveData : MonoBehaviour
+{
+    public static SaveData Instance;
+
+    public int SceneIndex = 0;
+    public List<InventorySlotData> InventorySlots = new List<InventorySlotData>();
+    public List<string> CollectedItemIds = new List<string>();
+    public List<JournalPageSaveData> UnlockedJournalEntries = new List<JournalPageSaveData>();
+
+    void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        LoadPlayer();
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.Save(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.Load();
+
+        SceneIndex = data.SceneIndex;
+        InventorySlots = data.InventorySlots;
+        CollectedItemIds = data.CollectedItemIds;
+        UnlockedJournalEntries = data.UnlockedJournalEntries;
+    }
+}
