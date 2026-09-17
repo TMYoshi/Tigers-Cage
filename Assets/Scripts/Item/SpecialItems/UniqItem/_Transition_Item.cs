@@ -18,6 +18,8 @@ public class _Transition_Item : SpecialItems
         {
             Debug.Log("Transitioning to " + transition_to_);
             SceneController.scene_controller_instance.PlayerShouldReturnTo(transform.position);
+
+            SaveData.Instance.SceneIndex = transition_to_;
             SaveData.Instance.SavePlayer();
             FadeController.Instance.FadeAndLoad(transition_to_);
         }

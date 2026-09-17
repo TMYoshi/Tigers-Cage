@@ -19,7 +19,7 @@ public class DialogSO : ScriptableObject
         if (Equip_Button.Instance == null)
         {
             Debug.LogWarning("Equip_Button.Instance is null.");
-            Equip_Button.Instance = FindFirstObjectByType<Equip_Button>();
+            Equip_Button.Instance = FindAnyObjectByType<Equip_Button>();
         }
 
         if(Equip_Button.Instance == null)

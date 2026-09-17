@@ -5,13 +5,19 @@ public class SaveData : MonoBehaviour
 {
     public static SaveData Instance;
 
-    public int SceneIndex = 0;
+    public string SceneIndex = "";
     public List<InventorySlotData> InventorySlots = new List<InventorySlotData>();
     public List<string> CollectedItemIds = new List<string>();
     public List<JournalPageSaveData> UnlockedJournalEntries = new List<JournalPageSaveData>();
 
     void Awake()
     {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
