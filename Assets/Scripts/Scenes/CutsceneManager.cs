@@ -12,7 +12,7 @@ public class CutsceneManager : MonoBehaviour
     [Header("Cutscene Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private GameObject skipUI;
-    [SerializeField] private string nextSceneName = "GameOver";
+    public string nextSceneName = "GameOver";
 
     [Header("Alternative: Animation Cutscene")]
     [SerializeField] private Animator cutsceneAnimator;
@@ -30,12 +30,15 @@ public class CutsceneManager : MonoBehaviour
 
     private IEnumerator Start()
     {
+        /*
+        removing this until I finish the same system
         string storedNextScene = PlayerPrefs.GetString("NextSceneAfterCutscene", "");
         if (!string.IsNullOrEmpty(storedNextScene))
         {
             nextSceneName = storedNextScene;
             PlayerPrefs.DeleteKey("NextSceneAfterCutscene");
         }
+        */
 
         yield return null;
 

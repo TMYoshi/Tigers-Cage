@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6261cac6d209a44b869fc3dbcb6e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveData
-  SceneIndex: 0
+  SceneIndex: 
   InventorySlots: []
   CollectedItemIds: []
   UnlockedJournalEntries: []
