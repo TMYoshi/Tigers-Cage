@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class SaveData : MonoBehaviour
 {
     public static SaveData Instance;
-
+    public bool[] CutsceneSaved = new bool[3];
     public string SceneIndex = "";
     public List<InventorySlotData> InventorySlots = new List<InventorySlotData>();
     public List<string> CollectedItemIds = new List<string>();
@@ -33,6 +33,7 @@ public class SaveData : MonoBehaviour
     {
         PlayerData data = SaveSystem.Load();
 
+        CutsceneSaved = data.CutsceneSaved;
         SceneIndex = data.SceneIndex;
         InventorySlots = data.InventorySlots;
         CollectedItemIds = data.CollectedItemIds;
