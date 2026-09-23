@@ -17,7 +17,10 @@ public class CutsceneManager : MonoBehaviour
     [Header("Alternative: Animation Cutscene")]
     [SerializeField] private Animator cutsceneAnimator;
     [SerializeField] private string animationTrigger = "PlayCutscene";
-    
+
+    [Header("Save System")]
+    [SerializeField] int skipIndex;
+
     [Header("Events")]
     public UnityEvent OnCutsceneComplete;
 
@@ -28,19 +31,18 @@ public class CutsceneManager : MonoBehaviour
         Instance = this;
     }
 
-    private IEnumerator Start()
+    void Start()
     {
-        /*
-        removing this until I finish the same system
-        string storedNextScene = PlayerPrefs.GetString("NextSceneAfterCutscene", "");
-        if (!string.IsNullOrEmpty(storedNextScene))
+        if(SaveData.Instance.SceneIndex != "")
         {
-            nextSceneName = storedNextScene;
-            PlayerPrefs.DeleteKey("NextSceneAfterCutscene");
+            nextSceneName = SaveData.Instance.SceneIndex;
         }
-        */
 
-        yield return null;
+        if(SaveData.Instance.CutsceneSaved[skipIndex])
+        {
+            SkipCutscene();
+            return;
+        }
 
         StartCutscene();
     }
@@ -144,7 +146,7 @@ public class CutsceneManager : MonoBehaviour
         ProceedToNextScene();
     }
 
-    private void ProceedToNextScene()
+    public void ProceedToNextScene()
     {
         if (cutsceneFinished) return;
         cutsceneFinished = true;
@@ -156,11 +158,11 @@ public class CutsceneManager : MonoBehaviour
 
         string currentScene = SceneManager.GetActiveScene().name;
 
-        OnCutsceneComplete?.Invoke();
-
         if (SceneController.scene_controller_instance != null)
         {
             SceneController.scene_controller_instance.FadeAndLoadScene(nextSceneName);
+            OnCutsceneComplete?.Invoke();
+
         }
         else
         {

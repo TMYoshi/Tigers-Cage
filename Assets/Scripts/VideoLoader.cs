@@ -10,15 +10,11 @@ public class VideoLoader : MonoBehaviour
     void Awake()
     {
         player = GetComponent<VideoPlayer>();
-    }
 
-    void Start()
-    {
         player.source = VideoSource.Url;
         player.url = Path.Combine(
             Application.streamingAssetsPath,
             pathDir
         );
-        player.Play();
     }
 }
