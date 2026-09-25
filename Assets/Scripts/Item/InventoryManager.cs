@@ -8,7 +8,6 @@ public class InventoryManager : MonoBehaviour
 
     public ItemSlot[] itemSlot; //UI Slots in the inventory
     public static HashSet<string> collectedItems = new HashSet<string>();
-
 	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
@@ -24,8 +23,9 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
+        ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
+    }
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
@@ -99,7 +99,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Load items
-    public void  ApplyInventorySaveData(List<InventorySlotData> data)
+    public void ApplyInventorySaveData(List<InventorySlotData> data)
     {
         //clear current UI slots
         for(int i = 0; i < itemSlot.Length; i++)
@@ -153,6 +153,8 @@ public class InventoryManager : MonoBehaviour
     public static void MarkItemAsCollected(string itemId)
     {
         collectedItems.Add(itemId);
+        SaveData.Instance.CollectedItemIds.Add(itemId);
+        SaveData.Instance.SavePlayer();
         Debug.Log($"Marked {itemId} as collected. Total collected: {collectedItems.Count}");
     }
 

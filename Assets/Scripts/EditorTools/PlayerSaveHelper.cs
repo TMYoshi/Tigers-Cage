@@ -18,6 +18,15 @@ public class PlayerSaveHelper : EditorWindow
             SaveData.Instance.SceneIndex = "";
             SaveData.Instance.SavePlayer();
         }
+
+        if(GUILayout.Button("Wipe save"))
+        {
+            SaveData.Instance.CutsceneSaved = new bool[3];
+            SaveData.Instance.SceneIndex = "";
+            SaveData.Instance.InventorySlots = new List<InventorySlotData>();
+            SaveData.Instance.CollectedItemIds = new List<string>();
+            SaveData.Instance.UnlockedJournalEntries = new List<JournalPageSaveData>();
+        }
     }
 }
 #endif
