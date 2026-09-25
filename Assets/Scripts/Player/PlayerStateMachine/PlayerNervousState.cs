@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -23,6 +24,12 @@ public class PlayerNervousState : PlayerBaseState
         PlayerController.WalkToOnClick(_context._MovementController);
     }
 
+    void StressedUpOnSceneChange(Scene _, Scene __)
+    {
+        if(HeartbeatBackground.Instance != null)
+            HeartbeatBackground.TurnStressUp();
+    }
+
     public override void EnterState()
     {
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
@@ -30,6 +37,9 @@ public class PlayerNervousState : PlayerBaseState
 
         if(HeartbeatBackground.Instance != null)
             HeartbeatBackground.TurnStressUp();
+
+        SceneManager.activeSceneChanged -= StressedUpOnSceneChange;
+        SceneManager.activeSceneChanged += StressedUpOnSceneChange;
     }
 
     public override void UpdateState()
@@ -45,6 +55,7 @@ public class PlayerNervousState : PlayerBaseState
         HeartbeatBackground.TurnStressDown();
 
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
+        SceneManager.activeSceneChanged -= StressedUpOnSceneChange;
     }
 
     private void OnDisable()

@@ -25,6 +25,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
+        ApplyInventorySaveData(SaveData.Instance.InventorySlots);
     }
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
@@ -35,7 +36,9 @@ public class InventoryManager : MonoBehaviour
             {
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+
                 //add to save system
+                SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
                 return true;
             }
         }
@@ -164,6 +167,24 @@ public class InventoryManager : MonoBehaviour
         {
             if (collectedId.Contains(partialId)) return true;
         }
+        return false;
+    }
+    
+    //add item to INv
+    public static bool AddItemToInv(InventoryItem _inventoryItem)
+    {
+        if (InventoryManager.Instance != null)
+        {
+            return
+            InventoryManager.Instance.AddItem(
+                _inventoryItem.ItemName,
+                _inventoryItem.Quantity,
+                _inventoryItem.Sprite,
+                _inventoryItem.ItemDescription
+            );
+
+        }
+
         return false;
     }
 

@@ -26,6 +26,7 @@ public class PlayerSaveHelper : EditorWindow
             SaveData.Instance.InventorySlots = new List<InventorySlotData>();
             SaveData.Instance.CollectedItemIds = new List<string>();
             SaveData.Instance.UnlockedJournalEntries = new List<JournalPageSaveData>();
+            SaveData.Instance.SavePlayer();
         }
     }
 }

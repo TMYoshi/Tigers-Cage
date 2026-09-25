@@ -58,7 +58,7 @@ public class PlayerDialogItemState : PlayerBaseState
         if (_context._ItemManager._SelectedItem.Collectable)
         {
             if(!_context._ItemManager._SelectedItem.Destroyable) 
-                isFull = !AddItemToInv(_context._ItemManager._SelectedItem);
+                isFull = !InventoryManager.AddItemToInv(_context._ItemManager._SelectedItem);
 
             if(!isFull)
             {
@@ -67,23 +67,6 @@ public class PlayerDialogItemState : PlayerBaseState
             }
         }
         _context._ItemManager.UpdateSelectedItem(null);
-    }
-
-    public static bool AddItemToInv(InventoryItem _inventoryItem)
-    {
-        InventoryManager inventoryManager = GameObject.Find("InventoryCanvas")?.GetComponent<InventoryManager>();
-        if (inventoryManager != null)
-        {
-            return
-            inventoryManager.AddItem(
-                _inventoryItem.ItemName,
-                _inventoryItem.Quantity,
-                _inventoryItem.Sprite,
-                _inventoryItem.ItemDescription
-            );
-        }
-
-        return false;
     }
 
     static public void MarkItemAsCollected(InventoryItem _inventoryItem)
