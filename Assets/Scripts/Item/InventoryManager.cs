@@ -188,6 +188,21 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public static bool RemoveItemFromInv(string _itemToRemove)
+    {
+        foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
+        {
+            if(slot.itemName == _itemToRemove)
+            {
+                slot.RemoveItem();
+                SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void DebugPrintAllCollectedItems()
     {
         Debug.Log("collected items:");

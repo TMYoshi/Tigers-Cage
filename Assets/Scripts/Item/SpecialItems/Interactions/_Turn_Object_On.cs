@@ -21,16 +21,11 @@ public class _Turn_Object_On : SpecialItems
     }
     public override bool CompleteCondition()
     {
-        foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
+        if(InventoryManager.RemoveItemFromInv(itemToRemove))
         {
-            if(slot.itemName == itemToRemove)
-            {
-                objectToTurnOn.SetActive(true);
-                slot.RemoveItem();
-                InventoryManager.alreadyInteratedItems.Add(saveKey);
-            }
+            objectToTurnOn.SetActive(true);
         }
-
+        //InventoryManager.alreadyInteratedItems.Add(saveKey);
         return true;
     }
     public override bool ExitCondition()
