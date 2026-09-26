@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 [RequireComponent(typeof(ItemManager))]
@@ -14,6 +15,8 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerMouseUtils _MouseUtils;
     [Header("null if no movementController")]
     public PlayerController _MovementController;
+    [Header("Events")]
+    public UnityEvent OnStart;
     [Header("Debug")]
     [SerializeField]
     bool debugLogs;
@@ -54,6 +57,8 @@ public class PlayerStateManager : MonoBehaviour
     }
 
     PlayerBaseState _currentState;
+
+    [System.NonSerialized]
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
     public PlayerBaseState GetCurrentState() { return _currentState; }
 
@@ -61,8 +66,8 @@ public class PlayerStateManager : MonoBehaviour
     {
         UpdatePlayerCharacterReference();
 
-        // immediately start as nervous when first instantiated
-        UpdateCurrentState(State.Nervous);
+        OnStart.Invoke();
+        //UpdateCurrentState(State.Nervous);
     }
 
     //play dialog

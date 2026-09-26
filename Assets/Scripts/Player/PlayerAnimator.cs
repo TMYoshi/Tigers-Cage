@@ -4,11 +4,13 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     public static bool HasBunny = false;
+    public static PlayerAnimator Instance;
 
     Animator animator; 
 
     void Awake()
     {
+        Instance = this;
         animator = GetComponent<Animator>();
     }
 

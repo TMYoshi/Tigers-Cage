@@ -9,8 +9,8 @@ using UnityEngine.Rendering;
 public class PauseMenu : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [Header("Save/Load")]
-    public SaveLoad saveLoadManager;
+    //[Header("Save/Load")]
+    //public SaveLoad saveLoadManager;
 
     [Header("UI Refrences")]
     public GameObject JournalUI;// pause menu panel first
@@ -187,22 +187,6 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Options menu opened");
         SettingsPanel.SetActive(true);
 
-    }
-
-
-    public void SaveGame()
-    {
-        if (saveLoadManager != null)
-        {
-            saveLoadManager.SaveGame();
-            Debug.Log("Game saved via pause menue!");
-        }
-    }
-
-    public void LoadGame()
-    {
-        saveLoadManager.LoadGame();
-        Debug.Log("Game load");
     }
 
     void Awake()

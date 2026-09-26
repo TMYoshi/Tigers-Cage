@@ -33,10 +33,4 @@ public class HeartbeatBackground : MonoBehaviour
         Stressed = true;
         Instance.OnStressed.Invoke();
     }
-
-    void Start()
-    {
-        if(Stressed) TurnStressUp();
-        if(!Stressed) TurnStressDown();
-    }
 }

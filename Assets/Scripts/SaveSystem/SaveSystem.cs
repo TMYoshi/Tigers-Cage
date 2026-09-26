@@ -1,37 +1,81 @@
 using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
+using JetBrains.Annotations;//change
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;//change
+using System.Data.Common;//change
+
 public static class SaveSystem
 {
-    public static void Save(SettingData Settings)
+    //Both Private prevents scene loading destroy objects
+    private static PlayerData pendingLoadData; 
+    private static bool hookedSceneLoaded = false;
+
+    public static string SavePath
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.cage";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        get
+        {
+            return Application.persistentDataPath + "/player.json";
+        }
+    }
 
-        PlayerData data = new PlayerData(Settings);
+    public static void Save(SaveData _save)
+    {
+        string path = Path.Combine(Application.persistentDataPath, "player.json");
+        PlayerData data = new PlayerData(_save);
 
-        formatter.Serialize(stream, data);
-        stream.Close();
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(path, json);
     }
 
     public static PlayerData Load()
     {
-        string path = Application.persistentDataPath + "/player.cage";
+        string path = Path.Combine(Application.persistentDataPath, "player.json");
         if(File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData; 
-            stream.Close();
+            string json = File.ReadAllText(path);
+            PlayerData data = JsonUtility.FromJson<PlayerData>(json);
 
             return data;
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
+            Debug.LogError("Save file not found in: " + path);
             return null;
         }
+    }
+
+    public static void SetPendingLoad(PlayerData data)
+    {
+        pendingLoadData = data;
+
+        if (!hookedSceneLoaded)
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            hookedSceneLoaded = true;
+        }
+    }
+
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(pendingLoadData == null) return;
+
+        InventoryManager inv = Object.FindAnyObjectByType<InventoryManager>();
+
+        if(inv != null)
+        {
+            inv.ApplyCollectedItemsSaveData(pendingLoadData.CollectedItemIds);
+            inv.ApplyInventorySaveData(pendingLoadData.InventorySlots);
+            //prevent items to duplicate.load once
+
+            Debug.Log("Inventory applied after scene load");
+        }
+        else
+        {
+            Debug.Log("Not found");
+        }
+
+        pendingLoadData = null;
     }
 }

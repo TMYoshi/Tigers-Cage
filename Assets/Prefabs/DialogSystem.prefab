@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: Sample text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f66dd464db617af4c94b56edd185dfd7, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -5199289859138526564, guid: f66dd464db617af4c94b56edd185dfd7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -193,6 +194,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1890330071
@@ -411,7 +413,7 @@ MonoBehaviour:
   dialog_opener_: 1
   text_speed_: 0.025
   dialog_animator_: {fileID: 8420576868757059824}
-  talking_sounds_: {fileID: 8300000, guid: e7530fe4a81bdee4d93b9af91dcebce6, type: 3}
+  talking_sounds_: {fileID: 8300000, guid: 5d600381bccd5dc4299a44e900724ee6, type: 3}
 --- !u!95 &8420576868757059824
 Animator:
   serializedVersion: 7

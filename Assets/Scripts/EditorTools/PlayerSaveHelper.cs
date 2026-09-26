@@ -1,26 +1,32 @@
 #if UNITY_EDITOR
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class PlayerPlayerHelper : EditorWindow
+public class PlayerSaveHelper : EditorWindow
 {
     [MenuItem("Tiger Tools/Save Helper")]
     public static void ShowWindow()
     {
-        GetWindow<PlayerPlayerHelper>("Save Helper");
+        GetWindow<PlayerSaveHelper>("Save Helper");
     }
 
     private void OnGUI()
     {
-        if (GUILayout.Button("Save"))
+        if(GUILayout.Button("Wipe Saved Scene"))
         {
-            Saves_System.SavePlayer();
-            Debug.Log("Save Everything");
+            SaveData.Instance.SceneIndex = "";
+            SaveData.Instance.SavePlayer();
         }
-        if (GUILayout.Button("Load"))
+
+        if(GUILayout.Button("Wipe save"))
         {
-            Saves_System.LoadPlayer();
-            Debug.Log("Load Everything");
+            SaveData.Instance.CutsceneSaved = new bool[3];
+            SaveData.Instance.SceneIndex = "";
+            SaveData.Instance.InventorySlots = new List<InventorySlotData>();
+            SaveData.Instance.CollectedItemIds = new List<string>();
+            SaveData.Instance.UnlockedJournalEntries = new List<JournalPageSaveData>();
+            SaveData.Instance.SavePlayer();
         }
     }
 }

@@ -8,7 +8,6 @@ public class InventoryManager : MonoBehaviour
 
     public ItemSlot[] itemSlot; //UI Slots in the inventory
     public static HashSet<string> collectedItems = new HashSet<string>();
-
 	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
@@ -24,8 +23,10 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
+        ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
+        ApplyInventorySaveData(SaveData.Instance.InventorySlots);
+    }
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
@@ -35,7 +36,9 @@ public class InventoryManager : MonoBehaviour
             {
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+
                 //add to save system
+                SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
                 return true;
             }
         }
@@ -99,7 +102,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Load items
-    public void  ApplyInventorySaveData(List<InventorySlotData> data)
+    public void ApplyInventorySaveData(List<InventorySlotData> data)
     {
         //clear current UI slots
         for(int i = 0; i < itemSlot.Length; i++)
@@ -153,6 +156,8 @@ public class InventoryManager : MonoBehaviour
     public static void MarkItemAsCollected(string itemId)
     {
         collectedItems.Add(itemId);
+        SaveData.Instance.CollectedItemIds.Add(itemId);
+        SaveData.Instance.SavePlayer();
         Debug.Log($"Marked {itemId} as collected. Total collected: {collectedItems.Count}");
     }
 
@@ -162,6 +167,39 @@ public class InventoryManager : MonoBehaviour
         {
             if (collectedId.Contains(partialId)) return true;
         }
+        return false;
+    }
+    
+    //add item to INv
+    public static bool AddItemToInv(InventoryItem _inventoryItem)
+    {
+        if (InventoryManager.Instance != null)
+        {
+            return
+            InventoryManager.Instance.AddItem(
+                _inventoryItem.ItemName,
+                _inventoryItem.Quantity,
+                _inventoryItem.Sprite,
+                _inventoryItem.ItemDescription
+            );
+
+        }
+
+        return false;
+    }
+
+    public static bool RemoveItemFromInv(string _itemToRemove)
+    {
+        foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
+        {
+            if(slot.itemName == _itemToRemove)
+            {
+                slot.RemoveItem();
+                SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
+                return true;
+            }
+        }
+
         return false;
     }
 

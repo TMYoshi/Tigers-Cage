@@ -1,14 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[System.Serializable]
+[Serializable]
 public class PlayerData
+//can add puzzle, scene/position.
 {
-    public List<int> ID;
+    public bool[] CutsceneSaved;
+    public string SceneIndex;
+    public List<InventorySlotData> InventorySlots;
+    public List<string> CollectedItemIds;
+    public List<JournalPageSaveData> UnlockedJournalEntries;
+    
+    //add this back if we're bringing back flashlight
+    //public Dictionary<string, bool> PlayerUpgrades;
 
-    public PlayerData (SettingData Setting)
+
+    public PlayerData (SaveData _save)
     {
-        ID = Setting.ID;
+        //scene to load back into
+        CutsceneSaved = _save.CutsceneSaved;
+        SceneIndex = _save.SceneIndex;
+        InventorySlots = _save.InventorySlots;
+        CollectedItemIds = _save.CollectedItemIds;
+        UnlockedJournalEntries = _save.UnlockedJournalEntries;
+        
+        // bug inventorySlots = inventorySlots;
+        //unlock items = unlockItems;
+        //keybinds
     }
 }
+
+
