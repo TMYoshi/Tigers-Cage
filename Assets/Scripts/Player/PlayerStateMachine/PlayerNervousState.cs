@@ -35,11 +35,11 @@ public class PlayerNervousState : PlayerBaseState
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
 
-        if(HeartbeatBackground.Instance != null)
-            HeartbeatBackground.TurnStressUp();
-
         SceneManager.activeSceneChanged -= StressedUpOnSceneChange;
         SceneManager.activeSceneChanged += StressedUpOnSceneChange;
+
+        if(HeartbeatBackground.Instance != null)
+            HeartbeatBackground.TurnStressUp();
     }
 
     public override void UpdateState()

@@ -33,7 +33,16 @@ public class PlayerInput : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         mouseAction = InputSystem.actions.FindAction("MouseLocation");
         invAction = InputSystem.actions.FindAction("Inventory");
