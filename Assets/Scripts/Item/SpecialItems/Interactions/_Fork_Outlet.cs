@@ -8,11 +8,12 @@ public class _Fork_Outlet : SpecialItems
 {
     public override void EnterCondition()
     {
-        Debug.Log("this is from FORK OUTLET");
+        //don't put naything here for interations ;-;
     }
     public override bool CompleteCondition()
     {
-        return false;
+        FadeController.Instance.FadeAndLoad("GameOver");
+        return true;
     }
     public override bool ExitCondition()
     {

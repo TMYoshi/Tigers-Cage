@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: "Mama thinks I\u2019m too old for bedtime stories, but I don\u2019t think
-      so."
+    text_: 'I like to organize my books alphabetically rather than by color or size.
+
+'
   required_item_: 

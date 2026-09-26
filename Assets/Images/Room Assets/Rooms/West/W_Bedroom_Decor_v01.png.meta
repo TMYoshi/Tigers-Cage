@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 6b4dcfff192016b45a66e7c40a1e6269
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1791044748703836919
+    second: W_Bedroom_Decor_v01_0
+  - first:
+      213: -2671392940401487791
+    second: W_Bedroom_Decor_v01_1
+  - first:
+      213: -4389670784983431826
+    second: W_Bedroom_Decor_v01_2
+  - first:
+      213: 4709235073512025764
+    second: W_Bedroom_Decor_v01_3
+  - first:
+      213: 6560577700727034996
+    second: W_Bedroom_Decor_v01_4
+  - first:
+      213: -3424649904576547333
+    second: W_Bedroom_Decor_v01_5
+  - first:
+      213: -199726507982901767
+    second: W_Bedroom_Decor_v01_6
+  - first:
+      213: -2997268828375457626
+    second: W_Bedroom_Decor_v01_7
+  - first:
+      213: 7667436800029896935
+    second: W_Bedroom_Decor_v01_8
+  - first:
+      213: 3587851666068047948
+    second: W_Bedroom_Decor_v01_9
+  - first:
+      213: 6739923340043724953
+    second: W_Bedroom_Decor_v01_10
+  - first:
+      213: -2972596615732436101
+    second: W_Bedroom_Decor_v01_11
+  - first:
+      213: -5314105822895371551
+    second: W_Bedroom_Decor_v01_12
+  - first:
+      213: -285756512522819369
+    second: W_Bedroom_Decor_v01_13
+  - first:
+      213: -3178529413770311921
+    second: W_Bedroom_Decor_v01_14
+  - first:
+      213: 3549867049986531764
+    second: W_Bedroom_Decor_v01_15
+  - first:
+      213: -7665652070843481346
+    second: W_Bedroom_Decor_v01_16
+  - first:
+      213: -662174668198966069
+    second: W_Bedroom_Decor_v01_17
+  - first:
+      213: -5641572193349315556
+    second: W_Bedroom_Decor_v01_18
+  - first:
+      213: -8330863788646092830
+    second: W_Bedroom_Decor_v01_19
+  - first:
+      213: -7206512160029531646
+    second: W_Bedroom_Decor_v01_20
+  - first:
+      213: 2917116913592760509
+    second: W_Bedroom_Decor_v01_21
+  - first:
+      213: 3132024079149805275
+    second: W_Bedroom_Decor_v01_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1802
+        width: 166
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa2257a5b11bd810800000000000000
+      internalID: 1791044748703836919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 2015
+        width: 92
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15012eb364e4dead0800000000000000
+      internalID: -2671392940401487791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1832
+        width: 115
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e650724bda1c413c0800000000000000
+      internalID: -4389670784983431826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1927
+        width: 35
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aeae7849509a5140800000000000000
+      internalID: 4709235073512025764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_4
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 2019
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4741f2dc8aadb0b50800000000000000
+      internalID: 6560577700727034996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_5
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1927
+        width: 200
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5b3ad6e033970d0800000000000000
+      internalID: -3424649904576547333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_6
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 1946
+        width: 122
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd23779ccd6a3df0800000000000000
+      internalID: -199726507982901767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1383
+        width: 122
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0645c71ef8766d0800000000000000
+      internalID: -2997268828375457626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_8
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1288
+        width: 221
+        height: 532
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e03a835525386a60800000000000000
+      internalID: 7667436800029896935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_9
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1588
+        width: 74
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4887ceb41c9ac130800000000000000
+      internalID: 3587851666068047948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_10
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1626
+        width: 582
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998aba07194098d50800000000000000
+      internalID: 6739923340043724953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_11
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1647
+        width: 78
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b736db2a0273fb6d0800000000000000
+      internalID: -2972596615732436101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_12
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 1728
+        width: 84
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea8c7fc8e08046b0800000000000000
+      internalID: -5314105822895371551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_13
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 1410
+        width: 722
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8a2d247f9c80cf0800000000000000
+      internalID: -285756512522819369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 125
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f070718b65893e3d0800000000000000
+      internalID: -3178529413770311921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_15
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1247
+        width: 74
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1af422649a34130800000000000000
+      internalID: 3549867049986531764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_16
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1157
+        width: 336
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef203a15e022e9590800000000000000
+      internalID: -7665652070843481346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_17
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1304
+        width: 415
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc0dbac5ab7fc6f0800000000000000
+      internalID: -662174668198966069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_18
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1193
+        width: 177
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1451b00bfb15b1b0800000000000000
+      internalID: -5641572193349315556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_19
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1251
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efa595e583d26c80800000000000000
+      internalID: -8330863788646092830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_20
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1121
+        width: 103
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20228e74f535dfb90800000000000000
+      internalID: -7206512160029531646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_21
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1189
+        width: 35
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8fafa906eab7820800000000000000
+      internalID: 2917116913592760509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: W_Bedroom_Decor_v01_22
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1202
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdea1b94e4f277b20800000000000000
+      internalID: 3132024079149805275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      W_Bedroom_Decor_v01_0: 1791044748703836919
+      W_Bedroom_Decor_v01_1: -2671392940401487791
+      W_Bedroom_Decor_v01_10: 6739923340043724953
+      W_Bedroom_Decor_v01_11: -2972596615732436101
+      W_Bedroom_Decor_v01_12: -5314105822895371551
+      W_Bedroom_Decor_v01_13: -285756512522819369
+      W_Bedroom_Decor_v01_14: -3178529413770311921
+      W_Bedroom_Decor_v01_15: 3549867049986531764
+      W_Bedroom_Decor_v01_16: -7665652070843481346
+      W_Bedroom_Decor_v01_17: -662174668198966069
+      W_Bedroom_Decor_v01_18: -5641572193349315556
+      W_Bedroom_Decor_v01_19: -8330863788646092830
+      W_Bedroom_Decor_v01_2: -4389670784983431826
+      W_Bedroom_Decor_v01_20: -7206512160029531646
+      W_Bedroom_Decor_v01_21: 2917116913592760509
+      W_Bedroom_Decor_v01_22: 3132024079149805275
+      W_Bedroom_Decor_v01_3: 4709235073512025764
+      W_Bedroom_Decor_v01_4: 6560577700727034996
+      W_Bedroom_Decor_v01_5: -3424649904576547333
+      W_Bedroom_Decor_v01_6: -199726507982901767
+      W_Bedroom_Decor_v01_7: -2997268828375457626
+      W_Bedroom_Decor_v01_8: 7667436800029896935
+      W_Bedroom_Decor_v01_9: 3587851666068047948
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

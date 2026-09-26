@@ -28,6 +28,11 @@ public class CogController : MonoBehaviour
 
     private bool isDragging = false;
     private bool isInitialized = false;
+
+    [SerializeField] private AudioClip[] pick_up_sounds_ = new AudioClip[2];
+    [SerializeField] private AudioClip[] place_sounds_ = new AudioClip[2];
+    [SerializeField] private AudioClip[] place_fail_sound = new AudioClip[1];
+
     // private bool canStartDrag = false;
     //
     int draggableLayerMask; // ~ to exclude FixedCogs layer from check
@@ -93,6 +98,7 @@ public class CogController : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
+            SFXManager.Instance.PlaySFXClip(pick_up_sounds_[Random.Range(0, 1)]);
             //canStartDrag = true;
             HandleMouseDown();
         }
@@ -179,6 +185,8 @@ public class CogController : MonoBehaviour
                 if (isValidPlacement)
                 {
                     // successful snap
+                    SFXManager.Instance.PlaySFXClip(place_sounds_[Random.Range(0, 1)]);
+
                     currentAxlePosition = snapPosition;
                     AxleManager.Instance.OccupyPosition(currentAxlePosition, this);
 
@@ -196,6 +204,7 @@ public class CogController : MonoBehaviour
             {
                 // snap failed
                 SetCollidersEnabled(true);
+                SFXManager.Instance.PlaySFXClip(place_fail_sound[0]);
                 SnapBackToTray();
             }
         }

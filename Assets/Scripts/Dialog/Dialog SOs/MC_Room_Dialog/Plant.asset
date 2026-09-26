@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: This plant will get sunshine tomorrow.
+    text_: "I\u2019m sorry\u2026 I forgot to water you again."
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: "Tomorrow, I\u2019ll borrow a library book and learn how to better care
+      for plants.\n"
   required_item_: 

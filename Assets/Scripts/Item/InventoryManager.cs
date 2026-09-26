@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance;
     public GameObject InventoryMenu;
 
     public ItemSlot[] itemSlot; //UI Slots in the inventory
@@ -11,7 +12,22 @@ public class InventoryManager : MonoBehaviour
 	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
@@ -20,9 +36,11 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
                 //add to save system
-                return;
+                return true;
             }
         }
+
+        return false;
     }
 /*
     public void DeselectAllSlots()
@@ -59,16 +77,15 @@ public class InventoryManager : MonoBehaviour
             {
                 string itemId = itemSlot[i].itemName;
                 int  qty = itemSlot[i].quantity;
+                string desc = itemSlot[i].itemDescription;
 
                 //save the sprite refrence
                 string spritePath = "";
                 if(itemSlot[i].itemSprite != null)
                 {
-                    spritePath = SPRITE_RESOURCES_FOLDER + itemSlot[i].itemSprite.name;
+                    spritePath = SPRITE_RESOURCES_FOLDER + itemId;
 
                 }
-
-                string desc = itemSlot[i].itemDescription;
 
                 list.Add(new InventorySlotData(itemId,qty,spritePath,desc));
             }
@@ -102,10 +119,20 @@ public class InventoryManager : MonoBehaviour
         for(int i = 0; i < data.Count; i++)
         {
             var d = data[i];
-            Sprite sprite = null;
+            string path = SPRITE_RESOURCES_FOLDER + d.itemId;
+            Debug.Log($"Loading sprite for itemId '{d.itemId}' from path '{path}'");
+
+            Sprite sprite = Resources.Load<Sprite>(SPRITE_RESOURCES_FOLDER + d.itemId);
             //load sprite from resources folder
-            if (!string.IsNullOrEmpty(d.spriteResourcePath))
-                sprite = Resources.Load<Sprite>(d.spriteResourcePath);
+            if (sprite == null)
+            {
+                Debug.LogWarning($"Sprite for itemId '{d.itemId}' not found at path '{SPRITE_RESOURCES_FOLDER + d.itemId}'. Check if the sprite exists and the path is correct.");
+            }
+
+            else
+            {
+                Debug.Log($"Successfully loaded sprite for itemId '{d.itemId}' from path '{path}'");
+            }
 
             AddItem(d.itemId, d.quantity,sprite, d.itemDescription);
         }
@@ -129,8 +156,22 @@ public class InventoryManager : MonoBehaviour
         Debug.Log($"Marked {itemId} as collected. Total collected: {collectedItems.Count}");
     }
 
-    public static bool IsItemCollected(string itemId)
+    public static bool IsItemCollected(string partialId)
     {
-        return collectedItems.Contains(itemId);
+        foreach (string collectedId in collectedItems)
+        {
+            if (collectedId.Contains(partialId)) return true;
+        }
+        return false;
+    }
+
+    public static void DebugPrintAllCollectedItems()
+    {
+        Debug.Log("collected items:");
+        foreach (string item in collectedItems)
+        {
+            Debug.Log("Collected Item ID: " + item);
+        }
+        Debug.Log("end of collected items");
     }
 }

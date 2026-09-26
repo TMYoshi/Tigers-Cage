@@ -1,53 +1,76 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.UI;
-using Unity.VisualScripting;
+using System.Linq;
 
 public class Countdown : MonoBehaviour
 {
     public static Countdown Instance;
-    private static bool is_active_ = false; //Wake up after event via Singleton
+    public static bool is_active_ = false; //Wake up after event via Singleton
+    public bool IsActive() { return is_active_; }
     [SerializeField] private TextMeshProUGUI timer_text_;
     [SerializeField] private float remaining_time_;
+    [SerializeField] private float[] time_interval_;
     private PlayerStateManager player_;
+    private ShakeCamera shake_camera_;
     public float GetRemTime() { return remaining_time_; }
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(gameObject);
-            return;
+            Instance = this;
+            //DontDestroyOnLoad(gameObject);
         }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            Destroy(gameObject); // prevent duplicates
+        }
     }
 
     private void Start()
-    {
-         // To activate countdown, affect the player pref?
-        /*
+    {   
         if (is_active_)
         {
-            remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
+            if(PlayerPrefs.HasKey("countdown_value"))
+            {
+                // else, remaining time is just the one that you set
+                remaining_time_ = PlayerPrefs.GetFloat("countdown_value");
+            }
         }
         else if (PlayerPrefs.GetFloat("countdown_value") <= 0)
         {
             gameObject.SetActive(false);
         }
-        */
     }
-    
+
+    private void OnEnable()
+    {
+        if(is_active_) { 
+            if(timer_text_.gameObject.activeSelf == false)
+            {
+                timer_text_.gameObject.SetActive(true);
+            }
+
+            HidingSpotManager hidingSpotManager = (HidingSpotManager)FindAnyObjectByType(typeof(HidingSpotManager));
+            hidingSpotManager?.SwapWithHidingSpot();
+
+            shake_camera_ = (ShakeCamera)FindAnyObjectByType(typeof(ShakeCamera));
+            
+            // On scene traversal, remove higher time intervals to avoid repeats (I lowk feel like this is not at all optimal, but the interval sizes are small anyways so it should be fineeeee right?)
+            foreach(var time in shake_camera_.intervals_)
+            {
+                if(time > remaining_time_) { shake_camera_.intervals_.Remove(time); }
+            }
+        }
+    }
+
     private void TickDown()
     {
-        /*
         if(remaining_time_ > 0)
         {
             remaining_time_ -= Time.deltaTime;
         }
-        else if (remaining_time_ < 0)
+        else if (remaining_time_ <= 0)
         {
             is_active_ = false;
             remaining_time_ = 0;
@@ -62,16 +85,31 @@ public class Countdown : MonoBehaviour
             }
         }
 
+        if(shake_camera_ != null)
+        {            
+            if(remaining_time_ < shake_camera_.intervals_.Max())
+            {
+                StartCoroutine(shake_camera_.WaitForShake());
+                shake_camera_.intervals_.Remove(shake_camera_.intervals_.Max());
+            }
+        }
+
         int minutes      = Mathf.FloorToInt(remaining_time_ / 60);
         int seconds      = Mathf.FloorToInt(remaining_time_ % 60);
         int centiseconds = Mathf.FloorToInt(remaining_time_ * 100 % 100);
         timer_text_.text = string.Format("{0:00}:{1:00}.{2:00}", minutes, seconds, centiseconds);
-        */
     }
 
     private void Update()
     {
-        TickDown();
+        if(is_active_) { 
+            if(timer_text_.gameObject.activeSelf == false)
+            {
+                timer_text_.gameObject.SetActive(true);
+            }
+
+            TickDown(); 
+        }
     }
 
     private void OnDestroy()

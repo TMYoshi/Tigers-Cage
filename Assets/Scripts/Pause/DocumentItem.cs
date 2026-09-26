@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 
 
@@ -10,6 +11,10 @@ public class DocumentItem : ScriptableObject
     public string documentTitle;
     [TextArea] public string documentText;
     public Sprite documentImage;
+    public TMP_FontAsset documentInfoFont;
     public bool isUnlocked = false;
+    public bool forceUnlock = false; //for testing purposes, set to true to unlock all documents at start
+
+    public int pageNumber = -1;
     
 }

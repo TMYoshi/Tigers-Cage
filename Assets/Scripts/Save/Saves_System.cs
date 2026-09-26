@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
 using JetBrains.Annotations;//change
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;//change
@@ -11,13 +11,24 @@ public static class Saves_System
     //Both Private prevents scene loading destroy objects
     private static Player_Data pendingLoadData; 
     private static bool hookedSceneLoaded = false;
+
+    public static string SavePath
+    {
+        get
+        {
+            return Application.persistentDataPath + "/Player.Journal.json";
+        }
+    }
+
+    public static bool SaveFileExists()
+    {
+        return File.Exists(SavePath);
+    }
     public static void SavePlayer()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.Journal";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        string path = SavePath;
 
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; //get current scene index to save and load back into the same scene
 
         //Find inventory in scene (if exists)
         InventoryManager inv = Object.FindAnyObjectByType<InventoryManager>();
@@ -25,29 +36,36 @@ public static class Saves_System
         var inventorySlots = (inv != null) ? inv.BuildInventorySaveData() : null;
         var collectedIds = (inv != null) ? inv.BuildCollectedItemsSaveData() : null;
 
+        var journalPages = (JournalDataManager.Instance != null) ? JournalDataManager.Instance.BuildJournalPageSaveData() : null;
+
         //Create Save file object
-        Player_Data data = new Player_Data(currentSceneIndex, inventorySlots, collectedIds);
+        Player_Data data = new Player_Data(
+            currentSceneIndex, 
+            inventorySlots, 
+            collectedIds,
+            journalPages);
 
-        formatter.Serialize(stream, data);
-        stream.Close();
+       string json = JsonUtility.ToJson(data, true);
 
+       File.WriteAllText(path, json);
         Debug.Log("Game Saved yeyeyey!!!");
+        Debug.Log("Saved location: " + path);
     }
 
     public static Player_Data LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/player.Journal";
+        string path = SavePath;
 
         if (!File.Exists(path))
         {
             Debug.LogError("Save File Not found in" + path);
             return null;
         }
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+          
+          string json = File.ReadAllText(path); // 
 
-            Player_Data data = formatter.Deserialize(stream) as Player_Data;
-            stream.Close();
+          Player_Data data = JsonUtility.FromJson<Player_Data>(json); //takes json and converts it into a player data object
+
 
             Debug.Log("game Loaded");
             return data;
@@ -72,8 +90,9 @@ public static class Saves_System
 
         if(inv != null)
         {
+            inv.ApplyCollectedItemsSaveData(pendingLoadData.collectedItemIds);
             inv.ApplyInventorySaveData(pendingLoadData.inventorySlots);
-            inv.ApplyCollectedItemsSaveData(pendingLoadData.collectedItemIds);//prevent items to duplicate.load once
+            //prevent items to duplicate.load once
 
             Debug.Log("Inventory applied after scene load");
         }

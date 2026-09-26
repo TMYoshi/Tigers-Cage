@@ -4,14 +4,17 @@ using NUnit.Framework;
 
 public class CraftingManager : MonoBehaviour
 {
-    public static InventoryManager _inventory;
-    [SerializeField] private InventoryManager _inspectorInventory;
+    public static InventoryManager _inventory => InventoryManager.Instance;
+    [SerializeReference] public ItemCombinations[] StaticItemCombo;
+    public static List<ItemCombinations> CraftingSet = new List<ItemCombinations>();
 
-    [SerializeReference]
-    public ItemCombinations[] StaticItemCombo;
-    public static HashSet<ItemCombinations> CraftingSet = new HashSet<ItemCombinations>();
-    public static void CraftIfComboExist(string item1, string item2)
+    public static bool TryCraftIfComboExist(string item1, string item2)
     {
+        if (_inventory == null || _inventory.itemSlot == null)
+        {
+            Debug.LogWarning("CraftingManager has broken inventory or item slots.");
+        }
+
         foreach (ItemCombinations item in CraftingSet)
         {
             if(item == null)
@@ -32,7 +35,10 @@ public class CraftingManager : MonoBehaviour
                         }
                     }
                     _inventory.AddItem(creation.ResultName, 1, creation.ResultImage, creation.ResultDescription);
-                    break;
+                    InventoryManager.MarkItemAsCollected(creation.ResultName);
+
+                    Debug.Log($"Crafted {creation.ResultName}.");
+                    return true;
                 case ItemComDialog dialog:
                     throw new System.NotImplementedException();
                 default:
@@ -40,9 +46,11 @@ public class CraftingManager : MonoBehaviour
                     break;
             }
         }
+
+        return false;
     }
 
-    public void AddToHash(ItemCombinations item)
+    public void AddToItemCombo(ItemCombinations item)
     {
         CraftingSet.Add(item);
     }
@@ -51,8 +59,7 @@ public class CraftingManager : MonoBehaviour
     {
         foreach (ItemCombinations item in StaticItemCombo)
         {
-            AddToHash(item);
+            AddToItemCombo(item);
         }
-        _inventory = _inspectorInventory;
     }
 }

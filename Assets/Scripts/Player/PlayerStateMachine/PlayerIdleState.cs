@@ -1,8 +1,7 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine.EventSystems;
 using UnityEngine;
-
-//note i am a terrible programmer feel free to fix anything you deem fit
 
 public class PlayerIdleState : PlayerBaseState
 {
@@ -10,9 +9,25 @@ public class PlayerIdleState : PlayerBaseState
     {
         _context = context;
     }
+
+    Action LocateMovementController;
+
+    private void MoveToWalk()
+    {
+        _context.UpdatePlayerCharacterReference();
+
+        if(_context._MovementController == null)
+            return;
+
+        PlayerController.WalkToOnClick(_context._MovementController);
+    }
+
     public override void EnterState()
     {
+        PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
+        PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
     }
+
     public override void UpdateState()
     {
         if (PauseMenu.isPaused)
@@ -22,8 +37,15 @@ public class PlayerIdleState : PlayerBaseState
         MouseDetection();
         UIMouseDetection();
     }
-    public override void ExitState()
+
+    public override void Cleanup()
     {
+        PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
+    }
+
+    private void OnDisable()
+    {
+        Cleanup();
     }
 
     public void MouseDetection()
@@ -32,7 +54,7 @@ public class PlayerIdleState : PlayerBaseState
 
         if(currentCollider == null) return;
 
-        Debug.Log("Hit object: " + currentCollider.gameObject.name);
+        //Debug.Log("Hit object: " + currentCollider.gameObject.name);
         InventoryItem _inventoryItem = currentCollider.gameObject.GetComponent<InventoryItem>();
         _context._ItemManager.UpdateSelectedItem(_inventoryItem);
 

@@ -1,5 +1,4 @@
-using NUnit.Framework.Internal;
-using UnityEditor;
+
 using UnityEngine;
 
 public class PlayerDialogItemState : PlayerBaseState
@@ -11,6 +10,11 @@ public class PlayerDialogItemState : PlayerBaseState
 
     public override void EnterState()
     {
+        SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+
+        if(specialItem != null)
+            specialItem.DialogEnterCondition();
+
         _context._ItemManager._SelectedItem.WriteLines();
 
         if (SFXManager.Instance == null) return;
@@ -23,35 +27,54 @@ public class PlayerDialogItemState : PlayerBaseState
         {
             if (_context._ItemManager._SelectedItem.WriteLines())
             {
-                ExitState();
+                if(_context._ItemManager._SelectedItem == null) return;
+
+                PlayerStateManager.State nextState = PlayerStateManager.State.Idle;
+
+                SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+                if(specialItem != null)
+                    nextState = specialItem.DialogExitCondition();
+
+                _context.UpdateCurrentState(nextState);
             }
         }
     }
 
-    public override void ExitState()
-    {
-            Cleanup();
-            _context.UpdateCurrentState(PlayerStateManager.State.Idle);
-    }
-
     public override void Cleanup()
     {
-        if(_context._ItemManager._SelectedItem == null) return;
+        JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
 
+        
+        if(journalItem != null){
+            Debug.Log("JournalCollectable found, adding to journal.");
+            journalItem.AddtoJournal();
+        }
+        else
+        {
+            Debug.Log("No JournalCollectable found, item will not be added to journal.");
+        }
+
+        bool isFull = false;
         if (_context._ItemManager._SelectedItem.Collectable)
         {
-            MarkItemAsCollected(_context._ItemManager._SelectedItem);
-            AddItemToInv(_context._ItemManager._SelectedItem);
-            _context._ItemManager.DestroySelectedItem();
+            if(!_context._ItemManager._SelectedItem.Destroyable) 
+                isFull = !AddItemToInv(_context._ItemManager._SelectedItem);
+
+            if(!isFull)
+            {
+                MarkItemAsCollected(_context._ItemManager._SelectedItem);
+                _context._ItemManager.DestroySelectedItem();
+            }
         }
         _context._ItemManager.UpdateSelectedItem(null);
     }
 
-    public static void AddItemToInv(InventoryItem _inventoryItem)
+    public static bool AddItemToInv(InventoryItem _inventoryItem)
     {
         InventoryManager inventoryManager = GameObject.Find("InventoryCanvas")?.GetComponent<InventoryManager>();
         if (inventoryManager != null)
         {
+            return
             inventoryManager.AddItem(
                 _inventoryItem.ItemName,
                 _inventoryItem.Quantity,
@@ -59,10 +82,8 @@ public class PlayerDialogItemState : PlayerBaseState
                 _inventoryItem.ItemDescription
             );
         }
-        else
-        {
-            Debug.LogError("InventoryManager not found!");
-        }
+
+        return false;
     }
 
     static public void MarkItemAsCollected(InventoryItem _inventoryItem)

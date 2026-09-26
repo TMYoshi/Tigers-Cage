@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEditor.Overlays;
+using Mono.Cecil.Cil;
 
 public class JournalDataManager : MonoBehaviour
 {
@@ -24,7 +27,7 @@ public class JournalDataManager : MonoBehaviour
 
     void Start()
     {
-        LoadProgress();
+        //LoadProgress();
         //UnlockDocument(0); test the jounral documents by uncomment
         
     }
@@ -37,8 +40,41 @@ public class JournalDataManager : MonoBehaviour
             return;
         }
         //Mark the doucments as unlock
-        allDocuments[index].isUnlocked = true;
+        DocumentItem doc = allDocuments[index];
+
+        doc.isUnlocked = true;
         SaveProgress();
+
+        if(JournalTableUI.Instance != null)
+        {
+            JournalTableUI.Instance.CollectDocument(doc);
+        }
+    }
+
+    public List<JournalPageSaveData> BuildJournalPageSaveData()
+    {
+        List<JournalPageSaveData> saveData = new List<JournalPageSaveData>();
+
+        for(int i = 0; i < allDocuments.Length; i++)
+        {
+            DocumentItem doc = allDocuments[i];
+
+            if(doc == null)
+            {
+                continue; // Skip null entries
+            }
+
+            if (doc.isUnlocked)
+            {
+                JournalPageSaveData pageData = 
+                new JournalPageSaveData
+                (doc.documentTitle, 
+                doc.pageNumber);
+
+                saveData.Add(pageData);
+            }
+        }
+        return saveData;
     }
 
     public void SaveProgress()

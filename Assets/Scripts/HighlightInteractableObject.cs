@@ -32,6 +32,11 @@ public class HighlightInteractableOutline : MonoBehaviour
     void Start() 
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if(spriteRenderer == null)
+        {
+            Debug.Log("No Sprite Renderer");
+            return;
+        }
         CreateOutlineEffect();
     }
 
@@ -78,7 +83,6 @@ public class HighlightInteractableOutline : MonoBehaviour
 
     public void Enter()
     {
-        // show outline
         if (outlineParent != null)
         {
             outlineParent.SetActive(true);

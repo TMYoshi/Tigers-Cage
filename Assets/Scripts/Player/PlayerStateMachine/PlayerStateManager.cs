@@ -9,12 +9,26 @@ public class PlayerStateManager : MonoBehaviour
         PLAYER CONTEXT
     */
     [Header("Should be assigned")]
-    public InventoryManager _InventoryManager ;
+    public InventoryManager _InventoryManager;
     public ItemManager _ItemManager;
     public PlayerMouseUtils _MouseUtils;
     [Header("null if no movementController")]
     public PlayerController _MovementController;
-    //dunno if I should make proper getters and setters for this but I think it should be fine for now
+    [Header("Debug")]
+    [SerializeField]
+    bool debugLogs;
+
+    public enum State
+    {
+        Null,
+        Idle,
+        Inventory,
+        DialogItem,
+        SpecialItem,
+        Hiding,
+        Nervous,
+    }
+
 
     private void Awake()
     {
@@ -27,49 +41,59 @@ public class PlayerStateManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
+
+        _State[State.Null] = new PlayerNullState(this);
+        _State[State.Inventory] = new PlayerInvState(this);
+        _State[State.DialogItem] = new PlayerDialogItemState(this);
+        _State[State.SpecialItem] = new PlayerSpecialItemState(this);
+        _State[State.Idle] = new PlayerIdleState(this);
+        _State[State.Hiding] = new PlayerHidingState(this);
+        _State[State.Nervous] = new PlayerNervousState(this);
     }
 
-    public enum State
-    {
-        Idle,
-        Inventory,
-        DialogItem,
-        SpecialItem,
-        Hiding
-    }
     PlayerBaseState _currentState;
     public Dictionary<State, PlayerBaseState> _State = new Dictionary<State, PlayerBaseState>();
     public PlayerBaseState GetCurrentState() { return _currentState; }
 
     void Start()
     {
-        _State[State.Inventory] = new PlayerInvState(this);
-        _State[State.DialogItem] = new PlayerDialogItemState(this);
-        _State[State.SpecialItem] = new PlayerSpecialItemState(this);
-        _State[State.Idle] = new PlayerIdleState(this);
-        _State[State.Hiding] = new PlayerHidingState(this);
-
         UpdatePlayerCharacterReference();
-        
-        UpdateCurrentState(State.Idle); // immediately start as idle when first instantiated
+
+        // immediately start as nervous when first instantiated
+        UpdateCurrentState(State.Nervous);
     }
-    public void UpdateCurrentState(State state)
+
+    //play dialog
+    public void UpdateToDialogAndSpeak(InventoryItem _selectedItem)
+    {
+        _ItemManager.UpdateSelectedItem(_selectedItem);
+        _currentState = _State[State.DialogItem];
+        _currentState.EnterState();
+    }
+
+    public void UpdateCurrentStateSkipCleanup(State _state)
+    {
+        _currentState = _State[_state];
+        _currentState.EnterState();
+    }
+    
+    public void UpdateCurrentState(State _state)
     {
         if(_currentState != null) _currentState.Cleanup();
-        _currentState = _State[state];
+        _currentState = _State[_state];
         _currentState.EnterState();
     }
 
     public void UpdatePlayerCharacterReference()
     {
-        
         if(_MovementController != null) return;
         GameObject _MovementObject = GameObject.Find("-PlayerCharacter");
 
         if(_MovementObject == null)
         {
-            Debug.Log("<color=green> Clickable Scene Enter (no movement controller)</color>");
+            if(debugLogs) Debug.Log("<color=green> Clickable Scene Enter (no movement controller)</color>");
             return;
         }
 
@@ -77,7 +101,7 @@ public class PlayerStateManager : MonoBehaviour
 
         if(_MovementController == null)
         {
-            Debug.LogWarning("No player controller in movement controller!!!");
+            if(debugLogs) Debug.LogWarning("No player controller in movement controller!!!");
             return;
         }
     }

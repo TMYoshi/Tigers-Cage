@@ -4,6 +4,7 @@ using UnityEngine;
 public class CogHint : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer hintRenderer;
+    [SerializeField] private AudioClip feedback_sfx_;
     private Coroutine fadeCoroutine;
 
     void Update()
@@ -26,6 +27,8 @@ public class CogHint : MonoBehaviour
         Color color = hintRenderer.color;
         float startAlpha = color.a;
         float elapsed = 0f;
+
+        SFXManager.Instance.PlaySFXClip(feedback_sfx_);
 
         while (elapsed < duration)
         {

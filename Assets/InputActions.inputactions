@@ -16,6 +16,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Journal",
+                    "type": "Button",
+                    "id": "11459625-be08-4ee1-8fb7-6330ef0008cb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MouseLocation",
                     "type": "Value",
                     "id": "488f8047-a8c2-42b8-9e8b-7c6ad34760e2",
@@ -55,15 +64,6 @@
                     "name": "Hint",
                     "type": "Button",
                     "id": "9e76dbe1-ab85-4728-a7c8-07400f9cc068",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Journal",
-                    "type": "Button",
-                    "id": "11459625-be08-4ee1-8fb7-6330ef0008cb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -143,17 +143,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Hint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3ad597bd-5240-4262-a594-55fcc6887ea8",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Journal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

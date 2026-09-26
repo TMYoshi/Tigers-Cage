@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class SceneController : MonoBehaviour
     public Vector3 teleportPositionForGoingBack {get; private set;} = new Vector3(0, 0, 0);
     [SerializeField] private string cutsceneScene = "Intro_Cutscene";
     [SerializeField] private string sceneAfterCutscene;
+    public Action OnSceneChange;
     //sets the last direction
     public void SetLastArrow(string arrowName)
     {
@@ -30,10 +32,13 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    // scene load without fade (fallback)
-    public void TraverseScene(string sceneName)
+    // scene load without fade (fallback) fade also use this
+    public AsyncOperation TraverseScene(string sceneName)
     {
-        SceneManager.LoadSceneAsync(sceneName);
+        if(OnSceneChange != null) 
+            OnSceneChange.Invoke();
+
+        return SceneManager.LoadSceneAsync(sceneName);
     }
 
     // scene load without fade (fallback)
@@ -46,6 +51,9 @@ public class SceneController : MonoBehaviour
     {
         yield return new WaitForSeconds(MainMenuTransition.Instance.ChangeSceneWithTigerAnimation());
         SceneManager.LoadSceneAsync(sceneName);
+
+        if(OnSceneChange != null)
+            OnSceneChange.Invoke();
     }
 
     //this is for scenes where you go into like a thing that doesn't have a player so it knows where to spawn back
@@ -67,21 +75,24 @@ public class SceneController : MonoBehaviour
         {
             Debug.LogWarning("FadeController not found, loading directly");
             SceneManager.LoadScene(cutsceneScene);
+            OnSceneChange.Invoke();
         }
     }
 
 
     public void FadeAndLoadScene(string sceneName)
     {
-        if (FadeController.Instance != null)
-        {
+        //if (FadeController.Instance != null)
+        //{
+        Debug.Log("attempting scene fade and load");
             FadeController.Instance.FadeAndLoad(sceneName);
-        }
-        else
-        {
-            Debug.LogWarning("FadeController not found, loading directly instead.");
-            SceneManager.LoadScene(sceneName);
-        }
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("FadeController not found, loading directly instead.");
+        //    SceneManager.LoadScene(sceneName);
+        //    OnSceneChange.Invoke();
+        //}
     }
 
     public void FadeAndLoadSceneWithCutscene(string cutsceneSceneName, string finalSceneName)
@@ -94,6 +105,7 @@ public class SceneController : MonoBehaviour
         {
             Debug.LogWarning("Fade controller not found, loading directly instead.");
             SceneManager.LoadScene(cutsceneSceneName);
+            OnSceneChange.Invoke();
         }
     }
 }

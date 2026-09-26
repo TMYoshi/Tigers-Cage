@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines_:
   - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
-    text_: I wonder why Mom ripped up my card?
+    text_: "I\u2019ll tape this in my journal so it stays safe."
+  - speaker_: {fileID: 11400000, guid: 3ce09178a55d71949ad113627c02714f, type: 2}
+    text_: "I don\u2019t want anything to happen to it again.\n"
   required_item_: 

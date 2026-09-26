@@ -43,7 +43,7 @@ public class FlashlightRequired : MonoBehaviour
         else
         {
             SetDarkState(true);
-            if (lightObject.activeSelf) lightObject.SetActive(false);
+            //if (lightObject.activeSelf) lightObject.SetActive(false); temp fix cause i cant get it before build - N
         }
     }
     void SetDarkState(bool active)

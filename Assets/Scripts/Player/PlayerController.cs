@@ -1,15 +1,23 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] float maxX, minX;
+    [Tooltip("the player won't move if the click is within this min ")]
+    [SerializeField] float minXMove;
     [SerializeField] float speed;
-    [SerializeField] AnimationCurve animation_curve;
+    //false = left
+    //true = right 
+    public UnityEvent<bool> OnWalk;
+    public UnityEvent OnStop;
+
     public void GetOffscreenAndGoToMiddle(bool left)
     {
         //swaps x position util tool for getting the player offscreen
-        transform.position = new Vector3((left ? -1 : 1) * 11, transform.position.y, transform.position.z);
+        transform.position = new Vector3((left ? -1 : 1) * 5, transform.position.y, transform.position.z);
 
         //goto middle
         GameObject _StartmoveObject = GameObject.Find("-MidpointPos");
@@ -19,11 +27,12 @@ public class PlayerController : MonoBehaviour
         else
             Debug.LogWarning("No -midposition for start to go towards");
     }
+
     void Start()
     {
         if(SceneController.scene_controller_instance.shouldMoveToMiddle == false)
         {
-            transform.position = SceneController.scene_controller_instance.teleportPositionForGoingBack;
+            transform.position = new Vector3(SceneController.scene_controller_instance.teleportPositionForGoingBack.x, -2.0f, 0f);
             SceneController.scene_controller_instance.shouldMoveToMiddle = true;
             return;
         }
@@ -36,15 +45,59 @@ public class PlayerController : MonoBehaviour
         else
             GetOffscreenAndGoToMiddle(SceneController.scene_controller_instance.lastArrowClicked == "Right" ? true : false);
     }
+
+    public static void WalkToOnClick(PlayerController _playerController)
+    {
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput);
+        targetPos.z = -10;
+
+        _playerController.MoveTo
+        (
+            targetPos
+        );
+    }
+
+    public static void StopMoving(PlayerController _playerController)
+    {
+        if(_playerController == null) return;
+        _playerController.StopAllCoroutines();
+        _playerController.MoveTo
+        (
+            _playerController.transform.position
+        );
+    }
+
     public void MoveTo(Transform _moveTo, Action _onComplete = null)
+    {
+        StopAllCoroutines();
+        StartCoroutine(MoveToHelper(_moveTo.position, _onComplete));
+    }
+
+    public void MoveTo(Vector3 _moveTo, Action _onComplete = null)
     {
         StopAllCoroutines();
         StartCoroutine(MoveToHelper(_moveTo, _onComplete));
     }
-    public IEnumerator MoveToHelper(Transform _moveTo, Action _onComplete)
+
+    public IEnumerator MoveToHelper(Vector3 _moveTo, Action _onComplete)
     {
         float originalPos = transform.position.x;
-        float targetX = _moveTo.position.x;
+        float targetX = _moveTo.x;
+
+        if(minXMove > Mathf.Abs(originalPos - targetX))
+        {
+            _onComplete?.Invoke();
+            OnStop?.Invoke();
+            yield break;
+        }
+
+        OnWalk?.Invoke(originalPos - targetX < 0 ? true : false);
+
+        if(targetX > maxX)
+            targetX = maxX;
+
+        if(targetX < minX)
+            targetX = minX;
 
         while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
         {
@@ -53,7 +106,7 @@ public class PlayerController : MonoBehaviour
             float newX = Mathf.MoveTowards(
                 transform.position.x,
                 targetX,
-                Mathf.Clamp(animation_curve.Evaluate(progress), 0.01f, 1f) * speed * Time.deltaTime
+                speed * Time.deltaTime
             );
 
             transform.position = new Vector3(
@@ -67,7 +120,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
 
-        if(_onComplete != null)
-            _onComplete.Invoke();
+        _onComplete?.Invoke();
+        OnStop?.Invoke();
     }
 }

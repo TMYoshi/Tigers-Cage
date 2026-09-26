@@ -34,7 +34,4 @@ public class PlayerHidingState : PlayerBaseState
             _context.UpdateCurrentState(PlayerStateManager.State.Idle);   
         }
     }
-    public override void ExitState()
-    {
-    }
 }

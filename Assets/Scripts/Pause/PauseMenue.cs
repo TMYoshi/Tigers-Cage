@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 
 public class PauseMenu : MonoBehaviour
@@ -15,6 +16,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
     public GameObject tableofContentes; //Second UI 
+    //public GameObject PreFabTableOfContents; // Third UI
+
+    public GameObject SettingsPanel; // Options menu panel
     public TMP_Text titleText;
     public TMP_Text contentText;
     public Image documentImage;
@@ -29,6 +33,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+
+        RefreshButtons();
         invHandler = () =>
         {
             if(!this || JournalUI == null) return;
@@ -42,7 +48,6 @@ public class PauseMenu : MonoBehaviour
         PauseBackground.SetActive(false);
         JournalUI.SetActive(false);
 
-        UpdateTOCButtons();
 
     }
     //Check if the key 'J" is pressed. it will pause the game
@@ -54,6 +59,7 @@ public class PauseMenu : MonoBehaviour
         JournalUI.SetActive(true);// shows pause menue
         documentPage.SetActive(false);
         tableofContentes.SetActive(false);
+        SettingsPanel.SetActive(false);
         PauseBackground.SetActive(true);
 
         Debug.Log("games is paused ");
@@ -71,14 +77,34 @@ public class PauseMenu : MonoBehaviour
     public void OpenJournal()
     {
         PauseBackground.SetActive(false);
-
-        tableofContentes.SetActive(true);
+        RefreshButtons();
         Debug.Log("Opened table of contetnents");
+        JournalTableUI.Instance.RefreshTable();
+        tableofContentes.SetActive(true);
 
     }
 
-    void UpdateTOCButtons()
+   public void BackToTable()
     {
+        Debug.Log("BackToTable button clicked");
+
+       documentPage.SetActive(false);
+
+        tableofContentes.SetActive(true);
+        RefreshButtons();
+    }
+
+    public void  PauseUI()
+    {
+        Debug.Log("BackToPauseMenu button clicked");
+        tableofContentes.SetActive(false);
+        SettingsPanel.SetActive(false);
+        PauseBackground.SetActive(true);
+    }
+
+   /* void UpdateTOCButtons()
+    {
+        if(JournalDataManager.Instance == null) return;
         var data = JournalDataManager.Instance.allDocuments;
 
         for (int i = 0; i < documentButtons.Length; i++)
@@ -90,6 +116,39 @@ public class PauseMenu : MonoBehaviour
             documentButtons[i].onClick.RemoveAllListeners();
             documentButtons[i].onClick.AddListener(() => OpenDocument(index));
         }
+    }*/
+
+    public void RefreshButtons()
+    {
+        foreach(Button but in documentButtons)
+        {
+            DocumnetButton docBut = but.GetComponent<DocumnetButton>();
+
+            if(docBut != null && docBut.documentItem != null)
+            {
+                but.gameObject.SetActive(docBut.documentItem.isUnlocked);
+            }
+        }
+    }
+
+    public void OpenDocumentByItem(DocumentItem doc)
+    {
+       if(doc == null) return;
+
+        titleText.text = doc.documentTitle;
+        contentText.text = doc.documentText;
+        documentImage.sprite = doc.documentImage;
+
+        if(doc.documentInfoFont != null)
+        {
+            titleText.font = doc.documentInfoFont;
+            contentText.font = doc.documentInfoFont;
+        }
+
+        tableofContentes.SetActive(false);
+        documentPage.SetActive(true);
+
+        Debug.Log($"Opened document: {doc.documentTitle}");
     }
 
     public void OpenDocument(int index)
@@ -98,11 +157,19 @@ public class PauseMenu : MonoBehaviour
         titleText.text = doc.documentTitle;
         contentText.text = doc.documentText;
         documentImage.sprite = doc.documentImage;
+
+        //applying font if set
+        if(doc.documentInfoFont != null)
+        {
+            titleText.font = doc.documentInfoFont;
+            contentText.font = doc.documentInfoFont;
+        }
         tableofContentes.SetActive(false);
         documentPage.SetActive(true);
 
         Debug.Log($"Opened document: {doc.documentTitle}");
     }
+
 
     public void QuitToMainMenu()
     {
@@ -112,6 +179,14 @@ public class PauseMenu : MonoBehaviour
 
         // Load main menu directly
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Options()
+    {
+        // Implement options menu logic here
+        Debug.Log("Options menu opened");
+        SettingsPanel.SetActive(true);
+
     }
 
 
@@ -132,13 +207,20 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("PauseMeneu on: " + gameObject.name + " is awake");
+        
+        if(PauseBackground == null) Debug.LogError("PauseBackground is NOT assigned!");
     
         Time.timeScale = 1f;
         isPaused = false;
+
+        
         JournalUI.SetActive(false);
         PauseBackground.SetActive(false);
         tableofContentes.SetActive(false);
         documentPage.SetActive(false);
+        SettingsPanel.SetActive(false);
+        
         Debug.Log("Awake to function to reset Journal has been done");
     }
 

@@ -9,14 +9,19 @@ public class _LockedChest : SpecialItems
     [SerializeField] Sprite openSprite;
     [SerializeField] GameObject CodeLock, OpenChest;
 	[SerializeField] GameObject ExitButtonCanvas;
+    [SerializeField] AudioClip unlock_sound_;
+    [SerializeField] AudioClip padlock_sound_;
+    [SerializeField] AudioClip failed_sound_;
     public TMP_Text[] DisplayNumbers;
     public uint[] currentCode = { 0, 0, 0, 0 };
-    uint[] correctCode = { 0, 0,0,0};
+    uint[] correctCode = {0,8,2,8};
     // remind me to change lol-n
     bool _CompleteCondition, _ExitCondition;
+    Animator animator;
 
 	public override void Start()//
 	{
+        animator = GetComponent<Animator>();
 		item.AssignSpecialEvents(this);
 		if(InventoryManager.alreadyInteratedItems.Contains("Chest"))
 		{
@@ -29,15 +34,33 @@ public class _LockedChest : SpecialItems
 
     public void IncrementByOne(int _Location)
     {
+        animator.SetTrigger("Jiggles");
+        SFXManager.Instance.PlaySFXClip(padlock_sound_);
+        
         currentCode[_Location]++;
         if (currentCode[_Location] >= 10) currentCode[_Location] = 0;
         DisplayNumbers[_Location].text = currentCode[_Location].ToString();
     }
+
+    public void DecrementByOne(int _Location)
+    {
+        animator.SetTrigger("Jiggles");
+        SFXManager.Instance.PlaySFXClip(padlock_sound_);
+        
+        if (currentCode[_Location] == 0) currentCode[_Location] = 10;
+        currentCode[_Location]--;
+        DisplayNumbers[_Location].text = currentCode[_Location].ToString();
+    }
+
     public void CheckIfCorret()
     {
         if (currentCode.SequenceEqual(correctCode))
         {
             _CompleteCondition = true;
+        }
+        else
+        {
+            SFXManager.Instance.PlaySFXClip(failed_sound_);
         }
     }
     public override void EnterCondition()
@@ -63,6 +86,7 @@ public class _LockedChest : SpecialItems
 		InventoryManager.alreadyInteratedItems.Add("Chest");
 
         OpenChest.SetActive(true);
+        SFXManager.Instance.PlaySFXClip(unlock_sound_);
         gameObject.SetActive(false);
         Destroy(colliderToDestroy);
         //save system noted for chris 
