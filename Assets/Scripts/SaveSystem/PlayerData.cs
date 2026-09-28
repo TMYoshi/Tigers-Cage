@@ -10,6 +10,7 @@ public class PlayerData
     public string SceneIndex;
     public List<InventorySlotData> InventorySlots;
     public List<string> CollectedItemIds;
+    public List<string> AlreadyInteractedItems;
     public List<JournalPageSaveData> UnlockedJournalEntries;
     
     //add this back if we're bringing back flashlight
@@ -23,6 +24,7 @@ public class PlayerData
         SceneIndex = _save.SceneIndex;
         InventorySlots = _save.InventorySlots;
         CollectedItemIds = _save.CollectedItemIds;
+        AlreadyInteractedItems = _save.AlreadyInteractedItems;
         UnlockedJournalEntries = _save.UnlockedJournalEntries;
         
         // bug inventorySlots = inventorySlots;

@@ -8,6 +8,7 @@ public class SaveData : MonoBehaviour
     public string SceneIndex = "";
     public List<InventorySlotData> InventorySlots = new List<InventorySlotData>();
     public List<string> CollectedItemIds = new List<string>();
+    public List<string> AlreadyInteractedItems = new List<string>();
     public List<JournalPageSaveData> UnlockedJournalEntries = new List<JournalPageSaveData>();
 
     void Awake()
@@ -37,6 +38,11 @@ public class SaveData : MonoBehaviour
         SceneIndex = data.SceneIndex;
         InventorySlots = data.InventorySlots;
         CollectedItemIds = data.CollectedItemIds;
+        AlreadyInteractedItems = data.AlreadyInteractedItems;
         UnlockedJournalEntries = data.UnlockedJournalEntries;
+
+        InventoryManager.Instance.ApplyAlreadyInteractedItems(AlreadyInteractedItems);
+        InventoryManager.Instance.ApplyCollectedItemsSaveData(CollectedItemIds);
+        InventoryManager.Instance.ApplyInventorySaveData(InventorySlots);
     }
 }

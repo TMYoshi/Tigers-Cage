@@ -7,8 +7,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
 
     public ItemSlot[] itemSlot; //UI Slots in the inventory
-    public static HashSet<string> collectedItems = new HashSet<string>();
-	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
+    public static HashSet<string> CollectedItems => Instance.collectedItems;
+    public HashSet<string> collectedItems = new HashSet<string>();
+    public static HashSet<string> AlreadyInteractedItems => Instance.alreadyInteractedItems;
+	public HashSet<string> alreadyInteractedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
 
@@ -23,9 +25,14 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-        ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
-        ApplyInventorySaveData(SaveData.Instance.InventorySlots);
+    public static void AddAlreadyInteractedItem(string _item)
+    {
+        Instance.alreadyInteractedItems.Add(_item);
+        if(!SaveData.Instance.AlreadyInteractedItems.Contains(_item))
+            SaveData.Instance.AlreadyInteractedItems.Add(_item);
+        SaveData.Instance.SavePlayer();
     }
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
@@ -153,17 +160,31 @@ public class InventoryManager : MonoBehaviour
             collectedItems.Add(ids[i]);//restore hashset
         }
     }
+
+    public void ApplyAlreadyInteractedItems(List<string> ids)
+    {
+        alreadyInteractedItems.Clear();
+        if(ids == null)
+        {
+            return;
+        }
+        for(int i = 0; i < ids.Count; i++)
+        {
+            alreadyInteractedItems.Add(ids[i]);//restore hashset
+        }
+    }
+
     public static void MarkItemAsCollected(string itemId)
     {
-        collectedItems.Add(itemId);
+        Instance.collectedItems.Add(itemId);
         SaveData.Instance.CollectedItemIds.Add(itemId);
         SaveData.Instance.SavePlayer();
-        Debug.Log($"Marked {itemId} as collected. Total collected: {collectedItems.Count}");
+        Debug.Log($"Marked {itemId} as collected. Total collected: {Instance.collectedItems.Count}");
     }
 
     public static bool IsItemCollected(string partialId)
     {
-        foreach (string collectedId in collectedItems)
+        foreach (string collectedId in CollectedItems)
         {
             if (collectedId.Contains(partialId)) return true;
         }
@@ -206,7 +227,7 @@ public class InventoryManager : MonoBehaviour
     public static void DebugPrintAllCollectedItems()
     {
         Debug.Log("collected items:");
-        foreach (string item in collectedItems)
+        foreach (string item in CollectedItems)
         {
             Debug.Log("Collected Item ID: " + item);
         }

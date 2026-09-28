@@ -14,10 +14,10 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void SetBunnyTrue()
+    public static void SetBunnyTrue()
     {
         HasBunny = true;
-        animator.SetBool("HasBunny", HasBunny);
+        Instance?.animator.SetBool("HasBunny", HasBunny);
     }
 
     void Start()

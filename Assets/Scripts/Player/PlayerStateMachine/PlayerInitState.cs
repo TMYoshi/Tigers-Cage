@@ -7,7 +7,7 @@ public class PlayerInitState : MonoBehaviour
         if(SaveData.Instance.CollectedItemIds.Contains("MC Room - 3 South Wall_Rabbit_"))
         {
             PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
-            PlayerAnimator.Instance.SetBunnyTrue();
+            PlayerAnimator.SetBunnyTrue();
         }
         else
         {

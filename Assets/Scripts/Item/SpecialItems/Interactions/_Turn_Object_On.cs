@@ -12,7 +12,7 @@ public class _Turn_Object_On : SpecialItems
 
     public override void Start()
     {
-        if(InventoryManager.alreadyInteratedItems.Contains(saveKey))
+        if(InventoryManager.AlreadyInteractedItems.Contains(saveKey))
             objectToTurnOn.SetActive(true);
     }
 
@@ -25,9 +25,11 @@ public class _Turn_Object_On : SpecialItems
         {
             objectToTurnOn.SetActive(true);
         }
-        //InventoryManager.alreadyInteratedItems.Add(saveKey);
+        InventoryManager.AddAlreadyInteractedItem(saveKey);
+
         return true;
     }
+
     public override bool ExitCondition()
     {
         return false;
