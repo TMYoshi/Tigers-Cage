@@ -11,6 +11,7 @@ public class PlayerIdleState : PlayerBaseState
     }
 
     Action LocateMovementController;
+    Collider2D currentCollider;
 
     private void MoveToWalk()
     {
@@ -26,6 +27,9 @@ public class PlayerIdleState : PlayerBaseState
     {
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
+
+        PlayerInput.Instance.MouseOnClickInput -= ActualClick;
+        PlayerInput.Instance.MouseOnClickInput += ActualClick;
     }
 
     public override void UpdateState()
@@ -41,6 +45,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void Cleanup()
     {
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
+        PlayerInput.Instance.MouseOnClickInput -= ActualClick;
     }
 
     private void OnDisable()
@@ -48,13 +53,12 @@ public class PlayerIdleState : PlayerBaseState
         Cleanup();
     }
 
-    public void MouseDetection()
+    private void ActualClick()
     {
-        Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
+        currentCollider = _context._MouseUtils.JustReturnColliders();
 
         if(currentCollider == null) return;
 
-        //Debug.Log("Hit object: " + currentCollider.gameObject.name);
         InventoryItem _inventoryItem = currentCollider.gameObject.GetComponent<InventoryItem>();
         _context._ItemManager.UpdateSelectedItem(_inventoryItem);
 
@@ -98,6 +102,12 @@ public class PlayerIdleState : PlayerBaseState
                 break;
         }
     }
+
+    public void MouseDetection()
+    {
+        Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
+    }
+
     public void UIMouseDetection()
     {
         if (EventSystem.current == null)
