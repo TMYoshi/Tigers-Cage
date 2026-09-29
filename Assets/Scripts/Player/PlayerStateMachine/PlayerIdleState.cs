@@ -70,7 +70,7 @@ public class PlayerIdleState : PlayerBaseState
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
-                        currentCollider.transform,
+                        Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput),
                         () => _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem)
                     );
                 else
@@ -80,7 +80,7 @@ public class PlayerIdleState : PlayerBaseState
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
-                        currentCollider.transform,
+                        Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput),
                         () => _context?.UpdateCurrentState(PlayerStateManager.State.SpecialItem)
                     );
                 else   
@@ -91,7 +91,7 @@ public class PlayerIdleState : PlayerBaseState
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
-                        currentCollider.transform,
+                        Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput),
                         () => arrowController.OnPressed()
                     );
                 else   
