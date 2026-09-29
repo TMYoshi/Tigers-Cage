@@ -5750,7 +5750,7 @@ MonoBehaviour:
   itemName: 
   quantity: 0
   sprite: {fileID: 0}
-  audio_clip_: {fileID: 8300000, guid: f6102fb674f0042c3a6184f4b3258f8e, type: 3}
+  audio_clip_: {fileID: 0}
   itemDescription: '
 
 
