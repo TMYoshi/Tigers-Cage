@@ -44,19 +44,19 @@ public class PauseMenu : MonoBehaviour
         Instance = this;
     }
 
-    public void InvHandler()
+    public static void InvHandler()
     {
-        if(!this || JournalUI == null) return;
+        if(!Instance || Instance.JournalUI == null) return;
 
-            if(isPaused)
+            if(Instance.isPaused)
             {
-                PlayerInput.Instance.InvOnClick -= PauseMenu.Instance.InvHandler;
-                ResumeGame();
+                PlayerInput.Instance.InvOnClick -= PauseMenu.InvHandler;
+                Instance.ResumeGame();
             }
             else
             {
-                PlayerInput.Instance.InvOnClick += PauseMenu.Instance.InvHandler;
-                PauseGame();
+                PlayerInput.Instance.InvOnClick += PauseMenu.InvHandler;
+                Instance.PauseGame();
             }
     }
 

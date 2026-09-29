@@ -31,8 +31,8 @@ public class PlayerIdleState : PlayerBaseState
         PlayerInput.Instance.MouseOnClickInput -= ActualClick;
         PlayerInput.Instance.MouseOnClickInput += ActualClick;
 
-        PlayerInput.Instance.InvOnClick -= PauseMenu.Instance.InvHandler;
-        PlayerInput.Instance.InvOnClick += PauseMenu.Instance.InvHandler;
+        PlayerInput.Instance.InvOnClick -= PauseMenu.InvHandler;
+        PlayerInput.Instance.InvOnClick += PauseMenu.InvHandler;
     }
 
     public override void UpdateState()
@@ -46,7 +46,7 @@ public class PlayerIdleState : PlayerBaseState
     {
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput -= ActualClick;
-        PlayerInput.Instance.InvOnClick -= PauseMenu.Instance.InvHandler;
+        PlayerInput.Instance.InvOnClick -= PauseMenu.InvHandler;
     }
 
     private void OnDisable()
