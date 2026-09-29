@@ -27,6 +27,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        ApplyAlreadyInteractedItems(SaveData.Instance.AlreadyInteractedItems);
+        ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
+        ApplyInventorySaveData(SaveData.Instance.InventorySlots);
+    }
+
     public static void AddAlreadyInteractedItem(string _item)
     {
         Instance.alreadyInteractedItems.Add(_item);

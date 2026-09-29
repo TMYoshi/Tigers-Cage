@@ -40,9 +40,5 @@ public class SaveData : MonoBehaviour
         CollectedItemIds = data.CollectedItemIds;
         AlreadyInteractedItems = data.AlreadyInteractedItems;
         UnlockedJournalEntries = data.UnlockedJournalEntries;
-
-        InventoryManager.Instance.ApplyAlreadyInteractedItems(AlreadyInteractedItems);
-        InventoryManager.Instance.ApplyCollectedItemsSaveData(CollectedItemIds);
-        InventoryManager.Instance.ApplyInventorySaveData(InventorySlots);
     }
 }
