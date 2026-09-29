@@ -194,32 +194,11 @@ Transform:
   - {fileID: 36770955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &99206621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1494666362022696330, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-  m_PrefabInstance: {fileID: 8011519921836958163}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &99206629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3522435851530888255, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
   m_PrefabInstance: {fileID: 8011519921836958163}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &99206630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99206621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ed2e62b4f9721429609d1bb7e4ce51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlashlightController
-  flashlightObject: {fileID: 2008924198}
-  flashlight: {fileID: 161594441}
-  followSpeed: 10
-  isFlashlightUnlocked: 0
 --- !u!1 &124914591
 GameObject:
   m_ObjectHideFlags: 0
@@ -18304,6 +18283,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5006172852671420875, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: flashlight
+      value: 
+      objectReference: {fileID: 161594441}
+    - target: {fileID: 5006172852671420875, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
+      propertyPath: flashlightObject
+      value: 
+      objectReference: {fileID: 2008924198}
     - target: {fileID: 7978748274346186704, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       propertyPath: heartbeatBackground
       value: 
@@ -18518,10 +18505,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3522435851530888255, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2008924199}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1494666362022696330, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 99206630}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732dbc50632e144498489bd91f6f3c6e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

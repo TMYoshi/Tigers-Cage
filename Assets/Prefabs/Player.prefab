@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 7574197539886751949}
   - component: {fileID: 5355016504501398550}
   - component: {fileID: 7116035262970723504}
-  - component: {fileID: 4130158236776889299}
+  - component: {fileID: 5006172852671420875}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StaticItemCombo:
   - {fileID: 11400000, guid: a20e707db1bf821479646376e7052142, type: 2}
---- !u!114 &4130158236776889299
+--- !u!114 &5006172852671420875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

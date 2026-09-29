@@ -25,7 +25,9 @@ public class _LockedChest : SpecialItems
 		item.AssignSpecialEvents(this);
 		if(InventoryManager.AlreadyInteractedItems.Contains("Chest"))
 		{
-			RewardCondition();
+            OpenChest.SetActive(true);
+            gameObject.SetActive(false);
+            Destroy(colliderToDestroy);
 		}
 	}
 

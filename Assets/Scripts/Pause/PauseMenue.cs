@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     //[Header("Save/Load")]
     //public SaveLoad saveLoadManager;
 
+    public static PauseMenu Instance;
+
     [Header("UI Refrences")]
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
@@ -28,34 +30,50 @@ public class PauseMenu : MonoBehaviour
     [Header("TOC Buttons")]
     public Button[] documentButtons;
 
-    public static bool isPaused = false;
-    private Action invHandler;
+    private bool isPaused = false;
+
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
+    public void InvHandler()
+    {
+        if(!this || JournalUI == null) return;
+
+            if(isPaused)
+            {
+                PlayerInput.Instance.InvOnClick -= PauseMenu.Instance.InvHandler;
+                ResumeGame();
+            }
+            else
+            {
+                PlayerInput.Instance.InvOnClick += PauseMenu.Instance.InvHandler;
+                PauseGame();
+            }
+    }
 
     void Start()
     {
 
         RefreshButtons();
-        invHandler = () =>
-        {
-            if(!this || JournalUI == null) return;
-
-            if(isPaused)
-                ResumeGame();
-            else
-                PauseGame();
-        };
-        PlayerInput.Instance.InvOnClick += invHandler;
         PauseBackground.SetActive(false);
         JournalUI.SetActive(false);
-
-
     }
+
     //Check if the key 'J" is pressed. it will pause the game
     //Game will freeze and show UI pause menue
     public void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0f;
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Null);
         JournalUI.SetActive(true);// shows pause menue
         documentPage.SetActive(false);
         tableofContentes.SetActive(false);
@@ -67,9 +85,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        Debug.Log("games is unpaused ");
         isPaused = false;
-        Time.timeScale = 1f;
+        Debug.Log("games is unpaused ");
+        PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
         JournalUI.SetActive(false);
         documentPage.SetActive(false);
     }
@@ -188,28 +206,5 @@ public class PauseMenu : MonoBehaviour
         SettingsPanel.SetActive(true);
 
     }
-
-    void Awake()
-    {
-        Debug.Log("PauseMeneu on: " + gameObject.name + " is awake");
-        
-        if(PauseBackground == null) Debug.LogError("PauseBackground is NOT assigned!");
-    
-        Time.timeScale = 1f;
-        isPaused = false;
-
-        
-        JournalUI.SetActive(false);
-        PauseBackground.SetActive(false);
-        tableofContentes.SetActive(false);
-        documentPage.SetActive(false);
-        SettingsPanel.SetActive(false);
-        
-        Debug.Log("Awake to function to reset Journal has been done");
-    }
-
-
-
-
 }
    

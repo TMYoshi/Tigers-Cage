@@ -30,13 +30,13 @@ public class PlayerIdleState : PlayerBaseState
 
         PlayerInput.Instance.MouseOnClickInput -= ActualClick;
         PlayerInput.Instance.MouseOnClickInput += ActualClick;
+
+        PlayerInput.Instance.InvOnClick -= PauseMenu.Instance.InvHandler;
+        PlayerInput.Instance.InvOnClick += PauseMenu.Instance.InvHandler;
     }
 
     public override void UpdateState()
     {
-        if (PauseMenu.isPaused)
-            return;
-        
         //if Mouse is over any UI, it will not click the world
         MouseDetection();
         UIMouseDetection();
@@ -46,6 +46,7 @@ public class PlayerIdleState : PlayerBaseState
     {
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput -= ActualClick;
+        PlayerInput.Instance.InvOnClick -= PauseMenu.Instance.InvHandler;
     }
 
     private void OnDisable()

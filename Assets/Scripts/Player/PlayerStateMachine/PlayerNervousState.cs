@@ -44,9 +44,6 @@ public class PlayerNervousState : PlayerBaseState
 
     public override void UpdateState()
     {
-        if (PauseMenu.isPaused)
-            return;
-        
         MouseDetection();
     }
 
