@@ -5,6 +5,7 @@ public class _Transition_Item : SpecialItems
     public string transition_to_;
     [SerializeField] AudioClip audio_clip_;
     bool already_played_ = false;
+    [SerializeField] bool saveTransitionLocation = true;
 
     public override void EnterCondition()
     {
@@ -19,8 +20,12 @@ public class _Transition_Item : SpecialItems
             Debug.Log("Transitioning to " + transition_to_);
             SceneController.scene_controller_instance.PlayerShouldReturnTo(transform.position);
 
-            SaveData.Instance.SceneIndex = transition_to_;
-            SaveData.Instance.SavePlayer();
+            if(saveTransitionLocation)
+            {
+                SaveData.Instance.SceneIndex = transition_to_;
+                SaveData.Instance.SavePlayer();
+            }
+
             FadeController.Instance.FadeAndLoad(transition_to_);
         }
     }

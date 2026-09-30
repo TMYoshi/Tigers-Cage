@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: saveLoadManager
       value: 
-      objectReference: {fileID: 1230778504}
+      objectReference: {fileID: 0}
     - target: {fileID: 6075644342992764066, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: tableofContentes
       value: 
@@ -388,6 +388,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &180781314
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -433,6 +434,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 3400654998115402042, guid: 7de8579943c96ac46adc3630c4854286, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -442,8 +444,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &180781315
 Transform:
   m_ObjectHideFlags: 0
@@ -883,6 +885,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &315009656
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -928,6 +931,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -6834524911116659543, guid: ad95cd507082a974c9902948a2bb199b, type: 3}
   m_Color: {r: 0.990566, g: 0.4532307, b: 0.4532307, a: 0.95686275}
   m_FlipX: 0
@@ -937,8 +941,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1001 &325574554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1175,11 +1179,11 @@ PrefabInstance:
     - target: {fileID: 3322253576384684795, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1230778504}
+      objectReference: {fileID: 0}
     - target: {fileID: 4163684798505457104, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1230778504}
+      objectReference: {fileID: 0}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
       value: JournalUI
@@ -1357,9 +1361,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 4
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 9008462181864046669
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
@@ -1397,6 +1405,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 9008462181864046669
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 4
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!4 &602394173
 Transform:
   m_ObjectHideFlags: 0
@@ -1814,24 +1835,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6557027288156200346, guid: 48993a38584200c4dabd443c784853be, type: 3}
       propertyPath: m_Name
-      value: SaveLoadManager
+      value: PlayerSave
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48993a38584200c4dabd443c784853be, type: 3}
---- !u!114 &1230778504 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3908426647410140419, guid: 48993a38584200c4dabd443c784853be, type: 3}
-  m_PrefabInstance: {fileID: 1230778503}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248accd18e855a34aab6fa1c17c46fda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SaveLoad
 --- !u!1001 &1522698481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1954,7 +1964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideIfHaventPickBunny: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.2
   outlineResolution: 8
@@ -1983,6 +1992,7 @@ MonoBehaviour:
   SpecialEvents: {fileID: 0}
 --- !u!212 &1562968582
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2028,6 +2038,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -4629377124558951635, guid: 8de7508f07dc2ad4197dadb3c7a2f92a, type: 3}
   m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_FlipX: 0
@@ -2037,8 +2048,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!114 &1562968586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,6 +2065,7 @@ MonoBehaviour:
   item: {fileID: 1562968581}
   transition_to_: MC Room - 2 Music Box
   audio_clip_: {fileID: 0}
+  saveTransitionLocation: 1
 --- !u!61 &1562968587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2212,6 +2224,7 @@ MonoBehaviour:
   item: {fileID: 1563247632}
   transition_to_: Cutscene_Music_Box
   audio_clip_: {fileID: 0}
+  saveTransitionLocation: 0
 --- !u!114 &1563247630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,7 +2252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6fcd27e46f8cf45a587741c437a8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideIfHaventPickBunny: 0
   outlineColor: {r: 0, g: 0, b: 0, a: 1}
   outlineWidth: 0.2
   outlineResolution: 8
@@ -2268,6 +2280,7 @@ MonoBehaviour:
   SpecialEvents: {fileID: 0}
 --- !u!212 &1563247633
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2313,6 +2326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 1422296223832514157, guid: 32786fa4b7c73a94792782d69b51f3d2, type: 3}
   m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_FlipX: 0
@@ -2322,8 +2336,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!114 &1563247634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2339,7 +2353,6 @@ MonoBehaviour:
   puzzleId: Puzzle_box
   objectsToDisable:
   - {fileID: 1562968577}
-  saveLoadManager: {fileID: 1230778504}
 --- !u!1001 &1624406066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2624,9 +2637,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 3
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 9008462181864046668
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.2
@@ -2664,6 +2681,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 9008462181864046668
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 3
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!4 &1785504442
 Transform:
   m_ObjectHideFlags: 0
@@ -2713,6 +2743,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1824640923
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2758,6 +2789,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 3848767492025410580, guid: 44f3760d636b358478abcc90394fdad6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2767,8 +2799,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1833522144
 GameObject:
   m_ObjectHideFlags: 0

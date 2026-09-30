@@ -23,6 +23,7 @@ public class CutsceneManager : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent OnCutsceneComplete;
+    public UnityEvent OnCutsceneStart;
 
     private bool cutsceneFinished = false;
     private bool useVideo = true;
@@ -33,11 +34,7 @@ public class CutsceneManager : MonoBehaviour
 
     void Start()
     {
-        if(SaveData.Instance.SceneIndex != "")
-        {
-            nextSceneName = SaveData.Instance.SceneIndex;
-        }
-
+        OnCutsceneStart.Invoke();
         if(SaveData.Instance.CutsceneSaved[skipIndex])
         {
             SkipCutscene();

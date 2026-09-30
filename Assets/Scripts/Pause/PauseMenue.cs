@@ -64,7 +64,7 @@ public class PauseMenu : MonoBehaviour
     {
 
         RefreshButtons();
-        PauseBackground.SetActive(false);
+        PauseBackground?.SetActive(false);
         JournalUI.SetActive(false);
     }
 
