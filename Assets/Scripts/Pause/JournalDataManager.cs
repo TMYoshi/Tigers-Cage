@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor.Overlays;
-using Mono.Cecil.Cil;
 
 public class JournalDataManager : MonoBehaviour
 {
