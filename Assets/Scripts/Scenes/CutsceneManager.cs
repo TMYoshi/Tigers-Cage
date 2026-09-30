@@ -26,6 +26,10 @@ public class CutsceneManager : MonoBehaviour
     private bool useVideo = true;
     private void Awake()
     {
+        RenderTexture.active = _videoPlayer.targetTexture;
+        GL.Clear(true, true, Color.black);
+        RenderTexture.active = null;
+
         _videoPlayer.Stop();
         _videoPlayer.frame = 0;
     }
