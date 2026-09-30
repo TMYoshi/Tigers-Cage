@@ -6,9 +6,6 @@ using UnityEngine.Events;
 
 public class CutsceneManager : MonoBehaviour
 {
-    public static bool musicBoxCutsceneCompleted;
-    public static CutsceneManager Instance;
-
     [Header("Cutscene Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private GameObject skipUI;
@@ -29,7 +26,8 @@ public class CutsceneManager : MonoBehaviour
     private bool useVideo = true;
     private void Awake()
     {
-        Instance = this;
+        _videoPlayer.Stop();
+        _videoPlayer.frame = 0;
     }
 
     void Start()

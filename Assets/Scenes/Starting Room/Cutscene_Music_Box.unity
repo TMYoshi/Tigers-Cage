@@ -1113,6 +1113,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCutsceneStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1431219145
 Transform:
   m_ObjectHideFlags: 0
