@@ -51,8 +51,6 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
 
-                //add to save system
-                SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
                 return true;
             }
         }
@@ -223,7 +221,6 @@ public class InventoryManager : MonoBehaviour
             if(slot.itemName == _itemToRemove)
             {
                 slot.RemoveItem();
-                SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
                 return true;
             }
         }
