@@ -7,9 +7,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
 
     public ItemSlot[] itemSlot; //UI Slots in the inventory
-    public static HashSet<string> collectedItems = new HashSet<string>();
-
-	public static HashSet<string> alreadyInteratedItems = new HashSet<string>();
+    public static HashSet<string> CollectedItems => Instance.collectedItems;
+    public HashSet<string> collectedItems = new HashSet<string>();
+    public static HashSet<string> AlreadyInteractedItems => Instance.alreadyInteractedItems;
+	public HashSet<string> alreadyInteractedItems = new HashSet<string>();
 
     public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
 
@@ -26,6 +27,20 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        ApplyAlreadyInteractedItems(SaveData.Instance.AlreadyInteractedItems);
+        ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
+        ApplyInventorySaveData(SaveData.Instance.InventorySlots);
+    }
+
+    public static void AddAlreadyInteractedItem(string _item)
+    {
+        Instance.alreadyInteractedItems.Add(_item);
+        if(!SaveData.Instance.AlreadyInteractedItems.Contains(_item))
+            SaveData.Instance.AlreadyInteractedItems.Add(_item);
+        SaveData.Instance.SavePlayer();
+    }
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
@@ -35,7 +50,7 @@ public class InventoryManager : MonoBehaviour
             {
                 Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
                 itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
-                //add to save system
+
                 return true;
             }
         }
@@ -99,7 +114,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Load items
-    public void  ApplyInventorySaveData(List<InventorySlotData> data)
+    public void ApplyInventorySaveData(List<InventorySlotData> data)
     {
         //clear current UI slots
         for(int i = 0; i < itemSlot.Length; i++)
@@ -150,25 +165,73 @@ public class InventoryManager : MonoBehaviour
             collectedItems.Add(ids[i]);//restore hashset
         }
     }
+
+    public void ApplyAlreadyInteractedItems(List<string> ids)
+    {
+        alreadyInteractedItems.Clear();
+        if(ids == null)
+        {
+            return;
+        }
+        for(int i = 0; i < ids.Count; i++)
+        {
+            alreadyInteractedItems.Add(ids[i]);//restore hashset
+        }
+    }
+
     public static void MarkItemAsCollected(string itemId)
     {
-        collectedItems.Add(itemId);
-        Debug.Log($"Marked {itemId} as collected. Total collected: {collectedItems.Count}");
+        Instance.collectedItems.Add(itemId);
+        SaveData.Instance.CollectedItemIds.Add(itemId);
+        SaveData.Instance.SavePlayer();
+        Debug.Log($"Marked {itemId} as collected. Total collected: {Instance.collectedItems.Count}");
     }
 
     public static bool IsItemCollected(string partialId)
     {
-        foreach (string collectedId in collectedItems)
+        foreach (string collectedId in CollectedItems)
         {
             if (collectedId.Contains(partialId)) return true;
         }
+        return false;
+    }
+    
+    //add item to INv
+    public static bool AddItemToInv(InventoryItem _inventoryItem)
+    {
+        if (InventoryManager.Instance != null)
+        {
+            return
+            InventoryManager.Instance.AddItem(
+                _inventoryItem.ItemName,
+                _inventoryItem.Quantity,
+                _inventoryItem.Sprite,
+                _inventoryItem.ItemDescription
+            );
+
+        }
+
+        return false;
+    }
+
+    public static bool RemoveItemFromInv(string _itemToRemove)
+    {
+        foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
+        {
+            if(slot.itemName == _itemToRemove)
+            {
+                slot.RemoveItem();
+                return true;
+            }
+        }
+
         return false;
     }
 
     public static void DebugPrintAllCollectedItems()
     {
         Debug.Log("collected items:");
-        foreach (string item in collectedItems)
+        foreach (string item in CollectedItems)
         {
             Debug.Log("Collected Item ID: " + item);
         }

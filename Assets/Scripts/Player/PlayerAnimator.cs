@@ -4,18 +4,20 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     public static bool HasBunny = false;
+    public static PlayerAnimator Instance;
 
     Animator animator; 
 
     void Awake()
     {
+        Instance = this;
         animator = GetComponent<Animator>();
     }
 
-    public void SetBunnyTrue()
+    public static void SetBunnyTrue()
     {
         HasBunny = true;
-        animator.SetBool("HasBunny", HasBunny);
+        Instance?.animator.SetBool("HasBunny", HasBunny);
     }
 
     void Start()

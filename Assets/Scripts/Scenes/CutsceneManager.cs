@@ -2,38 +2,46 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class CutsceneManager : MonoBehaviour
 {
-    public static CutsceneManager Instance;
-    public static bool musicBoxCutsceneCompleted = false;
-
     [Header("Cutscene Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private GameObject skipUI;
-    [SerializeField] private string nextSceneName = "GameOver";
+    public string nextSceneName = "GameOver";
 
     [Header("Alternative: Animation Cutscene")]
     [SerializeField] private Animator cutsceneAnimator;
     [SerializeField] private string animationTrigger = "PlayCutscene";
 
+    [Header("Save System")]
+    [SerializeField] int skipIndex;
+
+    [Header("Events")]
+    public UnityEvent OnCutsceneComplete;
+    public UnityEvent OnCutsceneStart;
+
     private bool cutsceneFinished = false;
     private bool useVideo = true;
     private void Awake()
     {
-        Instance = this;
+        RenderTexture.active = _videoPlayer.targetTexture;
+        GL.Clear(true, true, Color.black);
+        RenderTexture.active = null;
+
+        _videoPlayer.Stop();
+        _videoPlayer.frame = 0;
     }
 
-    private IEnumerator Start()
+    void Start()
     {
-        string storedNextScene = PlayerPrefs.GetString("NextSceneAfterCutscene", "");
-        if (!string.IsNullOrEmpty(storedNextScene))
+        OnCutsceneStart.Invoke();
+        if(SaveData.Instance.CutsceneSaved[skipIndex])
         {
-            nextSceneName = storedNextScene;
-            PlayerPrefs.DeleteKey("NextSceneAfterCutscene");
+            SkipCutscene();
+            return;
         }
-
-        yield return null;
 
         StartCutscene();
     }
@@ -137,7 +145,7 @@ public class CutsceneManager : MonoBehaviour
         ProceedToNextScene();
     }
 
-    private void ProceedToNextScene()
+    public void ProceedToNextScene()
     {
         if (cutsceneFinished) return;
         cutsceneFinished = true;
@@ -149,24 +157,11 @@ public class CutsceneManager : MonoBehaviour
 
         string currentScene = SceneManager.GetActiveScene().name;
 
-        // Countdown Related Logic - Turn back on when done
-        if (currentScene == "Cutscene_Music_Box")
-        {
-            if (Countdown.Instance != null)
-            {
-                Countdown.Instance.gameObject.SetActive(true);
-                Countdown.is_active_ = true;
-                Debug.Log("Music Box Cutscene finished, countdown: " + Countdown.is_active_);
-                musicBoxCutsceneCompleted = true;
-
-                IndiscriminateDialog.Instance.gameObject.SetActive(true);
-                IndiscriminateDialog.is_active_ = true;
-            }
-        }
-
         if (SceneController.scene_controller_instance != null)
         {
             SceneController.scene_controller_instance.FadeAndLoadScene(nextSceneName);
+            OnCutsceneComplete?.Invoke();
+
         }
         else
         {

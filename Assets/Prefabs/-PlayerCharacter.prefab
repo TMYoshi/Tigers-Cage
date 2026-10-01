@@ -144,6 +144,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab7430a7a6e594b43bda4cbc1b0e5711, type: 3}
   - {fileID: 8300000, guid: 1f0bf1632f90deb4cbc3c968062f1f7f, type: 3}
   - {fileID: 8300000, guid: 54ec0ee6cdd1c0b47b7f8b1435d12987, type: 3}
+  footstepAudio: 0.75
 --- !u!1 &7425887975959834089
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +180,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8106188418584056010
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -224,6 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: -1675108877
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -7866200681662601555, guid: 285c4a8346bb354478e0ec658dc75c4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -233,8 +236,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!114 &5622018712183545793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.ShadowCaster2D
   m_ShadowGroup: 0
   m_Priority: 0
-  m_ComponentVersion: 5
+  m_ComponentVersion: 6
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -268,22 +271,24 @@ MonoBehaviour:
     rid: -2
   m_ShadowCastingSource: 1
   m_ShadowMesh:
-    m_Mesh: {fileID: 0}
-    m_LocalBounds:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.62, y: 2.7, z: 0}
-    m_EdgeProcessing: 1
-    m_TrimEdge: 0.06
-    m_FlipX: 0
-    m_FlipY: 0
-    m_InitialTrim: 0
+    rid: -2
   m_CastingOption: 1
   m_PreviousTrimEdge: 0.06
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 1
   m_PreviousShadowShape2DSource: {fileID: 0}
+  m_SelectionSources:
+    rid: 1000
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 1000
+      type: {class: Shadow2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
