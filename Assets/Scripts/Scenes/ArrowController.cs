@@ -28,14 +28,11 @@ public class ArrowController : MonoBehaviour
             {
                 SceneController.scene_controller_instance.SetLastArrow("Right");
                 nextScene = GetNextScene(currentScene, "Clockwise");
-                //saveLoadManager.SaveGame();
-                
             }
             else if (gameObject.name.Contains("Left"))
             {
                 SceneController.scene_controller_instance.SetLastArrow("Left");
                 nextScene = GetNextScene(currentScene, "Counterclockwise");
-                //saveLoadManager.SaveGame();
             }
         }
         Debug.Log($"Next scene calculated: {nextScene}");
@@ -43,6 +40,9 @@ public class ArrowController : MonoBehaviour
 
         if (!string.IsNullOrEmpty(nextScene))
         {
+            SaveData.Instance.SceneIndex = nextScene;
+            SaveData.Instance.SavePlayer();
+
             if (FadeController.Instance != null)
             {
                 FadeController.Instance.FadeAndLoad(nextScene);

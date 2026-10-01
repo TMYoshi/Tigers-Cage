@@ -23,9 +23,11 @@ public class _LockedChest : SpecialItems
 	{
         animator = GetComponent<Animator>();
 		item.AssignSpecialEvents(this);
-		if(InventoryManager.alreadyInteratedItems.Contains("Chest"))
+		if(InventoryManager.AlreadyInteractedItems.Contains("Chest"))
 		{
-			RewardCondition();
+            OpenChest.SetActive(true);
+            gameObject.SetActive(false);
+            Destroy(colliderToDestroy);
 		}
 	}
 
@@ -83,7 +85,7 @@ public class _LockedChest : SpecialItems
 
     public override void RewardCondition()
     {
-		InventoryManager.alreadyInteratedItems.Add("Chest");
+		InventoryManager.AddAlreadyInteractedItem("Chest");
 
         OpenChest.SetActive(true);
         SFXManager.Instance.PlaySFXClip(unlock_sound_);

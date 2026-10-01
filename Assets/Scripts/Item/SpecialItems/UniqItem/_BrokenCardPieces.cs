@@ -15,19 +15,19 @@ public class _BrokenCardPieces: SpecialItems
         if(currentDialog == null)
             Debug.Log("no dialog found in gameobject");
 
-        if(!InventoryManager.alreadyInteratedItems.Contains("BrokenCard1"))
-            InventoryManager.alreadyInteratedItems.Add("BrokenCard1");
+        if(!InventoryManager.AlreadyInteractedItems.Contains("BrokenCard1"))
+            InventoryManager.AddAlreadyInteractedItem("BrokenCard1");
 
-        else if(!InventoryManager.alreadyInteratedItems.Contains("BrokenCard2"))
+        else if(!InventoryManager.AlreadyInteractedItems.Contains("BrokenCard2"))
         {
             currentDialog.convos_ = secondDialog;
-            InventoryManager.alreadyInteratedItems.Add("BrokenCard2");
+            InventoryManager.AddAlreadyInteractedItem("BrokenCard2");
         }
 
-        else if(!InventoryManager.alreadyInteratedItems.Contains("BrokenCard3"))
+        else if(!InventoryManager.AlreadyInteractedItems.Contains("BrokenCard3"))
         {
             currentDialog.convos_ = lastDialog;
-            InventoryManager.alreadyInteratedItems.Add("BrokenCard3");
+            InventoryManager.AddAlreadyInteractedItem("BrokenCard3");
         }
     }
 

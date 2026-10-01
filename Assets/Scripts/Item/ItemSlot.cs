@@ -62,6 +62,8 @@ public class ItemSlot : MonoBehaviour
         //quantityText.enabled = true; // applicable for items with quantity: coins etc, i assume most 
         // interactables will be single use however so disabling for time being
         itemImage.sprite = itemSprite;
+
+        SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
     }
 
     public void RemoveItem()
@@ -77,6 +79,8 @@ public class ItemSlot : MonoBehaviour
         itemImage.color = new Color(1, 1, 1, 0);
 
         if (quantityText != null) quantityText.text = "";
+
+        SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
     }
 
     /*

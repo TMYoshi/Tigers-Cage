@@ -10,7 +10,7 @@ public class _Completed_Card : SpecialItems
    // [SerializeField] private SaveLoad saveLoadManager;
     public override void Start()
     {
-        if(InventoryManager.alreadyInteratedItems.Contains("Completed Card"))
+        if(InventoryManager.AlreadyInteractedItems.Contains("Completed Card"))
             RewardCondition();
     }
 
@@ -21,9 +21,9 @@ public class _Completed_Card : SpecialItems
 
     public override void DialogEnterCondition()
     {
-        if(!InventoryManager.alreadyInteratedItems.Contains("Put Ripped Card 1")) return;
-        if(!InventoryManager.alreadyInteratedItems.Contains("Put Ripped Card 2")) return;
-        if(!InventoryManager.alreadyInteratedItems.Contains("Put Ripped Card 3")) return;
+        if(!InventoryManager.AlreadyInteractedItems.Contains("Put Ripped Card 1")) return;
+        if(!InventoryManager.AlreadyInteractedItems.Contains("Put Ripped Card 2")) return;
+        if(!InventoryManager.AlreadyInteractedItems.Contains("Put Ripped Card 3")) return;
 
         Dialog currentDialog = GetComponent<Dialog>();
         if(currentDialog == null)
@@ -31,8 +31,7 @@ public class _Completed_Card : SpecialItems
 
         currentDialog.convos_ = puttingCardTogetherDialog;
 
-        InventoryManager.alreadyInteratedItems.Add("Completed Card");
-        //saveLoadManager.SaveGame();
+        InventoryManager.AddAlreadyInteractedItem("Completed Card");
         Debug.Log("Completed Card added to alreadyInteratedItems and saved");
 
         RewardCondition();

@@ -12,7 +12,7 @@ public class _Turn_Object_On : SpecialItems
 
     public override void Start()
     {
-        if(InventoryManager.alreadyInteratedItems.Contains(saveKey))
+        if(InventoryManager.AlreadyInteractedItems.Contains(saveKey))
             objectToTurnOn.SetActive(true);
     }
 
@@ -21,18 +21,15 @@ public class _Turn_Object_On : SpecialItems
     }
     public override bool CompleteCondition()
     {
-        foreach(ItemSlot slot in InventoryManager.Instance.itemSlot)
+        if(InventoryManager.RemoveItemFromInv(itemToRemove))
         {
-            if(slot.itemName == itemToRemove)
-            {
-                objectToTurnOn.SetActive(true);
-                slot.RemoveItem();
-                InventoryManager.alreadyInteratedItems.Add(saveKey);
-            }
+            objectToTurnOn.SetActive(true);
         }
+        InventoryManager.AddAlreadyInteractedItem(saveKey);
 
         return true;
     }
+
     public override bool ExitCondition()
     {
         return false;

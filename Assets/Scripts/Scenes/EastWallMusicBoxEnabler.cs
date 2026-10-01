@@ -4,6 +4,7 @@ public class EastWallMusicBoxEnabler : MonoBehaviour
 {
     void Start()
     {
+        /*
         if (CutsceneManager.musicBoxCutsceneCompleted)
         {
             GameObject items = GameObject.Find("Items");
@@ -21,5 +22,6 @@ public class EastWallMusicBoxEnabler : MonoBehaviour
                 if (batteries != null) batteries.gameObject.SetActive(true);
             }
         }
+        */
     }
 }

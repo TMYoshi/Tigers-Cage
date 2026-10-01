@@ -19,31 +19,35 @@ public class PlayerDialogItemState : PlayerBaseState
 
         if (SFXManager.Instance == null) return;
         SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
+
+        PlayerInput.Instance.MouseOnClickInput -= DialogPlays;
+        PlayerInput.Instance.MouseOnClickInput += DialogPlays;
+    }
+
+    private void DialogPlays()
+    {
+        if (_context._ItemManager._SelectedItem.WriteLines())
+        {
+            if(_context._ItemManager._SelectedItem == null) return;
+
+            PlayerStateManager.State nextState = PlayerStateManager.State.Idle;
+
+            SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
+            if(specialItem != null)
+                nextState = specialItem.DialogExitCondition();
+
+            _context.UpdateCurrentState(nextState);
+        }
     }
 
     public override void UpdateState()
     {
-        if (PlayerInput.Instance.MouseClickInput) // Left mouse button
-        {
-            if (_context._ItemManager._SelectedItem.WriteLines())
-            {
-                if(_context._ItemManager._SelectedItem == null) return;
-
-                PlayerStateManager.State nextState = PlayerStateManager.State.Idle;
-
-                SpecialItems specialItem = _context._ItemManager._SelectedItem.GetSpecialEvents();
-                if(specialItem != null)
-                    nextState = specialItem.DialogExitCondition();
-
-                _context.UpdateCurrentState(nextState);
-            }
-        }
     }
 
     public override void Cleanup()
     {
+        PlayerInput.Instance.MouseOnClickInput -= DialogPlays;
         JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
-
         
         if(journalItem != null){
             Debug.Log("JournalCollectable found, adding to journal.");
@@ -58,7 +62,7 @@ public class PlayerDialogItemState : PlayerBaseState
         if (_context._ItemManager._SelectedItem.Collectable)
         {
             if(!_context._ItemManager._SelectedItem.Destroyable) 
-                isFull = !AddItemToInv(_context._ItemManager._SelectedItem);
+                isFull = !InventoryManager.AddItemToInv(_context._ItemManager._SelectedItem);
 
             if(!isFull)
             {
@@ -67,23 +71,6 @@ public class PlayerDialogItemState : PlayerBaseState
             }
         }
         _context._ItemManager.UpdateSelectedItem(null);
-    }
-
-    public static bool AddItemToInv(InventoryItem _inventoryItem)
-    {
-        InventoryManager inventoryManager = GameObject.Find("InventoryCanvas")?.GetComponent<InventoryManager>();
-        if (inventoryManager != null)
-        {
-            return
-            inventoryManager.AddItem(
-                _inventoryItem.ItemName,
-                _inventoryItem.Quantity,
-                _inventoryItem.Sprite,
-                _inventoryItem.ItemDescription
-            );
-        }
-
-        return false;
     }
 
     static public void MarkItemAsCollected(InventoryItem _inventoryItem)

@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class ChestSceneManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //dude there's better ways to do this... i'll clean this up when I have time
     void Start()
     {
+        /*
         if (PuzzlePathChecker.musicBoxPuzzleSolved)
         {
             GameObject room = GameObject.Find("Room Design");
@@ -29,5 +30,6 @@ public class ChestSceneManager : MonoBehaviour
                 if (finishedBox != null) finishedBox.gameObject.SetActive(false);
             }
         }
+        */
     }
 }

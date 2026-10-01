@@ -1,8 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance;
