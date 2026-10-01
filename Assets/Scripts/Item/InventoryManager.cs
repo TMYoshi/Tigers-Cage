@@ -42,14 +42,14 @@ public class InventoryManager : MonoBehaviour
         SaveData.Instance.SavePlayer();
     }
 
-    public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public bool AddItem(string itemName, Sprite itemSprite, string itemDescription)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
             if (itemSlot[i].isFull == false)
             {
-                Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
-                itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+                Debug.Log("itemName = " + itemName + "itemSprite = " + itemSprite + "item desc: " + itemDescription);
+                itemSlot[i].AddItem(itemName, itemSprite, itemDescription);
 
                 return true;
             }
@@ -91,7 +91,6 @@ public class InventoryManager : MonoBehaviour
             if(itemSlot[i] != null && itemSlot[i].isFull) //only filled slots
             {
                 string itemId = itemSlot[i].itemName;
-                int  qty = itemSlot[i].quantity;
                 string desc = itemSlot[i].itemDescription;
 
                 //save the sprite refrence
@@ -102,7 +101,7 @@ public class InventoryManager : MonoBehaviour
 
                 }
 
-                list.Add(new InventorySlotData(itemId,qty,spritePath,desc));
+                list.Add(new InventorySlotData(itemId, spritePath,desc));
             }
         }
         return list;
@@ -149,7 +148,7 @@ public class InventoryManager : MonoBehaviour
                 Debug.Log($"Successfully loaded sprite for itemId '{d.itemId}' from path '{path}'");
             }
 
-            AddItem(d.itemId, d.quantity,sprite, d.itemDescription);
+            AddItem(d.itemId, sprite, d.itemDescription);
         }
     }
 
@@ -204,7 +203,6 @@ public class InventoryManager : MonoBehaviour
             return
             InventoryManager.Instance.AddItem(
                 _inventoryItem.ItemName,
-                _inventoryItem.Quantity,
                 _inventoryItem.Sprite,
                 _inventoryItem.ItemDescription
             );
