@@ -575,7 +575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5991910480794092173, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: OnExitItem.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5991910480794092173, guid: f13cc862f85364c598b58cba4e422754, type: 3}
       propertyPath: OnExitItem.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2558,7 +2558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 8218888756499186071}
   itemName: Birthday Card
-  quantity: 1
   sprite: {fileID: 3326513414631346885, guid: e37de25ff650bfb439704513ab9ae751, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: A card I made for my mom for her birthday. The date on it says
