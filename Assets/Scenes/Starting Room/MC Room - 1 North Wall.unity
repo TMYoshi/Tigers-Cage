@@ -2402,7 +2402,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
 --- !u!61 &1109231626
@@ -4683,6 +4683,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -5199289859138526564, guid: f66dd464db617af4c94b56edd185dfd7, type: 2}
+    - target: {fileID: 8999008169819580332, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 15527148
+      objectReference: {fileID: 0}
     - target: {fileID: 8999008169819580332, guid: efc79450703fcc94497e8498cbc78f08, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
