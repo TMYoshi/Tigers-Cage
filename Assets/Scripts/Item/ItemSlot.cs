@@ -38,7 +38,7 @@ public class ItemSlot : MonoBehaviour
         */
     }
 
-    public void AddItem(string itemName,Sprite itemSprite, string itemDescription)
+    public void AddItem(string itemName, Sprite itemSprite, string itemDescription)
     {
         if (this == null || itemImage == null )
         {

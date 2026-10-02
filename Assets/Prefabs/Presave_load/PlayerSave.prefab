@@ -63,4 +63,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1caf98acc9040840bafce16d3533c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MasterList
-  EveryCollectedSO: []
+  EveryCollectableSO:
+  - {fileID: 11400000, guid: cbf80fe46eb4e424da7742bce27fd9aa, type: 2}
+  - {fileID: 11400000, guid: 8f4dffc381776db4fa55b45de810def4, type: 2}
+  - {fileID: 11400000, guid: 2f5c05f0953def0429b9fdffc2e4ee51, type: 2}
+  - {fileID: 11400000, guid: 6d9552ab4ec5e4e4a83f88625e5e8900, type: 2}
+  - {fileID: 11400000, guid: 1ede37c99380dbd468ae0df9dc219b62, type: 2}

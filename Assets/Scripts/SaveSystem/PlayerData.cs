@@ -8,7 +8,7 @@ public class PlayerData
 {
     public bool[] CutsceneSaved;
     public string SceneIndex;
-    public List<InventorySlotData> InventorySlots;
+    public List<string> InventorySlots;
     public List<string> CollectedItemIds;
     public List<string> AlreadyInteractedItems;
     public List<JournalPageSaveData> UnlockedJournalEntries;

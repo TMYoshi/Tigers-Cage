@@ -1971,10 +1971,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5745278638090858585, guid: 48993a38584200c4dabd443c784853be, type: 3}
-      propertyPath: EveryCollectableSO.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6557027288156200346, guid: 48993a38584200c4dabd443c784853be, type: 3}
       propertyPath: m_Name
       value: PlayerSave

@@ -12,8 +12,6 @@ public class InventoryManager : MonoBehaviour
     public static HashSet<string> AlreadyInteractedItems => Instance.alreadyInteractedItems;
 	public HashSet<string> alreadyInteractedItems = new HashSet<string>();
 
-    public const string SPRITE_RESOURCES_FOLDER = "Item/"; //Folfer inside Assets/Resources/. Used to rebuild sprites when loading
-
     private void Awake()
     {
         if(Instance == null)
@@ -82,26 +80,16 @@ public class InventoryManager : MonoBehaviour
 */
 
 //=======Saveformanager==========
-    public List<InventorySlotData> BuildInventorySaveData()
+    public List<string> BuildInventorySaveData()
     {
-        var list = new List<InventorySlotData>();
+        var list = new List<string>();
         //loops through every UI Slot
         for(int i = 0; i < itemSlot.Length; i++)
         {
             if(itemSlot[i] != null && itemSlot[i].isFull) //only filled slots
             {
-                string itemId = itemSlot[i].itemName;
-                string desc = itemSlot[i].itemDescription;
-
-                //save the sprite refrence
-                string spritePath = "";
-                if(itemSlot[i].itemSprite != null)
-                {
-                    spritePath = SPRITE_RESOURCES_FOLDER + itemId;
-
-                }
-
-                list.Add(new InventorySlotData(itemId, spritePath,desc));
+                string item = itemSlot[i].itemName;
+                list.Add(item);
             }
         }
         return list;
@@ -113,7 +101,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Load items
-    public void ApplyInventorySaveData(List<InventorySlotData> data)
+    public void ApplyInventorySaveData(List<string> data)
     {
         //clear current UI slots
         for(int i = 0; i < itemSlot.Length; i++)
@@ -132,23 +120,18 @@ public class InventoryManager : MonoBehaviour
         //refill UI
         for(int i = 0; i < data.Count; i++)
         {
-            var d = data[i];
-            string path = SPRITE_RESOURCES_FOLDER + d.itemId;
-            Debug.Log($"Loading sprite for itemId '{d.itemId}' from path '{path}'");
+            int itemIndex = MasterList.Instance.EveryCollectableSO
+                .FindIndex(item => item.item_name_ == data[i]);
 
-            Sprite sprite = Resources.Load<Sprite>(SPRITE_RESOURCES_FOLDER + d.itemId);
-            //load sprite from resources folder
-            if (sprite == null)
+            if(itemIndex < 0) 
             {
-                Debug.LogWarning($"Sprite for itemId '{d.itemId}' not found at path '{SPRITE_RESOURCES_FOLDER + d.itemId}'. Check if the sprite exists and the path is correct.");
+                Debug.LogError("Unable to find item in master list");
+                continue;
             }
 
-            else
-            {
-                Debug.Log($"Successfully loaded sprite for itemId '{d.itemId}' from path '{path}'");
-            }
+            ItemSO item = MasterList.Instance.EveryCollectableSO[itemIndex];
 
-            AddItem(d.itemId, sprite, d.itemDescription);
+            AddItem(item.item_name_, item.inv_sprite_, item.desc_);
         }
     }
 
