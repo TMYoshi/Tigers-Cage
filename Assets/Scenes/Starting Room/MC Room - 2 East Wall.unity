@@ -371,7 +371,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 142190792}
   itemName: 
-  quantity: 0
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: '
@@ -870,7 +869,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 254783505}
   itemName: 
-  quantity: 0
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: '
@@ -1083,7 +1081,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
   itemName: Medium Cog
-  quantity: 1
   sprite: {fileID: 21300000, guid: 77c94e0b19cb9b941aecfd44a70fec2a, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: A simple cog.
@@ -6450,7 +6447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6687,7 +6684,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 408342663}
   itemName: 
-  quantity: 0
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: '
@@ -6818,6 +6814,7 @@ MonoBehaviour:
   item: {fileID: 408342665}
   transition_to_: MC Room - 2 Chest
   audio_clip_: {fileID: 0}
+  saveTransitionLocation: 1
 --- !u!1 &412113195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4722155658727062655, guid: dae6a7acdde114043b9b61ed80ef63f0, type: 3}
@@ -6865,8 +6862,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
-  m_sharedMaterial: {fileID: -2629195299392661221, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7247,7 +7244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 466407356}
   itemName: Ripped Card 3
-  quantity: 1
   sprite: {fileID: 7638622712957130237, guid: 22f455f5871a0244d91bfbb04c69318f, type: 3}
   audio_clip_: {fileID: 8300000, guid: 82adf1069788829448b47c1303eccf4b, type: 3}
   itemDescription: 'test
@@ -7457,7 +7453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
   itemName: Medium Cog
-  quantity: 1
   sprite: {fileID: 21300000, guid: 77c94e0b19cb9b941aecfd44a70fec2a, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: A simple cog.
@@ -7942,8 +7937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 250, y: 200}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 250, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570183840
 MonoBehaviour:
@@ -8100,8 +8095,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
-  m_sharedMaterial: {fileID: -2629195299392661221, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8806,7 +8801,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
   itemName: 
-  quantity: 1
   sprite: {fileID: -8882603033900237567, guid: c2d5ed9d18797ef49a0399615866a3ef, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: 'A large cog.
@@ -8972,8 +8966,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
-  m_sharedMaterial: {fileID: -2629195299392661221, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9246,8 +9240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 250, y: 200}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 250, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049051304
 MonoBehaviour:
@@ -9402,8 +9396,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: submit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
-  m_sharedMaterial: {fileID: -2629195299392661221, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9629,7 +9623,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1137230767}
   itemName: Batteries
-  quantity: 1
   sprite: {fileID: 21300000, guid: 488be46472d25d9458225d23c2c47d32, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: 'test
@@ -9997,7 +9990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10056,8 +10049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 250, y: 200}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 250, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232944704
 MonoBehaviour:
@@ -10887,7 +10880,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1486223021}
   itemName: 
-  quantity: 0
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: '
@@ -11100,7 +11092,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
   itemName: Large Cog
-  quantity: 1
   sprite: {fileID: -8882603033900237567, guid: c2d5ed9d18797ef49a0399615866a3ef, type: 3}
   audio_clip_: {fileID: 0}
   itemDescription: 'A large cog.
@@ -11259,7 +11250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11566,7 +11557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 1643760250}
   itemName: 
-  quantity: 0
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: '
@@ -11736,7 +11726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -16957,8 +16947,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 250, y: 200}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 250, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869104639
 MonoBehaviour:
@@ -17241,7 +17231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assoc_dialog_box_: {fileID: 0}
   itemName: 
-  quantity: 0
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: 'chest for 3x3 slider puzzle?
@@ -17377,8 +17366,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
-  m_sharedMaterial: {fileID: -2629195299392661221, guid: f6ce1ad3fbaa44b409c6edcb49bc0cda, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

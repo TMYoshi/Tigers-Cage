@@ -10,14 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1511748806daf4434b0febc175553dc9, type: 3}
-  m_Name: Plant
+  m_Name: Ripped Card 1
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  item_name_: Plant
-  quantity_: 0
-  audio_clip_: {fileID: 8300000, guid: f6102fb674f0042c3a6184f4b3258f8e, type: 3}
+  item_name_: Ripped Card 1
   desc_: 
-  inv_sprite_: {fileID: 0}
-  special_events_: {fileID: 0}
-  collectable_: 0
-  dialogSO_: {fileID: 11400000, guid: 9f78934209c1d3844b493f2f4d0457cd, type: 2}
-  sprite_: {fileID: 8591533231565066105, guid: 53b3ad1dc90fb104194b398836c6e8c8, type: 3}
+  inv_sprite_: {fileID: 5405418551023050170, guid: 22f455f5871a0244d91bfbb04c69318f, type: 3}

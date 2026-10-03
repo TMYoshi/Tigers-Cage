@@ -10,13 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1511748806daf4434b0febc175553dc9, type: 3}
-  m_Name: Open_Closet
+  m_Name: Ripped Card 2
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  item_name_: ' Closet'
-  quantity_: 0
-  audio_clip_: {fileID: 0}
+  item_name_: Ripped Card 2
   desc_: 
-  inv_sprite_: {fileID: 0}
-  special_events_: {fileID: 0}
-  collectable_: 0
-  dialogSO_: {fileID: 11400000, guid: 5ad182ee7b79c824ea580aa5f7a43a0b, type: 2}
+  inv_sprite_: {fileID: -1912571708030255103, guid: 22f455f5871a0244d91bfbb04c69318f, type: 3}

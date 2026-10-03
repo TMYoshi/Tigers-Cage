@@ -26,6 +26,9 @@ public class PlayerDialogItemState : PlayerBaseState
 
     private void DialogPlays()
     {
+        if(_context._ItemManager._SelectedItem == null)
+            _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+
         if (_context._ItemManager._SelectedItem.WriteLines())
         {
             if(_context._ItemManager._SelectedItem == null) return;

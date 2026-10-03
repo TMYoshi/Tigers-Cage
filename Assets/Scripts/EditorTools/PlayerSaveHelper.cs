@@ -23,7 +23,7 @@ public class PlayerSaveHelper : EditorWindow
         {
             SaveData.Instance.CutsceneSaved = new bool[3];
             SaveData.Instance.SceneIndex = "";
-            SaveData.Instance.InventorySlots = new List<InventorySlotData>();
+            SaveData.Instance.InventorySlots = new List<string>();
             SaveData.Instance.CollectedItemIds = new List<string>();
             SaveData.Instance.AlreadyInteractedItems = new List<string>();
             SaveData.Instance.UnlockedJournalEntries = new List<JournalPageSaveData>();
