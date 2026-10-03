@@ -13,6 +13,7 @@ public class PlayerNervousState : PlayerBaseState
     }
 
     Action LocateMovementController;
+    Collider2D currentCollider;
 
     private void MoveToWalk()
     {
@@ -35,6 +36,9 @@ public class PlayerNervousState : PlayerBaseState
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
         PlayerInput.Instance.MouseOnClickInput += MoveToWalk;
 
+        PlayerInput.Instance.MouseOnClickInput -= ActualClick;
+        PlayerInput.Instance.MouseOnClickInput += ActualClick;
+
         SceneManager.activeSceneChanged -= StressedUpOnSceneChange;
         SceneManager.activeSceneChanged += StressedUpOnSceneChange;
 
@@ -52,6 +56,7 @@ public class PlayerNervousState : PlayerBaseState
         HeartbeatBackground.TurnStressDown();
 
         PlayerInput.Instance.MouseOnClickInput -= MoveToWalk;
+        PlayerInput.Instance.MouseOnClickInput -= ActualClick;
         SceneManager.activeSceneChanged -= StressedUpOnSceneChange;
     }
 
@@ -68,9 +73,9 @@ public class PlayerNervousState : PlayerBaseState
             return false;
     }
 
-    public void MouseDetection()
+    public void ActualClick()
     {
-        Collider2D currentCollider = _context._MouseUtils.HighlightOnCondition(CheckTransitionAndRabbit);
+        currentCollider = _context._MouseUtils.JustReturnColliders();
 
         if(currentCollider == null) return;
 
@@ -86,7 +91,7 @@ public class PlayerNervousState : PlayerBaseState
                 if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
-                        currentCollider.transform,
+                        Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput),
                         () => _context?.UpdateCurrentState(PlayerStateManager.State.DialogItem)
                     );
                 else
@@ -94,10 +99,10 @@ public class PlayerNervousState : PlayerBaseState
                 break;
             case "Transitions":
                 ArrowController arrowController = currentCollider.gameObject.GetComponent<ArrowController>();
-                if(_context._MovementController != null)
+              if(_context._MovementController != null)
                     _context._MovementController.MoveTo
                     (
-                        currentCollider.transform,
+                        Camera.main.ScreenToWorldPoint(PlayerInput.Instance.MouseInput),
                         () => arrowController.OnPressed()
                     );
                 else   
@@ -107,6 +112,11 @@ public class PlayerNervousState : PlayerBaseState
                 Debug.Log("Hit non-item object: " + currentCollider.gameObject.name);
                 break;
         }
+    }
+
+    public void MouseDetection()
+    {
+        currentCollider = _context._MouseUtils.HighlightOnHover();
     }
 }
 

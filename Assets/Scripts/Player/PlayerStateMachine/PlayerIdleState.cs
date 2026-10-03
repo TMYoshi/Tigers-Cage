@@ -106,7 +106,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public void MouseDetection()
     {
-        Collider2D currentCollider = _context._MouseUtils.HighlightOnHover();
+        currentCollider = _context._MouseUtils.HighlightOnHover();
     }
 
     public void UIMouseDetection()
