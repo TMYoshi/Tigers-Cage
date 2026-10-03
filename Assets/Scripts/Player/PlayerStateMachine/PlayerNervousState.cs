@@ -48,7 +48,10 @@ public class PlayerNervousState : PlayerBaseState
 
     public override void UpdateState()
     {
-        MouseDetection();
+        if(!HeartbeatBackground.Stressed)
+            MouseDetection();
+        else
+            _context._MouseUtils.HighlightOnCondition(CheckTransitionAndRabbit);
     }
 
     public override void Cleanup()
