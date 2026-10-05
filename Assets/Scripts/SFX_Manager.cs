@@ -4,6 +4,7 @@ public class SFXManager : MonoBehaviour
 {
     public static SFXManager Instance;
     [SerializeField] private AudioSource sfx_obj_;
+    [SerializeField] private AudioSource music_obj_;
     private AudioSource loop_sfx_obj_;
     private void Awake()
     {
@@ -17,6 +18,16 @@ public class SFXManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void PlayMusicLoop()
+    {
+        music_obj_.Play();
+    }
+
+    public void StopMusicUnloop()
+    {
+        music_obj_.Stop();
     }
 
     public void PlaySFXClipLoop(AudioClip audio_clip)

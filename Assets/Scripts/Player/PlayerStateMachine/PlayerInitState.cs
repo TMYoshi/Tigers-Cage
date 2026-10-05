@@ -5,6 +5,7 @@ public class PlayerInitState : MonoBehaviour
 {
     public void PlayerOnStart()
     {
+        SFXManager.Instance.PlayMusicLoop();
         SceneManager.sceneLoaded += OnSceneLoaded;
         Debug.Log(SceneManager.GetActiveScene().name);
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
