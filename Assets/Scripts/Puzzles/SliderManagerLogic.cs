@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slider_Manager : MonoBehaviour
+public class SliderManager : MonoBehaviour
 {
     [SerializeField] private Transform game_transform_;
     [SerializeField] private Transform piece_prefab_; // Set it to a small square (100 x 100?)

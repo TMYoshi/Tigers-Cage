@@ -5,16 +5,20 @@ public class PlayerSetting : MonoBehaviour
     public static PlayerSetting Instance;
 
     [Range(0, 1)]
-    public float MasterVolume;
-    private const string MasterVolumeKey = "Master Volume";
+    public float MasterVolume = 0.5f;
+    public const string MasterVolumeKey = "MasterVolume";
 
     [Range(0, 1)]
-    public float SFXVolume;
-    private const string SFXVolumeKey = "SFX Volume";
+    public float SFXVolume = 0.5f;
+    public const string SFXVolumeKey = "SFXVolume";
 
     [Range(0, 1)]
-    public float Brightness;
-    private const string BrightnessKey = "Brightness";
+    public float MusicVolume = 0.5f;
+    public const string MusicVolumeKey = "MusicVolume";
+
+    [Range(0, 1)]
+    public float Brightness = 0.5f;
+    public const string BrightnessKey = "Brightness";
 
     void Awake()
     {
@@ -32,13 +36,19 @@ public class PlayerSetting : MonoBehaviour
 
     public void LoadPlayer()
     {
-        if(PlayerPrefs.HasKey(MasterVolumeKey))
-            MasterVolume = PlayerPrefs.GetFloat(MasterVolumeKey, 0.5f);
+        MasterVolume = PlayerPrefs.GetFloat(MasterVolumeKey, 0.5f);
+        SFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f);
+        MusicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
+        Brightness = PlayerPrefs.GetFloat(BrightnessKey, 0.5f);
+    }
 
-        if(PlayerPrefs.HasKey(SFXVolumeKey))
-            SFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f);
+    public void SavePlayer()
+    {
+        PlayerPrefs.SetFloat(MasterVolumeKey, MasterVolume);
+        PlayerPrefs.SetFloat(SFXVolumeKey, SFXVolume);
+        PlayerPrefs.SetFloat(MusicVolumeKey, MusicVolume);
+        PlayerPrefs.SetFloat(BrightnessKey, Brightness);
 
-        if(PlayerPrefs.HasKey(BrightnessKey))
-            Brightness = PlayerPrefs.GetFloat(BrightnessKey, 0.5f);
+        PlayerPrefs.Save();
     }
 }

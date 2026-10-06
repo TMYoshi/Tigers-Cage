@@ -5,12 +5,12 @@ using UnityEngine.UI;
 using System.Collections;
 
 //code feels a little sloppy feel free to fix it up D:
-public class _Slider_Puzzle : SpecialItems
+public class _SliderPuzzle : SpecialItems
 {
 	public GameObject exitButton;
 	public Button exitButtonComponent;
 
-    public Slider_Manager slider_Manager;
+    public SliderManager slider_Manager;
     public GameObject completed_card, actual_puzzle;
     public SpriteRenderer _renderer;
     public BoxCollider2D _collider;
