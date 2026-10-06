@@ -315,8 +315,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3696541637537973279}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
-        m_MethodName: UpdateSave
-        m_Mode: 1
+        m_MethodName: UpdateSaveMaster
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1317,8 +1317,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3696541637537973279}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
-        m_MethodName: UpdateSave
-        m_Mode: 1
+        m_MethodName: UpdateSaveBrightness
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1559,8 +1559,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3696541637537973279}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
-        m_MethodName: UpdateSave
-        m_Mode: 1
+        m_MethodName: UpdateSaveSFX
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1880,8 +1880,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3696541637537973279}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
-        m_MethodName: UpdateSave
-        m_Mode: 1
+        m_MethodName: UpdateSaveMusic
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

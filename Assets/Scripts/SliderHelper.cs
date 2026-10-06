@@ -13,12 +13,27 @@ public class SliderHelper : MonoBehaviour
         UpdateSlider();
     }
 
-    public void UpdateSave()
+    public void UpdateSaveMaster(float _newValue)
     {
-        PlayerSetting.Instance.MasterVolume = master_slider_.value;
-        PlayerSetting.Instance.SFXVolume = sfx_slider_.value;
-        PlayerSetting.Instance.MusicVolume = music_slider_.value;
-        PlayerSetting.Instance.Brightness = brightness_slider_.value;
+        PlayerSetting.Instance.MasterVolume = _newValue;
+        PlayerSetting.Instance.SavePlayer();
+    }
+
+    public void UpdateSaveSFX(float _newValue)
+    {
+        PlayerSetting.Instance.SFXVolume = _newValue;
+        PlayerSetting.Instance.SavePlayer();
+    }
+
+    public void UpdateSaveMusic(float _newValue)
+    {
+        PlayerSetting.Instance.MusicVolume = _newValue;
+        PlayerSetting.Instance.SavePlayer();
+    }
+
+    public void UpdateSaveBrightness(float _newValue)
+    {
+        PlayerSetting.Instance.Brightness = _newValue;
         PlayerSetting.Instance.SavePlayer();
     }
 
