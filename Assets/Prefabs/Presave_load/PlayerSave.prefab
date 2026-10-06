@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5560413201051230660}
   - component: {fileID: 3319343929584692071}
+  - component: {fileID: 2359822672295136364}
   - component: {fileID: 5745278638090858585}
   m_Layer: 0
   m_Name: PlayerSave
@@ -51,6 +52,18 @@ MonoBehaviour:
   CollectedItemIds: []
   AlreadyInteractedItems: []
   UnlockedJournalEntries: []
+--- !u!114 &2359822672295136364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557027288156200346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb6de01eb218c64c80a0486cbe426da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
 --- !u!114 &5745278638090858585
 MonoBehaviour:
   m_ObjectHideFlags: 0
