@@ -47,13 +47,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JournalUI: {fileID: 3840014996457302827}
-  PauseBackground: {fileID: 8070191306007008513}
-  tableofContentes: {fileID: 4943478695778233785}
+  PauseBackground: {fileID: 681779649912204989}
+  tableofContentes: {fileID: 0}
   SettingsPanel: {fileID: 6266848019030536265}
-  titleText: {fileID: 6233349067719063909}
-  contentText: {fileID: 3860491902244530629}
-  documentImage: {fileID: 2081692985155173336}
-  documentPage: {fileID: 3360734817194145761}
+  titleText: {fileID: 0}
+  contentText: {fileID: 0}
+  documentImage: {fileID: 0}
+  documentPage: {fileID: 0}
   documentButtons: []
 --- !u!114 &5054144373773206409
 MonoBehaviour:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
   testDocuments: []
-  contentParent: {fileID: 8999024910793639163}
+  contentParent: {fileID: 0}
   tocButtonPrefab: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
   pauseMenu: {fileID: 6075644342992764066}
 --- !u!1001 &8116736285484074761
@@ -192,20 +192,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
---- !u!114 &2081692985155173336 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7802442477710212305, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!1 &3360734817194145761 stripped
+--- !u!1 &681779649912204989 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6775606433605595368, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8778177988032604596, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3840014996457302827 stripped
@@ -213,33 +202,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3860491902244530629 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4987534602991300300, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!1 &4943478695778233785 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3764643198746487472, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6233349067719063909 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2748670588123184748, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &6266848019030536265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2764121329423726400, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
@@ -248,15 +210,5 @@ GameObject:
 --- !u!224 &7009755687804204071 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1289110369496380206, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8070191306007008513 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2259510248902693384, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &8999024910793639163 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 884541571988603890, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}

@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     [Header("UI Refrences")]
     public GameObject JournalUI;// pause menu panel first
     public GameObject PauseBackground;// Journal Panel with three buttons
-    public GameObject tableofContentes; //Second UI 
+    public GameObject TableOfContents; //Second UI 
     //public GameObject PreFabTableOfContents; // Third UI
 
     public GameObject SettingsPanel; // Options menu panel
@@ -76,7 +76,7 @@ public class PauseMenu : MonoBehaviour
         PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Null);
         JournalUI.SetActive(true);// shows pause menue
         documentPage.SetActive(false);
-        tableofContentes.SetActive(false);
+        TableOfContents.SetActive(false);
         SettingsPanel.SetActive(false);
         PauseBackground.SetActive(true);
 
@@ -96,9 +96,9 @@ public class PauseMenu : MonoBehaviour
     {
         PauseBackground.SetActive(false);
         RefreshButtons();
-        Debug.Log("Opened table of contetnents");
+        Debug.Log("Opened Table");
         JournalTableUI.Instance.RefreshTable();
-        tableofContentes.SetActive(true);
+        TableOfContents.SetActive(true);
 
     }
 
@@ -106,16 +106,16 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("BackToTable button clicked");
 
-       documentPage.SetActive(false);
+        documentPage.SetActive(false);
 
-        tableofContentes.SetActive(true);
+        TableOfContents.SetActive(true);
         RefreshButtons();
     }
 
     public void  PauseUI()
     {
         Debug.Log("BackToPauseMenu button clicked");
-        tableofContentes.SetActive(false);
+        TableOfContents.SetActive(false);
         SettingsPanel.SetActive(false);
         PauseBackground.SetActive(true);
     }
@@ -163,7 +163,7 @@ public class PauseMenu : MonoBehaviour
             contentText.font = doc.documentInfoFont;
         }
 
-        tableofContentes.SetActive(false);
+        TableOfContents.SetActive(false);
         documentPage.SetActive(true);
 
         Debug.Log($"Opened document: {doc.documentTitle}");
@@ -182,7 +182,7 @@ public class PauseMenu : MonoBehaviour
             titleText.font = doc.documentInfoFont;
             contentText.font = doc.documentInfoFont;
         }
-        tableofContentes.SetActive(false);
+        TableOfContents.SetActive(false);
         documentPage.SetActive(true);
 
         Debug.Log($"Opened document: {doc.documentTitle}");
