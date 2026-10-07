@@ -2055,6 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd7b9aa9ecbc4f58ac7fc67f2f57e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sound_Mixer_Manager
+  masterMix: {fileID: 24100000, guid: 23280ec0ac21147ee81e86baae0b6779, type: 2}
   master_slider_: {fileID: 1786984527326536157}
   sfx_slider_: {fileID: 8887590912910907393}
   music_slider_: {fileID: 9160828386753098921}
