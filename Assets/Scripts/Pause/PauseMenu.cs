@@ -48,16 +48,16 @@ public class PauseMenu : MonoBehaviour
     {
         if(!Instance || Instance.JournalUI == null) return;
 
-            if(Instance.isPaused)
-            {
-                PlayerInput.Instance.InvOnClick -= PauseMenu.InvHandler;
-                Instance.ResumeGame();
-            }
-            else
-            {
-                PlayerInput.Instance.InvOnClick += PauseMenu.InvHandler;
-                Instance.PauseGame();
-            }
+        if(Instance.isPaused)
+        {
+            PlayerInput.Instance.InvOnClick -= PauseMenu.InvHandler;
+            Instance.ResumeGame();
+        }
+        else
+        {
+            PlayerInput.Instance.InvOnClick += PauseMenu.InvHandler;
+            Instance.PauseGame();
+        }
     }
 
     void Start()

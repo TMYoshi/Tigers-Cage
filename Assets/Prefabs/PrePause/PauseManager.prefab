@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JournalUI: {fileID: 3840014996457302827}
   PauseBackground: {fileID: 681779649912204989}
-  TableOfContents: {fileID: 3232730809907067057}
+  TableOfContents: {fileID: 4972381376037970337}
   SettingsPanel: {fileID: 6266848019030536265}
   titleText: {fileID: 4283480417227844013}
   contentText: {fileID: 352187408619111869}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
   testDocuments: []
-  contentParent: {fileID: 0}
+  contentParent: {fileID: 6294863198731215174}
   tocButtonPrefab: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
   pauseMenu: {fileID: 6075644342992764066}
 --- !u!1001 &8116736285484074761
@@ -307,6 +307,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3865498199973144232, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3933239233190602118, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -355,9 +359,17 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4360992532095518276, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6075644342992764066}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
       value: JournalUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6170319845519995499, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -457,11 +469,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8778177988032604596, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3232730809907067057 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6663224282702020536, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3840014996457302827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
@@ -483,9 +490,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &4972381376037970337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3865498199973144232, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 8116736285484074761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6266848019030536265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2764121329423726400, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 8116736285484074761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6294863198731215174 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2882207141693810255, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &7009755687804204071 stripped
