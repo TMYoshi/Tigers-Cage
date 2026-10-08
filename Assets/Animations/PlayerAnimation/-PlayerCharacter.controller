@@ -60,7 +60,7 @@ AnimatorController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: -PlayerCharacter
-  serializedVersion: 5
+  serializedVersion: 6
   m_AnimatorParameters:
   - m_Name: IsWalking
     m_Type: 4
@@ -87,6 +87,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  m_EvaluateTransitionsOnStart: 0
 --- !u!1101 &2189433105197258425
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -105,8 +106,8 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.04945499
-  m_ExitTime: 0
+  m_TransitionOffset: 0.15605359
+  m_ExitTime: 0.3017794
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -139,7 +140,7 @@ AnimatorStateTransition:
   m_CanTransitionToSelf: 1
 --- !u!1107 &2788376465721439378
 AnimatorStateMachine:
-  serializedVersion: 6
+  serializedVersion: 7
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,10 +149,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -8547052987504323819}
-    m_Position: {x: 250, y: 120, z: 0}
+    m_Position: {x: 320, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4936059009304363832}
-    m_Position: {x: 250, y: 10, z: 0}
+    m_Position: {x: 210, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3248649605910680651}
     m_Position: {x: 180, y: 240, z: 0}
@@ -266,8 +267,8 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75000006
+  m_TransitionOffset: 0.0016349555
+  m_ExitTime: 0.31028897
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
