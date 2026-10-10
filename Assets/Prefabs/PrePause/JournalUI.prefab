@@ -649,7 +649,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3696541637537973279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
         m_MethodName: UpdateSaveMaster
         m_Mode: 0
@@ -1900,54 +1900,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &3101600318820776612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6707024407291523936}
-  - component: {fileID: 3696541637537973279}
-  m_Layer: 0
-  m_Name: SliderManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6707024407291523936
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3101600318820776612}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -166.607, y: -1.1557007, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1289110369496380206}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3696541637537973279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3101600318820776612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efd7b9aa9ecbc4f58ac7fc67f2f57e6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sound_Mixer_Manager
-  masterMix: {fileID: 24100000, guid: 23280ec0ac21147ee81e86baae0b6779, type: 2}
-  master_slider_: {fileID: 1786984527326536157}
-  sfx_slider_: {fileID: 8887590912910907393}
-  music_slider_: {fileID: 9160828386753098921}
 --- !u!1 &3192498925199666029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,7 +2395,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3696541637537973279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
         m_MethodName: UpdateSaveSFX
         m_Mode: 0
@@ -2785,7 +2737,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3696541637537973279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SliderHelper, Assembly-CSharp
         m_MethodName: UpdateSaveMusic
         m_Mode: 0
@@ -3038,7 +2990,6 @@ RectTransform:
   - {fileID: 3961603522991512274}
   - {fileID: 3608580481015848723}
   - {fileID: 2208936210533356975}
-  - {fileID: 6707024407291523936}
   - {fileID: 4176560878015520406}
   - {fileID: 5966504766802457954}
   m_Father: {fileID: 0}
