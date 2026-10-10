@@ -8,7 +8,6 @@ public class SliderHelper : MonoBehaviour
     [SerializeField] private Slider master_slider_;
     [SerializeField] private Slider sfx_slider_;
     [SerializeField] private Slider music_slider_;
-    [SerializeField] private Slider brightness_slider_;
 
     void Start()
     {
@@ -42,18 +41,11 @@ public class SliderHelper : MonoBehaviour
         masterMix.SetFloat("MusicVolume", musicVolume);
     }
 
-    public void UpdateSaveBrightness(float _newValue)
-    {
-        PlayerSetting.Instance.Brightness = _newValue;
-        PlayerSetting.Instance.SavePlayer();
-    }
-
     private void UpdateSlider()
     {
         master_slider_.value = PlayerSetting.Instance.MasterVolume;
         sfx_slider_.value = PlayerSetting.Instance.SFXVolume;
         music_slider_.value = PlayerSetting.Instance.MusicVolume;
-        brightness_slider_.value = PlayerSetting.Instance.Brightness;
 
         float masterVolume = Mathf.Log10(Mathf.Clamp(PlayerSetting.Instance.MasterVolume, 0.0001f, 1f)) * 20;
         masterMix.SetFloat("MasterVolume", masterVolume);

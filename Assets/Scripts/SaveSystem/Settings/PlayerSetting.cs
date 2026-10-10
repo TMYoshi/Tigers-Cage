@@ -16,10 +16,6 @@ public class PlayerSetting : MonoBehaviour
     public float MusicVolume = 0.5f;
     public const string MusicVolumeKey = "MusicVolume";
 
-    [Range(0, 1)]
-    public float Brightness = 0.5f;
-    public const string BrightnessKey = "Brightness";
-
     void Awake()
     {
         if(Instance != null && Instance != this)
@@ -39,7 +35,6 @@ public class PlayerSetting : MonoBehaviour
         MasterVolume = PlayerPrefs.GetFloat(MasterVolumeKey, 0.5f);
         SFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f);
         MusicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
-        Brightness = PlayerPrefs.GetFloat(BrightnessKey, 0.5f);
     }
 
     public void SavePlayer()
@@ -47,7 +42,6 @@ public class PlayerSetting : MonoBehaviour
         PlayerPrefs.SetFloat(MasterVolumeKey, MasterVolume);
         PlayerPrefs.SetFloat(SFXVolumeKey, SFXVolume);
         PlayerPrefs.SetFloat(MusicVolumeKey, MusicVolume);
-        PlayerPrefs.SetFloat(BrightnessKey, Brightness);
 
         PlayerPrefs.Save();
     }
