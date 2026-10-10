@@ -120,7 +120,7 @@ public class InventoryManager : MonoBehaviour
         //refill UI
         for(int i = 0; i < data.Count; i++)
         {
-            int itemIndex = MasterList.Instance.EveryCollectableSO
+            int itemIndex = MasterList.Instance.EveryCollectable
                 .FindIndex(item => item.item_name_ == data[i]);
 
             if(itemIndex < 0) 
@@ -129,7 +129,7 @@ public class InventoryManager : MonoBehaviour
                 continue;
             }
 
-            ItemSO item = MasterList.Instance.EveryCollectableSO[itemIndex];
+            ItemSO item = MasterList.Instance.EveryCollectable[itemIndex];
 
             AddItem(item.item_name_, item.inv_sprite_, item.desc_);
         }

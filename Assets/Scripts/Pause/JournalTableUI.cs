@@ -43,8 +43,6 @@ public class JournalTableUI : MonoBehaviour
             return; // Already collected
         }
 
-        item.isUnlocked = true;
-
         item.pageNumber = documentItems.Count + 1; //assigns page number
 
         documentItems.Add(item);
@@ -58,6 +56,7 @@ public class JournalTableUI : MonoBehaviour
 
     public void RefreshTable()
     {
+        /*
         Debug.Log("Refreshing Journal Table UI");
         foreach (Transform child in contentParent)
         {
@@ -74,6 +73,7 @@ public class JournalTableUI : MonoBehaviour
 
            }
         }
+        */
     }
 
 }

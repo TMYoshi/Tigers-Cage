@@ -24,7 +24,7 @@ public class _Bunny_Item : SpecialItems
         minigame.StartHeartBeatMinigame();
         if(documentToUnlock != null)
         {
-            documentToUnlock.isUnlocked = true;
+            SaveData.Instance.UnlockedDocuments.Add(documentToUnlock);
             Debug.Log($"Document '{documentToUnlock.documentTitle}' unlocked!");
         }       
         return PlayerStateManager.State.Null;

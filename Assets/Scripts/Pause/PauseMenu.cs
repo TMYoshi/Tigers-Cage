@@ -138,6 +138,7 @@ public class PauseMenu : MonoBehaviour
 
     public void RefreshButtons()
     {
+        /*
         foreach(Button but in documentButtons)
         {
             DocumnetButton docBut = but.GetComponent<DocumnetButton>();
@@ -147,6 +148,7 @@ public class PauseMenu : MonoBehaviour
                 but.gameObject.SetActive(docBut.documentItem.isUnlocked);
             }
         }
+        */
     }
 
     public void OpenDocumentByItem(DocumentItem doc)
@@ -171,6 +173,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenDocument(int index)
     {
+        /*
         var doc = JournalDataManager.Instance.allDocuments[index];
         titleText.text = doc.documentTitle;
         contentText.text = doc.documentText;
@@ -186,6 +189,7 @@ public class PauseMenu : MonoBehaviour
         documentPage.SetActive(true);
 
         Debug.Log($"Opened document: {doc.documentTitle}");
+        */
     }
 
 

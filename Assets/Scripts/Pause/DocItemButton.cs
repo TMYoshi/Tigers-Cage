@@ -24,9 +24,9 @@ public class DocItemButton : MonoBehaviour
 
     private void OpenDocument()
     {
-        if (documentItem.isUnlocked)
+        if (SaveData.Instance.UnlockedDocuments.Contains(documentItem))
         {
-          pauseMenu.OpenDocumentByItem(documentItem);
+            pauseMenu.OpenDocumentByItem(documentItem);
         }
     }
 }

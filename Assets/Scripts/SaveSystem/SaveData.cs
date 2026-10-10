@@ -9,7 +9,7 @@ public class SaveData : MonoBehaviour
     public List<string> InventorySlots = new List<string>();
     public List<string> CollectedItemIds = new List<string>();
     public List<string> AlreadyInteractedItems = new List<string>();
-    public List<JournalPageSaveData> UnlockedJournalEntries = new List<JournalPageSaveData>();
+    public List<DocumentItem> UnlockedDocuments = new List<DocumentItem>();
 
     void Awake()
     {
@@ -39,6 +39,6 @@ public class SaveData : MonoBehaviour
         InventorySlots = data.InventorySlots;
         CollectedItemIds = data.CollectedItemIds;
         AlreadyInteractedItems = data.AlreadyInteractedItems;
-        UnlockedJournalEntries = data.UnlockedJournalEntries;
+        UnlockedDocuments = data.UnlockedDocuments;
     }
 }

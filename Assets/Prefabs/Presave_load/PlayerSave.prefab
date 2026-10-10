@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3319343929584692071}
   - component: {fileID: 2359822672295136364}
   - component: {fileID: 5745278638090858585}
-  - component: {fileID: 7928049088459619616}
   m_Layer: 0
   m_Name: PlayerSave
   m_TagString: Untagged
@@ -52,7 +51,7 @@ MonoBehaviour:
   InventorySlots: []
   CollectedItemIds: []
   AlreadyInteractedItems: []
-  UnlockedJournalEntries: []
+  UnlockedDocuments: []
 --- !u!114 &2359822672295136364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,18 +86,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d9552ab4ec5e4e4a83f88625e5e8900, type: 2}
   - {fileID: 11400000, guid: 1ede37c99380dbd468ae0df9dc219b62, type: 2}
   - {fileID: 11400000, guid: 0b2db0c78e26b1b4f9c16e5d38b610ad, type: 2}
---- !u!114 &7928049088459619616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557027288156200346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c765c116bb10a34fbe9e2b5cc6a722a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JournalDataManager
-  allDocuments:
+  EveryDocumentItem:
+  - {fileID: 11400000, guid: 34de6fa30b0f6084c994d34ead90bab6, type: 2}
   - {fileID: 11400000, guid: 40162de4d1be2ec47bdc468c8d767f6c, type: 2}
   - {fileID: 11400000, guid: 61ed14d3f9473d7429c6f8abbe4092fc, type: 2}
+  - {fileID: 11400000, guid: 9774425ffaf0358468aaac902d95a492, type: 2}
