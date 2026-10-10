@@ -8,7 +8,7 @@ public class JournalTableUI : MonoBehaviour
     public static JournalTableUI Instance;
     
     public Transform contentParent;
-    public DocItemButton tocButtonPrefab;
+    public DocumentItemButton buttonScript;
     public PauseMenu pauseMenu;
 
     private List<DocumentItem> documentItems = new List<DocumentItem>();
@@ -49,7 +49,7 @@ public class JournalTableUI : MonoBehaviour
 
         Debug.Log("Creating button for document: " + item.documentTitle);
         
-        DocItemButton newButton = Instantiate(tocButtonPrefab, contentParent);
+        DocumentItemButton newButton = Instantiate(buttonScript, contentParent);
 
         newButton.Setup(item, pauseMenu);
     }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class DocItemButton : MonoBehaviour
+public class DocumentItemButton : MonoBehaviour
 {
     public TMP_Text PageNumberText;
     public TMP_Text documentTitleText;
