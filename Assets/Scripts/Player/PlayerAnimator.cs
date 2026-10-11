@@ -6,7 +6,7 @@ public class PlayerAnimator : MonoBehaviour
     public static bool HasBunny = false;
     public static PlayerAnimator Instance;
 
-    Animator animator; 
+    public Animator animator {private set; get;} 
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class PlayerAnimator : MonoBehaviour
     public static void SetBunnyTrue()
     {
         HasBunny = true;
-        Instance?.animator.SetBool("HasBunny", HasBunny);
+        Instance.animator.SetBool("HasBunny", HasBunny);
     }
 
     void Start()

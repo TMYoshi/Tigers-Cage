@@ -6689,7 +6689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Transition_Item
   item: {fileID: 408342665}
   transition_to_: MC Room - 2 Chest
-  audio_clip_: {fileID: 0}
+  audio_clip_: {fileID: 8300000, guid: 63e5b258db2d76b408eb4531fbaaa41d, type: 3}
   saveTransitionLocation: 1
 --- !u!1 &412113195 stripped
 GameObject:
