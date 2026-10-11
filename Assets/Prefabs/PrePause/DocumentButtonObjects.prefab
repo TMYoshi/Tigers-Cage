@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 542211560562540688}
   - component: {fileID: -2564208182256313559}
   m_Layer: 5
-  m_Name: DocItemButtonPrefab
+  m_Name: DocumentButtonObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

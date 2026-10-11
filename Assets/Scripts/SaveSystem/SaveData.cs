@@ -9,7 +9,7 @@ public class SaveData : MonoBehaviour
     public List<string> InventorySlots = new List<string>();
     public List<string> CollectedItemIds = new List<string>();
     public List<string> AlreadyInteractedItems = new List<string>();
-    public List<DocumentItem> UnlockedDocuments = new List<DocumentItem>();
+    public List<string> UnlockedDocuments = new List<string>();
 
     void Awake()
     {

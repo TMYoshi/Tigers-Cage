@@ -11,7 +11,7 @@ public class PlayerData
     public List<string> InventorySlots;
     public List<string> CollectedItemIds;
     public List<string> AlreadyInteractedItems;
-    public List<DocumentItem> UnlockedDocuments;
+    public List<string> UnlockedDocuments;
     
     //add this back if we're bringing back flashlight
     //public Dictionary<string, bool> PlayerUpgrades;

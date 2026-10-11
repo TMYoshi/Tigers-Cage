@@ -26,7 +26,7 @@ public class PlayerSaveHelper : EditorWindow
             SaveData.Instance.InventorySlots = new List<string>();
             SaveData.Instance.CollectedItemIds = new List<string>();
             SaveData.Instance.AlreadyInteractedItems = new List<string>();
-            SaveData.Instance.UnlockedDocuments = new List<DocumentItem>();
+            SaveData.Instance.UnlockedDocuments = new List<string>();
             SaveData.Instance.SavePlayer();
         }
     }

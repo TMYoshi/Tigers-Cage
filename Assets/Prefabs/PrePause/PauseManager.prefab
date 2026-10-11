@@ -68,9 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ff086c82d388b49ba816323bdff0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
-  testDocuments: []
   contentParent: {fileID: 6294863198731215174}
-  tocButtonPrefab: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
+  buttonScript: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
   pauseMenu: {fileID: 6075644342992764066}
 --- !u!114 &6367429336969014839
 MonoBehaviour:
@@ -388,6 +387,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6075644342992764066}
+    - target: {fileID: 4835796752215375616, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 6075644342992764066}
+    - target: {fileID: 4835796752215375616, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: buttonScript
+      value: 
+      objectReference: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
     - target: {fileID: 5038975954971520034, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_Name
       value: JournalUI

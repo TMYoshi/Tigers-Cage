@@ -4,7 +4,6 @@ using UnityEngine;
 public class _Bunny_Item : SpecialItems
 {
     [SerializeField] HeartbeatMinigame minigame;
-    public DocumentItem documentToUnlock;
     public override void EnterCondition()
     {
     }
@@ -22,11 +21,6 @@ public class _Bunny_Item : SpecialItems
     public override PlayerStateManager.State DialogExitCondition()
     {
         minigame.StartHeartBeatMinigame();
-        if(documentToUnlock != null)
-        {
-            SaveData.Instance.UnlockedDocuments.Add(documentToUnlock);
-            Debug.Log($"Document '{documentToUnlock.documentTitle}' unlocked!");
-        }       
         return PlayerStateManager.State.Null;
     }
 

@@ -3,77 +3,55 @@ using System.Collections.Generic;
 
 public class JournalTableUI : MonoBehaviour
 {
-    [Header("Testing")]
-    public DocumentItem[] testDocuments; // For testing purposes, assign in inspector
     public static JournalTableUI Instance;
     
     public Transform contentParent;
     public DocumentItemButton buttonScript;
     public PauseMenu pauseMenu;
 
-    private List<DocumentItem> documentItems = new List<DocumentItem>();
+    public static List<DocumentItem> DocumentItems = new List<DocumentItem>();
 
-     private void Awake()
+    private void Awake()
     {
         Instance = this;
         Debug.Log("JournalTableUI Instance set");
     }
-   /* private void Start()
+
+    private void Start()
     {
-        // For testing, add all test documents to the journal at start
-        Debug.Log("JournalTableUI Start: Adding test documents to journal");
-        foreach (DocumentItem doc in testDocuments)
+        foreach (string _itemName in SaveData.Instance.UnlockedDocuments)
         {
-            if (doc != null && doc.forceUnlock)
-            {
-                Debug.Log("Force unlocking document: " + doc.documentTitle);
-                CollectDocument(doc);
-            }
+            DocumentItem item = MasterList.Instance.EveryDocumentItem
+                                    [MasterList.Instance.EveryDocumentItem.FindIndex(item => item.documentTitle == _itemName)];
+            GenerateDocument(item);
         }
-    }*/
+    }
 
 
-    public void CollectDocument(DocumentItem item)
+    public void CollectDocument(DocumentItem _item)
     {
-        Debug.Log("CollectDocument called for: " + item.documentTitle);
+        Debug.Log("CollectDocument called for: " + _item.documentTitle);
+        if(SaveData.Instance.UnlockedDocuments.Contains(_item.documentTitle))
+            return;
 
-        if (documentItems.Contains(item))
-        {
-            Debug.Log("Document already collected: " + item.documentTitle);
+        SaveData.Instance.UnlockedDocuments.Add(_item.documentTitle);
+        SaveData.Instance.SavePlayer();
+        
+        GenerateDocument(_item);
+    }
+
+    public void GenerateDocument(DocumentItem _item)
+    {
+        if (DocumentItems.Contains(_item))
             return; // Already collected
-        }
 
-        item.pageNumber = documentItems.Count + 1; //assigns page number
+        _item.pageNumber = DocumentItems.Count + 1; //assigns page number
+        DocumentItems.Add(_item);
 
-        documentItems.Add(item);
-
-        Debug.Log("Creating button for document: " + item.documentTitle);
+        Debug.Log("Creating button for document: " + _item.documentTitle);
         
         DocumentItemButton newButton = Instantiate(buttonScript, contentParent);
 
-        newButton.Setup(item, pauseMenu);
+        newButton.Setup(_item, pauseMenu);
     }
-
-    public void RefreshTable()
-    {
-        /*
-        Debug.Log("Refreshing Journal Table UI");
-        foreach (Transform child in contentParent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        documentItems.Clear();
-
-        foreach (DocumentItem doc in JournalDataManager.Instance.allDocuments)
-        {
-           if(doc != null && doc.isUnlocked){
-            
-                CollectDocument(doc);
-
-           }
-        }
-        */
-    }
-
 }
