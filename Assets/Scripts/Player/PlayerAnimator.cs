@@ -22,16 +22,16 @@ public class PlayerAnimator : MonoBehaviour
 
     void Start()
     {
-        animator.SetBool("HasBunny", HasBunny);
+        animator?.SetBool("HasBunny", HasBunny);
     }
     
     public void Walking()
     {
-        animator.SetBool("IsWalking", true);
+        animator?.SetBool("IsWalking", true);
     }
 
     public void StopWalking()
     {
-        animator.SetBool("IsWalking", false);
+        animator?.SetBool("IsWalking", false);
     }
 }
