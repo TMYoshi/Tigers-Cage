@@ -6,7 +6,7 @@ public class JournalTableUI : MonoBehaviour
     public static JournalTableUI Instance;
     
     public Transform contentParent;
-    public DocumentItemButton buttonScript;
+    public GameObject buttonObject;
     public PauseMenu pauseMenu;
 
     public static List<DocumentItem> DocumentItems = new List<DocumentItem>();
@@ -45,13 +45,12 @@ public class JournalTableUI : MonoBehaviour
         if (DocumentItems.Contains(_item))
             return; // Already collected
 
-        _item.pageNumber = DocumentItems.Count + 1; //assigns page number
         DocumentItems.Add(_item);
 
         Debug.Log("Creating button for document: " + _item.documentTitle);
         
-        DocumentItemButton newButton = Instantiate(buttonScript, contentParent);
+        DocumentItemButton newButton = Instantiate(buttonObject, contentParent).GetComponent<DocumentItemButton>();
 
-        newButton.Setup(_item, pauseMenu);
+        newButton.Setup(_item, pauseMenu, (uint)(DocumentItems.Count));
     }
 }

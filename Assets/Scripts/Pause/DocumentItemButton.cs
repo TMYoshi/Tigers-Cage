@@ -5,28 +5,25 @@ public class DocumentItemButton : MonoBehaviour
 {
     public TMP_Text PageNumberText;
     public TMP_Text documentTitleText;
-    public Button button;
 
     private DocumentItem documentItem;
     private PauseMenu pauseMenu;
 
-    public void Setup(DocumentItem item, PauseMenu menu)
+    public void Setup(DocumentItem item, PauseMenu menu, uint page)
     {
         documentItem = item;
         pauseMenu = menu;
 
-        PageNumberText.text = $"page {item.pageNumber}...............";
+        PageNumberText.text = $"page {page} ...............";
         documentTitleText.text = item.documentTitle;
-
+        
+        Button button = GetComponent<Button>();
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(OpenDocument);
     }
 
     private void OpenDocument()
     {
-        if (SaveData.Instance.UnlockedDocuments.Contains(documentItem.name))
-        {
-            pauseMenu.OpenDocumentByItem(documentItem);
-        }
+        pauseMenu.OpenDocumentByItem(documentItem);
     }
 }

@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 10
+  m_Spacing: 40
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2499,9 +2499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ff086c82d388b49ba816323bdff0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
-  testDocuments: []
   contentParent: {fileID: 2882207141693810255}
-  tocButtonPrefab: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
+  buttonObject: {fileID: 0}
   pauseMenu: {fileID: 0}
 --- !u!1 &3927206991264241551
 GameObject:

@@ -27,11 +27,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject documentPage;
 
-    [Header("TOC Buttons")]
-    public Button[] documentButtons;
-
     private bool isPaused = false;
-
 
     private void Awake()
     {

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4510974858196415401}
   - component: {fileID: 6075644342992764066}
-  - component: {fileID: 5054144373773206409}
   - component: {fileID: 6367429336969014839}
   m_Layer: 0
   m_Name: PauseManager
@@ -55,22 +54,6 @@ MonoBehaviour:
   contentText: {fileID: 352187408619111869}
   documentImage: {fileID: 8633011860569834384}
   documentPage: {fileID: 3965747515660513493}
-  documentButtons: []
---- !u!114 &5054144373773206409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5942334328809161159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ff086c82d388b49ba816323bdff0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
-  contentParent: {fileID: 6294863198731215174}
-  buttonScript: {fileID: -2564208182256313559, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
-  pauseMenu: {fileID: 6075644342992764066}
 --- !u!114 &6367429336969014839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,11 +549,6 @@ GameObject:
 --- !u!1 &6266848019030536265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2764121329423726400, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
-  m_PrefabInstance: {fileID: 8116736285484074761}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &6294863198731215174 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2882207141693810255, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &7009755687804204071 stripped
