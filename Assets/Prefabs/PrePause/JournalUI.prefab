@@ -2418,7 +2418,6 @@ GameObject:
   - component: {fileID: 3608580481015848723}
   - component: {fileID: 1112991034801172179}
   - component: {fileID: 1370884941758065379}
-  - component: {fileID: 4835796752215375616}
   m_Layer: 5
   m_Name: DoccumentsPanel
   m_TagString: Untagged
@@ -2487,21 +2486,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4835796752215375616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865498199973144232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ff086c82d388b49ba816323bdff0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
-  contentParent: {fileID: 2882207141693810255}
-  buttonObject: {fileID: 0}
-  pauseMenu: {fileID: 0}
 --- !u!1 &3927206991264241551
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
             return;
         }
 
+        DontDestroyOnLoad(gameObject);
         Instance = this;
     }
 

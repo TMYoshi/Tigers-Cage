@@ -13,8 +13,14 @@ public class JournalTableUI : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
         Instance = this;
-        Debug.Log("JournalTableUI Instance set");
     }
 
     private void Start()
@@ -27,8 +33,7 @@ public class JournalTableUI : MonoBehaviour
         }
     }
 
-
-    public void CollectDocument(DocumentItem _item)
+    public static void CollectDocument(DocumentItem _item)
     {
         Debug.Log("CollectDocument called for: " + _item.documentTitle);
         if(SaveData.Instance.UnlockedDocuments.Contains(_item.documentTitle))
@@ -37,7 +42,7 @@ public class JournalTableUI : MonoBehaviour
         SaveData.Instance.UnlockedDocuments.Add(_item.documentTitle);
         SaveData.Instance.SavePlayer();
         
-        GenerateDocument(_item);
+        Instance.GenerateDocument(_item);
     }
 
     public void GenerateDocument(DocumentItem _item)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4510974858196415401}
   - component: {fileID: 6075644342992764066}
+  - component: {fileID: 1139656128450090768}
   - component: {fileID: 6367429336969014839}
   m_Layer: 0
   m_Name: PauseManager
@@ -54,6 +55,21 @@ MonoBehaviour:
   contentText: {fileID: 352187408619111869}
   documentImage: {fileID: 8633011860569834384}
   documentPage: {fileID: 3965747515660513493}
+--- !u!114 &1139656128450090768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942334328809161159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ff086c82d388b49ba816323bdff0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JournalTableUI
+  contentParent: {fileID: 6294863198731215174}
+  buttonObject: {fileID: 3789274193279482784, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
+  pauseMenu: {fileID: 6075644342992764066}
 --- !u!114 &6367429336969014839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +278,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2882207141693810255, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882207141693810255, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 2950686077144822917, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -374,6 +398,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 6075644342992764066}
+    - target: {fileID: 4835796752215375616, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+      propertyPath: buttonObject
+      value: 
+      objectReference: {fileID: 3789274193279482784, guid: 2ec4397bb32db2144b02be32678722a0, type: 3}
     - target: {fileID: 4835796752215375616, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
       propertyPath: buttonScript
       value: 
@@ -549,6 +577,11 @@ GameObject:
 --- !u!1 &6266848019030536265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2764121329423726400, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
+  m_PrefabInstance: {fileID: 8116736285484074761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6294863198731215174 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2882207141693810255, guid: e79fda93348e53c48b46e4483f84fc2a, type: 3}
   m_PrefabInstance: {fileID: 8116736285484074761}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &7009755687804204071 stripped
