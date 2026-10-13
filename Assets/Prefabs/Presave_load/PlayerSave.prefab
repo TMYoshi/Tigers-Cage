@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5560413201051230660}
   - component: {fileID: 3319343929584692071}
+  - component: {fileID: 2359822672295136364}
+  - component: {fileID: 5745278638090858585}
   m_Layer: 0
   m_Name: PlayerSave
   m_TagString: Untagged
@@ -48,4 +50,44 @@ MonoBehaviour:
   SceneIndex: 
   InventorySlots: []
   CollectedItemIds: []
-  UnlockedJournalEntries: []
+  AlreadyInteractedItems: []
+  UnlockedDocuments: []
+--- !u!114 &2359822672295136364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557027288156200346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb6de01eb218c64c80a0486cbe426da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
+  MasterVolume: 0.5
+  SFXVolume: 0.5
+  MusicVolume: 0.5
+--- !u!114 &5745278638090858585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557027288156200346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1caf98acc9040840bafce16d3533c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasterList
+  EveryCollectable:
+  - {fileID: 11400000, guid: 0b2db0c78e26b1b4f9c16e5d38b610ad, type: 2}
+  - {fileID: 11400000, guid: 6d9552ab4ec5e4e4a83f88625e5e8900, type: 2}
+  - {fileID: 11400000, guid: 1ede37c99380dbd468ae0df9dc219b62, type: 2}
+  - {fileID: 11400000, guid: cbf80fe46eb4e424da7742bce27fd9aa, type: 2}
+  - {fileID: 11400000, guid: 8f4dffc381776db4fa55b45de810def4, type: 2}
+  - {fileID: 11400000, guid: 2f5c05f0953def0429b9fdffc2e4ee51, type: 2}
+  EveryDocumentItem:
+  - {fileID: 11400000, guid: 34de6fa30b0f6084c994d34ead90bab6, type: 2}
+  - {fileID: 11400000, guid: 40162de4d1be2ec47bdc468c8d767f6c, type: 2}
+  - {fileID: 11400000, guid: 61ed14d3f9473d7429c6f8abbe4092fc, type: 2}
+  - {fileID: 11400000, guid: 9774425ffaf0358468aaac902d95a492, type: 2}

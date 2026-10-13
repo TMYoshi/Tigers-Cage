@@ -20,6 +20,16 @@ public class SFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void PlayMusicLoop()
+    {
+        music_obj_.Play();
+    }
+
+    public void StopMusicUnloop()
+    {
+        music_obj_.Stop();
+    }
+
     public void PlaySFXClipLoop(AudioClip audio_clip)
     {
         loop_sfx_obj_.clip = audio_clip;

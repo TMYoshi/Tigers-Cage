@@ -5,8 +5,6 @@ public class InventoryItem : Item
     [SerializeField]
     private string itemName;
     [SerializeField]
-    private int quantity;
-    [SerializeField]
     private Sprite sprite;
     [SerializeField]
     private AudioClip audio_clip_;
@@ -17,7 +15,6 @@ public class InventoryItem : Item
     private InventoryManager inventoryManager;
 
     public string ItemName => itemName;
-    public int Quantity => quantity;
     public Sprite Sprite => sprite;
     public string ItemDescription => itemDescription;
     public AudioClip AudioClip => audio_clip_;
@@ -95,11 +92,6 @@ public class InventoryItem : Item
     public void SetItemName(string item_name)
     {
         itemName = item_name;
-    }
-
-    public void SetQuantity(int quantity_)
-    {
-        quantity = quantity_;
     }
 
     public void SetAudioClip(AudioClip audio_clip)

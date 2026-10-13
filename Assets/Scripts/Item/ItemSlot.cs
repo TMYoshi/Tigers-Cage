@@ -7,15 +7,10 @@ public class ItemSlot : MonoBehaviour
 {
     // item data public for debugging
     public string itemName;
-    public int quantity;
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
     public Sprite emptySprite;
-
-    // item slot
-    [SerializeField]
-    private TMP_Text quantityText;
 
     [SerializeField]
     private Image itemImage;
@@ -43,9 +38,9 @@ public class ItemSlot : MonoBehaviour
         */
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public void AddItem(string itemName, Sprite itemSprite, string itemDescription)
     {
-        if (this == null || itemImage == null || quantityText == null)
+        if (this == null || itemImage == null )
         {
             Debug.LogWarning($"ItemSlot on {gameObject.name} is missing UI references or has been destroyed.");
             return;
@@ -53,12 +48,10 @@ public class ItemSlot : MonoBehaviour
 
         itemImage.color = new Color(1, 1, 1, 1);
         this.itemName = itemName;
-        this.quantity = quantity;
         this.itemSprite = itemSprite;
         this.itemDescription = itemDescription;
         isFull = true;
 
-        quantityText.text = quantity.ToString(); // text component of TMP = int
         //quantityText.enabled = true; // applicable for items with quantity: coins etc, i assume most 
         // interactables will be single use however so disabling for time being
         itemImage.sprite = itemSprite;
@@ -69,7 +62,6 @@ public class ItemSlot : MonoBehaviour
     public void RemoveItem()
     {
         this.itemName = null;
-        this.quantity = 0;
         this.itemSprite = null;
         this.itemDescription = null;
         isFull = false;
@@ -77,8 +69,6 @@ public class ItemSlot : MonoBehaviour
         //sets color to transparent to avoid white null image
         itemImage.sprite = null;
         itemImage.color = new Color(1, 1, 1, 0);
-
-        if (quantityText != null) quantityText.text = "";
 
         SaveData.Instance.InventorySlots = InventoryManager.Instance.BuildInventorySaveData();
     }

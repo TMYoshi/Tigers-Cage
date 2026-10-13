@@ -26,6 +26,9 @@ public class PlayerDialogItemState : PlayerBaseState
 
     private void DialogPlays()
     {
+        if(_context._ItemManager._SelectedItem == null)
+            _context.UpdateCurrentState(PlayerStateManager.State.Idle);
+
         if (_context._ItemManager._SelectedItem.WriteLines())
         {
             if(_context._ItemManager._SelectedItem == null) return;
@@ -49,7 +52,8 @@ public class PlayerDialogItemState : PlayerBaseState
         PlayerInput.Instance.MouseOnClickInput -= DialogPlays;
         JournalCollectable journalItem = _context._ItemManager._SelectedItem.GetComponent<JournalCollectable>();
         
-        if(journalItem != null){
+        if(journalItem != null)
+        {
             Debug.Log("JournalCollectable found, adding to journal.");
             journalItem.AddtoJournal();
         }

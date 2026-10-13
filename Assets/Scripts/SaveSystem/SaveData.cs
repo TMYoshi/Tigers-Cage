@@ -6,10 +6,10 @@ public class SaveData : MonoBehaviour
     public static SaveData Instance;
     public bool[] CutsceneSaved = new bool[3];
     public string SceneIndex = "";
-    public List<InventorySlotData> InventorySlots = new List<InventorySlotData>();
+    public List<string> InventorySlots = new List<string>();
     public List<string> CollectedItemIds = new List<string>();
     public List<string> AlreadyInteractedItems = new List<string>();
-    public List<JournalPageSaveData> UnlockedJournalEntries = new List<JournalPageSaveData>();
+    public List<string> UnlockedDocuments = new List<string>();
 
     void Awake()
     {
@@ -39,6 +39,6 @@ public class SaveData : MonoBehaviour
         InventorySlots = data.InventorySlots;
         CollectedItemIds = data.CollectedItemIds;
         AlreadyInteractedItems = data.AlreadyInteractedItems;
-        UnlockedJournalEntries = data.UnlockedJournalEntries;
+        UnlockedDocuments = data.UnlockedDocuments;
     }
 }
