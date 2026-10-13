@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("the player won't move if the click is within this min ")]
     [SerializeField] float minXMove;
     [SerializeField] float speed;
+    [SerializeField] float teleportBackY = -2.0f;
     //false = left
     //true = right 
     public UnityEvent<bool> OnWalk;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         if(SceneController.scene_controller_instance.shouldMoveToMiddle == false)
         {
-            transform.position = new Vector3(SceneController.scene_controller_instance.teleportPositionForGoingBack.x, -2.0f, 0f);
+            transform.position = new Vector3(SceneController.scene_controller_instance.teleportPositionForGoingBack.x, teleportBackY, 0f);
             SceneController.scene_controller_instance.shouldMoveToMiddle = true;
             return;
         }
