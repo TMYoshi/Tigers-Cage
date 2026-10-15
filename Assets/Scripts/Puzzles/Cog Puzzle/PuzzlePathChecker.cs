@@ -114,7 +114,7 @@ public class PuzzlePathChecker : MonoBehaviour
         {
             CogController parent = queue.Dequeue();
 
-            if (!connectionGraph.ContainsKey(parent)) continue;
+            //if (!connectionGraph.ContainsKey(parent)) continue;
 
             foreach (CogController child in connectionGraph[parent])
             {
