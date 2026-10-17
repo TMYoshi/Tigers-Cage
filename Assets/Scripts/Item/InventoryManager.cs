@@ -177,6 +177,19 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+
+    public static bool IsInventoryFull()
+    {
+        for (int i = 0; i < Instance.itemSlot.Length; i++)
+        {
+            if (Instance.itemSlot[i].isFull == false)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
     
     //add item to INv
     public static bool AddItemToInv(InventoryItem _inventoryItem)

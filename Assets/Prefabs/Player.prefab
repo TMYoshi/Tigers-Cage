@@ -298,10 +298,13 @@ GameObject:
   - component: {fileID: 7978748274346186704}
   - component: {fileID: 7335480056828261413}
   - component: {fileID: 232941122322748454}
+  - component: {fileID: 1788111854707316531}
   - component: {fileID: 1953037894475601402}
   - component: {fileID: 1024108505556653181}
   - component: {fileID: 7574197539886751949}
+  - component: {fileID: 2598692239795610580}
   - component: {fileID: 5355016504501398550}
+  - component: {fileID: 1014605226995250914}
   - component: {fileID: 7116035262970723504}
   - component: {fileID: 5006172852671420875}
   m_Layer: 8
@@ -377,7 +380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectedItem: {fileID: 0}
   _draggedItem: {fileID: 3812719277048777154}
-  _dummyItem: {fileID: 1953037894475601402}
+  _dummyItemFailed: {fileID: 1953037894475601402}
+  _dummyItemFull: {fileID: 1788111854707316531}
   _dialogItem: {fileID: 1024108505556653181}
 --- !u!114 &232941122322748454
 MonoBehaviour:
@@ -391,6 +395,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ce426056f688d4690cdc559272d27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMouseUtils
+--- !u!114 &1788111854707316531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494666362022696330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b055d5963ff185418f03f1e429b7cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
+  assoc_dialog_box_: {fileID: 2598692239795610580}
+  itemName: 
+  sprite: {fileID: 0}
+  audio_clip_: {fileID: 0}
+  itemDescription: Stores the full inventory dialog
+  collectable: 0
+  destroyable: 0
+  SpecialEvents: {fileID: 0}
 --- !u!114 &1953037894475601402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +432,8 @@ MonoBehaviour:
   sprite: {fileID: 0}
   audio_clip_: {fileID: 0}
   itemDescription: This is for static objects, I swear to god if you (the player)
-    somehow get this i'm gonna kill myself.
+    somehow get this i'm gonna kill myself. (Anyways this is also to store the failed
+    interaction dialog)
   collectable: 0
   destroyable: 0
   SpecialEvents: {fileID: 0}
@@ -448,6 +473,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5076e89d05eb7f14d8fc1259a9ffa982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInitState
+--- !u!114 &2598692239795610580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494666362022696330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialog
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: f3572f2b3a9b0e248b632a9ff1f93632, type: 2}
 --- !u!114 &5355016504501398550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +503,21 @@ MonoBehaviour:
   current_convo_: {fileID: 0}
   convos_:
   - {fileID: 11400000, guid: 8ab1e34c3c95f884895f8925d2c030fc, type: 2}
+--- !u!114 &1014605226995250914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494666362022696330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a634dedc3cd40b18b7f7ac3f602349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialog
+  current_convo_: {fileID: 0}
+  convos_:
+  - {fileID: 11400000, guid: f3572f2b3a9b0e248b632a9ff1f93632, type: 2}
 --- !u!114 &7116035262970723504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +539,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494666362022696330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45ed2e62b4f9721429609d1bb7e4ce51, type: 3}
   m_Name: 

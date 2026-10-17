@@ -128,7 +128,6 @@ public class PlayerInvState : PlayerBaseState
                 {
                     //switches to special state after interaction
                     _context._ItemManager.HideDraggedItem();
-                    _context._ItemManager.UpdateToDummy();
                     interaction.ExecuteEffect(_context);
                     return;
                 }
@@ -159,7 +158,7 @@ public class PlayerInvState : PlayerBaseState
     void FailedInteraction()
     {
         _context._ItemManager.HideDraggedItem();
-        _context._ItemManager.UpdateToDummy();
+        _context._ItemManager.UpdateToDummyFailed();
         _context.UpdateCurrentState(PlayerStateManager.State.DialogItem);
         Debug.Log("tripped Failed interaction");
     }

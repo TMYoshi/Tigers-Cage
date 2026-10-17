@@ -21,7 +21,8 @@ public class InventoryItem : Item
 
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
-
+    
+    //AN ITEM HAS TO BE COLLECTABLE TO BE DESTROYABLE sorry for programming it like this
     [SerializeField] private bool destroyable = false;
     public bool Destroyable => destroyable;
 
