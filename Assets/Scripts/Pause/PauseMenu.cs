@@ -98,17 +98,16 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-   public void BackToTable()
+    public void BackToTable()
     {
         Debug.Log("BackToTable button clicked");
 
         documentPage.SetActive(false);
-
         TableOfContents.SetActive(true);
         RefreshButtons();
     }
 
-    public void  PauseUI()
+    public void PauseUI()
     {
         Debug.Log("BackToPauseMenu button clicked");
         TableOfContents.SetActive(false);

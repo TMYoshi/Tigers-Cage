@@ -50,8 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxX: 8
   minX: -8
-  minXMove: 0.7
+  minXMove: 0.9
   speed: 4.5
+  teleportBackY: -2
   OnWalk:
     m_PersistentCalls:
       m_Calls:
