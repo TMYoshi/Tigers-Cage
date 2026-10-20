@@ -87,7 +87,9 @@ public class PlayerController : MonoBehaviour
 
         if(minXMove > Mathf.Abs(originalPos - targetX))
         {
-            _onComplete?.Invoke();
+            if(!PauseMenu.Instance.IsPaused)
+                _onComplete?.Invoke();
+
             OnStop?.Invoke();
             yield break;
         }
@@ -121,7 +123,9 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
 
-        _onComplete?.Invoke();
+        if(!PauseMenu.Instance.IsPaused)
+            _onComplete?.Invoke();
+
         OnStop?.Invoke();
     }
 }

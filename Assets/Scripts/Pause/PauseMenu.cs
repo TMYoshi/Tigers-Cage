@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject documentPage;
 
+    public bool IsPaused => isPaused;
     private bool isPaused = false;
 
     private void Awake()
@@ -65,8 +66,6 @@ public class PauseMenu : MonoBehaviour
         PauseBackground?.SetActive(false);
     }
 
-    //Check if the key 'J" is pressed. it will pause the game
-    //Game will freeze and show UI pause menue
     public void PauseGame()
     {
         isPaused = true;
