@@ -15,15 +15,17 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu Instance;
 
     [Header("UI Refrences")]
-    public GameObject JournalUI;// pause menu panel first
-    public GameObject PauseBackground;// Journal Panel with three buttons
-    public GameObject TableOfContents; //Second UI 
-    //public GameObject PreFabTableOfContents; // Third UI
+    [SerializeField] GameObject PauseBackground;// Journal Panel with three buttons
+    [SerializeField] GameObject TableOfContents; //Second UI 
+    [SerializeField] GameObject SettingsPanel; // Options menu panel
+    
+    [Header("Page layout")]
+    [SerializeField] TMP_Text titleText;
+    [SerializeField] TMP_Text contentText;
+    [SerializeField] Image documentImage;
 
-    public GameObject SettingsPanel; // Options menu panel
-    public TMP_Text titleText;
-    public TMP_Text contentText;
-    public Image documentImage;
+    [Header("Animators")]
+    [SerializeField] Animator journalAnimator;
 
     public GameObject documentPage;
 
@@ -43,7 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public static void InvHandler()
     {
-        if(!Instance || Instance.JournalUI == null) return;
+        if(!Instance) return;
 
         if(Instance.isPaused)
         {
@@ -62,7 +64,6 @@ public class PauseMenu : MonoBehaviour
 
         RefreshButtons();
         PauseBackground?.SetActive(false);
-        JournalUI.SetActive(false);
     }
 
     //Check if the key 'J" is pressed. it will pause the game
@@ -71,7 +72,7 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = true;
         PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Null);
-        JournalUI.SetActive(true);// shows pause menue
+        journalAnimator.SetBool("Show", true);
         documentPage.SetActive(false);
         TableOfContents.SetActive(false);
         SettingsPanel.SetActive(false);
@@ -85,7 +86,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         Debug.Log("games is unpaused ");
         PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
-        JournalUI.SetActive(false);
+        journalAnimator.SetBool("Show", false);
         documentPage.SetActive(false);
     }
 
@@ -198,12 +199,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void Options()
+    public void OpenSettings()
     {
         // Implement options menu logic here
         Debug.Log("Options menu opened");
         SettingsPanel.SetActive(true);
-
     }
 }
    

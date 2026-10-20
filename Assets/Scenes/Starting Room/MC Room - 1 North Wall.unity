@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000f3dd279c29da538ffd64c985b1422701
+  m_ApplyToSortingLayers: 00000000f3dd279c29da538ffd64c985b1422701b1c70642
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4596,10 +4596,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6211530763520305541, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6532383432357208793, guid: 55680c3e826d5814b97a558204783479, type: 3}
       propertyPath: intervals_.Array.size
       value: 3
@@ -4621,34 +4617,6 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130889390192026691, guid: 55680c3e826d5814b97a558204783479, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -4665,6 +4633,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55680c3e826d5814b97a558204783479, type: 3}
+--- !u!20 &1958596486 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6231147724603959928, guid: 55680c3e826d5814b97a558204783479, type: 3}
+  m_PrefabInstance: {fileID: 1958596485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1975317715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5100,13 +5073,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2476326597487989389, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2000
+      objectReference: {fileID: 0}
     - target: {fileID: 4510974858196415401, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.25021
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4510974858196415401, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27503
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4510974858196415401, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5143,6 +5120,14 @@ PrefabInstance:
     - target: {fileID: 5942334328809161159, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
       propertyPath: m_Name
       value: PauseManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316889325785147596, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1958596486}
+    - target: {fileID: 6316889325785147596, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

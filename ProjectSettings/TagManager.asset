@@ -62,5 +62,9 @@ TagManager:
   - name: Foreground
     uniqueID: 1377877635
     locked: 0
+  - name: Journal
+    uniqueID: 1107740593
+    locked: 0
   m_RenderingLayers:
   - Default
+  m_MigratedRenderPipelines: []
