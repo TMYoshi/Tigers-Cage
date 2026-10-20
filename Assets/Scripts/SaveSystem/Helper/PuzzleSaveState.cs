@@ -1,23 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PuzzleSaveState : MonoBehaviour
 {
-   [Header ("Unique ID for puzzle object")]
-   [SerializeField] private string puzzleId;
+    [Header ("Unique ID for puzzle object")]
+    [SerializeField] private string puzzleId;
+    [SerializeField] UnityEvent AlreadySolved;
 
-    [Header ("Optional: objects to disable when completed")]
-   [SerializeField] private GameObject[] objectsToDisable;
-
-    //[Header("Save system")]
-    //[SerializeField] private SaveLoad saveLoadManager;
-
-   private void Start()
+    private void Start()
     {
         //After loading, CollectedItems is resotred before start() runs and disables again to spefific Id
         //check if the puzzle id inside the collectedItems
-        if (InventoryManager.IsItemCollected(puzzleId))
+        if (SaveData.Instance.AlreadyInteractedItems.Contains(puzzleId))
         {
-            //ApplyCompleteState();
+            AlreadySolved.Invoke();
         }
     }
 

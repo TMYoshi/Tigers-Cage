@@ -34,7 +34,7 @@ public class CraftingManager : MonoBehaviour
                             _inventory.itemSlot[i].RemoveItem();
                         }
                     }
-                    _inventory.AddItem(creation.ResultName, 1, creation.ResultImage, creation.ResultDescription);
+                    _inventory.AddItem(creation.ResultName, creation.ResultImage, creation.ResultDescription);
                     InventoryManager.MarkItemAsCollected(creation.ResultName);
 
                     Debug.Log($"Crafted {creation.ResultName}.");

@@ -5,8 +5,6 @@ public class InventoryItem : Item
     [SerializeField]
     private string itemName;
     [SerializeField]
-    private int quantity;
-    [SerializeField]
     private Sprite sprite;
     [SerializeField]
     private AudioClip audio_clip_;
@@ -17,14 +15,14 @@ public class InventoryItem : Item
     private InventoryManager inventoryManager;
 
     public string ItemName => itemName;
-    public int Quantity => quantity;
     public Sprite Sprite => sprite;
     public string ItemDescription => itemDescription;
     public AudioClip AudioClip => audio_clip_;
 
     [SerializeField] private bool collectable;
     public bool Collectable => collectable;
-
+    
+    //AN ITEM HAS TO BE COLLECTABLE TO BE DESTROYABLE sorry for programming it like this
     [SerializeField] private bool destroyable = false;
     public bool Destroyable => destroyable;
 
@@ -95,11 +93,6 @@ public class InventoryItem : Item
     public void SetItemName(string item_name)
     {
         itemName = item_name;
-    }
-
-    public void SetQuantity(int quantity_)
-    {
-        quantity = quantity_;
     }
 
     public void SetAudioClip(AudioClip audio_clip)

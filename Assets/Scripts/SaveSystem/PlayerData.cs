@@ -8,10 +8,10 @@ public class PlayerData
 {
     public bool[] CutsceneSaved;
     public string SceneIndex;
-    public List<InventorySlotData> InventorySlots;
+    public List<string> InventorySlots;
     public List<string> CollectedItemIds;
     public List<string> AlreadyInteractedItems;
-    public List<JournalPageSaveData> UnlockedJournalEntries;
+    public List<string> UnlockedDocuments;
     
     //add this back if we're bringing back flashlight
     //public Dictionary<string, bool> PlayerUpgrades;
@@ -25,7 +25,7 @@ public class PlayerData
         InventorySlots = _save.InventorySlots;
         CollectedItemIds = _save.CollectedItemIds;
         AlreadyInteractedItems = _save.AlreadyInteractedItems;
-        UnlockedJournalEntries = _save.UnlockedJournalEntries;
+        UnlockedDocuments = _save.UnlockedDocuments;
         
         // bug inventorySlots = inventorySlots;
         //unlock items = unlockItems;

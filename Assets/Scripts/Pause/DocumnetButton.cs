@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DocumnetButton : MonoBehaviour
+public class DocumentButton : MonoBehaviour
 {
     public DocumentItem documentItem;
     public PauseMenu pauseMenu;
@@ -21,8 +21,6 @@ public class DocumnetButton : MonoBehaviour
             Debug.LogWarning("PauseMenu reference is not assigned for " + gameObject.name);
             return;
         }
-
-
 
         pauseMenu.OpenDocumentByItem(documentItem);
     }

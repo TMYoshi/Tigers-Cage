@@ -12,7 +12,6 @@ public class PuzzlePathChecker : MonoBehaviour
     public CogController driverCog;
     public CogController upperEndCog;
     public CogController lowerEndCog;
-    public static bool musicBoxPuzzleSolved = false;
 
     private Dictionary<CogController, HashSet<CogController>> connectionGraph = 
         new Dictionary<CogController, HashSet<CogController>>();
@@ -115,7 +114,7 @@ public class PuzzlePathChecker : MonoBehaviour
         {
             CogController parent = queue.Dequeue();
 
-            if (!connectionGraph.ContainsKey(parent)) continue;
+            //if (!connectionGraph.ContainsKey(parent)) continue;
 
             foreach (CogController child in connectionGraph[parent])
             {
@@ -216,11 +215,10 @@ public class PuzzlePathChecker : MonoBehaviour
         return neighbors;
     }
 
-    private void OnPuzzleSolved()// notes for chris puzzle solved
+    private void OnPuzzleSolved()
     {
         Debug.LogWarning($"puzzle solved");
-        musicBoxPuzzleSolved = true;
-        //autosave
+        InventoryManager.AddAlreadyInteractedItem("Music Box");
         SaveData.Instance.SavePlayer();
         SceneController.scene_controller_instance.FadeAndLoadScene("MC Room - 2 Chest");
 
