@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject PauseBackground;// Journal Panel with three buttons
     [SerializeField] GameObject TableOfContents; //Second UI 
     [SerializeField] GameObject SettingsPanel; // Options menu panel
+    [SerializeField] Canvas journalCanvas;
     
     [Header("Page layout")]
     [SerializeField] TMP_Text titleText;
@@ -61,6 +62,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        SceneManager.sceneLoaded += (_, _) => journalCanvas.worldCamera = Camera.main;
 
         RefreshButtons();
         PauseBackground?.SetActive(false);

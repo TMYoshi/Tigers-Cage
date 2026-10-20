@@ -5606,6 +5606,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6114972088675716473, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009755687804204071, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009755687804204071, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009755687804204071, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6871341997302445155, guid: 45af1be43ba6ae5429787ac312c51595, type: 3}
