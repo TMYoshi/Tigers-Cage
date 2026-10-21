@@ -88,7 +88,7 @@ public class PlayerInvState : PlayerBaseState
 
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
-        Interaction[] itemInteraction = new Interaction[0];
+        Interaction[] itemInteraction = null;
 
         foreach (RaycastResult result in results)
         {
@@ -134,7 +134,7 @@ public class PlayerInvState : PlayerBaseState
             }
         }
 
-        if(InteractedItem != null)
+        if(itemInteraction != null && InteractedItem != null)
             FailedInteraction();
     }
 

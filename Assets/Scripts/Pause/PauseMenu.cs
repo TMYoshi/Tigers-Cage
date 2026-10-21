@@ -73,7 +73,6 @@ public class PauseMenu : MonoBehaviour
         journalAnimator.SetBool("Show", true);
         documentPage.SetActive(false);
         TableOfContents.SetActive(false);
-        SettingsPanel.SetActive(false);
         PauseBackground.SetActive(true);
 
         Debug.Log("games is paused ");
@@ -85,7 +84,6 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("games is unpaused ");
         PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Idle);
         journalAnimator.SetBool("Show", false);
-        documentPage.SetActive(false);
     }
 
     public void OpenJournal()
