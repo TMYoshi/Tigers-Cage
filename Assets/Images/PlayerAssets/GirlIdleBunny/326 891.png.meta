@@ -178,7 +178,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -198,9 +198,9 @@ TextureImporter:
       name: 326 891_1
       rect:
         serializedVersion: 2
-        x: 327
+        x: 326
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -220,9 +220,9 @@ TextureImporter:
       name: 326 891_2
       rect:
         serializedVersion: 2
-        x: 654
+        x: 652
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -242,9 +242,9 @@ TextureImporter:
       name: 326 891_3
       rect:
         serializedVersion: 2
-        x: 981
+        x: 978
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -264,9 +264,9 @@ TextureImporter:
       name: 326 891_4
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 1304
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -286,9 +286,9 @@ TextureImporter:
       name: 326 891_5
       rect:
         serializedVersion: 2
-        x: 1635
+        x: 1630
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -308,9 +308,9 @@ TextureImporter:
       name: 326 891_6
       rect:
         serializedVersion: 2
-        x: 1962
+        x: 1956
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -330,9 +330,9 @@ TextureImporter:
       name: 326 891_7
       rect:
         serializedVersion: 2
-        x: 2289
+        x: 2282
         y: 1782
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -352,9 +352,9 @@ TextureImporter:
       name: 326 891_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 891
-        width: 327
+        x: 2608
+        y: 1782
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -374,9 +374,9 @@ TextureImporter:
       name: 326 891_9
       rect:
         serializedVersion: 2
-        x: 327
+        x: 0
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -396,9 +396,9 @@ TextureImporter:
       name: 326 891_10
       rect:
         serializedVersion: 2
-        x: 654
+        x: 326
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -418,9 +418,9 @@ TextureImporter:
       name: 326 891_11
       rect:
         serializedVersion: 2
-        x: 981
+        x: 652
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -440,9 +440,9 @@ TextureImporter:
       name: 326 891_12
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 978
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -462,9 +462,9 @@ TextureImporter:
       name: 326 891_13
       rect:
         serializedVersion: 2
-        x: 1635
+        x: 1304
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -484,9 +484,9 @@ TextureImporter:
       name: 326 891_14
       rect:
         serializedVersion: 2
-        x: 1962
+        x: 1630
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -506,9 +506,9 @@ TextureImporter:
       name: 326 891_15
       rect:
         serializedVersion: 2
-        x: 2289
+        x: 1956
         y: 891
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -528,9 +528,9 @@ TextureImporter:
       name: 326 891_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 327
+        x: 2282
+        y: 891
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -550,9 +550,9 @@ TextureImporter:
       name: 326 891_17
       rect:
         serializedVersion: 2
-        x: 327
-        y: 0
-        width: 327
+        x: 2608
+        y: 891
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -572,9 +572,9 @@ TextureImporter:
       name: 326 891_18
       rect:
         serializedVersion: 2
-        x: 654
+        x: 0
         y: 0
-        width: 327
+        width: 326
         height: 891
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -586,6 +586,50 @@ TextureImporter:
       bones: []
       spriteID: 4c016363e780edc30800000000000000
       internalID: 4385952425273856196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 326 891_19
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 0
+        width: 326
+        height: 891
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eefb0b351e95549a74d9a23be25274
+      internalID: -1048931955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 326 891_20
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 0
+        width: 326
+        height: 891
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1968777efe4c3574c831941a750d8f3e
+      internalID: -824425191
       vertices: []
       indices: 
       edges: []
@@ -604,7 +648,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":327.0,"y":891.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":326.0,"y":891.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       326 891_0: -6648873394119762041
       326 891_1: -6570643652110238048
@@ -617,7 +661,9 @@ TextureImporter:
       326 891_16: -3060599452011262725
       326 891_17: 3042557721840213458
       326 891_18: 4385952425273856196
+      326 891_19: -1048931955
       326 891_2: -2198789436649042910
+      326 891_20: -824425191
       326 891_3: -8694093023794895408
       326 891_4: -292241724839407465
       326 891_5: -1557193694788771125

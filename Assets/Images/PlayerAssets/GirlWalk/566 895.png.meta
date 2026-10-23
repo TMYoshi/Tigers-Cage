@@ -137,12 +137,12 @@ TextureImporter:
       name: 566 895_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 909
-        width: 443
-        height: 838
+        x: 0
+        y: 895
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: 566 895_1
       rect:
         serializedVersion: 2
-        x: 599
-        y: 904
-        width: 506
-        height: 814
+        x: 566
+        y: 895
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: 566 895_2
       rect:
         serializedVersion: 2
-        x: 1267
-        y: 904
-        width: 261
-        height: 838
+        x: 1132
+        y: 895
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: 566 895_3
       rect:
         serializedVersion: 2
-        x: 1823
-        y: 906
-        width: 296
-        height: 864
+        x: 1698
+        y: 895
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: 566 895_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 10
-        width: 478
-        height: 842
+        x: 0
+        y: 0
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: 566 895_5
       rect:
         serializedVersion: 2
-        x: 618
-        y: 9
-        width: 496
-        height: 813
+        x: 566
+        y: 0
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: 566 895_6
       rect:
         serializedVersion: 2
-        x: 1268
-        y: 11
-        width: 260
-        height: 836
+        x: 1132
+        y: 0
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: 566 895_7
       rect:
         serializedVersion: 2
-        x: 1830
-        y: 11
-        width: 288
-        height: 864
+        x: 1698
+        y: 0
+        width: 566
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9bf740eab85a4be4280e12656a02eff0
     internalID: 0
     vertices: []
     indices: 
@@ -321,7 +321,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":566.0,"y":895.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       566 895_0: -1241588636481092489
       566 895_1: 2187557231460401248

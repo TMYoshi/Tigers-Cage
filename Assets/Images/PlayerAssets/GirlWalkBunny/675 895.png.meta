@@ -137,12 +137,12 @@ TextureImporter:
       name: 675 895_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 909
-        width: 443
-        height: 838
+        x: 0
+        y: 895
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: 675 895_1
       rect:
         serializedVersion: 2
-        x: 764
-        y: 904
-        width: 514
-        height: 814
+        x: 675
+        y: 895
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: 675 895_2
       rect:
         serializedVersion: 2
-        x: 1541
-        y: 904
-        width: 261
-        height: 838
+        x: 1350
+        y: 895
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: 675 895_3
       rect:
         serializedVersion: 2
-        x: 2109
-        y: 906
-        width: 393
-        height: 864
+        x: 2025
+        y: 895
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: 675 895_4
       rect:
         serializedVersion: 2
-        x: 45
-        y: 10
-        width: 507
-        height: 842
+        x: 0
+        y: 0
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: 675 895_5
       rect:
         serializedVersion: 2
-        x: 704
-        y: 9
-        width: 575
-        height: 813
+        x: 675
+        y: 0
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: 675 895_6
       rect:
         serializedVersion: 2
-        x: 1523
-        y: 11
-        width: 279
-        height: 836
+        x: 1350
+        y: 0
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: 675 895_7
       rect:
         serializedVersion: 2
-        x: 2213
-        y: 11
-        width: 288
-        height: 864
+        x: 2025
+        y: 0
+        width: 675
+        height: 895
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2394558ff913b4e4d8e290ea4ae04c31
     internalID: 0
     vertices: []
     indices: 
@@ -321,7 +321,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":675.0,"y":895.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       675 895_0: -1557488412095412778
       675 895_1: 8745179791574869240
