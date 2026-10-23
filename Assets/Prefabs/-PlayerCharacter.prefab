@@ -51,6 +51,7 @@ MonoBehaviour:
   maxX: 8
   minX: -8
   minXMove: 0.9
+  flipTransform: {fileID: 3613023799139725718}
   speed: 4.5
   teleportBackY: -2
   OnWalk:
@@ -68,9 +69,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8106188418584056010}
+      - m_Target: {fileID: 1310034358719874774}
         m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
-        m_MethodName: set_flipX
+        m_MethodName: FlipBaseOnDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -236,7 +237,7 @@ SpriteRenderer:
   m_Size: {x: 3.26, y: 8.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
 --- !u!114 &5622018712183545793

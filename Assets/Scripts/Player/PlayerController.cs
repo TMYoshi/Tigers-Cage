@@ -8,12 +8,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxX, minX;
     [Tooltip("the player won't move if the click is within this min ")]
     [SerializeField] float minXMove;
+    [SerializeField] Transform flipTransform;
     [SerializeField] float speed;
     [SerializeField] float teleportBackY = -2.0f;
     //false = left
     //true = right 
     public UnityEvent<bool> OnWalk;
     public UnityEvent OnStop;
+
+    public void FlipBaseOnDirection(bool left)
+    {
+        if(!left)
+            flipTransform.rotation = Quaternion.Euler(0, 0, 0);
+        else
+            flipTransform.rotation = Quaternion.Euler(0, 180, 0);
+    }
 
     public void GetOffscreenAndGoToMiddle(bool left)
     {
@@ -93,6 +102,7 @@ public class PlayerController : MonoBehaviour
             OnStop?.Invoke();
             yield break;
         }
+
 
         OnWalk?.Invoke(originalPos - targetX < 0 ? true : false);
 
