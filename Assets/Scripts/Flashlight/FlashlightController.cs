@@ -55,7 +55,7 @@ public class FlashlightController : MonoBehaviour
     {
         if (PlayerInput.Instance != null)
         {
-            PlayerInput.Instance.FlashInput += ToggleFlashlight;
+            PlayerInput.Instance.FlashOnClick += ToggleFlashlight;
         }
     }
 
@@ -63,7 +63,7 @@ public class FlashlightController : MonoBehaviour
     {   
         if (PlayerInput.Instance != null)
         {
-            PlayerInput.Instance.FlashInput -= ToggleFlashlight;
+            PlayerInput.Instance.FlashOnClick -= ToggleFlashlight;
         }
     }
 

@@ -6407,8 +6407,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408342661}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: -2.007, z: 0.06747818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.95, y: -2.1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8939,6 +8939,10 @@ PrefabInstance:
     - target: {fileID: 2921302799798819951, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
       propertyPath: m_Name
       value: HeartbeatCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921302799798819951, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5237293392679571344, guid: 6df3cc2ef375c2d4aae35441a8058c93, type: 3}
       propertyPath: m_Pivot.x

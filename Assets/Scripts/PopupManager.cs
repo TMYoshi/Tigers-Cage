@@ -49,7 +49,7 @@ public class PopupManager : MonoBehaviour
     {
         animator.SetBool("Show", false);
         PlayerInput.Instance.InvOnClick -= SetpopupOff;
-        PlayerInput.Instance.FlashInput -= SetpopupOff;
+        PlayerInput.Instance.FlashOnClick -= SetpopupOff;
     }
 
     public void SetUIPopuopOn()

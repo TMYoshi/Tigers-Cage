@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
     public Action MouseOnClickInput; 
     public Action MouseOnUpInput;
     public Action InvOnClick;
-    public Action FlashInput;
+    public Action FlashOnClick;
     //public Action MouseMovement;
     
     [field: SerializeField]
@@ -19,7 +19,6 @@ public class PlayerInput : MonoBehaviour
     public Vector2 MouseInput {private set; get;}
     public Vector2 MouseMovement {private set; get;}
     public bool HintInput;  
-    public bool JournalInput {private set; get;}
 
     InputAction mouseClickAction;
     InputAction mouseAction;
@@ -50,12 +49,11 @@ public class PlayerInput : MonoBehaviour
         flashAction = InputSystem.actions.FindAction("Flashlight");
         skipAction = InputSystem.actions.FindAction("Skip");
         hintAction = InputSystem.actions.FindAction("Hint");
-        journalAction = InputSystem.actions.FindAction("Journal");
         mouseMoveAction = InputSystem.actions.FindAction("MouseMove");
 
         invAction.performed += _ => InvOnClick?.Invoke();
 
-        flashAction.performed += _ => FlashInput?.Invoke();
+        flashAction.performed += _ => FlashOnClick?.Invoke();
 
         skipAction.performed += _ => SkipInput = true;
         skipAction.canceled += _ => SkipInput = false;
@@ -73,8 +71,6 @@ public class PlayerInput : MonoBehaviour
         hintAction.performed += _ => HintInput = true;
         hintAction.canceled += _ => HintInput= false;
 
-        journalAction.performed += _ => JournalInput = true;
-        journalAction.canceled += _ => JournalInput= false;
     }
 
     void Update()
