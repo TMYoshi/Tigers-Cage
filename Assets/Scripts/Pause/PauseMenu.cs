@@ -15,9 +15,10 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu Instance;
 
     [Header("UI Refrences")]
-    [SerializeField] GameObject PauseBackground;// Journal Panel with three buttons
-    [SerializeField] GameObject TableOfContents; //Second UI 
-    [SerializeField] GameObject SettingsPanel; // Options menu panel
+    [SerializeField] GameObject mainPanel;// Journal Panel with three buttons
+    [SerializeField] GameObject tableOfContents; //Second UI 
+    [SerializeField] GameObject settingsPanel; // Options menu panel
+    [SerializeField] GameObject documentPage;
     
     [Header("Page layout")]
     [SerializeField] TMP_Text titleText;
@@ -26,8 +27,6 @@ public class PauseMenu : MonoBehaviour
 
     [Header("Animators")]
     [SerializeField] Animator journalAnimator;
-
-    public GameObject documentPage;
 
     public bool IsPaused => isPaused;
     private bool isPaused = false;
@@ -60,10 +59,17 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    void TurnOffAllPages()
+    {
+        settingsPanel.SetActive(false);
+        documentPage.SetActive(false);
+        tableOfContents.SetActive(false);
+        mainPanel.SetActive(false);
+    }
+
     void Start()
     {
-        RefreshButtons();
-        PauseBackground?.SetActive(false);
+        TurnOffAllPages();
     }
 
     public void PauseGame()
@@ -71,9 +77,8 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         PlayerStateManager.Instance.UpdateCurrentState(PlayerStateManager.State.Null);
         journalAnimator.SetBool("Show", true);
-        documentPage.SetActive(false);
-        TableOfContents.SetActive(false);
-        PauseBackground.SetActive(true);
+        TurnOffAllPages();
+        mainPanel.SetActive(true);
 
         Debug.Log("games is paused ");
     }
@@ -86,61 +91,16 @@ public class PauseMenu : MonoBehaviour
         journalAnimator.SetBool("Show", false);
     }
 
-    public void OpenJournal()
+    public void OpenTable()
     {
-        PauseBackground.SetActive(false);
-        RefreshButtons();
-        Debug.Log("Opened Table");
-        TableOfContents.SetActive(true);
-
-    }
-
-    public void BackToTable()
-    {
-        Debug.Log("BackToTable button clicked");
-
-        documentPage.SetActive(false);
-        TableOfContents.SetActive(true);
-        RefreshButtons();
+        TurnOffAllPages();
+        tableOfContents.SetActive(true);
     }
 
     public void PauseUI()
     {
-        Debug.Log("BackToPauseMenu button clicked");
-        TableOfContents.SetActive(false);
-        SettingsPanel.SetActive(false);
-        PauseBackground.SetActive(true);
-    }
-
-   /* void UpdateTOCButtons()
-    {
-        if(JournalDataManager.Instance == null) return;
-        var data = JournalDataManager.Instance.allDocuments;
-
-        for (int i = 0; i < documentButtons.Length; i++)
-        {
-            bool unlocked = data[i].isUnlocked;
-            documentButtons[i].gameObject.SetActive(unlocked);
-
-            int index = i; // local copy for lambda
-            documentButtons[i].onClick.RemoveAllListeners();
-            documentButtons[i].onClick.AddListener(() => OpenDocument(index));
-        }
-    }*/
-
-    public void RefreshButtons()
-    {
-        /*
-        foreach(Button but in documentButtons)
-        {
-            DocumnetButton docBut = but.GetComponent<DocumnetButton>();
-
-            if(docBut != null && docBut.documentItem != null)
-            {
-                but.gameObject.SetActive(docBut.documentItem.isUnlocked);
-            }
-        }
-        */
+        TurnOffAllPages();
+        mainPanel.SetActive(true);
     }
 
     public void OpenDocumentByItem(DocumentItem doc)
@@ -157,31 +117,10 @@ public class PauseMenu : MonoBehaviour
             contentText.font = doc.documentInfoFont;
         }
 
-        TableOfContents.SetActive(false);
+        TurnOffAllPages();
         documentPage.SetActive(true);
 
         Debug.Log($"Opened document: {doc.documentTitle}");
-    }
-
-    public void OpenDocument(int index)
-    {
-        /*
-        var doc = JournalDataManager.Instance.allDocuments[index];
-        titleText.text = doc.documentTitle;
-        contentText.text = doc.documentText;
-        documentImage.sprite = doc.documentImage;
-
-        //applying font if set
-        if(doc.documentInfoFont != null)
-        {
-            titleText.font = doc.documentInfoFont;
-            contentText.font = doc.documentInfoFont;
-        }
-        TableOfContents.SetActive(false);
-        documentPage.SetActive(true);
-
-        Debug.Log($"Opened document: {doc.documentTitle}");
-        */
     }
 
 
@@ -197,9 +136,8 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-        // Implement options menu logic here
-        Debug.Log("Options menu opened");
-        SettingsPanel.SetActive(true);
+        TurnOffAllPages();
+        settingsPanel.SetActive(true);
     }
 }
    
