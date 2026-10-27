@@ -1114,7 +1114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6373318483151956829}
   - component: {fileID: 3503466620193165461}
-  - component: {fileID: 9162586790555762264}
+  - component: {fileID: 6503033228208488101}
   m_Layer: 5
   m_Name: JournalBackground
   m_TagString: Untagged
@@ -1149,7 +1149,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562786240185906884}
   m_CullTransparentMesh: 1
---- !u!114 &9162586790555762264
+--- !u!114 &6503033228208488101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1160,16 +1160,16 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8758343430254617839, guid: 6e7cfd3e60659264fa537de9caedcedd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 317ac0d31fe696240bb195371a845772, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5441,12 +5441,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651996349244811923, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_text
-      value: Y
+      value: E
       objectReference: {fileID: 0}
     - target: {fileID: 2952728116873163006, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6090647313145214963}
     - target: {fileID: 6269261945516451879, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_text
       value: Inventory
@@ -5606,12 +5606,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651996349244811923, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_text
-      value: U
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 2952728116873163006, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3257952395990488681}
     - target: {fileID: 6269261945516451879, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_text
       value: Hint
@@ -5772,7 +5772,7 @@ PrefabInstance:
     - target: {fileID: 2952728116873163006, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5682661764246299662}
     - target: {fileID: 6269261945516451879, guid: 50cb9c4ce9b2c43f0ae9c22aed74cd02, type: 3}
       propertyPath: m_text
       value: Flashlight
