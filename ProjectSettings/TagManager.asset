@@ -65,6 +65,9 @@ TagManager:
   - name: Journal
     uniqueID: 1107740593
     locked: 0
+  - name: Cursor
+    uniqueID: 2236645299
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []

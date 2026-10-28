@@ -83,20 +83,22 @@ public class HighlightInteractableOutline : MonoBehaviour
 
     public void Enter()
     {
+        if(CursorManager.Instance != null)
+            CursorManager.Instance.UpdateToState(CursorManager.CursorState.Hover);
+
         if (outlineParent != null)
-        {
             outlineParent.SetActive(true);
-        }
         //Debug.Log("Mouse entered " + gameObject.name);
     }
 
     public void Exit()
     {
+        if(CursorManager.Instance != null)
+            CursorManager.Instance.UpdateToState(CursorManager.CursorState.Idle);
+
         // hide outline
         if (outlineParent != null)
-        {
             outlineParent.SetActive(false);
-        }
     }
     void OnDestroy()
     {
