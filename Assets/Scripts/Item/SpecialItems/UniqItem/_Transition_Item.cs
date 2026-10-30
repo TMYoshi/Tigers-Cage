@@ -18,7 +18,7 @@ public class _Transition_Item : SpecialItems
         if (transition_to_ != "")
         {
             Debug.Log("Transitioning to " + transition_to_);
-            SceneController.scene_controller_instance.PlayerShouldReturnTo(transform.position);
+            SceneController.Instance.PlayerShouldReturnTo(transform.position);
 
             if(saveTransitionLocation)
             {

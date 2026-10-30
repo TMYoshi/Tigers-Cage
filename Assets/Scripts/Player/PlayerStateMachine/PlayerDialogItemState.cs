@@ -31,7 +31,7 @@ public class PlayerDialogItemState : PlayerBaseState
 
         _context._ItemManager._SelectedItem.WriteLines();
 
-        if (SFXManager.Instance != null && !isFull);
+        if (SFXManager.Instance != null && !isFull)
             SFXManager.Instance.PlaySFXClip(_context._ItemManager._SelectedItem.AudioClip, _context.transform, 1f);
 
         PlayerInput.Instance.MouseOnClickInput -= DialogPlays;

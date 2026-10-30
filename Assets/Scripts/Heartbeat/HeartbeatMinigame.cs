@@ -175,7 +175,7 @@ public class HeartbeatMinigame : MonoBehaviour
 	public void lose()
 	{
 		Debug.Log("<color=red>lose</color>");
-        SceneController.scene_controller_instance.FadeAndLoadScene("GameOver");
+        SceneController.Instance.FadeAndLoadScene("GameOver");
 		EndMinigame();
 	}
 }

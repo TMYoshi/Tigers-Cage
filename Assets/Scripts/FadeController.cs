@@ -71,7 +71,7 @@ public class FadeController : MonoBehaviour
         transitionAnimator.SetBool("Blink", true);
 
         yield return new WaitUntil(() => finishedBlinkAnimation);
-        AsyncOperation scene = SceneController.scene_controller_instance.TraverseScene(sceneName);
+        AsyncOperation scene = SceneController.Instance.TraverseScene(sceneName);
         yield return new WaitUntil(() => scene.isDone);
 
         transitionAnimator.SetBool("Blink", false);

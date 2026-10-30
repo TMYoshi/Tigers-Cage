@@ -157,9 +157,9 @@ public class CutsceneManager : MonoBehaviour
 
         string currentScene = SceneManager.GetActiveScene().name;
 
-        if (SceneController.scene_controller_instance != null)
+        if (SceneController.Instance != null)
         {
-            SceneController.scene_controller_instance.FadeAndLoadScene(nextSceneName);
+            SceneController.Instance.FadeAndLoadScene(nextSceneName);
             OnCutsceneComplete?.Invoke();
 
         }

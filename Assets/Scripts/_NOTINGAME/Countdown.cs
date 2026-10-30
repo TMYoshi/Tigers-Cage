@@ -81,7 +81,7 @@ public class Countdown : MonoBehaviour
             player_ = PlayerStateManager.Instance;
             if(player_.GetCurrentState() is not PlayerHidingState)
             {
-                SceneController.scene_controller_instance.FadeAndLoadScene("GameOver");
+                SceneController.Instance.FadeAndLoadScene("GameOver");
             }
         }
 

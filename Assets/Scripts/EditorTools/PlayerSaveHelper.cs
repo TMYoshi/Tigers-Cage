@@ -21,14 +21,19 @@ public class PlayerSaveHelper : EditorWindow
 
         if(GUILayout.Button("Wipe save"))
         {
-            SaveData.Instance.CutsceneSaved = new bool[3];
-            SaveData.Instance.SceneIndex = "";
-            SaveData.Instance.InventorySlots = new List<string>();
-            SaveData.Instance.CollectedItemIds = new List<string>();
-            SaveData.Instance.AlreadyInteractedItems = new List<string>();
-            SaveData.Instance.UnlockedDocuments = new List<string>();
-            SaveData.Instance.SavePlayer();
+            WipeSave();
         }
+    }
+
+    public static void WipeSave()
+    {
+        SaveData.Instance.CutsceneSaved = new bool[3];
+        SaveData.Instance.SceneIndex = "";
+        SaveData.Instance.InventorySlots = new List<string>();
+        SaveData.Instance.CollectedItemIds = new List<string>();
+        SaveData.Instance.AlreadyInteractedItems = new List<string>();
+        SaveData.Instance.UnlockedDocuments = new List<string>();
+        SaveData.Instance.SavePlayer();
     }
 }
 #endif

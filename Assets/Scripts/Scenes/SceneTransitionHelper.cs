@@ -14,18 +14,18 @@ public class SceneTransitionHelper : MonoBehaviour
 
     private void ExecuteTransition()
     {
-        if (SceneController.scene_controller_instance == null) {
+        if (SceneController.Instance == null) {
             Debug.LogError("SceneController not found in memory.");
                 return;
         }
 
         if (useTigerAnimation)
         {
-            SceneController.scene_controller_instance.MainMenuTraverse(targetScene);
+            SceneController.Instance.MainMenuTraverse(targetScene);
         }
         else
         {
-            SceneController.scene_controller_instance.FadeAndLoadScene(targetScene);
+            SceneController.Instance.FadeAndLoadScene(targetScene);
         }
     }
 }

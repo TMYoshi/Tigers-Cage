@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public static SceneController scene_controller_instance;
+    public static SceneController Instance;
     public string lastArrowClicked {get; private set;} = "Right";
     public bool shouldMoveToMiddle {get; set;} = true;
     public Vector3 teleportPositionForGoingBack {get; private set;} = new Vector3(0, 0, 0);
@@ -21,9 +21,9 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        if (scene_controller_instance == null)
+        if (Instance == null)
         {
-            scene_controller_instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else

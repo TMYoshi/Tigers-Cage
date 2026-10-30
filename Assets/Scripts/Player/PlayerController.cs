@@ -40,20 +40,20 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        if(SceneController.scene_controller_instance.shouldMoveToMiddle == false)
+        if(SceneController.Instance.shouldMoveToMiddle == false)
         {
-            transform.position = new Vector3(SceneController.scene_controller_instance.teleportPositionForGoingBack.x, teleportBackY, 0f);
-            SceneController.scene_controller_instance.shouldMoveToMiddle = true;
+            transform.position = new Vector3(SceneController.Instance.teleportPositionForGoingBack.x, teleportBackY, 0f);
+            SceneController.Instance.shouldMoveToMiddle = true;
             return;
         }
 
-        if(SceneController.scene_controller_instance == null)
+        if(SceneController.Instance == null)
         {
             Debug.LogWarning("No Scene Controller D:");
             GetOffscreenAndGoToMiddle(false);
         }
         else
-            GetOffscreenAndGoToMiddle(SceneController.scene_controller_instance.lastArrowClicked == "Right" ? true : false);
+            GetOffscreenAndGoToMiddle(SceneController.Instance.lastArrowClicked == "Right" ? true : false);
     }
 
     public static void WalkToOnClick(PlayerController _playerController)

@@ -27,6 +27,11 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
+        InventoryCleanup();
+    }
+
+    public void InventoryCleanup()
+    {
         ApplyAlreadyInteractedItems(SaveData.Instance.AlreadyInteractedItems);
         ApplyCollectedItemsSaveData(SaveData.Instance.CollectedItemIds);
         ApplyInventorySaveData(SaveData.Instance.InventorySlots);

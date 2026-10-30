@@ -26,12 +26,12 @@ public class ArrowController : MonoBehaviour
             // right = 90' clockwise (CW), left = 90' CCW 
             if (gameObject.name.Contains("Right"))
             {
-                SceneController.scene_controller_instance.SetLastArrow("Right");
+                SceneController.Instance.SetLastArrow("Right");
                 nextScene = GetNextScene(currentScene, "Clockwise");
             }
             else if (gameObject.name.Contains("Left"))
             {
-                SceneController.scene_controller_instance.SetLastArrow("Left");
+                SceneController.Instance.SetLastArrow("Left");
                 nextScene = GetNextScene(currentScene, "Counterclockwise");
             }
         }
@@ -50,12 +50,12 @@ public class ArrowController : MonoBehaviour
             else
             {
                 Debug.LogWarning("FadeController.Instance is null - using SceneController fallback");
-                if (SceneController.scene_controller_instance == null)
+                if (SceneController.Instance == null)
                 {
                     Debug.LogError("SceneController.scene_controller_instance is NULL! Make sure SceneController is in the scene.");
                     return;
                 }
-                SceneController.scene_controller_instance.TraverseScene(nextScene);
+                SceneController.Instance.TraverseScene(nextScene);
             }
         }
         else

@@ -32,9 +32,9 @@ public class PopupSceneLoadProxy : MonoBehaviour
         }
         
 
-        if (SceneController.scene_controller_instance != null)
+        if (SceneController.Instance != null)
         {
-            SceneController.scene_controller_instance.FadeAndLoadScene(targetSceneName); 
+            SceneController.Instance.FadeAndLoadScene(targetSceneName); 
             // or trigger cutscene then flow into Hallway via CutsceneManager once animation is complete
         }
         else

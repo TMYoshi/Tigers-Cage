@@ -220,7 +220,7 @@ public class PuzzlePathChecker : MonoBehaviour
         Debug.LogWarning($"puzzle solved");
         InventoryManager.AddAlreadyInteractedItem("Music Box");
         SaveData.Instance.SavePlayer();
-        SceneController.scene_controller_instance.FadeAndLoadScene("MC Room - 2 Chest");
+        SceneController.Instance.FadeAndLoadScene("MC Room - 2 Chest");
 
     }
 
